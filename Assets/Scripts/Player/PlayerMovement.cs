@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMoviment : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     float velocity = 10.0f;
     public float rotation = 90.0f;
