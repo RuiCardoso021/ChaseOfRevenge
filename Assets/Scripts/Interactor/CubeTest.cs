@@ -9,6 +9,7 @@ public class CubeTest : MonoBehaviour, IInteractable
     public string InteractionPrompt => _prompt;
 
     public bool Interact(Interactor interactor){
+        
         Debug.Log("Olá Manel");
         return true;
     }
