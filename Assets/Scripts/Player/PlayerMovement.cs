@@ -5,55 +5,31 @@ using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject thePlayer;
+    public bool isMoving;
+    public float horizontalMove;
+    public float verticalMove;
 
-    public CharacterController controller;
+    private int speed = 150;
+    private float jumpHeight = 3.9f;
 
-    public float speed = 12f;
-    public float gravity = -9.81f;
-    public float jumpHeight = 1f;
-
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
-
-    Vector3 velocity;
-    bool isGrounded;
-
-    Animator animator;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        animator = GetComponentInChildren<Animator>();
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if(isGrounded && velocity.y < 0)
+        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
         {
-            velocity.y = -2f;
+            isMoving = true;
+            thePlayer.GetComponent<Animator>().SetBool("Idle", false);
+            thePlayer.GetComponent<Animator>().SetBool("Walk", true);
+            horizontalMove = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
+            verticalMove = Input.GetAxis("Vertical") * Time.deltaTime * jumpHeight;
+            thePlayer.transform.Rotate(0, horizontalMove, 0);
+            thePlayer.transform.Translate(0, 0, verticalMove);
         }
-
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        controller.Move(move * speed * Time.deltaTime);
-        animator.SetBool("Walk", true);
-
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        else
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            animator.SetBool("Walk", false);
-            animator.SetBool("Jump", true);
+            isMoving = false;
+            thePlayer.GetComponent<Animator>().SetBool("Walk", false);
+            thePlayer.GetComponent<Animator>().SetBool("Idle", true);
         }
-
-        velocity.y += gravity * Time.deltaTime;
-
-        controller.Move(velocity * Time.deltaTime);
     }
 }
