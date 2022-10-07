@@ -6,68 +6,106 @@ using TMPro;
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject thePlayer;
-    public bool isMoving;
-    public float horizontalMove;
-    public float verticalMove;
+    public Rigidbody rb;
+
+    public float groundDrag;
+    public float jumpForce;
+    public float jumpCooldown;
+    public float airMultiplier;
+    bool readyToJump;
 
     private Vector3 moveDirection;
+    private Vector3 velocity;
+
+    Animator animator;
+
     private CharacterController controller;
-    private float moveSpeed;
-    private float walkSpeed;
-    private float runSpeed;
-    private int speed = 150;
-    private float jumpHeight = 3.9f;
+
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float runSpeed;
+
+    public float playerHeight;
+    public LayerMask Ground;
+    bool isGrounded;
+    [SerializeField] private float gravity;
+
+    [SerializeField] private float jumpHeight;
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         controller = GetComponent<CharacterController>();
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
+        animator = GetComponentInChildren<Animator>();
+        readyToJump = true;
     }
 
     void Update()
     {
         Move();
-        //if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
-        //{
-        //    isMoving = true;
-        //    thePlayer.GetComponent<Animator>().SetBool("Idle", false);
-        //    thePlayer.GetComponent<Animator>().SetBool("Walk", true);
-        //    horizontalMove = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
-        //    verticalMove = Input.GetAxis("Vertical") * Time.deltaTime * jumpHeight;
-        //    thePlayer.transform.Rotate(0, horizontalMove, 0);
-        //    thePlayer.transform.Translate(0, 0, verticalMove);
-        //}
-        //else
-        //{
-        //    isMoving = false;
-        //    thePlayer.GetComponent<Animator>().SetBool("Walk", false);
-        //    thePlayer.GetComponent<Animator>().SetBool("Idle", true);
-        //}
     }
 
     private void Move()
     {
-        float moveZ = Input.GetAxis("Vertical");
+        // ground check
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, Ground);
 
-        moveDirection = new Vector3(0, 0, moveZ);
-        
-        if(moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
+        if (isGrounded && velocity.y < 0)
         {
-            // Walk
-            Walk();
+            velocity.y = -2f;
         }
-        else if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
+
+        if (isGrounded)
         {
-            // Run
-            Run();
+            float moveX = Input.GetAxis("Horizontal");
+            float moveZ = Input.GetAxis("Vertical");
+
+            moveDirection = new Vector3(moveX, 0, moveZ);
+            moveDirection = transform.TransformDirection(moveDirection);
+
+            if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
+            {
+                Walk();
+                animator.SetBool("Idle", false);
+                animator.SetBool("Run", false);
+                animator.SetBool("Walk", true); 
+            }
+            else if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
+            {
+                Run();
+                animator.SetBool("Walk", false);
+                animator.SetBool("Idle", false);
+                animator.SetBool("Run", true);
+            }
+            else if (moveDirection == Vector3.zero)
+            {
+                Idle();
+                animator.SetBool("Walk", false);
+                animator.SetBool("Run", false);
+                animator.SetBool("Idle", true);
+            }
+
+            moveDirection *= moveSpeed;
+
+            // when to jump
+            if (Input.GetKey(KeyCode.Space) && readyToJump && isGrounded)
+            {
+                readyToJump = false;
+
+                Jump();
+                animator.Play("Jump");
+
+                Invoke(nameof(ResetJump), jumpCooldown);
+            }
         }
-        else if (moveDirection == Vector3.zero)
-        {
-            // Idle
-            Idle();
-        }
-        moveDirection *= moveSpeed;
 
         controller.Move(moveDirection * Time.deltaTime);
+
+        //velocity.y = gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
     }
 
     private void Idle()
@@ -82,5 +120,17 @@ public class PlayerMovement : MonoBehaviour
     private void Run()
     {
         moveSpeed = runSpeed;
+    }
+
+    private void Jump()
+    {
+        // reset y velocity
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+    }
+    private void ResetJump()
+    {
+        readyToJump = true;
     }
 }
