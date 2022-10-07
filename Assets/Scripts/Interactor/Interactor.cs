@@ -21,21 +21,21 @@ public class Interactor : MonoBehaviour
 
         if (_numFound > 0){
             
-            var interactable = _colliders[0].GetComponent<IInteractable>();
+            _interactable = _colliders[0].GetComponent<IInteractable>();
 
-            if (interactable != null ){
+            if (_interactable != null ){
 
                 if(!_interactionPromptUI.isDisplayed)
                     _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
 
                 if (Input.GetKeyDown(KeyCode.E))
-                    interactable.Interact(this);
-            }else{
+                    _interactable.Interact(this);
+            }
 
+        }else{
                 if (_interactable != null) _interactable = null;
                 if (_interactionPromptUI.isDisplayed) _interactionPromptUI.Close();
             
-            }
         }
     }
 }

@@ -9,8 +9,17 @@ public class CubeTest : MonoBehaviour, IInteractable
     public string InteractionPrompt => _prompt;
 
     public bool Interact(Interactor interactor){
+
+        var Inventory = interactor.GetComponent<Inventory>();
+
+        if(Inventory == null) return false;
+
+        if(Inventory.Haskey) {
+            Debug.Log("Olá Manel");
+            return true;
+        }
         
-        Debug.Log("Olá Manel");
-        return true;
+        Debug.Log("Adeus Manel");
+       return false;
     }
 }

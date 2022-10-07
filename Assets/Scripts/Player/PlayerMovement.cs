@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
-    bool readyToJump;
+
+    public bool isIdleCooldown;
 
     private Vector3 moveDirection;
     private Vector3 velocity;
@@ -40,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         animator = GetComponentInChildren<Animator>();
-        readyToJump = true;
+        isIdleCooldown = false;
     }
 
     void Update()
@@ -52,14 +53,12 @@ public class PlayerMovement : MonoBehaviour
     {
         // ground check
         isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, Ground);
-
-        if (isGrounded && velocity.y < 0)
+        
+        if (isGrounded )
         {
-            velocity.y = -2f;
-        }
-
-        if (isGrounded)
-        {
+            Debug.Log(isGrounded);
+            if (velocity.y < 0) velocity.y = -2f;
+            
             float moveX = Input.GetAxis("Horizontal");
             float moveZ = Input.GetAxis("Vertical");
 
@@ -69,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
             if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
             {
                 Walk();
+                animator.SetBool("Jump", false);
                 animator.SetBool("Idle", false);
                 animator.SetBool("Run", false);
                 animator.SetBool("Walk", true); 
@@ -76,30 +76,37 @@ public class PlayerMovement : MonoBehaviour
             else if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
             {
                 Run();
+                animator.SetBool("Jump", false);
                 animator.SetBool("Walk", false);
                 animator.SetBool("Idle", false);
                 animator.SetBool("Run", true);
             }
-            else if (moveDirection == Vector3.zero)
+            else if (moveDirection == Vector3.zero && !isIdleCooldown)
             {
                 Idle();
+                animator.SetBool("Jump", false);
                 animator.SetBool("Walk", false);
                 animator.SetBool("Run", false);
                 animator.SetBool("Idle", true);
+  
+            }
+           
+            
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Jump();
+                animator.SetBool("Idle", false);
+                animator.SetBool("Walk", false);
+                animator.SetBool("Run", false);
+                animator.SetBool("Jump", true);
+
+                isIdleCooldown = true;
+                Invoke(nameof(CoolDownAnimation), 1.1f);
             }
 
             moveDirection *= moveSpeed;
 
-            // when to jump
-            if (Input.GetKey(KeyCode.Space) && readyToJump && isGrounded)
-            {
-                readyToJump = false;
-
-                Jump();
-                animator.Play("Jump");
-
-                Invoke(nameof(ResetJump), jumpCooldown);
-            }
+           
         }
 
         controller.Move(moveDirection * Time.deltaTime);
@@ -129,8 +136,9 @@ public class PlayerMovement : MonoBehaviour
 
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
-    private void ResetJump()
-    {
-        readyToJump = true;
+
+    private void CoolDownAnimation(){
+        isIdleCooldown = false;
     }
+  
 }
