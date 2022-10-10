@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
+    public float coolDownJumpTime;
 
     public bool isIdleCooldown;
 
@@ -56,57 +57,24 @@ public class PlayerMovement : MonoBehaviour
         
         if (isGrounded )
         {
-            Debug.Log(isGrounded);
             if (velocity.y < 0) velocity.y = -2f;
-            
+                
             float moveX = Input.GetAxis("Horizontal");
             float moveZ = Input.GetAxis("Vertical");
 
             moveDirection = new Vector3(moveX, 0, moveZ);
             moveDirection = transform.TransformDirection(moveDirection);
 
-            if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift))
-            {
-                Walk();
-                animator.SetBool("Jump", false);
-                animator.SetBool("Idle", false);
-                animator.SetBool("Run", false);
-                animator.SetBool("Walk", true); 
-            }
-            else if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift))
-            {
-                Run();
-                animator.SetBool("Jump", false);
-                animator.SetBool("Walk", false);
-                animator.SetBool("Idle", false);
-                animator.SetBool("Run", true);
-            }
-            else if (moveDirection == Vector3.zero && !isIdleCooldown)
-            {
-                Idle();
-                animator.SetBool("Jump", false);
-                animator.SetBool("Walk", false);
-                animator.SetBool("Run", false);
-                animator.SetBool("Idle", true);
-  
-            }
-           
-            
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
+            //animations transitions
+            if (Input.GetKeyDown(KeyCode.Space)){
                 Jump();
-                animator.SetBool("Idle", false);
-                animator.SetBool("Walk", false);
-                animator.SetBool("Run", false);
-                animator.SetBool("Jump", true);
-
-                isIdleCooldown = true;
-                Invoke(nameof(CoolDownAnimation), 1.1f);
-            }
-
-            moveDirection *= moveSpeed;
-
-           
+            } 
+            else if (!isIdleCooldown){
+                if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift)) Walk();
+                if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift)) Run();
+                if (moveDirection == Vector3.zero) Idle();
+                moveDirection *= moveSpeed;
+            }  
         }
 
         controller.Move(moveDirection * Time.deltaTime);
@@ -117,24 +85,43 @@ public class PlayerMovement : MonoBehaviour
 
     private void Idle()
     {
-
+        animator.SetInteger("Transition",1);
     }
 
     private void Walk()
     {
-        moveSpeed = walkSpeed;
+        //deminuir a velocidade suavemente
+        if (moveSpeed > walkSpeed) {
+            Debug.Log(Time.deltaTime);
+            moveSpeed = moveSpeed - 1;
+        }
+        else moveSpeed = walkSpeed;
+
+        animator.SetInteger("Transition",2);
     }
     private void Run()
     {
-        moveSpeed = runSpeed;
+        //aumentar a velocidade suavemente
+        if (moveSpeed < runSpeed) {
+            moveSpeed = moveSpeed + 1;
+        }
+        else moveSpeed = runSpeed;
+        
+        animator.SetInteger("Transition",3);
     }
 
     private void Jump()
     {
-        // reset y velocity
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        moveSpeed = 0;
 
+        // reset y velocity
+        animator.SetInteger("Transition",4);
+
+        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+
+        isIdleCooldown = true;
+        Invoke(nameof(CoolDownAnimation), coolDownJumpTime);
     }
 
     private void CoolDownAnimation(){
