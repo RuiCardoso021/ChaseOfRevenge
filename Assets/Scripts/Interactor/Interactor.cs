@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class Interactor : MonoBehaviour
 {
@@ -28,8 +28,10 @@ public class Interactor : MonoBehaviour
                 if(!_interactionPromptUI.isDisplayed)
                     _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E)){
+                    SceneManager.LoadScene(2);
                     _interactable.Interact(this);
+                }
             }
 
         }else{

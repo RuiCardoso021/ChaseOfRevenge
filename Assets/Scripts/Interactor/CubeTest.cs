@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.SceneManagement;
 
 public class CubeTest : MonoBehaviour, IInteractable
 {
@@ -15,6 +16,7 @@ public class CubeTest : MonoBehaviour, IInteractable
         if(Inventory == null) return false;
 
         if(Inventory.Haskey) {
+            //SceneManager.LoadScene(2);
             Debug.Log("Olá Manel");
             return true;
         }
@@ -23,3 +25,4 @@ public class CubeTest : MonoBehaviour, IInteractable
        return false;
     }
 }
+
