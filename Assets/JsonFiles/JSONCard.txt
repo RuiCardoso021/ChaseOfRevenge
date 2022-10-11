@@ -1,0 +1,22 @@
+{
+    "cartas":
+    [
+        {
+            "id": 1,
+            "name": "Furian is caming",
+            "tipo": "ATK",
+            "value": 20,
+            "text": "3 damage a 2 enemies",
+            "mana": 1
+        },
+        {
+            "id": 2,
+            "name": "Armored",
+            "tipo": "DEF",
+            "value": 100,
+            "text": "Defense of multiply",
+            "mana": 3
+        }
+    ]
+}
+
