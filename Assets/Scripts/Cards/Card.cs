@@ -6,17 +6,18 @@ using UnityEngine;
 public class Card
 {
     public int id;
+    public string type;
     public string name;
     public int number_effects;
     public Ability[] ability;
-    public string text;
+    public string description;
     public int mana;
 
 }
 
 [System.Serializable]
 public class Ability{
-    public string type;
+    public string tag;
     public int value;
     public int effect_quantity;
     public string type_effect;

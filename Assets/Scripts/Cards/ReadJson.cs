@@ -22,17 +22,17 @@ public class ReadJson : MonoBehaviour
             Debug.Log("\n id: " + card.id
             + "\n name: " + card.name 
             + "\n number_effects: " + card.number_effects 
-            + "\n text: " + card.text 
-            + "\n mana:" + card.mana );
+            + "\n text: " + card.description 
+            + "\n mana: " + card.mana 
+            + "\n type: " + card.type);
 
             foreach (Ability ab in card.ability)
             {
-                Debug.Log("\n type: " + ab.type
+                Debug.Log("\n type: " + ab.tag
                 + "\n value: " + ab.value
                 + "\n effect_quantity: " + ab.effect_quantity
                 + "\n type_effect: " + ab.type_effect);
             }
-
            //foreach (Ability item in abilityList)
            //{
            //    Debug.Log(item.type_effect);

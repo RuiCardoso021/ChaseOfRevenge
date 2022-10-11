@@ -3,56 +3,59 @@
     [
         {
             "id": 1,
+            "type": "ATK",
             "name": "Furian is caming",
             "number_effects": 1,
             "ability": 
             [
                 { 
-                    "type": "ATK", 
+                    "tag": "attack", 
                     "value": 3, 
                     "effect_quantity": 2, 
                     "type_effect": "enemy"
                 }
             ],
-            "text": "3 damage a 2 enemies",
+            "description": "3 damage a 2 enemies",
             "mana": 1
         },
         {
             "id": 2,
+            "type": "DEF",
             "name": "Armored",
             "number_effects": 1,
             "ability": 
             [
                 { 
-                    "type": "DEF", 
+                    "tag": "Defense", 
                     "value": 100, 
                     "effect_quantity": 1, 
                     "type_effect": "player"
                 }
             ],
-            "text": "Defense of multiply",
+            "description": "Defense of multiply player",
             "mana": 3
         },
         {
             "id": 3,
+            "type": "UN",
             "name": "Buff",
             "number_effects": 1,
             "ability": 
             [
                 { 
-                    "type": "UN", 
-                    "value": 2, 
+                    "tag": "buff", 
+                    "value": -2, 
                     "effect_quantity": 0, 
                     "type_effect": "card"
                 },
                 { 
-                    "type": "UN", 
-                    "value": 2, 
+                    "tag": "heal", 
+                    "value": 1, 
                     "effect_quantity": 0, 
-                    "type_effect": "card"
+                    "type_effect": "player"
                 }
             ],
-            "text": "Defense of multiply",
+            "description": "Give -2 cost by used other cards and give 1 life more to player",
             "mana": 3
         }
     ]
