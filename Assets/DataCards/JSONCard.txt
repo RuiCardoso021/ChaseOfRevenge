@@ -1,0 +1,60 @@
+{
+    "cards":
+    [
+        {
+            "id": 1,
+            "name": "Furian is caming",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "type": "ATK", 
+                    "value": 3, 
+                    "effect_quantity": 2, 
+                    "type_effect": "enemy"
+                }
+            ],
+            "text": "3 damage a 2 enemies",
+            "mana": 1
+        },
+        {
+            "id": 2,
+            "name": "Armored",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "type": "DEF", 
+                    "value": 100, 
+                    "effect_quantity": 1, 
+                    "type_effect": "player"
+                }
+            ],
+            "text": "Defense of multiply",
+            "mana": 3
+        },
+        {
+            "id": 3,
+            "name": "Buff",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "type": "UN", 
+                    "value": 2, 
+                    "effect_quantity": 0, 
+                    "type_effect": "card"
+                },
+                { 
+                    "type": "UN", 
+                    "value": 2, 
+                    "effect_quantity": 0, 
+                    "type_effect": "card"
+                }
+            ],
+            "text": "Defense of multiply",
+            "mana": 3
+        }
+    ]
+}
+

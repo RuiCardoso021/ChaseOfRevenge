@@ -612,7 +612,6 @@ GameObject:
   - component: {fileID: 445823452}
   - component: {fileID: 445823451}
   - component: {fileID: 445823450}
-  - component: {fileID: 445823454}
   m_Layer: 5
   m_Name: Cards
   m_TagString: Untagged
@@ -702,21 +701,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 1.13}
   m_SizeDelta: {x: 20, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &445823454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 445823449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48558afcba7e4d949af55ceb99f15a81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
-  _textMana: {fileID: 108559010}
-  _textDescription: {fileID: 1544396654}
 --- !u!1 &482055035
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,25 +6,38 @@ using UnityEngine;
 public class ReadJson : MonoBehaviour
 {
     public TextAsset jsonFile;
+    [SerializeField] private CardsList listCard;
     
-    [SerializeField] public TextMeshProUGUI _textMana;
-    [SerializeField] public TextMeshProUGUI _textDescription;
+    //[SerializeField] public TextMeshProUGUI _textMana;
+    //[SerializeField] public TextMeshProUGUI _textDescription;
  
+
     void Start()
     {
-        Cards playersInJson = JsonUtility.FromJson<Cards>(jsonFile.text);
- 
-        foreach (Card card in playersInJson.cartas)
-        {
-            Debug.Log("ID: " + card.id
-                     + "\nname: " + card.name
-                     + "\ntipo: " + card.tipo
-                     + "\ndano: " + card.value
-                     + "\ntext: " + card.text
-                     + "\nmana: " + card.mana);
+        listCard = new CardsList();
+        listCard = JsonUtility.FromJson<CardsList>(jsonFile.text);
 
-                     _textMana.text = card.mana.ToString();
-                     _textDescription.text = card.text;
+        foreach (Card card in listCard.cards)
+        {
+            Debug.Log("\n id: " + card.id
+            + "\n name: " + card.name 
+            + "\n number_effects: " + card.number_effects 
+            + "\n text: " + card.text 
+            + "\n mana:" + card.mana );
+
+            foreach (Ability ab in card.ability)
+            {
+                Debug.Log("\n type: " + ab.type
+                + "\n value: " + ab.value
+                + "\n effect_quantity: " + ab.effect_quantity
+                + "\n type_effect: " + ab.type_effect);
+            }
+
+           //foreach (Ability item in abilityList)
+           //{
+           //    Debug.Log(item.type_effect);
+           //}
+
         }
         
         
@@ -38,17 +51,3 @@ public class ReadJson : MonoBehaviour
 }
 
 
-[System.Serializable]
-public class Card{
-    public int id;
-    public string name;
-    public string tipo;
-    public int value;
-    public string text;
-    public int mana;
-}
-
-[System.Serializable]
-public class Cards{
-    public Card[] cartas;
-}
