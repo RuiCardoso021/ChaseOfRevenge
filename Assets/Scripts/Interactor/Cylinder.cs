@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.SceneManagement;
 
-public class CubeTest : MonoBehaviour, IInteractable
+public class Cylinder : MonoBehaviour, IInteractable
 {
+
     [SerializeField] private string _prompt;
 
     public string InteractionPrompt => _prompt;
 
     public bool Interact(Interactor interactor){
-
         var Inventory = interactor.GetComponent<Inventory>();
 
         if(Inventory == null) return false;
@@ -26,6 +25,4 @@ public class CubeTest : MonoBehaviour, IInteractable
        return false;
     }
 
-      
 }
-
