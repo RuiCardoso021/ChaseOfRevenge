@@ -3,8 +3,8 @@
     [
         {
             "id": 1,
-            "type": "ATK",
-            "name": "Furian is caming",
+            "type": "WAR",
+            "name": "Furian is coming",
             "number_effects": 1,
             "ability": 
             [
@@ -15,12 +15,13 @@
                     "type_effect": "enemy"
                 }
             ],
-            "description": "3 damage a 2 enemies",
-            "mana": 1
+            "description": "3 damage to 2 enemies",
+            "mana": 1,
+            "src": "Assets/DataCards/imagesCards/id_1.jpg"
         },
         {
             "id": 2,
-            "type": "DEF",
+            "type": "GEN",
             "name": "Armored",
             "number_effects": 1,
             "ability": 
@@ -33,7 +34,8 @@
                 }
             ],
             "description": "Defense of multiply player",
-            "mana": 3
+            "mana": 3,
+            "src": "Assets/DataCards/imagesCards/id_1.jpg"
         },
         {
             "id": 3,
@@ -56,7 +58,8 @@
                 }
             ],
             "description": "Give -2 cost by used other cards and give 1 life more to player",
-            "mana": 3
+            "mana": 3,
+            "src": "Assets/DataCards/imagesCards/id_1.jpg"
         }
     ]
 }

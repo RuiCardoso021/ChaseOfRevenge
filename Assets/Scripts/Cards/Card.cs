@@ -12,6 +12,7 @@ public class Card
     public Ability[] ability;
     public string description;
     public int mana;
+    public string src;
 
 }
 

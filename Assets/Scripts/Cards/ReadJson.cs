@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ReadJson : MonoBehaviour
 {
     public TextAsset jsonFile;
     [SerializeField] private CardsList listCard;
     
-    //[SerializeField] public TextMeshProUGUI _textMana;
-    //[SerializeField] public TextMeshProUGUI _textDescription;
+    [SerializeField] public TextMeshProUGUI _textMana;
+    [SerializeField] public TextMeshProUGUI _textDescription;
+    [SerializeField] public Image _image;
  
 
     void Start()
@@ -24,7 +26,12 @@ public class ReadJson : MonoBehaviour
             + "\n number_effects: " + card.number_effects 
             + "\n text: " + card.description 
             + "\n mana: " + card.mana 
-            + "\n type: " + card.type);
+            + "\n type: " + card.type
+            + "\n src: " + card.src);
+
+            _textMana.text = card.mana.ToString();
+            _textDescription.text = card.description;
+            //_image.sprite
 
             foreach (Ability ab in card.ability)
             {
