@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 moveDirection;
     private Vector3 velocity;
+    private bool isWalking = false;
 
     Animator animator;
 
@@ -65,12 +66,13 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = transform.TransformDirection(moveDirection);
 
             //animations transitions
-            if (Input.GetKeyDown(KeyCode.Space)){
+            /*if (Input.GetKeyDown(KeyCode.Space)){
                 Jump();
             } 
-            else if (!isIdleCooldown){
+            else*/
+            if (!isIdleCooldown){
                 if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift)) Walk();
-                if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift)) Run();
+                if (isWalking = true && moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift)) Run();
                 if (moveDirection == Vector3.zero) Idle();
                 moveDirection *= moveSpeed;
             }  
@@ -84,32 +86,44 @@ public class PlayerMovement : MonoBehaviour
 
     private void Idle()
     {
-        animator.SetInteger("Transition",1);
+        isWalking = false;
+        //animator.SetInteger("Transition",1);
+        animator.SetBool("Idle", true);
+        animator.SetBool("Walk", false);
+        animator.SetBool("Run", false);
     }
 
     private void Walk()
     {
-        //deminuir a velocidade suavemente
+        isWalking = true;
+        //diminuir a velocidade suavemente
         if (moveSpeed > walkSpeed) {
             Debug.Log(Time.deltaTime);
             moveSpeed = moveSpeed - 1;
         }
         else moveSpeed = walkSpeed;
 
-        animator.SetInteger("Transition",2);
+        //animator.SetInteger("Transition",2);
+        animator.SetBool("Idle", false);
+        animator.SetBool("Run", false);
+        animator.SetBool("Walk", true);
     }
     private void Run()
     {
+        isWalking = false;
         //aumentar a velocidade suavemente
-        if (moveSpeed < runSpeed) {
+        if (moveSpeed == walkSpeed) {
             moveSpeed = moveSpeed + 1;
         }
         else moveSpeed = runSpeed;
-        
-        animator.SetInteger("Transition",3);
+
+        //animator.SetInteger("Transition",3);
+        animator.SetBool("Idle", false);
+        animator.SetBool("Walk", false);
+        animator.SetBool("Run", true);
     }
 
-    private void Jump()
+    /*private void Jump()
     {
         moveSpeed = 0;
 
@@ -125,6 +139,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void CoolDownAnimation(){
         isIdleCooldown = false;
-    }
+    }*/
   
 }
