@@ -59,10 +59,9 @@ public class PlayerMovement : MonoBehaviour
         {
             if (velocity.y < 0) velocity.y = -2f;
                 
-            float moveX = Input.GetAxis("Horizontal");
             float moveZ = Input.GetAxis("Vertical");
 
-            moveDirection = new Vector3(moveX, 0, moveZ);
+            moveDirection = new Vector3(0, 0, moveZ);
             moveDirection = transform.TransformDirection(moveDirection);
 
             //animations transitions
