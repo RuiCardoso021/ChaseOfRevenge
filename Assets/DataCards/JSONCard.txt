@@ -37,7 +37,7 @@
                     "value": 2, 
                     "effect_quantity": 1, 
                     "type_effect": "enemy"
-                }, 
+                }
             ],
             "description": "4 damage to enemy with highest life ",
             "mana":2,
@@ -97,7 +97,7 @@
                     "value": 2, 
                     "effect_quantity": 1, 
                     "type_effect": "enemy"
-                }, 
+                }
             ],
             "description": "2 damage to a random enemy ",
             "mana":1,
@@ -115,7 +115,7 @@
                     "value": 0, 
                     "effect_quantity": 4, 
                     "type_effect": "enemy"
-                }, 
+                }
             ],
             "description": "Imobilize all enemies in next turn",
             "mana":2,
@@ -133,7 +133,7 @@
                     "value": 0, 
                     "effect_quantity": 4, 
                     "type_effect": "enemy"
-                }, 
+                }
             ],
             "description": "Double atacks on next turn",
             "mana":3,
@@ -188,7 +188,7 @@
                     "value": 0, 
                     "effect_quantity": 4, 
                     "type_effect": "enemy"
-                }, 
+                }
             ],
             "description": "Freeze all enemies in next turn",
             "mana":2,
@@ -206,7 +206,7 @@
                     "value": 3, 
                     "effect_quantity": 1, 
                     "type_effect": "enemy"
-                }, 
+                }
             ],
             "description": "3 damage to a random enemy ",
             "mana":2,
@@ -224,7 +224,7 @@
                     "value": 0, 
                     "effect_quantity": 1, 
                     "type_effect": "Player"
-                }, 
+                }
             ],
             "description": "Player cannot take damage for two turns",
             "mana":3,
@@ -242,7 +242,7 @@
                     "value": 2, 
                     "effect_quantity": 1, 
                     "type_effect": "enemy"
-                }, 
+                }
             ],
             "description": "2 damage to a random enemy ",
             "mana":1,
@@ -260,7 +260,7 @@
                     "value": 0, 
                     "effect_quantity": 1, 
                     "type_effect": "Player"
-                }, 
+                }
             ],
             "description": "Player gain 5 damage to an attack, but cannot attack this turn",
             "mana":1,
@@ -314,7 +314,7 @@
                     "value": 0, 
                     "effect_quantity": 1, 
                     "type_effect": "Player"
-                }, 
+                }
             ],
             "description": "Player gain 5 damage on next attack",
             "mana":2,
@@ -397,8 +397,7 @@
             "description": "3 damage to all enemie",
             "mana":3,
             "src": "Assets/DataCards/imagesCards/id_1.jpg"
-        },
-
+        }
     ]
 }
 
