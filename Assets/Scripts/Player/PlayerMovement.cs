@@ -10,11 +10,6 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public bool activePlayer;
     public float groundDrag;
-    public float jumpForce;
-    public float jumpCooldown;
-    public float airMultiplier;
-    public float coolDownJumpTime;
-    public bool isIdleCooldown;
     public float playerHeight;
     public LayerMask Ground;
 
@@ -28,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
     [SerializeField] private float gravity;
-    [SerializeField] private float jumpHeight;
 
     private void Start()
     {
@@ -40,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
             animator = GetComponentInChildren<Animator>();
-            isIdleCooldown = false;
         }
     }
 
@@ -63,18 +56,10 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = new Vector3(0, 0, moveZ);
             moveDirection = transform.TransformDirection(moveDirection);
 
-            //animations transitions
-            /*if (Input.GetKeyDown(KeyCode.Space)){
-                Jump();
-            } 
-            else*/
-            //if (!isIdleCooldown){
-            if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift)) Walk();
-            if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift)) Run();
-            if (moveDirection == Vector3.zero && Input.GetKey(KeyCode.LeftShift)) Run();
-            if (moveDirection == Vector3.zero) Idle();
-                moveDirection *= moveSpeed;
-            //}  
+        if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift)) Walk();
+        if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift)) Run();
+        if (moveDirection == Vector3.zero) Idle();
+            moveDirection *= moveSpeed;
         }
 
         controller.Move(moveDirection * Time.deltaTime);
@@ -122,23 +107,4 @@ public class PlayerMovement : MonoBehaviour
     public void SetActivePlayerMoviment(bool value){
         activePlayer = value;
     }
-
-    /*private void Jump()
-    {
-        moveSpeed = 0;
-
-        // reset y velocity
-        animator.SetInteger("Transition",4);
-
-        rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-        rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-
-        isIdleCooldown = true;
-        Invoke(nameof(CoolDownAnimation), coolDownJumpTime);
-    }
-
-    private void CoolDownAnimation(){
-        isIdleCooldown = false;
-    }*/
-  
 }
