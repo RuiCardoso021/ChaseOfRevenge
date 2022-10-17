@@ -201,13 +201,13 @@ MonoBehaviour:
   airMultiplier: 0.4
   coolDownJumpTime: 0
   isIdleCooldown: 0
-  moveSpeed: 5
-  walkSpeed: 2
-  runSpeed: 6
   playerHeight: 2
   Ground:
     serializedVersion: 2
     m_Bits: 8
+  moveSpeed: 5
+  walkSpeed: 2
+  runSpeed: 6
   gravity: -9.81
   jumpHeight: 1000
 --- !u!114 &92395184
@@ -320,13 +320,13 @@ MonoBehaviour:
   airMultiplier: 0.4
   coolDownJumpTime: 0
   isIdleCooldown: 0
-  moveSpeed: 5
-  walkSpeed: 2
-  runSpeed: 6
   playerHeight: 2
   Ground:
     serializedVersion: 2
     m_Bits: 8
+  moveSpeed: 5
+  walkSpeed: 2
+  runSpeed: 6
   gravity: -9.81
   jumpHeight: 1000
 --- !u!114 &311257311

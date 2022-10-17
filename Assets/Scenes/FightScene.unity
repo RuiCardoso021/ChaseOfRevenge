@@ -620,7 +620,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &430243011
 GameObject:
@@ -787,18 +787,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445823449}
-  m_LocalRotation: {x: -0, y: -0.21905875, z: -0, w: 0.9757117}
-  m_LocalPosition: {x: 0, y: 0, z: -4.07}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 971857778}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: -25.308, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.16, y: 1.33}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &445823454
@@ -814,8 +814,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
-  listCard:
+  deck:
     cards: []
+    totalCards: 0
   _textMana: {fileID: 108559010}
   _textDescription: {fileID: 1544396654}
   _image: {fileID: 1463383786}
@@ -967,53 +968,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &592838560
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 592838562}
-  - component: {fileID: 592838561}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &592838561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592838560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c9fd5987c647aa4f8764d8e69f2c589, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 231114196}
-  numberOfObjects: 20
-  radius: 5
---- !u!4 &592838562
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592838560}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.21, y: -0.07, z: -1.96}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &907548124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,8 +1084,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971857777}
-  m_LocalRotation: {x: 0.1604975, y: 0.23087102, z: -0.038643338, w: 0.9588774}
-  m_LocalPosition: {x: 0, y: 0, z: -0.07}
+  m_LocalRotation: {x: 0.25478327, y: -0, z: -0, w: 0.9669982}
+  m_LocalPosition: {x: 0, y: 0, z: -0.034503937}
   m_LocalScale: {x: 0.032406252, y: 0.09274669, z: 0.032406252}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1139,11 +1093,11 @@ RectTransform:
   - {fileID: 1463383785}
   m_Father: {fileID: 445823453}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 19.004, y: 27.075, z: 0}
+  m_LocalEulerAnglesHint: {x: 29.522, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.18, y: 0.45}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.5900002, y: 0.56909156}
+  m_SizeDelta: {x: -3.18, y: -0.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &971857779
 MonoBehaviour:
@@ -1421,19 +1375,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1298444096}
   rb: {fileID: 1298444104}
+  activePlayer: 0
   groundDrag: 5
   jumpForce: 12
   jumpCooldown: 0.25
   airMultiplier: 0.4
   coolDownJumpTime: 0
   isIdleCooldown: 0
-  moveSpeed: 5
-  walkSpeed: 2
-  runSpeed: 6
   playerHeight: 2
   Ground:
     serializedVersion: 2
     m_Bits: 8
+  moveSpeed: 5
+  walkSpeed: 2
+  runSpeed: 6
   gravity: -9.81
   jumpHeight: 1000
 --- !u!114 &1298444100
@@ -1964,7 +1919,7 @@ GameObject:
   - component: {fileID: 1681971239}
   - component: {fileID: 1681971238}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Helth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2280,11 +2235,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102772576}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.59, y: 2.43, z: -7.54}
+  m_LocalRotation: {x: 0.18074971, y: -0, z: -0, w: 0.98352915}
+  m_LocalPosition: {x: -0.59, y: 2.07, z: -7.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20.827, y: 0, z: 0}

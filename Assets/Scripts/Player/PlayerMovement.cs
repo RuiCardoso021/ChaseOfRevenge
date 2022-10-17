@@ -8,33 +8,26 @@ public class PlayerMovement : MonoBehaviour
 {
     public GameObject thePlayer;
     public Rigidbody rb;
-
     public bool activePlayer;
-
     public float groundDrag;
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
     public float coolDownJumpTime;
-
     public bool isIdleCooldown;
+    public float playerHeight;
+    public LayerMask Ground;
 
     private Vector3 moveDirection;
     private Vector3 velocity;
-
-    Animator animator;
-
+    private Animator animator;
+    private bool isGrounded;
     private CharacterController controller;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
-
-    public float playerHeight;
-    public LayerMask Ground;
-    bool isGrounded;
     [SerializeField] private float gravity;
-
     [SerializeField] private float jumpHeight;
 
     private void Start()

@@ -41,7 +41,7 @@
             ],
             "description": "4 damage to enemy with highest life ",
             "mana":2,
-            "src": "Assets/DataCards/imagesCards/id_1.jpg"
+            "src": "../Assets/DataCards/imagesCards/id_1.jpg"
         },
         {
             "id": 3,
@@ -396,7 +396,7 @@
             ],
             "description": "3 damage to all enemie",
             "mana":3,
-            "src": "Assets/DataCards/imagesCards/id_1.jpg"
+            "src": "../Assets/DataCards/imagesCards/id_1.jpg"
         }
     ]
 }
