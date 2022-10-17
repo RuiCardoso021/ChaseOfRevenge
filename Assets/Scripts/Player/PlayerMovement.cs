@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector3 moveDirection;
     private Vector3 velocity;
-    private bool isWalking = false;
 
     Animator animator;
 
@@ -70,12 +69,13 @@ public class PlayerMovement : MonoBehaviour
                 Jump();
             } 
             else*/
-            if (!isIdleCooldown){
-                if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift)) Walk();
-                if (isWalking = true && moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift)) Run();
-                if (moveDirection == Vector3.zero) Idle();
+            //if (!isIdleCooldown){
+            if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift)) Walk();
+            if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift)) Run();
+            if (moveDirection == Vector3.zero && Input.GetKey(KeyCode.LeftShift)) Run();
+            if (moveDirection == Vector3.zero) Idle();
                 moveDirection *= moveSpeed;
-            }  
+            //}  
         }
 
         controller.Move(moveDirection * Time.deltaTime);
@@ -86,7 +86,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Idle()
     {
-        isWalking = false;
         //animator.SetInteger("Transition",1);
         animator.SetBool("Idle", true);
         animator.SetBool("Walk", false);
@@ -95,7 +94,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Walk()
     {
-        isWalking = true;
         //diminuir a velocidade suavemente
         if (moveSpeed > walkSpeed) {
             Debug.Log(Time.deltaTime);
@@ -110,7 +108,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Run()
     {
-        isWalking = false;
         //aumentar a velocidade suavemente
         if (moveSpeed == walkSpeed) {
             moveSpeed = moveSpeed + 1;

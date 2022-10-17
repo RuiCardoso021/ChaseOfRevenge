@@ -844,7 +844,12 @@ MonoBehaviour:
   characters:
   - {fileID: 311257304}
   - {fileID: 92395176}
-  - {fileID: 0}
+  - {fileID: 1306790352}
+--- !u!1 &1306790352 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4470061613590560578, guid: 3e944001186b739418491bde8735b260, type: 3}
+  m_PrefabInstance: {fileID: 420083267}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1487607873
 PrefabInstance:
   m_ObjectHideFlags: 0
