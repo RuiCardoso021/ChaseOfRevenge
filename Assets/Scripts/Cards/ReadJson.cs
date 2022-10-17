@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ReadJson : MonoBehaviour
 {
     public TextAsset jsonFile;
-    [SerializeField] private CardsList listCard;
+    [SerializeField] private Deck deck;
     
     [SerializeField] public TextMeshProUGUI _textMana;
     [SerializeField] public TextMeshProUGUI _textDescription;
@@ -16,10 +16,10 @@ public class ReadJson : MonoBehaviour
 
     void Start()
     {
-        listCard = new CardsList();
-        listCard = JsonUtility.FromJson<CardsList>(jsonFile.text);
+        deck = new Deck();
+        deck = JsonUtility.FromJson<Deck>(jsonFile.text);
 
-        foreach (Card card in listCard.cards)
+        foreach (Card card in deck.cards)
         {
             Debug.Log("\n id: " + card.id
             + "\n name: " + card.name 

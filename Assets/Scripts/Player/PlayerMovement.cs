@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject thePlayer;
     public Rigidbody rb;
+
+    public bool activePlayer;
 
     public float groundDrag;
     public float jumpForce;
@@ -36,18 +39,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        controller = GetComponent<CharacterController>();
-        rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
-        animator = GetComponentInChildren<Animator>();
-        isIdleCooldown = false;
+        
+        if (activePlayer){
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            controller = GetComponent<CharacterController>();
+            rb = GetComponent<Rigidbody>();
+            rb.freezeRotation = true;
+            animator = GetComponentInChildren<Animator>();
+            isIdleCooldown = false;
+        }
     }
 
     void Update()
     {
-        Move();
+        if (activePlayer) Move();
     }
 
     private void Move()
@@ -118,6 +124,10 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("Idle", false);
         animator.SetBool("Walk", false);
         animator.SetBool("Run", true);
+    }
+
+    public void SetActivePlayerMoviment(bool value){
+        activePlayer = value;
     }
 
     /*private void Jump()

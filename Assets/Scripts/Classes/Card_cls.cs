@@ -15,17 +15,3 @@ public class Card
     public string src;
 
 }
-
-[System.Serializable]
-public class Ability{
-    public string tag;
-    public int value;
-    public int effect_quantity;
-    public string type_effect;
-}
-
-
-[System.Serializable]
-public class CardsList{
-    public Card[] cards;
-}

@@ -2000,6 +2000,7 @@ MonoBehaviour:
   jumpForce: 12
   jumpCooldown: 0.25
   airMultiplier: 0.4
+  coolDownJumpTime: 0
   isIdleCooldown: 0
   moveSpeed: 5
   walkSpeed: 2

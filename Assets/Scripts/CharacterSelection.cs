@@ -43,7 +43,7 @@ public class CharacterSelection : MonoBehaviour
 		index++;
 
 		if (index == characters.Length)
-			index = index - 2;
+			index = 0;
 
 		characters[index].SetActive(true);
 	}
