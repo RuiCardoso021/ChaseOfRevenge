@@ -31,7 +31,7 @@ public class ReadJson : MonoBehaviour
 
             _textMana.text = card.mana.ToString();
             _textDescription.text = card.description;
-            //_image.sprite
+            _image.sprite = Resources.Load<Sprite>("imagesCards/" + card.src);
 
             foreach (Ability ab in card.ability)
             {

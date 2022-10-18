@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 153831370}
   - component: {fileID: 153831369}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ManaBackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -819,7 +819,7 @@ MonoBehaviour:
     totalCards: 0
   _textMana: {fileID: 108559010}
   _textDescription: {fileID: 1544396654}
-  _image: {fileID: 1463383786}
+  _image: {fileID: 953808383}
 --- !u!1 &482055035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +1059,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907548124}
   m_CullTransparentMesh: 1
+--- !u!1 &953808381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 953808382}
+  - component: {fileID: 953808384}
+  - component: {fileID: 953808383}
+  m_Layer: 5
+  m_Name: ImageCard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &953808382
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953808381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.94310206, y: 0.6330697, z: 1.1095971}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 971857778}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -3.1}
+  m_SizeDelta: {x: 16.82, y: 9.55}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &953808383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953808381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &953808384
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953808381}
+  m_CullTransparentMesh: 1
 --- !u!1 &971857777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,7 +1147,7 @@ GameObject:
   - component: {fileID: 971857780}
   - component: {fileID: 971857779}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1091,6 +1167,7 @@ RectTransform:
   m_Children:
   - {fileID: 153831368}
   - {fileID: 1463383785}
+  - {fileID: 953808382}
   m_Father: {fileID: 445823453}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 29.522, y: 0, z: 0}
@@ -1377,11 +1454,6 @@ MonoBehaviour:
   rb: {fileID: 1298444104}
   activePlayer: 0
   groundDrag: 5
-  jumpForce: 12
-  jumpCooldown: 0.25
-  airMultiplier: 0.4
-  coolDownJumpTime: 0
-  isIdleCooldown: 0
   playerHeight: 2
   Ground:
     serializedVersion: 2
@@ -1390,7 +1462,6 @@ MonoBehaviour:
   walkSpeed: 2
   runSpeed: 6
   gravity: -9.81
-  jumpHeight: 1000
 --- !u!114 &1298444100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1494,7 +1565,7 @@ GameObject:
   - component: {fileID: 1463383787}
   - component: {fileID: 1463383786}
   m_Layer: 5
-  m_Name: Image
+  m_Name: DescriptionBackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
