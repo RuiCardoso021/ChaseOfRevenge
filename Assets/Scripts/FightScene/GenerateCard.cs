@@ -5,12 +5,12 @@ using UnityEngine;
 public class GenerateCard : MonoBehaviour
 {
    public GameObject block;
-   private int numberCards = 2;
+   private float numberCards = 1;
   
    void Start()
    {
 
-        for (int x=-2; x<numberCards; ++x)
+        for (float x=-1; x<numberCards; x+=0.5f)
         {
             Instantiate(block, new Vector3(x,1,-7), Quaternion.identity);
         }

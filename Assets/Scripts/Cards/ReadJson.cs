@@ -13,7 +13,7 @@ public class ReadJson : MonoBehaviour
     [SerializeField] public TextMeshProUGUI _textDescription;
     [SerializeField] public TextMeshProUGUI _textName;
     [SerializeField] public Image _image;
- 
+    
 
     void Start()
     {
