@@ -41,7 +41,7 @@
             ],
             "description": "4 damage to enemy with highest life ",
             "mana":2,
-            "src": "id_1"
+            "src": "id_2"
         },
         {
             "id": 3,
@@ -65,7 +65,7 @@
             ],
             "description": "1 damage to all enemies, heal 1 life per enemy",
             "mana": 2,
-            "src": "id_1"
+            "src": "id_3"
        }, 
          {
             "id": 4,
