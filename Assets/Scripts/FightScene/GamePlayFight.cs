@@ -20,8 +20,6 @@ public class GamePlayFight : MonoBehaviour
         deck = new Deck();
         deck = JsonUtility.FromJson<Deck>(jsonFile.text);
 
-        
-        
         foreach (Card card in deck.cards)
         {
             Debug.Log("\n id: " + card.id

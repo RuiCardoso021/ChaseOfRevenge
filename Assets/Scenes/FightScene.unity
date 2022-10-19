@@ -321,7 +321,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &141813553
 PrefabInstance:
@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 45745480827089566, guid: 187cb0d4a95d73f49ada846eea402b7a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 45745480827089566, guid: 187cb0d4a95d73f49ada846eea402b7a, type: 3}
       propertyPath: m_AnchorMax.x
@@ -404,7 +404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 45745480827089566, guid: 187cb0d4a95d73f49ada846eea402b7a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.28
+      value: -7.2800007
       objectReference: {fileID: 0}
     - target: {fileID: 45745480827089566, guid: 187cb0d4a95d73f49ada846eea402b7a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -412,23 +412,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 45745480827089566, guid: 187cb0d4a95d73f49ada846eea402b7a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 45745480827089566, guid: 187cb0d4a95d73f49ada846eea402b7a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 45745480827089566, guid: 187cb0d4a95d73f49ada846eea402b7a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 45745480827089566, guid: 187cb0d4a95d73f49ada846eea402b7a, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2.28
+      value: 13.203907
       objectReference: {fileID: 0}
     - target: {fileID: 45745480827089566, guid: 187cb0d4a95d73f49ada846eea402b7a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.47
+      value: 21.712831
       objectReference: {fileID: 0}
     - target: {fileID: 45745480827089566, guid: 187cb0d4a95d73f49ada846eea402b7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -555,9 +555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c9fd5987c647aa4f8764d8e69f2c589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: {fileID: 1968704436}
-  width: 4
-  height: 1
+  Card: {fileID: 1968704436}
+  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
 --- !u!1 &430243011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,7 +1016,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1298444095
 PrefabInstance:
@@ -1028,7 +1027,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 94272a3911b01514fa187fac5c4196fa, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94272a3911b01514fa187fac5c4196fa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1520,7 +1519,7 @@ RectTransform:
   - {fileID: 1054101283}
   - {fileID: 1611536793}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1545,7 +1544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4591218618519214722, guid: 7c4cb1599fc92c145b5ad1e4cc4d8176, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4591218618519214722, guid: 7c4cb1599fc92c145b5ad1e4cc4d8176, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1681,7 +1680,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &2102772576
 GameObject:
