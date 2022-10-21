@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1300952962}
     m_Modifications:
+    - target: {fileID: 2459625271754765518, guid: 3e944001186b739418491bde8735b260, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3659650284145363714, guid: 3e944001186b739418491bde8735b260, type: 3}
       propertyPath: activePlayer
       value: 0
@@ -249,6 +253,10 @@ PrefabInstance:
       value: Ely By K.Atienza
       objectReference: {fileID: 0}
     - target: {fileID: 935033077295601217, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6787208722300211971, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -547,6 +555,10 @@ PrefabInstance:
       value: Dreyar By M.Aure 1
       objectReference: {fileID: 0}
     - target: {fileID: 3344235741496257401, guid: 3c23338fc90e4f84e82d60817199de1c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133877971115260258, guid: 3c23338fc90e4f84e82d60817199de1c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

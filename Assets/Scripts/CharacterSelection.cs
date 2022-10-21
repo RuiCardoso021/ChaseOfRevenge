@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class CharacterSelection : MonoBehaviour
 {
@@ -20,8 +21,10 @@ public class CharacterSelection : MonoBehaviour
 		foreach (GameObject go in characters)
 			go.SetActive(false);
 
-		if (characters[index])
+		if (characters[index]){
 			characters[index].SetActive(true);
+		}
+			
 	}
 
 	public void ToggleLeft()
