@@ -23,6 +23,7 @@ public class CharacterSelection : MonoBehaviour
 
 		if (characters[index]){
 			characters[index].SetActive(true);
+			GameObjectTransfer.LoadedCharacter = characters[index];
 		}
 			
 	}
