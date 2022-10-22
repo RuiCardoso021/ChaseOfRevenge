@@ -6,9 +6,7 @@ using UnityEngine.UI;
 
 public class GamePlayFight : MonoBehaviour
 {
-   public TextAsset jsonFile;
-
-
+    public TextAsset jsonFile;
     private Deck deck;
     public TextMeshProUGUI _textMana;
     public TextMeshProUGUI _textDescription;

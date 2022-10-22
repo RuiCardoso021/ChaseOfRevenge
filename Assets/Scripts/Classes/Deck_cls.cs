@@ -5,5 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Deck{
     public Card[] cards;
-    public int totalCards;
+    public int TotalCards(){
+        return cards.Length;
+    }
 }

@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 4591218618519214722}
   - component: {fileID: 4591218618509407580}
   - component: {fileID: 4591218618518814777}
-  - component: {fileID: 4591218618518814782}
+  - component: {fileID: 8287458487189089131}
   m_Layer: 8
   m_Name: DungeonSkeleton_demo
   m_TagString: Enemy
@@ -723,7 +723,7 @@ CapsuleCollider:
   m_Height: 2.6143708
   m_Direction: 1
   m_Center: {x: -0, y: 1.2871974, z: -0}
---- !u!114 &4591218618518814782
+--- !u!114 &8287458487189089131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -732,7 +732,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4591218618518783714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c89dce274f65af24d951eeded9fdc057, type: 3}
+  m_Script: {fileID: 11500000, guid: 04f3656ca4307924493300a8af3690e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _prompt: FIGHT ME

@@ -10,6 +10,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private float _interactionPointRadius = 0.5f;
     [SerializeField] private LayerMask _interactionMask;
     [SerializeField] private InteractionPromptUI _interactionPromptUI;
+    [SerializeField] private GameObject _player;
 
     private readonly Collider[] _colliders = new Collider[3];
     [SerializeField] private int _numFound;
@@ -28,9 +29,7 @@ public class Interactor : MonoBehaviour
                 if(!_interactionPromptUI.isDisplayed) _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
 
                 if (Input.GetKeyDown(KeyCode.E)){
-                    //Time.timeScale = 0;
-                    SceneManager.LoadScene(2);
-                    _interactable.Interact(this);
+                    _interactable.ChangeScene(_player);
                 }
             }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Player
+public class Character_cls
 {
     public int id;
     public string name;
@@ -13,3 +13,4 @@ public class Player
     public Deck cards;
 
 }
+
