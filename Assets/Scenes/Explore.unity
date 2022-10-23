@@ -1515,7 +1515,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1456138830}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 581cdd05dc34e624ab4e38d10f490945, type: 3}
+  m_Script: {fileID: 11500000, guid: 888079cebfc6bf74d855545a8cdee097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characters:
@@ -1863,7 +1863,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1851161743}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8610a7300d208c748927e7f9639c0a6f, type: 3}
+  m_Script: {fileID: 11500000, guid: 75c6201a2465c324db534c838e414c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
+  _nextSceneName: FinalMap

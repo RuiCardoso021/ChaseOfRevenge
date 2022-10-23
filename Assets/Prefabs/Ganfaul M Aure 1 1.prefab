@@ -275,6 +275,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _interactionPromptUI: {fileID: 7758265001078554403}
+  _player: {fileID: 480410878680319498}
   _numFound: 0
 --- !u!1 &581988369881591867
 GameObject:

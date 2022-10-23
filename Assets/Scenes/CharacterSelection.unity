@@ -801,6 +801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1300952962}
+  - component: {fileID: 1300952964}
   - component: {fileID: 1300952963}
   m_Layer: 0
   m_Name: Characters
@@ -836,13 +837,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1300952961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 581cdd05dc34e624ab4e38d10f490945, type: 3}
+  m_Script: {fileID: 11500000, guid: 888079cebfc6bf74d855545a8cdee097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 1780449822}
   - {fileID: 686110625}
   - {fileID: 1306790352}
+--- !u!114 &1300952964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300952961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c6201a2465c324db534c838e414c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadedCharacter: []
+  _nextSceneName: 
 --- !u!1 &1306790352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4470061613590560578, guid: 3e944001186b739418491bde8735b260, type: 3}

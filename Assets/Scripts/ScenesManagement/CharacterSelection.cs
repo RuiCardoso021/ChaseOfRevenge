@@ -23,7 +23,8 @@ public class CharacterSelection : MonoBehaviour
 
 		if (characters[index]){
 			characters[index].SetActive(true);
-			GameObjectTransfer.LoadedCharacter = characters[index];
+			//GameObjectTransfer.LoadedCharacter = characters[index];
+			GameObjectTransfer.Instance.LoadedCharacter.Add(new Character_cls(characters[index], Vector3.zero));
 		}
 			
 	}

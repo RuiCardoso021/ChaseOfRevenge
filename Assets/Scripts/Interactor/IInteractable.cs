@@ -6,6 +6,8 @@ public interface IInteractable {
 
      public string InteractionPrompt{get;}
 
+     public GameObject InteractionGameObject{get;}
+
      public void ChangeScene(GameObject player);
 
      //public bool Interact(Interactor interactor);

@@ -54,7 +54,7 @@ public class GenerateCard : MonoBehaviour
     private void DestroyAllInstanceCards(){
         foreach (var item in cards)
         {
-            DestroyObject(item);            
+            Object.Destroy(item);            
         }
     }
 

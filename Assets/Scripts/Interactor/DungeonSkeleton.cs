@@ -7,15 +7,14 @@ public class DungeonSkeleton : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject _enemy;
     [SerializeField] private string _prompt;
+
     public string InteractionPrompt => _prompt;
-    public GameObject Enemy => _enemy;
+    public GameObject InteractionGameObject => _enemy;
 
 
     public void ChangeScene(GameObject player){
         // create the prefab in your scene
-        DontDestroyOnLoad(player.transform.root.gameObject);
-        DontDestroyOnLoad(_enemy.transform.root.gameObject);
-        SceneManager.LoadScene(2); 
+        GameObjectTransfer.Instance.LoadedCharacter.Add(new Character_cls (_enemy, Vector3.zero));
     }
 
     //public bool Interact(Interactor interactor){

@@ -584,6 +584,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _interactionPromptUI: {fileID: 439449010057693327}
+  _player: {fileID: 935033077295601217}
   _numFound: 0
 --- !u!114 &15919214099229463
 MonoBehaviour:
