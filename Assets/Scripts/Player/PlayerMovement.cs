@@ -7,8 +7,9 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject thePlayer;
+
+
     public Rigidbody rb;
-    public bool activePlayer;
     public float groundDrag;
     public float playerHeight;
     public LayerMask Ground;
@@ -19,21 +20,26 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private CharacterController controller;
 
+    [SerializeField] private GameObject _3dCameraObject;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
     [SerializeField] private float gravity;
+    [SerializeField] private bool activePlayer;
 
     private void Start()
-    {
-        
+    {    
         if (activePlayer){
+            _3dCameraObject.SetActive(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             controller = GetComponent<CharacterController>();
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
             animator = GetComponentInChildren<Animator>();
+        }else {
+            if (_3dCameraObject != null)
+                _3dCameraObject.SetActive(false);
         }
     }
 
@@ -106,5 +112,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetActivePlayerMoviment(bool value){
         activePlayer = value;
+        if (value == false) _3dCameraObject.SetActive(false);
     }
 }

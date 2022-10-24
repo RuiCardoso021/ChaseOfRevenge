@@ -5,18 +5,27 @@ using UnityEngine;
 [System.Serializable]
 public class Character_cls
 {
-    public GameObject obj;
-    public Vector3 Position;
-    public int id;
-    public string name;
-    public int mana;
-    public string class_type;
-    public float health;
-    public Deck cards;
+    public GameObject Obj;
+    public string Name;
+    public int Mana;
+    public string ClassType;
+    public float Health;
+    public Deck Cards;
 
-    public Character_cls(GameObject _obj, Vector3 _pos){
-        this.obj = _obj;
-        this.Position = _pos;
+    public Character_cls(GameObject _obj, string _name, int _mana, string _classType, float _health, Deck deck){
+        Obj = _obj;
+        Obj.transform.position = Vector3.zero;
+
+        Name = _name;
+        Mana = _mana;
+        ClassType = _classType;
+        Health = _health;
+        Cards = deck;
+    }
+
+    public Character_cls(GameObject _obj){
+        this.Obj = _obj;
+        Obj.transform.position = new Vector3(0,2f,0);
     }
 
 }

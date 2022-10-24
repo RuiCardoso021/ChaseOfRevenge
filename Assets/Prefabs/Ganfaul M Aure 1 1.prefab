@@ -136,7 +136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480410878680319498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.192, y: 0.09, z: 0.084}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -247,16 +247,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 480410878680319498}
   rb: {fileID: 750881744025329366}
-  activePlayer: 0
   groundDrag: 5
   playerHeight: 2
   Ground:
     serializedVersion: 2
     m_Bits: 8
+  _3dCameraObject: {fileID: 750881743647283371}
   moveSpeed: 5
   walkSpeed: 2
   runSpeed: 6
   gravity: -9.81
+  activePlayer: 1
 --- !u!114 &750881744025329361
 MonoBehaviour:
   m_ObjectHideFlags: 0
