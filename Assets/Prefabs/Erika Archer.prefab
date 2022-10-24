@@ -2480,7 +2480,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4470061613590560578}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.53, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2580,6 +2580,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   _interactionPromptUI: {fileID: 3659650283316820147}
+  _player: {fileID: 4470061613590560578}
   _numFound: 0
 --- !u!114 &3659650284145363714
 MonoBehaviour:
@@ -2595,16 +2596,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 4470061613590560578}
   rb: {fileID: 3659650284145363726}
-  activePlayer: 0
   groundDrag: 5
   playerHeight: 2
   Ground:
     serializedVersion: 2
     m_Bits: 8
+  _3dCameraObject: {fileID: 2459625271754765518}
   moveSpeed: 5
   walkSpeed: 2
   runSpeed: 6
   gravity: -9.81
+  activePlayer: 1
 --- !u!114 &3659650284145363715
 MonoBehaviour:
   m_ObjectHideFlags: 0

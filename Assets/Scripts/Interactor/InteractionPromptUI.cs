@@ -12,14 +12,16 @@ public class InteractionPromptUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _promptText;
 
     private void Start() {
-        
-        _mainCam = Camera.main;
+        if (_mainCam != null) _mainCam = Camera.main;  
         _uiPanel.SetActive(false);
     }
 
     private void LateUpdate() {
-        var rotation = _mainCam.transform.rotation;
-        transform.LookAt(transform.position + rotation * Vector3.forward, rotation * Vector3.up);
+        if (_mainCam != null){
+            var rotation = _mainCam.transform.rotation;
+            transform.LookAt(transform.position + rotation * Vector3.forward, rotation * Vector3.up);
+        }
+
     }
 
     public bool isDisplayed = false;

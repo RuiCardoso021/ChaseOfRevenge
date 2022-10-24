@@ -12,19 +12,17 @@ public class CharacterSelection : MonoBehaviour
     {
 		index = PlayerPrefs.GetInt("CharacterSelected");
 		characters = new GameObject[transform.childCount];
-
+		
+		//Add GameObjects for to list
 		for (int i = 0; i < transform.childCount; i++)
-        {
 			characters[i] = transform.GetChild(i).gameObject;
-        }
-
-		foreach (GameObject go in characters)
-			go.SetActive(false);
-
-		if (characters[index]){
-			characters[index].SetActive(true);
+        
+		//active character
+		foreach (GameObject go in characters){
+			if (characters[index] == go) go.SetActive(true);
+			else go.SetActive(false);
 		}
-			
+
 	}
 
 	public void ToggleLeft()
@@ -54,7 +52,11 @@ public class CharacterSelection : MonoBehaviour
 	public void ChangeScene()
     {
 		PlayerPrefs.SetInt("CharacterSelected", index);
-		
-		SceneManager.LoadScene("Explore");
+		Character_cls player = new Character_cls(characters[index]);
+		player.Obj.GetComponent<PlayerMovement>().SetActivePlayerMoviment(true);
+		player.Obj.transform.position = Vector3.zero;
+		player.Obj.name = "Character_Player";
+		GameObjectTransfer.Instance.LoadedCharacter.Add(player);
+		GameObjectTransfer.Instance.LoadNextScene();
     }
 }

@@ -1,22 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Cylinder : MonoBehaviour
+public class DungeonSkeleton : MonoBehaviour, IInteractable
 {
-    [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _enemy;
     [SerializeField] private string _prompt;
 
     public string InteractionPrompt => _prompt;
-    public GameObject Player => _player;
-    public GameObject Enemy => _enemy;
+    public GameObject InteractionGameObject => _enemy;
 
-    public void ChangeScene(){
 
+    public void ChangeScene(GameObject player){
+        // create the prefab in your scene
+        GameObjectTransfer.Instance.LoadedCharacter.Add(new Character_cls (_enemy));
     }
 
     //public bool Interact(Interactor interactor){
+//
     //    var Inventory = interactor.GetComponent<Inventory>();
 //
     //    if(Inventory == null) return false;
@@ -32,4 +34,6 @@ public class Cylinder : MonoBehaviour
     //   return false;
     //}
 
+      
 }
+

@@ -10,7 +10,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private float _interactionPointRadius = 0.5f;
     [SerializeField] private LayerMask _interactionMask;
     [SerializeField] private InteractionPromptUI _interactionPromptUI;
-
+    [SerializeField] private GameObject _player;
     private readonly Collider[] _colliders = new Collider[3];
     [SerializeField] private int _numFound;
 
@@ -28,9 +28,16 @@ public class Interactor : MonoBehaviour
                 if(!_interactionPromptUI.isDisplayed) _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
 
                 if (Input.GetKeyDown(KeyCode.E)){
-                    //Time.timeScale = 0;
-                    SceneManager.LoadScene(2);
-                    _interactable.Interact(this);
+                    Character_cls _tempPlayer = new Character_cls(_player);
+                    Character_cls _tempEnemy = new Character_cls(_interactable.InteractionGameObject);
+
+                    _tempPlayer.Obj.GetComponent<PlayerMovement>().SetActivePlayerMoviment(false);
+                    _tempPlayer.Obj.transform.position = new Vector3(-3f,0,3f);
+                    _tempEnemy.Obj.transform.position = new Vector3(3f,0,3f);
+
+                    GameObjectTransfer.Instance.LoadedCharacter.Add(_tempPlayer);
+                    GameObjectTransfer.Instance.LoadedCharacter.Add(_tempEnemy);
+                    GameObjectTransfer.Instance.LoadNextScene();
                 }
             }
 
