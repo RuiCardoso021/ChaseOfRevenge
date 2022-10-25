@@ -15,3 +15,8 @@ public class Card
     public string src;
 
 }
+
+public class ListCard
+{
+    public List<Card> Deck;
+}

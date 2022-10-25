@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3659650284145363726, guid: 3e944001186b739418491bde8735b260, type: 3}
       propertyPath: m_Constraints
-      value: 126
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 3837922260431988216, guid: 3e944001186b739418491bde8735b260, type: 3}
       propertyPath: m_RootOrder
@@ -188,7 +188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4470061613590560578, guid: 3e944001186b739418491bde8735b260, type: 3}
       propertyPath: m_Name
-      value: Erika Archer
+      value: Flora Raven
       objectReference: {fileID: 0}
     - target: {fileID: 4470061613590560578, guid: 3e944001186b739418491bde8735b260, type: 3}
       propertyPath: m_IsActive
@@ -214,7 +214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 15919214099229464, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
       propertyPath: m_Constraints
-      value: 126
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 554566235841465595, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
       propertyPath: m_RootOrder
@@ -262,7 +262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 935033077295601217, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
       propertyPath: m_Name
-      value: Ely By K.Atienza
+      value: Miles Raven
       objectReference: {fileID: 0}
     - target: {fileID: 935033077295601217, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
       propertyPath: m_IsActive
@@ -1076,7 +1076,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 480410878680319498, guid: 9bb9efed1d2e68f40b5a2012bb705aab, type: 3}
       propertyPath: m_Name
-      value: Ganfaul M Aure 1 1
+      value: Magus Raven
       objectReference: {fileID: 0}
     - target: {fileID: 480410878680319498, guid: 9bb9efed1d2e68f40b5a2012bb705aab, type: 3}
       propertyPath: m_IsActive
@@ -1096,7 +1096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 750881744025329366, guid: 9bb9efed1d2e68f40b5a2012bb705aab, type: 3}
       propertyPath: m_Constraints
-      value: 126
+      value: 112
       objectReference: {fileID: 0}
     - target: {fileID: 1000102077881982128, guid: 9bb9efed1d2e68f40b5a2012bb705aab, type: 3}
       propertyPath: m_RootOrder

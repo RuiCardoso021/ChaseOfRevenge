@@ -51,12 +51,8 @@ public class CharacterSelection : MonoBehaviour
 
 	public void ChangeScene()
     {
-		PlayerPrefs.SetInt("CharacterSelected", index);
-		Character_cls player = new Character_cls(characters[index]);
-		player.Obj.GetComponent<PlayerMovement>().SetActivePlayerMoviment(true);
-		player.Obj.transform.position = Vector3.zero;
-		player.Obj.name = "Character_Player";
-		GameObjectTransfer.Instance.LoadedCharacter.Add(player);
+        characters[index].name = "Character_Player";
+		GameObjectTransfer.Instance.LoadedCharacter.Add(characters[index]);
 		GameObjectTransfer.Instance.LoadNextScene();
     }
 }

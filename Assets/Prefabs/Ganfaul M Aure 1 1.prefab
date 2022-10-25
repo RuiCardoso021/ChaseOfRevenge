@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 750881744025329363}
   - component: {fileID: 750881744025329362}
   - component: {fileID: 750881744025329361}
+  - component: {fileID: 7794731673269814223}
   m_Layer: 0
   m_Name: Ganfaul M Aure 1 1
   m_TagString: Player
@@ -278,6 +279,25 @@ MonoBehaviour:
   _interactionPromptUI: {fileID: 7758265001078554403}
   _player: {fileID: 480410878680319498}
   _numFound: 0
+--- !u!114 &7794731673269814223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480410878680319498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b377919b276434cb65b5816e66abc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Magus Raven
+  Mana: 5
+  ClassType: Sorceress
+  Health: 20
+  Deck:
+    cards: []
+  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
 --- !u!1 &581988369881591867
 GameObject:
   m_ObjectHideFlags: 0

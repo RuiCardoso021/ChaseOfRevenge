@@ -1,31 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
+using JetBrains.Annotations;
 
-[System.Serializable]
-public class Character_cls
+public class Character_cls : MonoBehaviour
 {
-    public GameObject Obj;
     public string Name;
     public int Mana;
     public string ClassType;
     public float Health;
-    public Deck Cards;
+    public Deck myDeck;
 
-    public Character_cls(GameObject _obj, string _name, int _mana, string _classType, float _health, Deck deck){
-        Obj = _obj;
-        Obj.transform.position = Vector3.zero;
+    [SerializeField]private TextAsset jsonFile;
 
-        Name = _name;
-        Mana = _mana;
-        ClassType = _classType;
-        Health = _health;
-        Cards = deck;
-    }
-
-    public Character_cls(GameObject _obj){
-        this.Obj = _obj;
-        Obj.transform.position = new Vector3(0,2f,0);
+    private void Start()
+    {
+        myDeck = new Deck();
+        //Deck newdeck = new Deck();
+        myDeck = JsonUtility.FromJson<Deck>(jsonFile.text);
+        //int index = 0;
+        //
+        //foreach(Card card in newdeck.cards)
+        //{
+        //    if (card.type == ClassType || card.type == "UN")
+        //    {
+        //        myDeck.cards[index] = card;
+        //        index++;
+        //    }
+        //}
     }
 
 }

@@ -28,15 +28,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool activePlayer;
 
     private void Start()
-    {    
+    {
+        controller = GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
+
+
         if (activePlayer){
             _3dCameraObject.SetActive(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            controller = GetComponent<CharacterController>();
-            rb = GetComponent<Rigidbody>();
-            rb.freezeRotation = true;
-            animator = GetComponentInChildren<Animator>();
         }else {
             if (_3dCameraObject != null)
                 _3dCameraObject.SetActive(false);
@@ -45,15 +47,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, Ground);
         if (activePlayer) Move();
     }
 
     private void Move()
     {
         // ground check
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, Ground);
         
-        if (isGrounded )
+        if (isGrounded)
         {
             if (velocity.y < 0) velocity.y = -2f;
                 
@@ -62,9 +64,10 @@ public class PlayerMovement : MonoBehaviour
             moveDirection = new Vector3(0, 0, moveZ);
             moveDirection = transform.TransformDirection(moveDirection);
 
-        if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift)) Walk();
-        if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift)) Run();
-        if (moveDirection == Vector3.zero) Idle();
+            if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift)) Walk();
+            if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift)) Run();
+            if (moveDirection == Vector3.zero) Idle();
+
             moveDirection *= moveSpeed;
         }
 
@@ -86,7 +89,6 @@ public class PlayerMovement : MonoBehaviour
     {
         //diminuir a velocidade suavemente
         if (moveSpeed > walkSpeed) {
-            Debug.Log(Time.deltaTime);
             moveSpeed = moveSpeed - 1;
         }
         else moveSpeed = walkSpeed;
@@ -113,5 +115,6 @@ public class PlayerMovement : MonoBehaviour
     public void SetActivePlayerMoviment(bool value){
         activePlayer = value;
         if (value == false) _3dCameraObject.SetActive(false);
+        else _3dCameraObject.SetActive(true);
     }
 }

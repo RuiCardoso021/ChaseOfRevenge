@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameObjectTransfer : MonoBehaviour
 {
     public static GameObjectTransfer Instance;
-    public List<Character_cls> LoadedCharacter = new List<Character_cls>();
+    public List<GameObject> LoadedCharacter = new List<GameObject>();
     private bool premission;
     [SerializeField] private string _nextSceneName = "TransferTestScene";
 
@@ -18,8 +18,7 @@ public class GameObjectTransfer : MonoBehaviour
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Space) && premission){
-            GameObject test = GameObject.Find("Character_Player");
-            LoadedCharacter.Add(new Character_cls (test));
+            LoadedCharacter.Add(GameObject.Find("Character_Player"));
             LoadNextScene();
             premission = false;
         }
@@ -40,12 +39,15 @@ public class GameObjectTransfer : MonoBehaviour
     public void LoadNextScene()
     {
         GameObject gameObjectToSend = new GameObject();
-        gameObjectToSend.transform.position = Vector3.zero;
         gameObjectToSend.name = "receivedObject";
  
-        foreach (Character_cls character in LoadedCharacter)
-            if(character.Obj != null)
-                character.Obj.transform.SetParent(gameObjectToSend.transform);
+        foreach (GameObject character in LoadedCharacter)
+            if(character != null)
+            {
+                character.transform.position = Vector3.zero;
+                character.transform.SetParent(gameObjectToSend.transform);
+            }
+
         
         
         StartCoroutine(LoadSceneWithGameObject(gameObjectToSend));

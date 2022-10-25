@@ -28,15 +28,8 @@ public class Interactor : MonoBehaviour
                 if(!_interactionPromptUI.isDisplayed) _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
 
                 if (Input.GetKeyDown(KeyCode.E)){
-                    Character_cls _tempPlayer = new Character_cls(_player);
-                    Character_cls _tempEnemy = new Character_cls(_interactable.InteractionGameObject);
-
-                    _tempPlayer.Obj.GetComponent<PlayerMovement>().SetActivePlayerMoviment(false);
-                    _tempPlayer.Obj.transform.position = new Vector3(-3f,0,3f);
-                    _tempEnemy.Obj.transform.position = new Vector3(3f,0,3f);
-
-                    GameObjectTransfer.Instance.LoadedCharacter.Add(_tempPlayer);
-                    GameObjectTransfer.Instance.LoadedCharacter.Add(_tempEnemy);
+                    GameObjectTransfer.Instance.LoadedCharacter.Add(_player);
+                    GameObjectTransfer.Instance.LoadedCharacter.Add(_interactable.InteractionGameObject);
                     GameObjectTransfer.Instance.LoadNextScene();
                 }
             }

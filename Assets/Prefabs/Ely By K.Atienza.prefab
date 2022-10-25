@@ -472,6 +472,7 @@ GameObject:
   - component: {fileID: 15919214099229460}
   - component: {fileID: 15919214099229463}
   - component: {fileID: 15919214099229462}
+  - component: {fileID: 8077005773958875744}
   m_Layer: 0
   m_Name: Ely By K.Atienza
   m_TagString: Player
@@ -629,6 +630,25 @@ MonoBehaviour:
   inventoryClose: {fileID: 0}
   isOpen: 0
   canClose: 0
+--- !u!114 &8077005773958875744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935033077295601217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b377919b276434cb65b5816e66abc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Miles Raven
+  Mana: 3
+  ClassType: war
+  Health: 30
+  Deck:
+    cards: []
+  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
 --- !u!1 &1033260045540049509
 GameObject:
   m_ObjectHideFlags: 0
