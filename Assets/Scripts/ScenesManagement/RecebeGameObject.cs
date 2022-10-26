@@ -49,15 +49,15 @@ public class RecebeGameObject : MonoBehaviour
         switch (classType)
         {
             case "Sorceress":
-                gm = Resources.Load("Prefabs/Magus Raven") as GameObject;
+                gm = Resources.Load("Character_Player/Magus Raven") as GameObject;
                 gm.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
                 break;
             case "war":
-                gm = Resources.Load("Prefabs/Miles Raven") as GameObject;
+                gm = Resources.Load("Character_Player/Miles Raven") as GameObject;
                 gm.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
                 break;
             case "ARCH":
-                gm = Resources.Load("Prefabs/Flora Raven") as GameObject;
+                gm = Resources.Load("Character_Player/Flora Raven") as GameObject;
                 gm.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
                 break;
 
