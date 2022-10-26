@@ -8,8 +8,6 @@ public class PlayerMovement : MonoBehaviour
 {
     public GameObject thePlayer;
 
-
-    public Rigidbody rb;
     public float groundDrag;
     public float playerHeight;
     public LayerMask Ground;
@@ -31,8 +29,6 @@ public class PlayerMovement : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
-        rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
 
 
         if (activePlayer){
@@ -47,14 +43,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, Ground);
         if (activePlayer) Move();
     }
 
     private void Move()
     {
         // ground check
-        
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, Ground);
         if (isGrounded)
         {
             if (velocity.y < 0) velocity.y = -2f;
@@ -69,11 +64,9 @@ public class PlayerMovement : MonoBehaviour
             if (moveDirection == Vector3.zero) Idle();
 
             moveDirection *= moveSpeed;
+ 
         }
-
         controller.Move(moveDirection * Time.deltaTime);
-
-        //velocity.y = gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
 

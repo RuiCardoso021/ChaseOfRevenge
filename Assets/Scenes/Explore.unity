@@ -1087,6 +1087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadedCharacter: []
+  CurrentSceneChanged: 0
   _nextSceneName: FinalMap
 --- !u!114 &1851161746
 MonoBehaviour:
@@ -1100,5 +1101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce6c2456c3befb4599093cf821fa208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 1851161743}
+  spawnPoint:
+  - {fileID: 1851161743}
   activeMovimentPlayer: 1

@@ -117,12 +117,11 @@ GameObject:
   - component: {fileID: 750881744025329360}
   - component: {fileID: 750881744025329367}
   - component: {fileID: 750881744025329365}
-  - component: {fileID: 750881744025329363}
   - component: {fileID: 750881744025329362}
   - component: {fileID: 750881744025329361}
   - component: {fileID: 7794731673269814223}
   m_Layer: 0
-  m_Name: Ganfaul M Aure 1 1
+  m_Name: Magus Raven
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,7 +137,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6969967732891592966}
   - {fileID: 4733636453195021348}
@@ -199,24 +198,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &750881744025329363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480410878680319498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b2cefc2e8a7b29498776f4e6b6ab02c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Haskey: 0
-  inventoryScreen: {fileID: 0}
-  inventoryOpen: {fileID: 0}
-  inventoryClose: {fileID: 0}
-  isOpen: 0
-  canClose: 0
 --- !u!114 &750881744025329362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,7 +412,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750881743352883603}
-  m_LocalRotation: {x: 0.2094042, y: 0.20697439, z: -0.04540284, w: 0.95459425}
+  m_LocalRotation: {x: 0.2094042, y: 0.20697439, z: -0.04540287, w: 0.95459425}
   m_LocalPosition: {x: -0.00000016858742, y: -5.9494675e-31, z: -0.0000005057622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -815,7 +796,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0.41777164
+    Value: 0.5
     m_SpeedMode: 0
     m_MaxSpeed: 2
     m_AccelTime: 0.2
@@ -1078,8 +1059,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750881744414701351}
-  m_LocalRotation: {x: 0.24866468, y: 0.20492178, z: -0.05391527, w: 0.9451276}
-  m_LocalPosition: {x: -0.00000042146854, y: -1.4873669e-30, z: -0.0000009272307}
+  m_LocalRotation: {x: 0.24866472, y: 0.20492181, z: -0.0539153, w: 0.9451275}
+  m_LocalPosition: {x: -0.00000016858742, y: -5.9494675e-31, z: -0.0000005057622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1156,7 +1137,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750881744929856792}
-  m_LocalRotation: {x: 0.22904976, y: 0.20599377, z: -0.04966235, w: 0.9500719}
+  m_LocalRotation: {x: 0.22904974, y: 0.2059938, z: -0.049662396, w: 0.95007175}
   m_LocalPosition: {x: -0.00000016858742, y: -5.9494675e-31, z: -0.0000005057622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

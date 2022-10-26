@@ -665,8 +665,9 @@ GameObject:
   - component: {fileID: 4591218618509407580}
   - component: {fileID: 4591218618518814777}
   - component: {fileID: 8287458487189089131}
+  - component: {fileID: 130166031127586128}
   m_Layer: 8
-  m_Name: DungeonSkeleton_demo
+  m_Name: DungeonSkeleton
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -735,7 +736,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f3656ca4307924493300a8af3690e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemy: {fileID: 0}
   _prompt: FIGHT ME
+--- !u!114 &130166031127586128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4591218618518783714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b377919b276434cb65b5816e66abc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DungeonSkeleton
+  Mana: 3
+  ClassType: Enemy
+  Health: 30
+  myDeck:
+    cards: []
+  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
 --- !u!1 &4591218618518783716
 GameObject:
   m_ObjectHideFlags: 0

@@ -2463,10 +2463,9 @@ GameObject:
   - component: {fileID: 3659650284145363723}
   - component: {fileID: 3659650284145363724}
   - component: {fileID: 3659650284145363714}
-  - component: {fileID: 3659650284145363715}
   - component: {fileID: 4657515292139348291}
   m_Layer: 0
-  m_Name: Erika Archer
+  m_Name: Flora Raven
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2590,24 +2589,6 @@ MonoBehaviour:
   runSpeed: 6
   gravity: -9.81
   activePlayer: 1
---- !u!114 &3659650284145363715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4470061613590560578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b2cefc2e8a7b29498776f4e6b6ab02c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Haskey: 0
-  inventoryScreen: {fileID: 0}
-  inventoryOpen: {fileID: 0}
-  inventoryClose: {fileID: 0}
-  isOpen: 0
-  canClose: 0
 --- !u!114 &4657515292139348291
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3739,7 +3739,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &506448375
 MonoBehaviour:
@@ -3753,7 +3753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ce6c2456c3befb4599093cf821fa208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 506448372}
+  spawnPoint:
+  - {fileID: 506448372}
   activeMovimentPlayer: 1
 --- !u!114 &506448376
 MonoBehaviour:
@@ -3768,6 +3769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadedCharacter: []
+  CurrentSceneChanged: 0
   _nextSceneName: FightScene
 --- !u!1001 &506648280
 PrefabInstance:
@@ -14401,7 +14403,7 @@ Transform:
   - {fileID: 515555415}
   - {fileID: 815566717}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1939451544
 PrefabInstance:

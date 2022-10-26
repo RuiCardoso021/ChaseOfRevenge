@@ -17,7 +17,7 @@ public class GameObjectTransfer : MonoBehaviour
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space) && premission){
+        if (Input.GetKeyDown(KeyCode.V) && premission){
             LoadedCharacter.Add(GameObject.Find("Character_Player"));
             LoadNextScene();
             premission = false;

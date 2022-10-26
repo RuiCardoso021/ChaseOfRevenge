@@ -29,7 +29,9 @@ public class Interactor : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.E)){
                     GameObjectTransfer.Instance.LoadedCharacter.Add(_player);
-                    GameObjectTransfer.Instance.LoadedCharacter.Add(_interactable.InteractionGameObject);
+                    GameObject tempEnemy = _interactable.InteractionGameObject;
+                    tempEnemy.name = "Enemy";
+                    GameObjectTransfer.Instance.LoadedCharacter.Add(tempEnemy);
                     GameObjectTransfer.Instance.LoadNextScene();
                 }
             }

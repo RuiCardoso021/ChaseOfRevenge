@@ -132,15 +132,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2459625271754765518, guid: 3e944001186b739418491bde8735b260, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659650284145363714, guid: 3e944001186b739418491bde8735b260, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3659650284145363714, guid: 3e944001186b739418491bde8735b260, type: 3}
       propertyPath: activePlayer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3659650284145363715, guid: 3e944001186b739418491bde8735b260, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3659650284145363724, guid: 3e944001186b739418491bde8735b260, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3659650284145363726, guid: 3e944001186b739418491bde8735b260, type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 3837922260431988216, guid: 3e944001186b739418491bde8735b260, type: 3}
       propertyPath: m_RootOrder
@@ -194,6 +206,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4657515292139348291, guid: 3e944001186b739418491bde8735b260, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e944001186b739418491bde8735b260, type: 3}
 --- !u!4 &420083268 stripped
@@ -208,13 +224,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1300952962}
     m_Modifications:
+    - target: {fileID: 15919214099229462, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 15919214099229463, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 15919214099229463, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
       propertyPath: activePlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 15919214099229464, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 554566235841465595, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
       propertyPath: m_RootOrder
@@ -226,7 +250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 554566235841465595, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.037
       objectReference: {fileID: 0}
     - target: {fileID: 554566235841465595, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -270,6 +294,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6787208722300211971, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077005773958875744, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -861,6 +889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadedCharacter: []
+  CurrentSceneChanged: 0
   _nextSceneName: Explore
 --- !u!1 &1306790352 stripped
 GameObject:
@@ -1084,7 +1113,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 750881743647283371, guid: 9bb9efed1d2e68f40b5a2012bb705aab, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 750881743647283375, guid: 9bb9efed1d2e68f40b5a2012bb705aab, type: 3}
       propertyPath: m_YAxis.Value
@@ -1096,7 +1125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 750881744025329366, guid: 9bb9efed1d2e68f40b5a2012bb705aab, type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 126
       objectReference: {fileID: 0}
     - target: {fileID: 1000102077881982128, guid: 9bb9efed1d2e68f40b5a2012bb705aab, type: 3}
       propertyPath: m_RootOrder
