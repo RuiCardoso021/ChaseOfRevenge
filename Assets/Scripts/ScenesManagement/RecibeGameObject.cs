@@ -5,23 +5,34 @@ using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
 
-public class RecebeGameObject : MonoBehaviour
+public class RecibeGameObject : MonoBehaviour
 {
     public GameObject[] spawnPoint;
-    [SerializeField] private bool activeMovimentPlayer = false;
-    private GameObject _player;
-    private GameObject objectPrefab;
-    private GameObject _spawnedObject;
+    public bool activeMovimentPlayer = false;
+    public GameObject _player;
+    public GameObject objectPrefab;
+    public GameObject _spawnedObject;
 
     private void Start()
     {
-        _player = GameObject.Find("Character_Player");
-        objectPrefab = GameObject.Find("receivedObject");
-        objectPrefab.SetActive(false);
+        Inicialization();
 
     }
 
     private void Update()
+    {
+        getComponentsOtherScene();
+
+    }
+
+    public void Inicialization()
+    {
+        _player = GameObject.Find("Character_Player");
+        objectPrefab = GameObject.Find("receivedObject");
+        objectPrefab.SetActive(false);
+    }
+
+    public void getComponentsOtherScene()
     {
         if (_spawnedObject == null)
         {
@@ -30,19 +41,18 @@ public class RecebeGameObject : MonoBehaviour
                 for (int i = 0; i < objectPrefab.transform.childCount; i++)
                 {
                     GameObject child = objectPrefab.transform.GetChild(i).gameObject;
-                    
+
                     _spawnedObject = Instantiate(getCharacterPrefab(child), spawnPoint[i].transform.position, Quaternion.identity);
-                    if(_spawnedObject.GetComponent<Character_cls>().ClassType != "Enemy")
+                    if (_spawnedObject.GetComponent<Character_cls>().ClassType != "Enemy")
                         _spawnedObject.name = "Character_Player";
                 }
 
                 if (objectPrefab != null) Destroy(objectPrefab, 3f);
             }
         }
-
     }
 
-    public GameObject getCharacterPrefab(GameObject gm)
+    private GameObject getCharacterPrefab(GameObject gm)
     {
         string classType = gm.GetComponent<Character_cls>().ClassType;
 
@@ -60,8 +70,6 @@ public class RecebeGameObject : MonoBehaviour
                 gm = Resources.Load("Character_Player/Flora Raven") as GameObject;
                 gm.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
                 break;
-
-
         }
 
         return gm;
