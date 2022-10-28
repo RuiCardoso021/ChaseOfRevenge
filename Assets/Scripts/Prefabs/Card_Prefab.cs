@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ReadJson : MonoBehaviour
+public class Card_Prefab : MonoBehaviour
 {   
     [SerializeField] public TextMeshProUGUI _textMana;
     [SerializeField] public TextMeshProUGUI _textDescription;

@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class HealthBar_Prefab : MonoBehaviour
 {
     [SerializeField] private Image healthBar;
     [SerializeField] private TextMeshProUGUI _txtLife;

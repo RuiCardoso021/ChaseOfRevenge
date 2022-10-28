@@ -27,7 +27,7 @@ public class RecibeCharactersFight: RecibeGameObject
                 {
                     HealthBar[i] = Instantiate(healBarTemp, SpawnerList[i].transform.position + new Vector3(0,2.4f, 0), Quaternion.identity);
 
-                    HealthBar[i].GetComponent<HealthBar>().MaxLife = SpawnerList[i].GetComponent<Character_cls>().Health;
+                    HealthBar[i].GetComponent<HealthBar_Prefab>().MaxLife = SpawnerList[i].GetComponent<Character_cls>().Health;
                 }
             }
             

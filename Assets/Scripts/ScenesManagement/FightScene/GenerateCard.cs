@@ -35,6 +35,7 @@ public class GenerateCard : MonoBehaviour
         int random;
         float x = -2.4f;
 
+
         for (int i=0; i<numberCardsOnHand; i++)
         {
             //indice random
@@ -45,7 +46,7 @@ public class GenerateCard : MonoBehaviour
             cardsToGive.Add(random);
             
             //generate card
-            Card.GetComponent<ReadJson>().setDataCard(deck.cards[random].mana.ToString(), deck.cards[random].description, deck.cards[random].name, deck.cards[random].src);
+            Card.GetComponent<Card_Prefab>().setDataCard(deck.cards[random].mana.ToString(), deck.cards[random].description, deck.cards[random].name, deck.cards[random].src);
             cards.Add(Instantiate(Card, new Vector3(x,1,-7), Quaternion.identity, gmCard.transform));
             x+= 0.6f;
         }
