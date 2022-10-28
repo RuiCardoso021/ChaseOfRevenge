@@ -18,18 +18,18 @@ public class Character_cls : MonoBehaviour
     private void Start()
     {
         myDeck = new Deck();
-        //Deck newdeck = new Deck();
-        myDeck = JsonUtility.FromJson<Deck>(jsonFile.text);
-        //int index = 0;
-        //
-        //foreach(Card card in newdeck.cards)
-        //{
-        //    if (card.type == ClassType || card.type == "UN")
-        //    {
-        //        myDeck.cards[index] = card;
-        //        index++;
-        //    }
-        //}
+        Deck deck = new Deck();     
+        deck = JsonUtility.FromJson<Deck>(jsonFile.text);
+        List<Card> inventoryCards = new List<Card>();
+
+        foreach (Card card in deck.cards)
+        {
+            if (card.type == ClassType || card.type == "UN")
+            {
+                inventoryCards.Add(card);
+            }
+        }
+        myDeck.cards = inventoryCards.ToArray();
     }
 
 }
