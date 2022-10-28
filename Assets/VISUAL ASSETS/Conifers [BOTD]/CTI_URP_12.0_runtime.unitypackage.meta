@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/VISUAL ASSETS/Conifers [BOTD]/CTI_URP_12.0_runtime.unitypackage.meta
 guid: d5c6503be96872e48b5348c4272ae96f
+========
+guid: 88d5037c40acd0548a3838cc56b7d864
+>>>>>>>> b5bbb6c396c8befe7166874f5a0dadc37fbc1819:Assets/VISUAL ASSETS/Conifers [BOTD]/CTI_URP_10.3.2_runtime.unitypackage.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
