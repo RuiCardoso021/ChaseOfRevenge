@@ -1,22 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
-    public Image healthBar;
-    private const float MAX_HEALTH = 20f;
-    public float health = MAX_HEALTH;
+    [SerializeField] private Image healthBar;
+    [SerializeField] private TextMeshProUGUI _txtLife;
+    public float MaxLife;
+    public float health;
 
     void Start()
     {
-        healthBar = GetComponent<Image>();
+        health = MaxLife;
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = health / MAX_HEALTH;
+        _txtLife.text = health.ToString();
+        healthBar.fillAmount = health / MaxLife;
     }
 }
