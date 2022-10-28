@@ -2,21 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 using static UnityEditor.Experimental.GraphView.GraphView;
-
+using Unity.VisualScripting;
 
 public class RecibeGameObject : MonoBehaviour
 {
+    private GameObject _player;
     public GameObject[] spawnPoint;
     public bool activeMovimentPlayer = false;
-    public GameObject _player;
-    public GameObject objectPrefab;
-    public GameObject _spawnedObject;
-
+    [HideInInspector] public GameObject[] SpawnerList;
+    [HideInInspector] public GameObject ObjectPrefab;
+    [HideInInspector] public GameObject SpawnedObject;
+    [HideInInspector] public int indexCounter;
+    
     private void Start()
     {
         Inicialization();
-
     }
 
     private void Update()
@@ -28,47 +30,51 @@ public class RecibeGameObject : MonoBehaviour
     public void Inicialization()
     {
         _player = GameObject.Find("Character_Player");
-        objectPrefab = GameObject.Find("receivedObject");
-        objectPrefab.SetActive(false);
+        ObjectPrefab = GameObject.Find("receivedObject");
+        indexCounter = ObjectPrefab.transform.childCount;
+        SpawnerList = new GameObject[indexCounter];
+        ObjectPrefab.SetActive(false);
     }
 
     public void getComponentsOtherScene()
     {
-        if (_spawnedObject == null)
+        if (SpawnedObject == null && _player != null)
         {
-            if (_player != null)
+            for (int i = 0; i < indexCounter; i++)
             {
-                for (int i = 0; i < objectPrefab.transform.childCount; i++)
-                {
-                    GameObject child = objectPrefab.transform.GetChild(i).gameObject;
+                GameObject child = ObjectPrefab.transform.GetChild(i).gameObject;
 
-                    _spawnedObject = Instantiate(getCharacterPrefab(child), spawnPoint[i].transform.position, Quaternion.identity);
-                    if (_spawnedObject.GetComponent<Character_cls>().ClassType != "Enemy")
-                        _spawnedObject.name = "Character_Player";
+                SpawnedObject = Instantiate(getCharacterPrefab(child), spawnPoint[i].transform.position, Quaternion.identity);
+
+                if (SpawnedObject.GetComponent<Character_cls>().ClassType != "Enemy")
+                {
+                    SpawnedObject.name = "Character_Player";
+                    SpawnedObject.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
+                    SpawnedObject.GetComponent<Character_cls>().myDeck = _player.GetComponent<Character_cls>().myDeck;
                 }
 
-                if (objectPrefab != null) Destroy(objectPrefab, 3f);
+                SpawnerList[i] = SpawnedObject;
+
             }
+
+            if (ObjectPrefab != null) Destroy(ObjectPrefab, 3f);
         }
     }
 
     private GameObject getCharacterPrefab(GameObject gm)
     {
-        string classType = gm.GetComponent<Character_cls>().ClassType;
+        string classType = gm.GetComponent<Character_cls>().Name;
 
         switch (classType)
         {
-            case "Sorceress":
+            case "Magus Raven":
                 gm = Resources.Load("Character_Player/Magus Raven") as GameObject;
-                gm.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
                 break;
-            case "war":
+            case "Miles Raven":
                 gm = Resources.Load("Character_Player/Miles Raven") as GameObject;
-                gm.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
                 break;
-            case "ARCH":
+            case "Flora Raven":
                 gm = Resources.Load("Character_Player/Flora Raven") as GameObject;
-                gm.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
                 break;
         }
 
