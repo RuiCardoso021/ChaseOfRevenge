@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class RecibeCharactersFight: RecibeGameObject
 {
+    public static RecibeCharactersFight Instance;
     public GameObject[] HealthBar;
     private void Start()
     {
+        Instance = this;
         Inicialization();
         HealthBar = new GameObject[indexCounter];
     }
 
-    // Update is called once per frame
     void Update()
     {
         getComponentsOtherScene();

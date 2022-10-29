@@ -5,38 +5,26 @@ using UnityEngine.EventSystems;
 
 public class GenerateCard : MonoBehaviour
 {
-    private FightSceneInterface _turn;
-    public GameObject gmCard;
-    public GameObject Card;
-    public List<GameObject> cards = new List<GameObject>();
-    private int numberCardsOnHand = 4;
-    private Deck deck;
-    public TextAsset jsonFile;
-    
-    void Start()
-    {    
-        _turn = this.GetComponent<FightSceneInterface>();
-        _turn.RandomFirstPlayerToMove();
-        deck = new Deck();
-        deck = JsonUtility.FromJson<Deck>(jsonFile.text);
+    private const int TOTAL_CARDS_ON_HAND = 4;
 
-        getCardsToPlay();
-    }
+    private GameObject GameObjectFather;
+    private GameObject CardPrefab;
+    public List<GameObject> CardsOnHand = new List<GameObject>();
 
-    // Update is called once per frame
-    void Update()
+    public GenerateCard()
     {
-        
+        GameObjectFather = GameObject.Find("CardOnHand");
+        CardPrefab = Resources.Load("Card/Card") as GameObject;
     }
 
-    private void getCardsToPlay(){
+    public void InstanceCardsToPlay(Deck deck){
+
         //generate card list
         List<int> cardsToGive = new List<int>();
         int random;
         float x = -2.4f;
 
-
-        for (int i=0; i<numberCardsOnHand; i++)
+        for (int i=0; i< TOTAL_CARDS_ON_HAND; i++)
         {
             //indice random
             do
@@ -44,18 +32,18 @@ public class GenerateCard : MonoBehaviour
                 random = Random.Range(0, deck.cards.Length);
             } while (cardsToGive.Contains(random));
             cardsToGive.Add(random);
-            
+
             //generate card
-            Card.GetComponent<Card_Prefab>().setDataCard(deck.cards[random].mana.ToString(), deck.cards[random].description, deck.cards[random].name, deck.cards[random].src);
-            cards.Add(Instantiate(Card, new Vector3(x,1,-7), Quaternion.identity, gmCard.transform));
+            CardPrefab.GetComponent<Card_Prefab>().setDataCard(deck.cards[random].mana.ToString(), deck.cards[random].description, deck.cards[random].name, deck.cards[random].src);
+            CardsOnHand.Add(Instantiate(CardPrefab, new Vector3(x,1,-7), Quaternion.identity, GameObjectFather.transform));
             x+= 0.6f;
         }
     }
 
     private void DestroyAllInstanceCards(){
-        foreach (var item in cards)
+        foreach (var item in CardsOnHand)
         {
-            Object.Destroy(item);            
+            Destroy(item);            
         }
     }
 

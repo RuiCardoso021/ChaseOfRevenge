@@ -8,14 +8,13 @@ public class FightSceneInterface : MonoBehaviour
     public bool myTurn = false;
 
     private void Update() {
-        if (myTurn){
-            button.SetActive(true);
-        }else button.SetActive(false);
+        //if (myTurn){
+        //    button.SetActive(true);
+        //}else button.SetActive(false);
     }
 
     public void NextTurn(){
-        Debug.Log("ola");
-        myTurn = false;
+        myTurn = !myTurn;
     }
 
     public void RandomFirstPlayerToMove(){
