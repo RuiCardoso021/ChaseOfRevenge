@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Rendering;
 
 public class GamePlayFight : MonoBehaviour
 {
@@ -37,19 +38,6 @@ public class GamePlayFight : MonoBehaviour
                 _cardsToPlay = new GenerateCard();
                 _cardsToPlay.InstanceCardsToPlay(_deck);
 
-                if (!_cardsToPlay.CardChoose.IsEmpty())
-                {
-                    Card cardChose = new Card();
-                    cardChose = _cardsToPlay.CardChoose;
-                    for (int i = 0; i < cardChose.ability.Length; i++)
-                    {
-                        if (cardChose.ability[i].tag == "Attack")
-                        {
-                            Debug.Log("Ataquei com: " + cardChose.ability[i].value);
-                        }
-                    }
-                }
-
                 validate = false;
             }
 
@@ -58,7 +46,41 @@ public class GamePlayFight : MonoBehaviour
         if (!validate) { 
             if (_turn.myTurn)
             {
+                Card cardChose = new Card();
+                cardChose = _cardsToPlay.CardChoose;
+                    
+                if (!cardChose.IsEmpty())
+                {
+                    int countAbility = cardChose.ability.Length;
+                    for (int i = 0; i < countAbility; i++)
+                    {
+                        Ability ability = cardChose.ability[i];
 
+                        switch (ability.tag)
+                        {
+                            case "Attack":
+                                Debug.Log("Attack: " + ability);
+                                Character_cls enemy = RecibeCharactersFight.Instance.SpawnerList[1].GetComponent<Character_cls>();
+                                enemy.Health -= ability.value;
+                                break;
+                            case "Damage":
+                                Debug.Log("Damage: " + ability);
+                                break;
+                            case "healc":
+                                Debug.Log("heal: " + ability);
+                                break;
+                            case "CC":
+                                Debug.Log("CC: " + ability);
+                                break;
+                            default:
+                                Debug.Log("This Ability, don´t exist!");
+                                break;
+                        }
+                            
+                    }
+                }
+                _cardsToPlay.CardChoose = new Card();
+                
             }
         }
     }

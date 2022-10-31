@@ -33,6 +33,16 @@ public class RecibeCharactersFight: RecibeGameObject
             }
             
         }
-        
+
+        //update Life
+        if (HealthBar[0] != null && SpawnerList[0] != null)
+        {
+            for (int i = 0; i < HealthBar.Length; i++)
+            {
+                HealthBar[i].GetComponent<HealthBar_Prefab>().health = SpawnerList[i].GetComponent<Character_cls>().Health;
+            }
+        }
+
+
     }
 }

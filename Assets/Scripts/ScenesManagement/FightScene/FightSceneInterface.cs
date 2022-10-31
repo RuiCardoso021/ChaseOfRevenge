@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class FightSceneInterface : MonoBehaviour
 {
@@ -14,7 +16,9 @@ public class FightSceneInterface : MonoBehaviour
     }
 
     public void NextTurn(){
+        Debug.Log(!myTurn);
         myTurn = !myTurn;
+
     }
 
     public void RandomFirstPlayerToMove(){
