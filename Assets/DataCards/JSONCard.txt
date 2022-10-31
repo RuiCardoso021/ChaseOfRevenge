@@ -12,13 +12,13 @@
                     "tag": "Attack", 
                     "value": 2, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 },
                  { 
                     "tag": "Damage", 
                     "value": 2, 
                     "effect_quantity": 0, 
-                    "type_effect": "player"
+                    "type_effect": "Me"
                  }
             ],
             "description": "2 damage to all enemies, 2 damage to player ",
@@ -28,7 +28,7 @@
         {
             "id": 2,
             "type": "UN",
-            "name": "yolo",
+            "name": "Yolo",
             "number_effects": 1,
             "ability": 
             [
@@ -36,7 +36,7 @@
                     "tag": "Attack", 
                     "value": 2, 
                     "effect_quantity": 1, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "4 damage to enemy with highest life ",
@@ -46,7 +46,7 @@
         {
             "id": 3,
             "type": "UN",
-            "name": "stealer",
+            "name": "Stealer",
             "number_effects": 2,
             "ability": 
             [
@@ -54,13 +54,13 @@
                     "tag": "attack", 
                     "value": 1, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 },
                 { 
-                    "tag": "heal", 
+                    "tag": "Heal", 
                     "value": 1, 
                     "effect_quantity": 0, 
-                    "type_effect": "player"
+                    "type_effect": "Me"
                 }
             ],
             "description": "1 damage to all enemies, heal 1 life per enemy",
@@ -76,19 +76,61 @@
             [
                 { 
                     "tag": "Buff", 
+                    "value": 4, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Card"
+                }
+            ],
+            "description": "Shuffle your cards to deck and get 4 new cards",
+            "mana": 3,
+            "src": "id_4"
+        },
+        {
+            "id": 5,
+            "type": "UN",
+            "name": "Generate",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Shuffle", 
                     "value": -2, 
                     "effect_quantity": 0, 
-                    "type_effect": "card"
+                    "type_effect": "Card"
                 }
             ],
             "description": "Next to cards does not cost mana",
             "mana": 3,
-            "src": "id_1"
+            "src": "id_5"
         },
-         {
-            "id": 5,
-            "type": "ARCH",
-            "name": "dup",
+        {
+            "id": 6,
+            "type": "UN",
+            "name": "Ancient",
+            "number_effects": 2,
+            "ability": 
+            [
+                { 
+                    "tag": "Attack", 
+                    "value": 1, 
+                    "effect_quantity": 2, 
+                    "type_effect": "Other"
+                },
+                { 
+                    "tag": "Shuffle", 
+                    "value": -2, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Card"
+                }
+            ],
+            "description": "1 damage 2 enemies, get 1 card from deck",
+            "mana": 3,
+            "src": "id_6"
+       }, 
+       {
+            "id": 7,
+            "type": "UN",
+            "name": "Weaklink",
             "number_effects": 1,
             "ability": 
             [
@@ -96,15 +138,87 @@
                     "tag": "Attack", 
                     "value": 2, 
                     "effect_quantity": 1, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "Deal 1 damage to an enemy or kill the weaker",
+            "mana":2,
+            "src": "id_7"
+        },
+         {
+            "id": 8,
+            "type": "UN",
+            "name": "Apologize",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Attack", 
+                    "value": 3, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "Deal 3 damage to a random enemy",
+            "mana":3,
+            "src": "id_8"
+        },
+        {
+            "id": 9,
+            "type": "UN",
+            "name": "King Kongor",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Attack", 
+                    "value": 5, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "Deal 5 damage to first enemy",
+            "mana":3,
+            "src": "id_9"
+        },
+        {
+            "id": 10,
+            "type": "UN",
+            "name": "Shotone",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Attack", 
+                    "value": 2, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "Deal 2 damage to first enemy",
+            "mana":1,
+            "src": "id_10"
+        },
+        {
+            "id": 11,
+            "type": "ARCH",
+            "name": "Dup",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Attack", 
+                    "value": 2, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Other"
                 }
             ],
             "description": "2 damage to a random enemy ",
             "mana":1,
-            "src": "id_1"
+            "src": "id_11"
         },
         {
-            "id": 6,
+            "id": 12,
             "type": "ARCH",
             "name": "Imobilize",
             "number_effects": 1,
@@ -114,15 +228,15 @@
                     "tag": "CC", 
                     "value": 0, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "Imobilize all enemies in next turn",
             "mana":2,
-            "src": "id_1"
+            "src": "id_12"
         },
         {
-            "id": 7,
+            "id": 13,
             "type": "ARCH",
             "name": "DoubleDps",
             "number_effects": 1,
@@ -132,17 +246,17 @@
                     "tag": "Buff", 
                     "value": 0, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Me"
                 }
             ],
             "description": "Double atacks on next turn",
             "mana":3,
-            "src": "id_1"
+            "src": "id_13"
         },
 
           {
-            "id": 8,
-            "type": "Sorceress",
+            "id": 14,
+            "type": "SORCE",
             "name": "FireAoe",
             "number_effects": 1,
             "ability": 
@@ -151,17 +265,17 @@
                     "tag": "Attack", 
                     "value": 1, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "1 damage to all enemies",
             "mana":1,
-            "src": "id_1"
+            "src": "id_14"
         },
         {
-            "id": 9,
-            "type": "Sorceress",
-            "name": "plusone",
+            "id": 15,
+            "type": "SORCE",
+            "name": "Plusone",
             "number_effects": 1,
             "ability": 
             [
@@ -169,16 +283,16 @@
                     "tag": "Buff", 
                     "value": 1, 
                     "effect_quantity": 4, 
-                    "type_effect": "Player"
+                    "type_effect": "Me"
                 }
             ],
-            "description": "buff 1 damage to all cards on this turn",
+            "description": "Buff 1 damage to all cards on this turn",
             "mana":1,
-            "src": "id_1"
+            "src": "id_15"
         },
         {
-            "id": 10,
-            "type": "Sorceress",
+            "id": 16,
+            "type": "SORCE",
             "name": "Freeze",
             "number_effects": 1,
             "ability": 
@@ -187,16 +301,16 @@
                     "tag": "CC", 
                     "value": 0, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "Freeze all enemies in next turn",
             "mana":2,
-            "src": "id_1"
+            "src": "id_16"
         },
          {
-            "id": 11,
-            "type": "Sorceress",
+            "id": 17,
+            "type": "SORCE",
             "name": "Corrupt",
             "number_effects": 1,
             "ability": 
@@ -205,16 +319,16 @@
                     "tag": "Attack", 
                     "value": 3, 
                     "effect_quantity": 1, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "3 damage to a random enemy ",
             "mana":2,
-            "src": "id_1"
+            "src": "id_17"
         },
          {
-            "id": 12,
-            "type": "Sorceress",
+            "id": 18,
+            "type": "SORCE",
             "name": "Shield",
             "number_effects": 1,
             "ability": 
@@ -223,16 +337,16 @@
                     "tag": "Buff", 
                     "value": 0, 
                     "effect_quantity": 1, 
-                    "type_effect": "Player"
+                    "type_effect": "Me"
                 }
             ],
             "description": "Player cannot take damage for two turns",
             "mana":3,
-            "src": "id_1"
+            "src": "id_18"
         },
          {
-            "id": 11,
-            "type": "War",
+            "id": 19,
+            "type": "WAR",
             "name": "Slash",
             "number_effects": 1,
             "ability": 
@@ -241,17 +355,17 @@
                     "tag": "Attack", 
                     "value": 2, 
                     "effect_quantity": 1, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "2 damage to a random enemy ",
             "mana":1,
-            "src": "id_1"
+            "src": "id_19"
         },
          {
-            "id": 12,
-            "type": "War",
-            "name": "getfive",
+            "id": 20,
+            "type": "WAR",
+            "name": "Getfive",
             "number_effects": 1,
             "ability": 
             [
@@ -259,16 +373,16 @@
                     "tag": "Buff", 
                     "value": 0, 
                     "effect_quantity": 1, 
-                    "type_effect": "Player"
+                    "type_effect": "Me"
                 }
             ],
             "description": "Player gain 5 damage to an attack, but cannot attack this turn",
             "mana":1,
-            "src": "id_1"
+            "src": "id_20"
         },
          {
-            "id": 13,
-            "type": "War",
+            "id": 21,
+            "type": "WAR",
             "name": "Onetoall",
             "number_effects": 1,
             "ability": 
@@ -277,35 +391,35 @@
                     "tag": "Attack", 
                     "value": 1, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "1 damage to all enemies",
             "mana":1,
-            "src": "id_1"
+            "src": "id_21"
         },
          {
-            "id": 14,
-            "type": "War",
-            "name": "healme",
+            "id": 22,
+            "type": "WAR",
+            "name": "Healme",
             "number_effects": 1,
             "ability": 
             [
                 { 
-                    "tag": "heal", 
+                    "tag": "Heal", 
                     "value": 2, 
                     "effect_quantity": 0, 
-                    "type_effect": "Player"
+                    "type_effect": "Me"
                 }
             ],
-            "description": "heal player with 2 life",
+            "description": "Heal player with 2 life",
             "mana":2,
-            "src": "id_1"
+            "src": "id_22"
         },
            {
-            "id": 15,
-            "type": "War",
-            "name": "getfivenow",
+            "id": 23,
+            "type": "WAR",
+            "name": "Getfivenow",
             "number_effects": 1,
             "ability": 
             [
@@ -313,77 +427,77 @@
                     "tag": "Buff", 
                     "value": 0, 
                     "effect_quantity": 1, 
-                    "type_effect": "Player"
+                    "type_effect": "Me"
                 }
             ],
             "description": "Player gain 5 damage on next attack",
             "mana":2,
-            "src": "id_1"
+            "src": "id_23"
         },
            {
-            "id": 16,
-            "type": "War",
+            "id": 24,
+            "type": "WAR",
             "name": "Maxcoil",
             "number_effects": 2,
             "ability": 
             [
                 { 
-                    "tag": "attack", 
+                    "tag": "Attack", 
                     "value": 3, 
                     "effect_quantity": 1, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 },
                 { 
-                    "tag": "heal", 
+                    "tag": "Heal", 
                     "value": 1, 
                     "effect_quantity": 0, 
-                    "type_effect": "player"
+                    "type_effect": "Me"
                 }
             ],
             "description": "3 damage to a random enemy, heal 1 life",
             "mana": 2,
-            "src": "id_1"
+            "src": "id_24"
        }, 
           {
-            "id": 17,
-            "type": "War",
-            "name": "priest",
+            "id": 25,
+            "type": "WAR",
+            "name": "Priest",
             "number_effects": 1,
             "ability": 
             [
                 { 
-                    "tag": "heal", 
+                    "tag": "Heal", 
                     "value": 5, 
                     "effect_quantity": 0, 
-                    "type_effect": "Player"
+                    "type_effect": "Me"
                 }
             ],
-            "description": "heal player with 5 life",
+            "description": "Heal player with 5 life",
             "mana":3,
-            "src": "id_1"
+            "src": "id_25"
         },
           {
-            "id": 18,
-            "type": "War",
-            "name": "light",
+            "id": 26,
+            "type": "WAR",
+            "name": "Light",
             "number_effects": 1,
             "ability": 
             [
                 { 
-                    "tag": "heal", 
+                    "tag": "Heal", 
                     "value": 3, 
                     "effect_quantity": 0, 
-                    "type_effect": "Player"
+                    "type_effect": "Me"
                 }
             ],
-            "description": "heal player with 3 life on next turn",
+            "description": "Heal player with 3 life on next turn",
             "mana":3,
-            "src": "id_1"
+            "src": "id_26"
         },
         {
-            "id": 19,
-            "type": "Warr",
-            "name": "killemall",
+            "id": 27,
+            "type": "WAR",
+            "name": "Killemall",
             "number_effects": 1,
             "ability": 
             [
@@ -391,12 +505,12 @@
                     "tag": "Attack", 
                     "value": 3, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "3 damage to all enemie",
             "mana":3,
-            "src": "id_1"
+            "src": "id_27"
         }
     ]
 }
