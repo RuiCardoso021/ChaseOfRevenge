@@ -16,7 +16,7 @@ public class GenerateCard : MonoBehaviour
     {
         CardChoose = new Card();
         GameObjectFather = GameObject.Find("CardOnHand");
-        CardPrefab = Resources.Load("Card/Card") as GameObject;
+        CardPrefab = Resources.Load("Card/Canvas") as GameObject;
     }
 
     public void InstanceCardsToPlay(Deck deck){
@@ -38,9 +38,10 @@ public class GenerateCard : MonoBehaviour
             //generate card
             CardPrefab.GetComponent<Card_Prefab>().dataCard = deck.cards[random];
             CardPrefab.GetComponent<Card_Prefab>().setDataCard(true);
+            CardPrefab.transform.localScale = new Vector3(0.025f, 0.025f, 0.025f);
             CardsOnHand.Add(Instantiate(CardPrefab, new Vector3(x, 1, -7), Quaternion.identity, GameObjectFather.transform));
             
-            x+= 0.6f;
+            x+= 0.85f;
         }
     }
 

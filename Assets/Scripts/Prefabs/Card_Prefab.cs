@@ -38,7 +38,7 @@ public class Card_Prefab : MonoBehaviour
         if (activeExpand)
         {
             RectTransform rect = this.gameObject.GetComponent<RectTransform>();
-            rect.transform.localScale = new Vector3(0.12f, 0.12f, 0.1f);
+            rect.transform.localScale = new Vector3(0.03f, 0.03f, 0.03f);
         }
     }
 
@@ -47,7 +47,7 @@ public class Card_Prefab : MonoBehaviour
         if (activeExpand)
         {
             RectTransform rect = this.gameObject.GetComponent<RectTransform>();
-            rect.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            rect.transform.localScale = new Vector3(0.025f, 0.025f, 0.025f);
         }
     }
 
