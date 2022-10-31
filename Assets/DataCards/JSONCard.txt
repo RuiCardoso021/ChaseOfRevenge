@@ -12,13 +12,13 @@
                     "tag": "Attack", 
                     "value": 2, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 },
                  { 
                     "tag": "Damage", 
                     "value": 2, 
                     "effect_quantity": 0, 
-                    "type_effect": "player"
+                    "type_effect": "Me"
                  }
             ],
             "description": "2 damage to all enemies, 2 damage to player ",
@@ -36,7 +36,7 @@
                     "tag": "Attack", 
                     "value": 2, 
                     "effect_quantity": 1, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "4 damage to enemy with highest life ",
@@ -54,13 +54,13 @@
                     "tag": "attack", 
                     "value": 1, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 },
                 { 
-                    "tag": "heal", 
+                    "tag": "Heal", 
                     "value": 1, 
                     "effect_quantity": 0, 
-                    "type_effect": "player"
+                    "type_effect": "Me"
                 }
             ],
             "description": "1 damage to all enemies, heal 1 life per enemy",
@@ -78,7 +78,7 @@
                     "tag": "Buff", 
                     "value": 4, 
                     "effect_quantity": 0, 
-                    "type_effect": "card"
+                    "type_effect": "Card"
                 }
             ],
             "description": "Shuffle your cards to deck and get 4 new cards",
@@ -96,7 +96,7 @@
                     "tag": "Shuffle", 
                     "value": -2, 
                     "effect_quantity": 0, 
-                    "type_effect": "card"
+                    "type_effect": "Card"
                 }
             ],
             "description": "Next to cards does not cost mana",
@@ -111,16 +111,16 @@
             "ability": 
             [
                 { 
-                    "tag": "attack", 
+                    "tag": "Attack", 
                     "value": 1, 
                     "effect_quantity": 2, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 },
                 { 
                     "tag": "Shuffle", 
                     "value": -2, 
                     "effect_quantity": 0, 
-                    "type_effect": "card"
+                    "type_effect": "Card"
                 }
             ],
             "description": "1 damage 2 enemies, get 1 card from deck",
@@ -138,7 +138,7 @@
                     "tag": "Attack", 
                     "value": 2, 
                     "effect_quantity": 1, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "Deal 1 damage to an enemy or kill the weaker",
@@ -156,7 +156,7 @@
                     "tag": "Attack", 
                     "value": 3, 
                     "effect_quantity": 1, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "Deal 3 damage to a random enemy",
@@ -174,7 +174,7 @@
                     "tag": "Attack", 
                     "value": 5, 
                     "effect_quantity": 1, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "Deal 5 damage to first enemy",
@@ -192,7 +192,7 @@
                     "tag": "Attack", 
                     "value": 2, 
                     "effect_quantity": 1, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "Deal 2 damage to first enemy",
@@ -210,7 +210,7 @@
                     "tag": "Attack", 
                     "value": 2, 
                     "effect_quantity": 1, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "2 damage to a random enemy ",
@@ -228,7 +228,7 @@
                     "tag": "CC", 
                     "value": 0, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "Imobilize all enemies in next turn",
@@ -246,7 +246,7 @@
                     "tag": "Buff", 
                     "value": 0, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Me"
                 }
             ],
             "description": "Double atacks on next turn",
@@ -265,7 +265,7 @@
                     "tag": "Attack", 
                     "value": 1, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "1 damage to all enemies",
@@ -283,10 +283,10 @@
                     "tag": "Buff", 
                     "value": 1, 
                     "effect_quantity": 4, 
-                    "type_effect": "Player"
+                    "type_effect": "Me"
                 }
             ],
-            "description": "buff 1 damage to all cards on this turn",
+            "description": "Buff 1 damage to all cards on this turn",
             "mana":1,
             "src": "id_15"
         },
@@ -301,7 +301,7 @@
                     "tag": "CC", 
                     "value": 0, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "Freeze all enemies in next turn",
@@ -319,7 +319,7 @@
                     "tag": "Attack", 
                     "value": 3, 
                     "effect_quantity": 1, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "3 damage to a random enemy ",
@@ -337,7 +337,7 @@
                     "tag": "Buff", 
                     "value": 0, 
                     "effect_quantity": 1, 
-                    "type_effect": "Player"
+                    "type_effect": "Me"
                 }
             ],
             "description": "Player cannot take damage for two turns",
@@ -355,7 +355,7 @@
                     "tag": "Attack", 
                     "value": 2, 
                     "effect_quantity": 1, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "2 damage to a random enemy ",
@@ -373,7 +373,7 @@
                     "tag": "Buff", 
                     "value": 0, 
                     "effect_quantity": 1, 
-                    "type_effect": "Player"
+                    "type_effect": "Me"
                 }
             ],
             "description": "Player gain 5 damage to an attack, but cannot attack this turn",
@@ -391,7 +391,7 @@
                     "tag": "Attack", 
                     "value": 1, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "1 damage to all enemies",
@@ -401,18 +401,18 @@
          {
             "id": 22,
             "type": "WAR",
-            "name": "healme",
+            "name": "Healme",
             "number_effects": 1,
             "ability": 
             [
                 { 
-                    "tag": "heal", 
+                    "tag": "Heal", 
                     "value": 2, 
                     "effect_quantity": 0, 
-                    "type_effect": "Player"
+                    "type_effect": "Me"
                 }
             ],
-            "description": "heal player with 2 life",
+            "description": "Heal player with 2 life",
             "mana":2,
             "src": "id_22"
         },
@@ -427,7 +427,7 @@
                     "tag": "Buff", 
                     "value": 0, 
                     "effect_quantity": 1, 
-                    "type_effect": "Player"
+                    "type_effect": "Me"
                 }
             ],
             "description": "Player gain 5 damage on next attack",
@@ -442,16 +442,16 @@
             "ability": 
             [
                 { 
-                    "tag": "attack", 
+                    "tag": "Attack", 
                     "value": 3, 
                     "effect_quantity": 1, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 },
                 { 
-                    "tag": "heal", 
+                    "tag": "Heal", 
                     "value": 1, 
                     "effect_quantity": 0, 
-                    "type_effect": "player"
+                    "type_effect": "Me"
                 }
             ],
             "description": "3 damage to a random enemy, heal 1 life",
@@ -466,13 +466,13 @@
             "ability": 
             [
                 { 
-                    "tag": "heal", 
+                    "tag": "Heal", 
                     "value": 5, 
                     "effect_quantity": 0, 
-                    "type_effect": "Player"
+                    "type_effect": "Me"
                 }
             ],
-            "description": "heal player with 5 life",
+            "description": "Heal player with 5 life",
             "mana":3,
             "src": "id_25"
         },
@@ -484,13 +484,13 @@
             "ability": 
             [
                 { 
-                    "tag": "heal", 
+                    "tag": "Heal", 
                     "value": 3, 
                     "effect_quantity": 0, 
-                    "type_effect": "Player"
+                    "type_effect": "Me"
                 }
             ],
-            "description": "heal player with 3 life on next turn",
+            "description": "Heal player with 3 life on next turn",
             "mana":3,
             "src": "id_26"
         },
@@ -505,7 +505,7 @@
                     "tag": "Attack", 
                     "value": 3, 
                     "effect_quantity": 4, 
-                    "type_effect": "enemy"
+                    "type_effect": "Other"
                 }
             ],
             "description": "3 damage to all enemie",
