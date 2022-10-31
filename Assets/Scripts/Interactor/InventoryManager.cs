@@ -13,6 +13,7 @@ public class InventoryManager : MonoBehaviour
     public List<GameObject> allCards = new List<GameObject>();
     public List<InventoryCard_cls> cards2play = new List<InventoryCard_cls>();
     public GameObject cardGameObject;
+    public InventoryCard_cls cardChosen;
 
     private GameObject _player;
 
@@ -21,7 +22,7 @@ public class InventoryManager : MonoBehaviour
         _player = GameObject.Find("Character_Player");
         deck = _player.GetComponent<Character_cls>().myDeck;
 
-        FirstInventory();
+        FirstInventory();       
         getCardsToInventory();
     }
 

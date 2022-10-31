@@ -588,7 +588,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &45745480827089563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,7 +623,16 @@ MonoBehaviour:
   _textName: {fileID: 45745479917184340}
   _image: {fileID: 45745480101723807}
   activeExpand: 0
-  premissionToSendData: 0
+  activeClick: 0
+  dataCard:
+    id: 0
+    type: 
+    name: 
+    number_effects: 0
+    ability: []
+    description: 
+    mana: 0
+    src: 
 --- !u!61 &9029626406173658976
 BoxCollider2D:
   m_ObjectHideFlags: 0
