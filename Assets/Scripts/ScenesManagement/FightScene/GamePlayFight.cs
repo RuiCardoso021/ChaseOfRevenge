@@ -66,8 +66,8 @@ public class GamePlayFight : MonoBehaviour
                             case "Damage":
                                 Debug.Log("Damage: " + ability);
                                 break;
-                            case "healc":
-                                Debug.Log("heal: " + ability);
+                            case "Heal":
+                                Debug.Log("health: " + ability);
                                 break;
                             case "CC":
                                 Debug.Log("CC: " + ability);

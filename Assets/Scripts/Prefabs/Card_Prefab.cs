@@ -56,11 +56,22 @@ public class Card_Prefab : MonoBehaviour
         if (GameObject.Find("GamePlay").GetComponent<GamePlayFight>()._cardsToPlay.CardChoose != null)
         {
             GameObject.Find("GamePlay").GetComponent<GamePlayFight>()._cardsToPlay.CardChoose = dataCard;
-        } 
+        }
+        else if (GameObject.Find("CardInventory").GetComponent<InventoryManager>().cards2play != null)
+        {
+            //InventoryCard_cls inventoryCard = GameObject.Find("CardInventory").GetComponent<InventoryManager>().cards2play;
+         
+            foreach (InventoryCard_cls inventoryCard in GameObject.Find("CardInventory").GetComponent<InventoryManager>().cards2play) {
+                if (inventoryCard.card == dataCard)
+                {
+                    
+                    inventoryCard.isActive = !inventoryCard.isActive;
+                    Debug.Log(inventoryCard.isActive);
+                }
+            }    
+        }
         activeClick = true;
     }
-
-
 }
 
 
