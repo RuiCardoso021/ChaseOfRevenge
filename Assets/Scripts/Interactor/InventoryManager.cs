@@ -35,8 +35,9 @@ public class InventoryManager : MonoBehaviour
         foreach(Card card in deck.cards)
         {
             //generate card
-            cardGameObject.GetComponent<Card_Prefab>().setDataCard(card.mana.ToString(), card.description, card.name, card.src);
             gmTemp = Instantiate(cardGameObject, Vector3.zero, Quaternion.identity);
+            gmTemp.GetComponent<Card_Prefab>().dataCard = card;
+            gmTemp.GetComponent<Card_Prefab>().setDataCard(false);
             gmTemp.transform.parent = content.transform;
 
             cards.Add(gmTemp);

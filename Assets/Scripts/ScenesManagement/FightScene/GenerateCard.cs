@@ -10,9 +10,11 @@ public class GenerateCard : MonoBehaviour
     private GameObject GameObjectFather;
     private GameObject CardPrefab;
     public List<GameObject> CardsOnHand = new List<GameObject>();
+    public Card CardChoose;
 
     public GenerateCard()
     {
+        CardChoose = new Card();
         GameObjectFather = GameObject.Find("CardOnHand");
         CardPrefab = Resources.Load("Card/Card") as GameObject;
     }
@@ -34,8 +36,10 @@ public class GenerateCard : MonoBehaviour
             cardsToGive.Add(random);
 
             //generate card
-            CardPrefab.GetComponent<Card_Prefab>().setDataCard(deck.cards[random].mana.ToString(), deck.cards[random].description, deck.cards[random].name, deck.cards[random].src);
-            CardsOnHand.Add(Instantiate(CardPrefab, new Vector3(x,1,-7), Quaternion.identity, GameObjectFather.transform));
+            CardPrefab.GetComponent<Card_Prefab>().dataCard = deck.cards[random];
+            CardPrefab.GetComponent<Card_Prefab>().setDataCard(true);
+            CardsOnHand.Add(Instantiate(CardPrefab, new Vector3(x, 1, -7), Quaternion.identity, GameObjectFather.transform));
+            
             x+= 0.6f;
         }
     }

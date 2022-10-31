@@ -14,9 +14,12 @@ public class Card
     public int mana;
     public string src;
 
+    public bool IsEmpty()
+    {
+        bool value = false;
+        if (id == null || type == null || name == null || number_effects == null || ability == null || description == null || mana == null || src == null) value = true;
+
+        return value;
+    }
 }
 
-public class ListCard
-{
-    public List<Card> Deck;
-}
