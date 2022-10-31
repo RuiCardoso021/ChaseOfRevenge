@@ -28,7 +28,7 @@
         {
             "id": 2,
             "type": "UN",
-            "name": "yolo",
+            "name": "Yolo",
             "number_effects": 1,
             "ability": 
             [
@@ -46,7 +46,7 @@
         {
             "id": 3,
             "type": "UN",
-            "name": "stealer",
+            "name": "Stealer",
             "number_effects": 2,
             "ability": 
             [
@@ -147,8 +147,8 @@
         },
          {
             "id": 8,
-            "type": "Apologize",
-            "name": "Weaklink",
+            "type": "UN",
+            "name": "Apologize",
             "number_effects": 1,
             "ability": 
             [
@@ -202,7 +202,7 @@
         {
             "id": 11,
             "type": "ARCH",
-            "name": "dup",
+            "name": "Dup",
             "number_effects": 1,
             "ability": 
             [
@@ -256,7 +256,7 @@
 
           {
             "id": 14,
-            "type": "Sorceress",
+            "type": "SORCE",
             "name": "FireAoe",
             "number_effects": 1,
             "ability": 
@@ -274,8 +274,8 @@
         },
         {
             "id": 15,
-            "type": "Sorceress",
-            "name": "plusone",
+            "type": "SORCE",
+            "name": "Plusone",
             "number_effects": 1,
             "ability": 
             [
@@ -292,7 +292,7 @@
         },
         {
             "id": 16,
-            "type": "Sorceress",
+            "type": "SORCE",
             "name": "Freeze",
             "number_effects": 1,
             "ability": 
@@ -310,7 +310,7 @@
         },
          {
             "id": 17,
-            "type": "Sorceress",
+            "type": "SORCE",
             "name": "Corrupt",
             "number_effects": 1,
             "ability": 
@@ -328,7 +328,7 @@
         },
          {
             "id": 18,
-            "type": "Sorceress",
+            "type": "SORCE",
             "name": "Shield",
             "number_effects": 1,
             "ability": 
@@ -346,7 +346,7 @@
         },
          {
             "id": 19,
-            "type": "War",
+            "type": "WAR",
             "name": "Slash",
             "number_effects": 1,
             "ability": 
@@ -364,8 +364,8 @@
         },
          {
             "id": 20,
-            "type": "War",
-            "name": "getfive",
+            "type": "WAR",
+            "name": "Getfive",
             "number_effects": 1,
             "ability": 
             [
@@ -382,7 +382,7 @@
         },
          {
             "id": 21,
-            "type": "War",
+            "type": "WAR",
             "name": "Onetoall",
             "number_effects": 1,
             "ability": 
@@ -400,7 +400,7 @@
         },
          {
             "id": 22,
-            "type": "War",
+            "type": "WAR",
             "name": "healme",
             "number_effects": 1,
             "ability": 
@@ -418,8 +418,8 @@
         },
            {
             "id": 23,
-            "type": "War",
-            "name": "getfivenow",
+            "type": "WAR",
+            "name": "Getfivenow",
             "number_effects": 1,
             "ability": 
             [
@@ -436,7 +436,7 @@
         },
            {
             "id": 24,
-            "type": "War",
+            "type": "WAR",
             "name": "Maxcoil",
             "number_effects": 2,
             "ability": 
@@ -460,8 +460,8 @@
        }, 
           {
             "id": 25,
-            "type": "War",
-            "name": "priest",
+            "type": "WAR",
+            "name": "Priest",
             "number_effects": 1,
             "ability": 
             [
@@ -478,8 +478,8 @@
         },
           {
             "id": 26,
-            "type": "War",
-            "name": "light",
+            "type": "WAR",
+            "name": "Light",
             "number_effects": 1,
             "ability": 
             [
@@ -496,8 +496,8 @@
         },
         {
             "id": 27,
-            "type": "Warr",
-            "name": "killemall",
+            "type": "WAR",
+            "name": "Killemall",
             "number_effects": 1,
             "ability": 
             [
