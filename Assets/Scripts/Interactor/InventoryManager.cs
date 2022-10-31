@@ -10,7 +10,8 @@ public class InventoryManager : MonoBehaviour
     private Deck deck;
     public TextAsset jsonFile;
 
-    public List<GameObject> cards = new List<GameObject>();
+    public List<GameObject> allCards = new List<GameObject>();
+    public List<InventoryCard_cls> cards2play = new List<InventoryCard_cls>();
     public GameObject cardGameObject;
 
     private GameObject _player;
@@ -20,6 +21,7 @@ public class InventoryManager : MonoBehaviour
         _player = GameObject.Find("Character_Player");
         deck = _player.GetComponent<Character_cls>().myDeck;
 
+        FirstInventory();
         getCardsToInventory();
     }
 
@@ -32,15 +34,42 @@ public class InventoryManager : MonoBehaviour
     {
         GameObject gmTemp;
 
-        foreach(Card card in deck.cards)
+        foreach(InventoryCard_cls card in cards2play)
         {
             //generate card
             gmTemp = Instantiate(cardGameObject, Vector3.zero, Quaternion.identity);
-            gmTemp.GetComponent<Card_Prefab>().dataCard = card;
+            gmTemp.GetComponent<Card_Prefab>().dataCard = card.card;
             gmTemp.GetComponent<Card_Prefab>().setDataCard(false);
             gmTemp.transform.parent = content.transform;
 
-            cards.Add(gmTemp);
+            allCards.Add(gmTemp);
         }
+    }
+
+    private void FirstInventory()
+    {
+        foreach (Card card in deck.cards)
+        {
+            InventoryCard_cls tempCard = new InventoryCard_cls(card, true);
+
+            cards2play.Add(tempCard);
+        }
+    }
+
+    private bool CheckIfActive()
+    {
+        bool permission = false;
+        int count = 0;
+
+        foreach (InventoryCard_cls card in cards2play)
+        {
+            if (card.isActive)
+                count++;
+        }
+
+        if (count == 15)
+            permission = true;
+
+        return permission;
     }
 }
