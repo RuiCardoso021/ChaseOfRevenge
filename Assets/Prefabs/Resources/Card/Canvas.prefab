@@ -110,7 +110,7 @@ RectTransform:
   m_GameObject: {fileID: 287939272434314505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7179652820902143774}
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8152518061021064098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,17 +199,21 @@ MonoBehaviour:
   _textDescription: {fileID: 666900307461562927}
   _textName: {fileID: 3876118531215547790}
   _image: {fileID: 6918395000263778323}
-  activeExpand: 0
+  activeExpand: 1
   activeClick: 0
   dataCard:
-    id: 0
-    type: 
-    name: 
-    number_effects: 0
-    ability: []
-    description: 
-    mana: 0
-    src: 
+    id: 9
+    type: UN
+    name: King Kongor
+    number_effects: 1
+    ability:
+    - tag: Attack
+      value: 5
+      effect_quantity: 1
+      type_effect: Other
+    description: Deal 5 damage to first enemy
+    mana: 3
+    src: id_9
 --- !u!61 &8495175039439427015
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -379,7 +383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Card name
+  m_text: King Kongor
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 8b29aaa3eec7468097ff07adfcf29ac9, type: 2}
@@ -822,7 +826,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Descri\xE7\xE3o"
+  m_text: Deal 5 damage to first enemy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 8b29aaa3eec7468097ff07adfcf29ac9, type: 2}
@@ -1034,7 +1038,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: mana
+  m_text: 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 8b29aaa3eec7468097ff07adfcf29ac9, type: 2}
@@ -1136,10 +1140,10 @@ RectTransform:
   m_Father: {fileID: 6568438184443141437}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3487054744398307936
 CanvasRenderer:

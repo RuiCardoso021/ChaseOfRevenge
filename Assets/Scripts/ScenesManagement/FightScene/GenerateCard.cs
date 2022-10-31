@@ -39,7 +39,7 @@ public class GenerateCard : MonoBehaviour
             CardPrefab.GetComponent<Card_Prefab>().dataCard = deck.cards[random];
             CardPrefab.GetComponent<Card_Prefab>().setDataCard(true);
             CardPrefab.transform.localScale = new Vector3(0.025f, 0.025f, 0.025f);
-            CardsOnHand.Add(Instantiate(CardPrefab, new Vector3(x, 1, -7), Quaternion.identity, GameObjectFather.transform));
+            CardsOnHand.Add(Instantiate(CardPrefab, new Vector3(x, 1.5f, -8.5f), Quaternion.identity, GameObjectFather.transform));
             
             x+= 0.85f;
         }
