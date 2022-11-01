@@ -20,6 +20,7 @@ public class GamePlayFight : MonoBehaviour
     private int manaRound;
 
     public GameObject panelWin;
+    public GameObject panelLose;
 
     public void Start()
     {
@@ -136,7 +137,7 @@ public class GamePlayFight : MonoBehaviour
         // painel de vitoria/derrota
         if (player.Health <= 0)
         {
-            // reset na FinalMap scene
+            // reset fight ou voltar ao mapa
             LoseFight();
 
         }
@@ -147,7 +148,12 @@ public class GamePlayFight : MonoBehaviour
         }
     }
 
-    private void LoseFight() 
+    private void LoseFight()
+    {
+        panelLose.SetActive(true);
+    }
+    
+    public void RestartFight() 
     {
         bool gameHasEnded = false;
         float restartDelay = 1f;
@@ -156,13 +162,13 @@ public class GamePlayFight : MonoBehaviour
         {
             gameHasEnded = true;
             Debug.Log("GameOver!");
-            Invoke("Restart", restartDelay);
+            Invoke("RestartFightScene", restartDelay);
         }
     }
 
-    private void Restart()
+    private void RestartFightScene()
     {
-        SceneManager.LoadScene("FinalMap");
+        SceneManager.LoadScene("FightScene");
     }
 
     private void WinFight()
