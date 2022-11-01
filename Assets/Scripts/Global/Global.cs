@@ -13,10 +13,11 @@ public class Global
     public string playerArcherName = "Flora Raven";
     public string linkToFlora = "Character_Player/Flora Raven";
 
-    // tipos de personagem
+    // tipos de carta de personagem
     public string magePlayerType = "SORCE";
     public string warriorPlayerType = "WAR";
     public string archerPlayerType = "ARCH";
+    public string neutralCard = "UN";
 
     // recetor do efeito da carta
     public string cardAffectsPlayer = "Me";
@@ -33,7 +34,6 @@ public class Global
     public string healthBar = "FightSceneComponents/HealthBar";
 
     // tipos de cartas
-    public string neutralCard = "UN";
     public string attackCard = "Attack";
     public string damageCard = "Damage";
     public string healCard = "Heal";
