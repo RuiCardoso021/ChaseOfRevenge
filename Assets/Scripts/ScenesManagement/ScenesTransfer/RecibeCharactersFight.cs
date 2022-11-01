@@ -30,6 +30,8 @@ public class RecibeCharactersFight: RecibeGameObject
 
                     HealthBar[i].GetComponent<HealthBar_Prefab>().MaxLife = SpawnerList[i].GetComponent<Character_cls>().Health;
                 }
+
+
             }
             
         }

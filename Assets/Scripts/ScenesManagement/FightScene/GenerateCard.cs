@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEditor.Progress;
 
 public class GenerateCard : MonoBehaviour
 {
@@ -45,11 +46,30 @@ public class GenerateCard : MonoBehaviour
         }
     }
 
-    private void DestroyAllInstanceCards(){
+    public void DestroyAllInstanceCards(){
         foreach (var item in CardsOnHand)
         {
-            Destroy(item);            
+            if (item.GetComponent<Card_Prefab>() != null)
+                Destroy(item);            
         }
+        CardsOnHand = new List<GameObject>();
+    }
+
+    public void DestoyThisCard()
+    {
+        foreach (var item in CardsOnHand)
+        {
+            if (item.GetComponent<Card_Prefab>() != null)
+            {
+                if (CardChoose == item.GetComponent<Card_Prefab>().dataCard)
+                {
+                    Destroy(item);
+                    CardsOnHand.Remove(item);
+                }
+            }
+            
+        }
+
     }
 
 

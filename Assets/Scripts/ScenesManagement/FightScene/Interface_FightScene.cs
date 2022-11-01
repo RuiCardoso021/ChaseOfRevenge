@@ -9,14 +9,26 @@ public class Interface_FightScene : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private Camera _mainCam;
     [SerializeField] private GameObject _uiPanel;
+    [SerializeField] private TextMeshProUGUI _textName;
+    [SerializeField] private TextMeshProUGUI _textMana;
+    [SerializeField] private TextMeshProUGUI _textHealth;
 
     private void Start()
     {
         
     }
 
-    private void LateUpdate()
+    private void Update()
     {
+        
+        if (RecibeCharactersFight.Instance.SpawnerList[0]!= null)
+        {
+            Character_cls player = RecibeCharactersFight.Instance.SpawnerList[0].GetComponent<Character_cls>();
+            _textHealth.text = "Health: " + player.Health.ToString();
+            _textMana.text = "Mana: " + player.Mana.ToString();
+            _textName.text = player.Name.ToString();
+        }
+
         if (_mainCam != null)
         {
             var rotation = _mainCam.transform.rotation;

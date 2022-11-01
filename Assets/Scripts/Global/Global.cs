@@ -33,7 +33,7 @@ public class Global
     public string healthBar = "FightSceneComponents/HealthBar";
 
     // tipos de cartas
-    public string neutralCard = "UN";
+    public string UniversalCard = "UN";
     public string attackCard = "Attack";
     public string damageCard = "Damage";
     public string healCard = "Heal";
