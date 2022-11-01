@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class GamePlayFight : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class GamePlayFight : MonoBehaviour
     private Character_cls player;
     private Character_cls enemy;
     private int manaRound;
+
+    public GameObject panelWin;
 
     public void Start()
     {
@@ -109,7 +112,7 @@ public class GamePlayFight : MonoBehaviour
                 _turn.myTurn = !_turn.myTurn;
             }
         }
-        
+        FightOutcome();
     }
 
     private void generateCards()
@@ -128,6 +131,50 @@ public class GamePlayFight : MonoBehaviour
         }
     }
 
+    private void FightOutcome()
+    {
+        // painel de vitoria/derrota
+        if (player.Health <= 0)
+        {
+            // reset na FinalMap scene
+            LoseFight();
+
+        }
+        else if (enemy.Health <= 0)
+        {
+            // aparecer painel de vitoria
+            WinFight();
+        }
+    }
+
+    private void LoseFight() 
+    {
+        bool gameHasEnded = false;
+        float restartDelay = 1f;
+
+        if (gameHasEnded == false)
+        {
+            gameHasEnded = true;
+            Debug.Log("GameOver!");
+            Invoke("Restart", restartDelay);
+        }
+    }
+
+    private void Restart()
+    {
+        SceneManager.LoadScene("FinalMap");
+    }
+
+    private void WinFight()
+    {
+        panelWin.SetActive(true);
+    }
+
+    public void BackToSceneAfterWin()
+    {
+        SceneManager.LoadScene("FinalMap");
+        enemy.gameObject.SetActive(false);
+    }
 }
 
 

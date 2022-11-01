@@ -26,7 +26,7 @@ public class Interface_FightScene : MonoBehaviour
             Character_cls player = RecibeCharactersFight.Instance.SpawnerList[0].GetComponent<Character_cls>();
             _textHealth.text = "Health: " + player.Health.ToString();
             _textMana.text = "Mana: " + player.Mana.ToString();
-            _textName.text = player.Name.ToString();
+            _textName.text = player.Name.ToString();          
         }
 
         if (_mainCam != null)

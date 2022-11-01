@@ -27,7 +27,7 @@ public class Character_cls : MonoBehaviour
 
         foreach (Card card in deck.cards)
         {
-            if (card.type == ClassType || card.type == global.neutralCard)
+            if (card.type == ClassType || card.type == global.universalCard)
             {
                 inventoryCards.Add(card);
             }
