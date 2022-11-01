@@ -16,6 +16,8 @@ public class Card_Prefab : MonoBehaviour
     public bool activeClick;
     public Card dataCard;
 
+    private Global global = new Global();
+
     public void setDataCard(bool _activeExpand)
     {
         activeClick = false;
@@ -23,7 +25,7 @@ public class Card_Prefab : MonoBehaviour
         _textMana.text = dataCard.mana.ToString();
         _textDescription.text = dataCard.description;
         _textName.text = dataCard.name;
-        _image.sprite = Resources.Load<Sprite>("imagesCards/" + dataCard.src);
+        _image.sprite = Resources.Load<Sprite>(global.cardImage + dataCard.src);
     }
 
     public void setDataCardStatic(TextMeshProUGUI mana, TextMeshProUGUI description, TextMeshProUGUI name, Image imageID){
@@ -53,15 +55,15 @@ public class Card_Prefab : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (GameObject.Find("GamePlay").GetComponent<GamePlayFight>()._cardsToPlay.CardChoose != null)
+        if (GameObject.Find(global.gameplayObject).GetComponent<GamePlayFight>()._cardsToPlay.CardChoose != null)
         {
-            GameObject.Find("GamePlay").GetComponent<GamePlayFight>()._cardsToPlay.CardChoose = dataCard;
+            GameObject.Find(global.gameplayObject).GetComponent<GamePlayFight>()._cardsToPlay.CardChoose = dataCard;
         }
-        else if (GameObject.Find("CardInventory").GetComponent<InventoryManager>().cards2play != null)
+        else if (GameObject.Find(global.cardInventoryObject).GetComponent<InventoryManager>().cards2play != null)
         {
             //InventoryCard_cls inventoryCard = GameObject.Find("CardInventory").GetComponent<InventoryManager>().cards2play;
          
-            foreach (InventoryCard_cls inventoryCard in GameObject.Find("CardInventory").GetComponent<InventoryManager>().cards2play) {
+            foreach (InventoryCard_cls inventoryCard in GameObject.Find(global.cardInventoryObject).GetComponent<InventoryManager>().cards2play) {
                 if (inventoryCard.card == dataCard)
                 {
                     

@@ -9,14 +9,15 @@ public class Global
     public string playerMageName = "Magus Raven";
     public string linkToMagus = "Character_Player/Magus Raven";
     public string playerWarriorName = "Miles Raven";
-    public string linkToMiles = "Character_Player / Miles Raven";
+    public string linkToMiles = "Character_Player/Miles Raven";
     public string playerArcherName = "Flora Raven";
     public string linkToFlora = "Character_Player/Flora Raven";
 
-    // tipos de personagem
+    // tipos de carta de personagem
     public string magePlayerType = "SORCE";
     public string warriorPlayerType = "WAR";
     public string archerPlayerType = "ARCH";
+    public string universalCard = "UN";
 
     // recetor do efeito da carta
     public string cardAffectsPlayer = "Me";
@@ -33,7 +34,6 @@ public class Global
     public string healthBar = "FightSceneComponents/HealthBar";
 
     // tipos de cartas
-    public string UniversalCard = "UN";
     public string attackCard = "Attack";
     public string damageCard = "Damage";
     public string healCard = "Heal";
