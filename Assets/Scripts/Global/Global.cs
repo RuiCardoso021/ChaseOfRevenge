@@ -9,7 +9,7 @@ public class Global
     public string playerMageName = "Magus Raven";
     public string linkToMagus = "Character_Player/Magus Raven";
     public string playerWarriorName = "Miles Raven";
-    public string linkToMiles = "Character_Player / Miles Raven";
+    public string linkToMiles = "Character_Player/Miles Raven";
     public string playerArcherName = "Flora Raven";
     public string linkToFlora = "Character_Player/Flora Raven";
 

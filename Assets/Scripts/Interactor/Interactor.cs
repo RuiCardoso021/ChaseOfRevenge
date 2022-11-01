@@ -16,6 +16,8 @@ public class Interactor : MonoBehaviour
 
     private IInteractable _interactable;
 
+    private Global global = new Global();
+
     private void Update() {
         _numFound = Physics.OverlapSphereNonAlloc(_interactionPoint.position, _interactionPointRadius, _colliders, _interactionMask);
 
@@ -30,7 +32,7 @@ public class Interactor : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E)){
                     GameObjectTransfer.Instance.LoadedCharacter.Add(_player);
                     GameObject tempEnemy = _interactable.InteractionGameObject;
-                    tempEnemy.name = "Enemy";
+                    tempEnemy.name = global.findEnemy;
                     GameObjectTransfer.Instance.LoadedCharacter.Add(tempEnemy);
                     GameObjectTransfer.Instance.LoadNextScene();
                 }

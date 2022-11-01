@@ -12,11 +12,12 @@ public class GenerateCard : MonoBehaviour
     public List<GameObject> CardsOnHand = new List<GameObject>();
     public Card CardChoose;
 
+    private Global global = new Global();
     public GenerateCard()
     {
         CardChoose = new Card();
-        GameObjectFather = GameObject.Find("CardOnHand");
-        CardPrefab = Resources.Load("Card/Canvas") as GameObject;
+        GameObjectFather = GameObject.Find(global.cardOnHand);
+        CardPrefab = Resources.Load(global.cardPrefab) as GameObject;
     }
 
     public void InstanceCardsToPlay(Deck deck){

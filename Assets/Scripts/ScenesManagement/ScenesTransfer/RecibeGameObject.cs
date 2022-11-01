@@ -14,9 +14,12 @@ public class RecibeGameObject : MonoBehaviour
     [HideInInspector] public GameObject ObjectPrefab;
     [HideInInspector] public GameObject SpawnedObject;
     [HideInInspector] public int indexCounter;
+
+    private Global global;
     
     private void Start()
     {
+        global = new Global();
         Inicialization();
     }
 
@@ -28,8 +31,8 @@ public class RecibeGameObject : MonoBehaviour
 
     public void Inicialization()
     {
-        _player = GameObject.Find("Character_Player");
-        ObjectPrefab = GameObject.Find("receivedObject");
+        _player = GameObject.Find(global.findPlayer);
+        ObjectPrefab = GameObject.Find(global.playerPrefab);
         indexCounter = ObjectPrefab.transform.childCount;
         SpawnerList = new GameObject[indexCounter];
         ObjectPrefab.SetActive(false);
@@ -45,9 +48,9 @@ public class RecibeGameObject : MonoBehaviour
 
                 SpawnedObject = Instantiate(getCharacterPrefab(child), spawnPoint[i].transform.position, Quaternion.identity);
 
-                if (SpawnedObject.GetComponent<Character_cls>().ClassType != "Enemy")
+                if (SpawnedObject.GetComponent<Character_cls>().ClassType != global.findEnemy)
                 {
-                    SpawnedObject.name = "Character_Player";
+                    SpawnedObject.name = global.findPlayer;
                     SpawnedObject.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
                     SpawnedObject.GetComponent<Character_cls>().myDeck = _player.GetComponent<Character_cls>().myDeck;
                 }
@@ -66,14 +69,14 @@ public class RecibeGameObject : MonoBehaviour
 
         switch (classType)
         {
-            case "Magus Raven":
-                gm = Resources.Load("Character_Player/Magus Raven") as GameObject;
+            case var value when value == global.playerMageName:
+                gm = Resources.Load(global.linkToMagus) as GameObject;
                 break;
-            case "Miles Raven":
-                gm = Resources.Load("Character_Player/Miles Raven") as GameObject;
+            case var value when value == global.playerWarriorName:
+                gm = Resources.Load(global.linkToMiles) as GameObject;
                 break;
-            case "Flora Raven":
-                gm = Resources.Load("Character_Player/Flora Raven") as GameObject;
+            case var value when value == global.playerArcherName:
+                gm = Resources.Load(global.linkToFlora) as GameObject;
                 break;
         }
 

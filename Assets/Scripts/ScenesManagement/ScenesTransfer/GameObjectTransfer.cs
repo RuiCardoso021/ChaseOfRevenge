@@ -10,15 +10,18 @@ public class GameObjectTransfer : MonoBehaviour
     private bool premission;
     [SerializeField] private string _nextSceneName = "TransferTestScene";
 
+    private Global global;
+
 
     private void Start() {
+        global = new Global();
         Instance = this;
         premission = true;
     }
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.V) && premission){
-            LoadedCharacter.Add(GameObject.Find("Character_Player"));
+            LoadedCharacter.Add(GameObject.Find(global.findPlayer));
             LoadNextScene();
             premission = false;
         }
@@ -39,7 +42,7 @@ public class GameObjectTransfer : MonoBehaviour
     public void LoadNextScene()
     {
         GameObject gameObjectToSend = new GameObject();
-        gameObjectToSend.name = "receivedObject";
+        gameObjectToSend.name = global.playerPrefab;
  
         foreach (GameObject character in LoadedCharacter)
             if(character != null)

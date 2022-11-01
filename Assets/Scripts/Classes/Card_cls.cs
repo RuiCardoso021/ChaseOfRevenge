@@ -17,8 +17,8 @@ public class Card
     public bool IsEmpty()
     {
         bool value = false;
-        if (id == null || type == null || name == null || number_effects == null 
-            || ability == null || description == null || mana == null || src == null) value = true;
+        if (type == null || name == null
+            || ability == null || description == null || src == null) value = true;
 
         return value;
     }
