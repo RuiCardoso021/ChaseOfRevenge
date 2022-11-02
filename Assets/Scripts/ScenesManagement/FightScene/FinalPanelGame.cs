@@ -66,9 +66,9 @@ public class FinalPanelGame : MonoBehaviour
         }
     }
 
-    private void RestartFightScene()
+    public void RestartFightScene()
     {
-        SceneManager.LoadScene("FightScene");
+        GameObjectTransfer.Instance.ReloadScene();
     }
 
     private void WinFight()

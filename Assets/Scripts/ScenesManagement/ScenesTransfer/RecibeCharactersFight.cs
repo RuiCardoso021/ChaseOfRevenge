@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class RecibeCharactersFight: RecibeGameObject
 {
-    public static RecibeCharactersFight Instance;
     public GameObject[] HealthBar;
 
 

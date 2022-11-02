@@ -52,5 +52,14 @@ public class GameObjectTransfer : MonoBehaviour
         StartCoroutine(LoadSceneWithGameObject(gameObjectToSend));
     }
 
+    public void ReloadScene()
+    {
+        if (RecibeGameObject.Instance.ObjectPrefab != null)
+        {
+            _nextSceneName = "FightScene";
+            StartCoroutine(LoadSceneWithGameObject(RecibeGameObject.Instance.ObjectPrefab));
+        }
+    }
+
 
 }

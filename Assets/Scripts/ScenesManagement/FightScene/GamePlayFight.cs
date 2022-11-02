@@ -121,7 +121,8 @@ public class GamePlayFight : MonoBehaviour
         else
         {
             player.Mana = 4;
-            player.Health -= 2;
+
+            player.Health -= Random.Range(1, 7);
             if (_cardsToPlay.CardsOnHand.Count > 0)
             {
                 _cardsToPlay.DestroyAllInstanceCards();

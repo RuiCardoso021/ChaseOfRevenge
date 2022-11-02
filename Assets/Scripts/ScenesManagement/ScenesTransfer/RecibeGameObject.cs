@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 
 public class RecibeGameObject : MonoBehaviour
 {
+    public static RecibeCharactersFight Instance;
     private GameObject _player;
     public GameObject[] spawnPoint;
     public bool activeMovimentPlayer = false;

@@ -1951,7 +1951,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1122245178}
         m_TargetAssemblyTypeName: FinalPanelGame, Assembly-CSharp
-        m_MethodName: RestartFight
+        m_MethodName: RestartFightScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
