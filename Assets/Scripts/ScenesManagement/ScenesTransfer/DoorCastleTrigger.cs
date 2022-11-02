@@ -11,7 +11,8 @@ public class DoorCastleTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene("FinalMap");
+            GameObjectTransfer.Instance.LoadedCharacter.Add(GameObject.Find(Global.findPlayer));
+            GameObjectTransfer.Instance.LoadNextScene();
         }
     }
 }

@@ -13,13 +13,11 @@ public class Character_cls : MonoBehaviour
     public float Health;
     public Deck myDeck;
 
-    private Global global;
 
     [SerializeField]private TextAsset jsonFile;
 
     private void Start()
     {
-        global = new Global();
         myDeck = new Deck();
         Deck deck = new Deck();     
         deck = JsonUtility.FromJson<Deck>(jsonFile.text);
@@ -27,7 +25,7 @@ public class Character_cls : MonoBehaviour
 
         foreach (Card card in deck.cards)
         {
-            if (card.type == ClassType || card.type == global.universalCard)
+            if (card.type == ClassType || card.type == Global.universalCard)
             {
                 inventoryCards.Add(card);
             }

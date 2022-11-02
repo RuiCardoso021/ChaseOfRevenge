@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class GamePlayFight : MonoBehaviour
 {
 
-    private Global Global;
     private FightSceneInterface _turn;
     private Deck _deck;
     public GenerateCard _cardsToPlay ;
@@ -18,13 +17,11 @@ public class GamePlayFight : MonoBehaviour
     private Character_cls player;
     private Character_cls enemy;
     private int manaRound;
-
-    public GameObject panelWin;
-    public GameObject panelLose;
+    private FinalPanelGame uiFinalPanel;
 
     public void Start()
     {
-        Global = new Global();
+        uiFinalPanel = GetComponent<FinalPanelGame>();
         indexCharacters = 0;
         validate = false;
         _turn = GetComponent<FightSceneInterface>();
@@ -44,6 +41,7 @@ public class GamePlayFight : MonoBehaviour
             enemy = RecibeCharactersFight.Instance.SpawnerList[1].GetComponent<Character_cls>();
             player = RecibeCharactersFight.Instance.SpawnerList[0].GetComponent<Character_cls>();
             manaRound = 4;
+            uiFinalPanel.FightOutcome();
         }
 
         if (_turn.myTurn)
@@ -61,6 +59,7 @@ public class GamePlayFight : MonoBehaviour
             {
                 if (player.Mana >= cardChose.mana)
                 {
+                    bool activeDestroyThisCard = true;
                     int countAbility = cardChose.ability.Length;
                     for (int i = 0; i < countAbility; i++)
                     {
@@ -68,13 +67,12 @@ public class GamePlayFight : MonoBehaviour
 
                         switch (ability.tag)
                         {
-                            case var value when value == Global.attackCard:
-                                Debug.Log("Attack");
-                                enemy.Health -= ability.value;
-                                break;
                             case var value when value == Global.damageCard:
-                                player.Health -= ability.value;
                                 Debug.Log("Damage");
+                                if (ability.type_effect == Global.cardAffectsOther)
+                                    enemy.Health -= ability.value;
+                                else if (ability.type_effect == Global.cardAffectsPlayer)
+                                    player.Health -= ability.value;
                                 break;
                             case var value when value == Global.healCard:
                                 if (ability.type_effect == Global.cardAffectsPlayer)
@@ -90,30 +88,47 @@ public class GamePlayFight : MonoBehaviour
                             case var value when value == Global.ccCard:
                                 Debug.Log("CC: " + ability);
                                 break;
+                            case var value when value == Global.ShuffleCard:
+                                Debug.Log("Shuffle: " + ability);
+                                if (ability.effect_quantity == 4)
+                                {
+                                    _cardsToPlay.DestroyAllInstanceCards();
+                                    generateCards();
+                                    activeDestroyThisCard = false;
+                                }else if(ability.effect_quantity == 1)
+                                {
+                                    _cardsToPlay.DestroyThisCardAndGetAnother(player.myDeck);
+                                }
+                                break;
                             default:
                                 Debug.Log("This Ability, don´t exist!");
                                 break;
                         }
                     }
-                    _cardsToPlay.DestoyThisCard();
+
+                    if (activeDestroyThisCard) _cardsToPlay.DestroyThisCard();
+
                     player.Mana -= cardChose.mana;
                 }
 
                 
                 _cardsToPlay.CardChoose = new Card();
+
+                if (player.Mana == 0) _turn.NextTurn();
             }
 
         }
         else
         {
             player.Mana = 4;
+            player.Health -= 2;
             if (_cardsToPlay.CardsOnHand.Count > 0)
             {
                 _cardsToPlay.DestroyAllInstanceCards();
                 _turn.myTurn = !_turn.myTurn;
             }
         }
-        FightOutcome();
+   
     }
 
     private void generateCards()
@@ -130,56 +145,6 @@ public class GamePlayFight : MonoBehaviour
             validate = true;
             
         }
-    }
-
-    private void FightOutcome()
-    {
-        // painel de vitoria/derrota
-        if (player.Health <= 0)
-        {
-            // reset fight ou voltar ao mapa
-            LoseFight();
-
-        }
-        else if (enemy.Health <= 0)
-        {
-            // aparecer painel de vitoria
-            WinFight();
-        }
-    }
-
-    private void LoseFight()
-    {
-        panelLose.SetActive(true);
-    }
-    
-    public void RestartFight() 
-    {
-        bool gameHasEnded = false;
-        float restartDelay = 1f;
-
-        if (gameHasEnded == false)
-        {
-            gameHasEnded = true;
-            Debug.Log("GameOver!");
-            Invoke("RestartFightScene", restartDelay);
-        }
-    }
-
-    private void RestartFightScene()
-    {
-        SceneManager.LoadScene("FightScene");
-    }
-
-    private void WinFight()
-    {
-        panelWin.SetActive(true);
-    }
-
-    public void BackToSceneAfterWin()
-    {
-        SceneManager.LoadScene("FinalMap");
-        enemy.gameObject.SetActive(false);
     }
 }
 

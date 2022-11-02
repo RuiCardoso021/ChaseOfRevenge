@@ -8,11 +8,9 @@ public class RecibeCharactersFight: RecibeGameObject
     public static RecibeCharactersFight Instance;
     public GameObject[] HealthBar;
 
-    private Global global;
 
     private void Start()
     {
-        global = new Global();
         Instance = this;
         Inicialization();
         HealthBar = new GameObject[indexCounter];
@@ -24,7 +22,7 @@ public class RecibeCharactersFight: RecibeGameObject
 
         if (HealthBar[0] == null)
         {
-            GameObject healthBarTemp = Resources.Load(global.healthBar) as GameObject;
+            GameObject healthBarTemp = Resources.Load(Global.healthBar) as GameObject;
         
             if (healthBarTemp != null)
             {

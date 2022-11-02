@@ -17,12 +17,10 @@ public class InventoryManager : MonoBehaviour
 
     private GameObject _player;
 
-    private Global global;
 
     private void Start()
     {
-        global = new Global();
-        _player = GameObject.Find(global.findPlayer);
+        _player = GameObject.Find(Global.findPlayer);
         deck = _player.GetComponent<Character_cls>().myDeck;
 
         FirstInventory();       

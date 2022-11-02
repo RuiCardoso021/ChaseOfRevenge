@@ -9,7 +9,7 @@
             "ability": 
             [
                 { 
-                    "tag": "Attack", 
+                    "tag": "Damage", 
                     "value": 2, 
                     "effect_quantity": 4, 
                     "type_effect": "Other"
@@ -33,7 +33,7 @@
             "ability": 
             [
                 { 
-                    "tag": "Attack", 
+                    "tag": "Damage", 
                     "value": 2, 
                     "effect_quantity": 1, 
                     "type_effect": "Other"
@@ -41,7 +41,7 @@
             ],
             "description": "4 damage to enemy with highest life ",
             "mana":2,
-            "src": "id_2"
+            "src": "id_1"
         },
         {
             "id": 3,
@@ -51,7 +51,7 @@
             "ability": 
             [
                 { 
-                    "tag": "attack", 
+                    "tag": "Damage", 
                     "value": 1, 
                     "effect_quantity": 4, 
                     "type_effect": "Other"
@@ -65,7 +65,7 @@
             ],
             "description": "1 damage to all enemies, heal 1 life per enemy",
             "mana": 2,
-            "src": "id_3"
+            "src": "id_1"
        }, 
          {
             "id": 4,
@@ -75,15 +75,15 @@
             "ability": 
             [
                 { 
-                    "tag": "Buff", 
-                    "value": 4, 
-                    "effect_quantity": 0, 
+                    "tag": "Shuffle", 
+                    "value": 0, 
+                    "effect_quantity": 4, 
                     "type_effect": "Card"
                 }
             ],
             "description": "Shuffle your cards to deck and get 4 new cards",
             "mana": 3,
-            "src": "id_4"
+            "src": "id_1"
         },
         {
             "id": 5,
@@ -93,13 +93,13 @@
             "ability": 
             [
                 { 
-                    "tag": "Shuffle", 
-                    "value": -2, 
-                    "effect_quantity": 0, 
+                    "tag": "Buff_Mana", 
+                    "value": 0, 
+                    "effect_quantity": 1, 
                     "type_effect": "Card"
                 }
             ],
-            "description": "Next to cards does not cost mana",
+            "description": "Next card does not cost mana",
             "mana": 3,
             "src": "id_5"
         },
@@ -111,21 +111,21 @@
             "ability": 
             [
                 { 
-                    "tag": "Attack", 
+                    "tag": "Damage", 
                     "value": 1, 
                     "effect_quantity": 2, 
                     "type_effect": "Other"
                 },
                 { 
                     "tag": "Shuffle", 
-                    "value": -2, 
-                    "effect_quantity": 0, 
+                    "value": 0, 
+                    "effect_quantity": 1, 
                     "type_effect": "Card"
                 }
             ],
             "description": "1 damage 2 enemies, get 1 card from deck",
             "mana": 3,
-            "src": "id_6"
+            "src": "id_1"
        }, 
        {
             "id": 7,
@@ -135,7 +135,7 @@
             "ability": 
             [
                 { 
-                    "tag": "Attack", 
+                    "tag": "Damage", 
                     "value": 2, 
                     "effect_quantity": 1, 
                     "type_effect": "Other"
@@ -143,7 +143,7 @@
             ],
             "description": "Deal 1 damage to an enemy or kill the weaker",
             "mana":2,
-            "src": "id_7"
+            "src": "id_1"
         },
          {
             "id": 8,
@@ -153,7 +153,7 @@
             "ability": 
             [
                 { 
-                    "tag": "Attack", 
+                    "tag": "Damage", 
                     "value": 3, 
                     "effect_quantity": 1, 
                     "type_effect": "Other"
@@ -161,7 +161,7 @@
             ],
             "description": "Deal 3 damage to a random enemy",
             "mana":3,
-            "src": "id_8"
+            "src": "id_1"
         },
         {
             "id": 9,
@@ -171,7 +171,7 @@
             "ability": 
             [
                 { 
-                    "tag": "Attack", 
+                    "tag": "Damage", 
                     "value": 5, 
                     "effect_quantity": 1, 
                     "type_effect": "Other"
@@ -179,7 +179,7 @@
             ],
             "description": "Deal 5 damage to first enemy",
             "mana":3,
-            "src": "id_9"
+            "src": "id_1"
         },
         {
             "id": 10,
@@ -189,7 +189,7 @@
             "ability": 
             [
                 { 
-                    "tag": "Attack", 
+                    "tag": "Damage", 
                     "value": 2, 
                     "effect_quantity": 1, 
                     "type_effect": "Other"
@@ -197,7 +197,7 @@
             ],
             "description": "Deal 2 damage to first enemy",
             "mana":1,
-            "src": "id_10"
+            "src": "id_1"
         },
         {
             "id": 11,
@@ -207,7 +207,7 @@
             "ability": 
             [
                 { 
-                    "tag": "Attack", 
+                    "tag": "Damage", 
                     "value": 2, 
                     "effect_quantity": 1, 
                     "type_effect": "Other"
@@ -215,7 +215,7 @@
             ],
             "description": "2 damage to a random enemy ",
             "mana":1,
-            "src": "id_11"
+            "src": "id_1"
         },
         {
             "id": 12,
@@ -262,7 +262,7 @@
             "ability": 
             [
                 { 
-                    "tag": "Attack", 
+                    "tag": "Damage", 
                     "value": 1, 
                     "effect_quantity": 4, 
                     "type_effect": "Other"
@@ -270,7 +270,7 @@
             ],
             "description": "1 damage to all enemies",
             "mana":1,
-            "src": "id_14"
+            "src": "id_1"
         },
         {
             "id": 15,
@@ -316,7 +316,7 @@
             "ability": 
             [
                 { 
-                    "tag": "Attack", 
+                    "tag": "Damage", 
                     "value": 3, 
                     "effect_quantity": 1, 
                     "type_effect": "Other"
@@ -324,7 +324,7 @@
             ],
             "description": "3 damage to a random enemy ",
             "mana":2,
-            "src": "id_17"
+            "src": "id_1"
         },
          {
             "id": 18,
@@ -352,7 +352,7 @@
             "ability": 
             [
                 { 
-                    "tag": "Attack", 
+                    "tag": "Damage", 
                     "value": 2, 
                     "effect_quantity": 1, 
                     "type_effect": "Other"
@@ -360,7 +360,7 @@
             ],
             "description": "2 damage to a random enemy ",
             "mana":1,
-            "src": "id_19"
+            "src": "id_1"
         },
          {
             "id": 20,
@@ -388,7 +388,7 @@
             "ability": 
             [
                 { 
-                    "tag": "Attack", 
+                    "tag": "Damage", 
                     "value": 1, 
                     "effect_quantity": 4, 
                     "type_effect": "Other"
@@ -396,7 +396,7 @@
             ],
             "description": "1 damage to all enemies",
             "mana":1,
-            "src": "id_21"
+            "src": "id_1"
         },
          {
             "id": 22,
@@ -414,7 +414,7 @@
             ],
             "description": "Heal player with 2 life",
             "mana":2,
-            "src": "id_22"
+            "src": "id_1"
         },
            {
             "id": 23,
@@ -442,7 +442,7 @@
             "ability": 
             [
                 { 
-                    "tag": "Attack", 
+                    "tag": "Damage", 
                     "value": 3, 
                     "effect_quantity": 1, 
                     "type_effect": "Other"
@@ -456,7 +456,7 @@
             ],
             "description": "3 damage to a random enemy, heal 1 life",
             "mana": 2,
-            "src": "id_24"
+            "src": "id_1"
        }, 
           {
             "id": 25,
@@ -474,7 +474,7 @@
             ],
             "description": "Heal player with 5 life",
             "mana":3,
-            "src": "id_25"
+            "src": "id_1"
         },
           {
             "id": 26,
@@ -492,7 +492,7 @@
             ],
             "description": "Heal player with 3 life on next turn",
             "mana":3,
-            "src": "id_26"
+            "src": "id_1"
         },
         {
             "id": 27,
@@ -502,7 +502,7 @@
             "ability": 
             [
                 { 
-                    "tag": "Attack", 
+                    "tag": "Damage", 
                     "value": 3, 
                     "effect_quantity": 4, 
                     "type_effect": "Other"
@@ -510,7 +510,7 @@
             ],
             "description": "3 damage to all enemie",
             "mana":3,
-            "src": "id_27"
+            "src": "id_1"
         }
     ]
 }

@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 3309d17f0632bb840b6cfe18df9e2892, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -575,14 +575,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117979798}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: -3}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 3, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &122494979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,8 +1548,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122245177}
-        m_TargetAssemblyTypeName: GamePlayFight, Assembly-CSharp
+      - m_Target: {fileID: 1122245178}
+        m_TargetAssemblyTypeName: FinalPanelGame, Assembly-CSharp
         m_MethodName: BackToSceneAfterWin
         m_Mode: 1
         m_Arguments:
@@ -1949,8 +1949,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122245177}
-        m_TargetAssemblyTypeName: GamePlayFight, Assembly-CSharp
+      - m_Target: {fileID: 1122245178}
+        m_TargetAssemblyTypeName: FinalPanelGame, Assembly-CSharp
         m_MethodName: RestartFight
         m_Mode: 1
         m_Arguments:
@@ -2466,8 +2466,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1122245177}
-        m_TargetAssemblyTypeName: GamePlayFight, Assembly-CSharp
+      - m_Target: {fileID: 1122245178}
+        m_TargetAssemblyTypeName: FinalPanelGame, Assembly-CSharp
         m_MethodName: BackToSceneAfterWin
         m_Mode: 1
         m_Arguments:
@@ -2733,7 +2733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &612890397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4451,6 +4451,8 @@ GameObject:
   - component: {fileID: 1122245174}
   - component: {fileID: 1122245175}
   - component: {fileID: 1122245177}
+  - component: {fileID: 1122245178}
+  - component: {fileID: 1122245179}
   m_Layer: 0
   m_Name: GamePlay
   m_TagString: Untagged
@@ -4535,8 +4537,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cardsToPlay: {fileID: 0}
-  panelWin: {fileID: 1591632191}
-  panelLose: {fileID: 0}
+--- !u!114 &1122245178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122245168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a750699c3a18b74587365b8b3615cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1122245179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122245168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d22254cf6d7fd1b458590186cdeff38a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1134096074
 GameObject:
   m_ObjectHideFlags: 0
@@ -4948,14 +4972,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237763612}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: -3}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -3, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1244994525
 GameObject:
   m_ObjectHideFlags: 0
@@ -6219,7 +6243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1591632192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7979,7 +8003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1916926866
 Transform:
   m_ObjectHideFlags: 0

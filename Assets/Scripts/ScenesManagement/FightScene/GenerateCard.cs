@@ -1,8 +1,7 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using static UnityEditor.Progress;
+using Random = UnityEngine.Random;
 
 public class GenerateCard : MonoBehaviour
 {
@@ -13,12 +12,11 @@ public class GenerateCard : MonoBehaviour
     public List<GameObject> CardsOnHand = new List<GameObject>();
     public Card CardChoose;
 
-    private Global global = new Global();
     public GenerateCard()
     {
         CardChoose = new Card();
-        GameObjectFather = GameObject.Find(global.cardOnHand);
-        CardPrefab = Resources.Load(global.cardPrefab) as GameObject;
+        GameObjectFather = GameObject.Find(Global.cardOnHand);
+        CardPrefab = Resources.Load(Global.cardPrefab) as GameObject;
     }
 
     public void InstanceCardsToPlay(Deck deck){
@@ -56,23 +54,61 @@ public class GenerateCard : MonoBehaviour
         CardsOnHand = new List<GameObject>();
     }
 
-    public void DestoyThisCard()
+    public void DestroyThisCard()
     {
+        List<GameObject> tempListCardsOnHand = new List<GameObject>();
+
         foreach (var item in CardsOnHand)
         {
             if (item.GetComponent<Card_Prefab>() != null)
             {
                 if (CardChoose == item.GetComponent<Card_Prefab>().dataCard)
                 {
-                    Destroy(item);
-                    CardsOnHand.Remove(item);
+                    tempListCardsOnHand.Add(item);
+                    //Destroy(item);
+                    //CardsOnHand.Remove(item);
                 }
             }
             
         }
 
+        foreach (var item in tempListCardsOnHand)
+        {
+            Destroy(item);
+            CardsOnHand.Remove(item);
+        }
+
     }
 
+    public void DestroyThisCardAndGetAnother(Deck deck)
+    {
+        GameObject tempGameObject = FindGameObjWithThisCard(CardChoose);
 
+        if (tempGameObject != null)
+        {
+            DestroyThisCard();
+
+            //indice random
+            int random = Random.Range(0, deck.cards.Length);
+
+            CardPrefab.GetComponent<Card_Prefab>().dataCard = deck.cards[random];
+            CardPrefab.GetComponent<Card_Prefab>().setDataCard(true);
+            CardPrefab.transform.localScale = tempGameObject.transform.localScale;
+            CardsOnHand.Add(Instantiate(CardPrefab, tempGameObject.transform.position, Quaternion.identity, GameObjectFather.transform));
+        }
+        
+    }
+
+    private GameObject FindGameObjWithThisCard(Card card)
+    {
+        GameObject TempCard = new GameObject();
+        foreach (var item in CardsOnHand)
+        {
+            if (item.GetComponent<Card_Prefab>().dataCard == card)
+                TempCard = item;
+        }
+
+        return TempCard;
+    }
 
 }

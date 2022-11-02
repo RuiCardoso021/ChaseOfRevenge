@@ -8,12 +8,10 @@ public class CharacterSelection : MonoBehaviour
 
 	private int index;
 
-	private Global global;
 
     private void Start()
     {
-		global = new Global();
-		index = PlayerPrefs.GetInt(global.characterChosen);
+		index = PlayerPrefs.GetInt(Global.characterChosen);
 		characters = new GameObject[transform.childCount];
 		
 		//Add GameObjects for to list
@@ -54,7 +52,7 @@ public class CharacterSelection : MonoBehaviour
 
 	public void ChangeScene()
     {
-        characters[index].name = global.findPlayer;
+        characters[index].name = Global.findPlayer;
 		GameObjectTransfer.Instance.LoadedCharacter.Add(characters[index]);
 		GameObjectTransfer.Instance.LoadNextScene();
     }
