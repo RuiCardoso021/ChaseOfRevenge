@@ -5,6 +5,8 @@ using System;
 
 public static class Global 
 {
+    public static string dataTransfer = "DataTransfer";
+
     // 3 personagens 
     public static string playerMageName = "Magus Raven";
     public static string linkToMagus = "Character_Player/Magus Raven";
@@ -27,8 +29,8 @@ public static class Global
     // find game objects
     public static string findPlayer = "Character_Player";
     public static string findEnemy = "Enemy";
-    public static string playerPrefab = "receivedObject";
-    public static string characterChosen = "CharacterSelected";
+    public static string recivedObjects = "receivedObject";
+    public static string selectionObjects = "CharacterSelected";
         
     // health bar
     public static string healthBar = "FightSceneComponents/HealthBar";
@@ -51,6 +53,7 @@ public static class Global
     public static string cardInventoryObject = "CardInventory";
 
     //panel lose/win da fight scene
-    public static string linkToPanelLose = "PanelLoseCanvas";
-    public static string linkToPanelWin = "PanelWinCanvas";
+    public static string linkToPanelLose = "FightSceneComponents/PanelLoseCanvas";
+    public static string linkToPanelWin = "FightSceneComponents/PanelWinCanvas";
+    public static string linkToPanelLoading = "LoadingScenes/LoadingPanel";
 }

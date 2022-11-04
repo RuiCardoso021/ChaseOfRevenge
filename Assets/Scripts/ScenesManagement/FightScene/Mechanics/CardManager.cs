@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class GenerateCard : MonoBehaviour
+public class CardManager : MonoBehaviour
 {
     private const int TOTAL_CARDS_ON_HAND = 4;
 
@@ -12,7 +12,7 @@ public class GenerateCard : MonoBehaviour
     public List<GameObject> CardsOnHand = new List<GameObject>();
     public Card CardChoose;
 
-    public GenerateCard()
+    public CardManager()
     {
         CardChoose = new Card();
         GameObjectFather = GameObject.Find(Global.cardOnHand);

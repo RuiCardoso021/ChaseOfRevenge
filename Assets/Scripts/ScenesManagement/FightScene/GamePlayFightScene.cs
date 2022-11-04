@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,55 +6,63 @@ using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
-public class GamePlayFight : MonoBehaviour
+public class GamePlayFightScene : MonoBehaviour
 {
 
-    private FightSceneInterface _turn;
+    private RoundTurn _turn;
     private Deck _deck;
-    public GenerateCard _cardsToPlay ;
+    public CardManager _cardsToPlay ;
     private bool validate;
-    private int totalCharactersOnFight;
+    //private int totalCharactersOnFight;
     private int indexCharacters;
-    private Character_cls player;
-    private Character_cls enemy;
+    public Character_cls player;
+    public Character_cls enemy;
     private int manaRound;
-    private FinalPanelGame uiFinalPanel;
 
-    public void Start()
+    private void Start()
     {
-        uiFinalPanel = GetComponent<FinalPanelGame>();
         indexCharacters = 0;
-        validate = false;
-        _turn = GetComponent<FightSceneInterface>();
+        validate = true;
+        _turn = GetComponent<RoundTurn>();
         _turn.myTurn = true;
-        _cardsToPlay = new GenerateCard();
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        Time.timeScale = 0f;
+        _cardsToPlay = new CardManager();
         
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         //primeira entrada, quando o numero de objetos criados é igual ao numero de objetos pointer
-        if (RecibeCharactersFight.Instance.SpawnerList.Length > 0) { 
-            enemy = RecibeCharactersFight.Instance.SpawnerList[1].GetComponent<Character_cls>();
-            player = RecibeCharactersFight.Instance.SpawnerList[0].GetComponent<Character_cls>();
-            manaRound = 4;
-            uiFinalPanel.FightOutcome();
-        }
+        if (ManagerGameFigth.Instance.Manager.CharactersOnFight != null)
+        {
+            player = ManagerGameFigth.Instance.Manager.CurrentCharacter.GetComponent<Character_cls>();
+            enemy = ManagerGameFigth.Instance.Manager.NextCharacter.GetComponent<Character_cls>();
 
+            Debug.Log("GamePlay: " + player.Health);
+
+            //codigo rodado enquanto não existir um ecrã de vitoria ou derrota
+           
+                manaRound = 4;
+
+                roudnd();
+
+
+            
+        }
+    }
+
+    public void roudnd()
+    {
         if (_turn.myTurn)
         {
             //gera as cartas se nao existirem
             if (_cardsToPlay.CardsOnHand.Count == 0)
                 generateCards();
-            
+
             //atribui valores da carta que é clicada
             Card cardChose = new Card();
             cardChose = _cardsToPlay.CardChoose;
-            
+
             //valida se a carta escolhida esta vazia
             if (!cardChose.IsEmpty())
             {
@@ -95,7 +104,8 @@ public class GamePlayFight : MonoBehaviour
                                     _cardsToPlay.DestroyAllInstanceCards();
                                     generateCards();
                                     activeDestroyThisCard = false;
-                                }else if(ability.effect_quantity == 1)
+                                }
+                                else if (ability.effect_quantity == 1)
                                 {
                                     _cardsToPlay.DestroyThisCardAndGetAnother(player.myDeck);
                                 }
@@ -109,9 +119,13 @@ public class GamePlayFight : MonoBehaviour
                     if (activeDestroyThisCard) _cardsToPlay.DestroyThisCard();
 
                     player.Mana -= cardChose.mana;
+
+                    //HistoricGameFight_cls manager = ManagerGameFigth.Instance.HistoricGame[ManagerGameFigth.Instance.IndexHistoric];
+                    //manager.setDataCard(cardChose);
                 }
 
-                
+
+                //clear cardChoose
                 _cardsToPlay.CardChoose = new Card();
 
                 if (player.Mana == 0) _turn.NextTurn();
@@ -126,15 +140,15 @@ public class GamePlayFight : MonoBehaviour
             if (_cardsToPlay.CardsOnHand.Count > 0)
             {
                 _cardsToPlay.DestroyAllInstanceCards();
-                _turn.myTurn = !_turn.myTurn;
+                _turn.NextTurn();
             }
         }
-   
+        
     }
 
     private void generateCards()
     {
-        Character_cls character_cls_player_to_game = RecibeCharactersFight.Instance.SpawnerList[indexCharacters].GetComponent<Character_cls>();
+        Character_cls character_cls_player_to_game = RecibeGameObject.Instance.SpawnerList[indexCharacters].GetComponent<Character_cls>();
         //Variables Inicialization.
         if (character_cls_player_to_game.myDeck != null && character_cls_player_to_game.ClassType != Global.findEnemy)
         {
@@ -143,7 +157,6 @@ public class GamePlayFight : MonoBehaviour
                 
             _cardsToPlay.InstanceCardsToPlay(_deck);
 
-            validate = true;
             
         }
     }

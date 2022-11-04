@@ -21,9 +21,9 @@ public class Interface_FightScene : MonoBehaviour
     private void Update()
     {
         
-        if (RecibeCharactersFight.Instance.SpawnerList[0]!= null)
+        if (ManagerGameFigth.Instance.Manager.CharactersOnFight != null)
         {
-            Character_cls player = RecibeCharactersFight.Instance.SpawnerList[0].GetComponent<Character_cls>();
+            Character_cls player = ManagerGameFigth.Instance.Manager.CurrentCharacter.GetComponent<Character_cls>();
             _textHealth.text = "Health: " + player.Health.ToString();
             _textMana.text = "Mana: " + player.Mana.ToString();
             _textName.text = player.Name.ToString();          

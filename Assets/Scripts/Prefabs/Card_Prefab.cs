@@ -53,9 +53,9 @@ public class Card_Prefab : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (GameObject.Find(Global.gameplayObject).GetComponent<GamePlayFight>()._cardsToPlay.CardChoose != null)
+        if (GameObject.Find(Global.gameplayObject).GetComponent<GamePlayFightScene>()._cardsToPlay.CardChoose != null)
         {
-            GameObject.Find(Global.gameplayObject).GetComponent<GamePlayFight>()._cardsToPlay.CardChoose = dataCard;
+            GameObject.Find(Global.gameplayObject).GetComponent<GamePlayFightScene>()._cardsToPlay.CardChoose = dataCard;
         }
         else if (GameObject.Find(Global.cardInventoryObject).GetComponent<InventoryManager>().cards2play != null)
         {

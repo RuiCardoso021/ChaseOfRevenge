@@ -11,7 +11,7 @@ public class CharacterSelection : MonoBehaviour
 
     private void Start()
     {
-		index = PlayerPrefs.GetInt(Global.characterChosen);
+		index = PlayerPrefs.GetInt(Global.selectionObjects);
 		characters = new GameObject[transform.childCount];
 		
 		//Add GameObjects for to list
@@ -53,7 +53,7 @@ public class CharacterSelection : MonoBehaviour
 	public void ChangeScene()
     {
         characters[index].name = Global.findPlayer;
-		GameObjectTransfer.Instance.LoadedCharacter.Add(characters[index]);
-		GameObjectTransfer.Instance.LoadNextScene();
+		TransferGameObject.Instance.LoadedCharacter.Add(characters[index]);
+		TransferGameObject.Instance.LoadNextScene();
     }
 }

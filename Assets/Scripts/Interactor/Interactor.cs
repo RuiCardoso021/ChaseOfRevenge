@@ -29,11 +29,11 @@ public class Interactor : MonoBehaviour
                 if(!_interactionPromptUI.isDisplayed) _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
 
                 if (Input.GetKeyDown(KeyCode.E)){
-                    GameObjectTransfer.Instance.LoadedCharacter.Add(_player);
+                    TransferGameObject.Instance.LoadedCharacter.Add(_player);
                     GameObject tempEnemy = _interactable.InteractionGameObject;
                     tempEnemy.name = Global.findEnemy;
-                    GameObjectTransfer.Instance.LoadedCharacter.Add(tempEnemy);
-                    GameObjectTransfer.Instance.LoadNextScene();
+                    TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
+                    TransferGameObject.Instance.LoadNextScene();
                 }
             }
 
