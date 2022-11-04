@@ -45,6 +45,16 @@ public class CardManager : MonoBehaviour
         }
     }
 
+    public void rotationCardsFromCamera(Quaternion rotation)
+    {
+        if (CardsOnHand.Count != 0) {
+            foreach (GameObject gmCard in CardsOnHand)
+            {
+                gmCard.transform.LookAt(gmCard.transform.position + rotation * Vector3.forward, rotation * Vector3.up);
+            }
+        }
+    }
+
     public void DestroyAllInstanceCards(){
         foreach (var item in CardsOnHand)
         {

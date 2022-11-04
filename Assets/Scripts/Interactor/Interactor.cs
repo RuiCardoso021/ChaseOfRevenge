@@ -33,6 +33,7 @@ public class Interactor : MonoBehaviour
                     GameObject tempEnemy = _interactable.InteractionGameObject;
                     tempEnemy.name = Global.findEnemy;
                     TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
+                    TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
                     TransferGameObject.Instance.LoadNextScene();
                 }
             }

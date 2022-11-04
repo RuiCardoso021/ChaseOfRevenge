@@ -15,6 +15,7 @@ public class DungeonSkeleton : MonoBehaviour, IInteractable
     public void ChangeScene(GameObject player){
         // create the prefab in your scene
         TransferGameObject.Instance.LoadedCharacter.Add(_enemy);
+
     }
 
     //public bool Interact(Interactor interactor){
