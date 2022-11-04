@@ -297,6 +297,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8077005773958875744, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
+      propertyPath: ClassType
+      value: WAR
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077005773958875744, guid: f92c072075f3b7041a885e222e6262d0, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -889,7 +893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadedCharacter: []
-  _nextSceneName: CityScene
+  _nextSceneName: FinalMap
 --- !u!1 &1306790352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4470061613590560578, guid: 3e944001186b739418491bde8735b260, type: 3}
@@ -1173,6 +1177,10 @@ PrefabInstance:
     - target: {fileID: 7758265001078554405, guid: 9bb9efed1d2e68f40b5a2012bb705aab, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7794731673269814223, guid: 9bb9efed1d2e68f40b5a2012bb705aab, type: 3}
+      propertyPath: ClassType
+      value: SORCE
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bb9efed1d2e68f40b5a2012bb705aab, type: 3}

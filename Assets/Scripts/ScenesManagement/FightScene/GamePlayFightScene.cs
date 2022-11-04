@@ -32,7 +32,7 @@ public class GamePlayFightScene : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        //Execute affter existe spawn objects
+        //Execute affter existe spown 
         if (ManagerGameFight.Instance.Manager.CharactersOnFight != null)
         {
             player = ManagerGameFight.Instance.Manager.CurrentCharacter.GetComponent<Character_cls>();

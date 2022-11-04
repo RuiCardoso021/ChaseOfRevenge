@@ -374,7 +374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Miles Raven
   Mana: 3
-  ClassType: war
+  ClassType: WAR
   Health: 30
   myDeck:
     cards: []
