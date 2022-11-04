@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Magus Raven
   Mana: 5
-  ClassType: Sorceress
+  ClassType: SORCE
   Health: 20
   myDeck:
     cards: []
