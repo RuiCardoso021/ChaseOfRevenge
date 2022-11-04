@@ -23,7 +23,7 @@
             ],
             "description": "2 damage to all enemies, 2 damage to player ",
             "mana":1,
-            "src": "id_1"
+            "src": "generic"
         },
         {
             "id": 2,
@@ -41,7 +41,7 @@
             ],
             "description": "4 damage to enemy with highest life ",
             "mana":2,
-            "src": "id_1"
+            "src": "generic"
         },
         {
             "id": 3,
@@ -65,7 +65,7 @@
             ],
             "description": "1 damage to all enemies, heal 1 life per enemy",
             "mana": 2,
-            "src": "id_1"
+            "src": "generic"
        }, 
          {
             "id": 4,
@@ -83,7 +83,7 @@
             ],
             "description": "Shuffle your cards to deck and get 4 new cards",
             "mana": 3,
-            "src": "id_1"
+            "src": "generic"
         },
         {
             "id": 5,
@@ -101,7 +101,7 @@
             ],
             "description": "Next card does not cost mana",
             "mana": 3,
-            "src": "id_5"
+            "src": "generic"
         },
         {
             "id": 6,
@@ -125,7 +125,7 @@
             ],
             "description": "1 damage 2 enemies, get 1 card from deck",
             "mana": 3,
-            "src": "id_1"
+            "src": "generic"
        }, 
        {
             "id": 7,
@@ -143,7 +143,7 @@
             ],
             "description": "Deal 1 damage to an enemy or kill the weaker",
             "mana":2,
-            "src": "id_1"
+            "src": "generic"
         },
          {
             "id": 8,
@@ -161,7 +161,7 @@
             ],
             "description": "Deal 3 damage to a random enemy",
             "mana":3,
-            "src": "id_1"
+            "src": "generic"
         },
         {
             "id": 9,
@@ -179,7 +179,7 @@
             ],
             "description": "Deal 5 damage to first enemy",
             "mana":3,
-            "src": "id_1"
+            "src": "generic"
         },
         {
             "id": 10,
@@ -197,7 +197,7 @@
             ],
             "description": "Deal 2 damage to first enemy",
             "mana":1,
-            "src": "id_1"
+            "src": "generic"
         },
         {
             "id": 11,
@@ -215,7 +215,7 @@
             ],
             "description": "2 damage to a random enemy ",
             "mana":1,
-            "src": "id_1"
+            "src": "archery"
         },
         {
             "id": 12,
@@ -233,7 +233,7 @@
             ],
             "description": "Imobilize all enemies in next turn",
             "mana":2,
-            "src": "id_12"
+            "src": "archery"
         },
         {
             "id": 13,
@@ -251,7 +251,7 @@
             ],
             "description": "Double atacks on next turn",
             "mana":3,
-            "src": "id_13"
+            "src": "archery"
         },
 
           {
@@ -270,7 +270,7 @@
             ],
             "description": "1 damage to all enemies",
             "mana":1,
-            "src": "id_1"
+            "src": "sorceress"
         },
         {
             "id": 15,
@@ -288,7 +288,7 @@
             ],
             "description": "Buff 1 damage to all cards on this turn",
             "mana":1,
-            "src": "id_15"
+            "src": "sorceress"
         },
         {
             "id": 16,
@@ -306,7 +306,7 @@
             ],
             "description": "Freeze all enemies in next turn",
             "mana":2,
-            "src": "id_16"
+            "src": "sorceress"
         },
          {
             "id": 17,
@@ -324,7 +324,7 @@
             ],
             "description": "3 damage to a random enemy ",
             "mana":2,
-            "src": "id_1"
+            "src": "sorceress"
         },
          {
             "id": 18,
@@ -342,7 +342,7 @@
             ],
             "description": "Player cannot take damage for two turns",
             "mana":3,
-            "src": "id_18"
+            "src": "sorceress"
         },
          {
             "id": 19,
@@ -378,7 +378,7 @@
             ],
             "description": "Player gain 5 damage to an attack, but cannot attack this turn",
             "mana":1,
-            "src": "id_20"
+            "src": "warrior"
         },
          {
             "id": 21,
@@ -396,7 +396,7 @@
             ],
             "description": "1 damage to all enemies",
             "mana":1,
-            "src": "id_1"
+            "src": "warrior"
         },
          {
             "id": 22,
@@ -414,7 +414,7 @@
             ],
             "description": "Heal player with 2 life",
             "mana":2,
-            "src": "id_1"
+            "src": "warrior"
         },
            {
             "id": 23,
@@ -432,7 +432,7 @@
             ],
             "description": "Player gain 5 damage on next attack",
             "mana":2,
-            "src": "id_23"
+            "src": "warrior"
         },
            {
             "id": 24,
@@ -456,7 +456,7 @@
             ],
             "description": "3 damage to a random enemy, heal 1 life",
             "mana": 2,
-            "src": "id_1"
+            "src": "warrior"
        }, 
           {
             "id": 25,
@@ -474,7 +474,7 @@
             ],
             "description": "Heal player with 5 life",
             "mana":3,
-            "src": "id_1"
+            "src": "warrior"
         },
           {
             "id": 26,
@@ -492,7 +492,7 @@
             ],
             "description": "Heal player with 3 life on next turn",
             "mana":3,
-            "src": "id_1"
+            "src": "warrior"
         },
         {
             "id": 27,
@@ -510,7 +510,7 @@
             ],
             "description": "3 damage to all enemie",
             "mana":3,
-            "src": "id_1"
+            "src": "warrior"
         }
     ]
 }

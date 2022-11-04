@@ -45,7 +45,7 @@ public static class Global
 
     // card objeto
     public static string cardOnHand = "CardOnHand";
-    public static string cardPrefab = "Card/Canvas";
+    public static string cardPrefab = "Card/Card";
     public static string cardImage = "imagesCards/";
           
     // game play
