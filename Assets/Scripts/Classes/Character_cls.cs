@@ -11,7 +11,6 @@ public class Character_cls : MonoBehaviour
     public int Mana;
     public string ClassType;
     public float Health;
-    //public List<Character_cls> Friends = new List<Character_cls>();
     public Deck myDeck;
 
     [SerializeField]private TextAsset jsonFile;

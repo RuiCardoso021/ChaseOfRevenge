@@ -23,10 +23,10 @@ public class FinalPanelGame : MonoBehaviour
 
     private void GetPlayersOnScene()
     {
-        if (ManagerGameFigth.Instance.Manager.CharactersOnFight != null)
+        if (ManagerGameFight.Instance.Manager.CharactersOnFight != null)
         {
-            _player = ManagerGameFigth.Instance.Manager.CurrentCharacter.GetComponent<Character_cls>();
-            _enemy = ManagerGameFigth.Instance.Manager.NextCharacter.GetComponent<Character_cls>();
+            _player = ManagerGameFight.Instance.Manager.CurrentCharacter.GetComponent<Character_cls>();
+            _enemy = ManagerGameFight.Instance.Manager.NextCharacter.GetComponent<Character_cls>();
         }
     }
 

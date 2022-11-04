@@ -32,16 +32,14 @@ public class GamePlayFightScene : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        //primeira entrada, quando o numero de objetos criados é igual ao numero de objetos pointer
-        if (ManagerGameFigth.Instance.Manager.CharactersOnFight != null)
+        //Execute affter existe spawn objects
+        if (ManagerGameFight.Instance.Manager.CharactersOnFight != null)
         {
-            player = ManagerGameFigth.Instance.Manager.CurrentCharacter.GetComponent<Character_cls>();
-            enemy = ManagerGameFigth.Instance.Manager.NextCharacter.GetComponent<Character_cls>();
-
-            Debug.Log("GamePlay: " + player.Health);
+            player = ManagerGameFight.Instance.Manager.CurrentCharacter.GetComponent<Character_cls>();
+            enemy = ManagerGameFight.Instance.Manager.NextCharacter.GetComponent<Character_cls>();
 
             //codigo rodado enquanto não existir um ecrã de vitoria ou derrota
-           
+
                 manaRound = 4;
 
                 roudnd();
@@ -120,8 +118,7 @@ public class GamePlayFightScene : MonoBehaviour
 
                     player.Mana -= cardChose.mana;
 
-                    //HistoricGameFight_cls manager = ManagerGameFigth.Instance.HistoricGame[ManagerGameFigth.Instance.IndexHistoric];
-                    //manager.setDataCard(cardChose);
+                    ManagerGameFight.Instance.AddCardsOnHistoric(cardChose);
                 }
 
 
@@ -134,14 +131,15 @@ public class GamePlayFightScene : MonoBehaviour
         }
         else
         {
-            player.Mana = 4;
 
-            player.Health -= Random.Range(1, 7);
             if (_cardsToPlay.CardsOnHand.Count > 0)
             {
                 _cardsToPlay.DestroyAllInstanceCards();
                 _turn.NextTurn();
             }
+
+            player.Mana = 4;
+            player.Health -= Random.Range(1, 7);
         }
         
     }

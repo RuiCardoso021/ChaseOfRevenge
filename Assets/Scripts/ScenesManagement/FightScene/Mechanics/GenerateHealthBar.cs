@@ -17,18 +17,18 @@ public class GenerateHealthBar : MonoBehaviour
     {
         //getComponentsOtherScene();
 
-        if (ManagerGameFigth.Instance.Manager.CharactersOnFight != null && validate)
+        if (ManagerGameFight.Instance.Manager.CharactersOnFight != null && validate)
         {
-            HealthBar = new GameObject[ManagerGameFigth.Instance.Manager.CharactersOnFight.Length];
+            HealthBar = new GameObject[ManagerGameFight.Instance.Manager.CharactersOnFight.Length];
             GameObject healthBarTemp = Resources.Load(Global.healthBar) as GameObject;
         
             if (healthBarTemp != null)
             {
                 for (int i = 0; i < HealthBar.Length; i++)
                 {
-                    HealthBar[i] = Instantiate(healthBarTemp, ManagerGameFigth.Instance.Manager.CharactersOnFight[i].transform.position + new Vector3(0,2.4f, 0), Quaternion.identity);
+                    HealthBar[i] = Instantiate(healthBarTemp, ManagerGameFight.Instance.Manager.CharactersOnFight[i].transform.position + new Vector3(0,2.4f, 0), Quaternion.identity);
 
-                    HealthBar[i].GetComponent<HealthBar_Prefab>().MaxLife = ManagerGameFigth.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Health;
+                    HealthBar[i].GetComponent<HealthBar_Prefab>().MaxLife = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Health;
                 }
             }
 
@@ -40,7 +40,7 @@ public class GenerateHealthBar : MonoBehaviour
         {
             for (int i = 0; i < HealthBar.Length; i++)
             {
-                HealthBar[i].GetComponent<HealthBar_Prefab>().health = ManagerGameFigth.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Health;
+                HealthBar[i].GetComponent<HealthBar_Prefab>().health = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Health;
             }
         }
 

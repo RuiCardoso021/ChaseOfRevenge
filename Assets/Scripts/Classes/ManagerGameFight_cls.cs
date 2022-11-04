@@ -3,12 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class ManagerGameFigth_cls {
+public class ManagerGameFight_cls {
 
     public GameObject[] CharactersOnFight;
     public GameObject CurrentCharacter;
     public GameObject NextCharacter;
     public GameObject[] CharactersICanAttack;
+
+
+    public void changeCharacters()
+    {
+        CurrentCharacter = NextCharacter;
+        NextCharacter = CharactersOnFight[ValidationNextIndex(GetIndexCharactersOnFight(CurrentCharacter)+1)];
+    }
+
+
+    private int ValidationNextIndex(int index)
+    {
+        if (index > CharactersOnFight.Length)
+            index = 0;
+
+        return index;
+    }
+
+    private int GetIndexCharactersOnFight(GameObject gameObject)
+    {
+
+        for (int i = 0; i < CharactersOnFight.Length; i++)
+            if (CharactersOnFight[i] == gameObject) return i;
+
+        return -1;
+        
+    }
 
     //set default characters values
     public void SelectionCharacters()

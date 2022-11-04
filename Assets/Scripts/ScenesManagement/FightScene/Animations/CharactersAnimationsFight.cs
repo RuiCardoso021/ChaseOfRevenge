@@ -18,10 +18,10 @@ public class CharactersAnimationsFight : MonoBehaviour
 
     private void Update()
     {
-        if (ManagerGameFigth.Instance.Manager.CharactersOnFight != null && validation)
+        if (ManagerGameFight.Instance.Manager.CharactersOnFight != null && validation)
         {
-            _player = ManagerGameFigth.Instance.Manager.CurrentCharacter;
-            _enemy = ManagerGameFigth.Instance.Manager.NextCharacter;
+            _player = ManagerGameFight.Instance.Manager.CurrentCharacter;
+            _enemy = ManagerGameFight.Instance.Manager.NextCharacter;
             _player.transform.Rotate(0, 90f, 0);
             _enemy.transform.Rotate(0, -90f, 0);
 

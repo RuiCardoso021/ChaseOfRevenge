@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,26 +12,26 @@ using UnityEngine.SceneManagement;
 using UnityEngine.TextCore.Text;
 using static UnityEngine.EventSystems.EventTrigger;
 
-public class ManagerGameFigth : MonoBehaviour
+public class ManagerGameFight : MonoBehaviour
 {
-    public static ManagerGameFigth Instance;
-    public ManagerGameFigth_cls Manager;
+
+    public static ManagerGameFight Instance;
+    private const int TOTAL_HISTORIC = 100;
+
+    public ManagerGameFight_cls Manager;
     public HistoricGameFight_cls[] HistoricGame;
     public int IndexHistoric;
 
     private bool _validation;
-    private GameObject LoadingPanel;
 
     private void Start()
     {
-        LoadingPanel = Resources.Load(Global.linkToPanelLoading) as GameObject;
-        Instantiate(LoadingPanel);
         Instance = this;
-        Manager = new ManagerGameFigth_cls();
+        Manager = new ManagerGameFight_cls();
         _validation = true;
-        HistoricGame = new HistoricGameFight_cls[100];
+        HistoricGame = new HistoricGameFight_cls[TOTAL_HISTORIC];
         IndexHistoric = 0;
-        Invoke("Inicialization", 3.5f);
+        Invoke("Inicialization", 2.5f);
     }
 
     private void Update()
@@ -42,11 +43,6 @@ public class ManagerGameFigth : MonoBehaviour
         }
     }
 
-    public void changeCharacters()
-    {
-
-    }
-
     private void Inicialization()
     {
         Manager.CharactersOnFight = RecibeGameObject.Instance.SpawnerList;
@@ -55,9 +51,31 @@ public class ManagerGameFigth : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0f;
-        LoadingPanel.SetActive(false);
     }
 
+    public void AddCardsOnHistoric(Card card)
+    {
+        HistoricGame[IndexHistoric] = ValidateHistoric(HistoricGame[IndexHistoric]);
 
+        if (card != null)
+            HistoricGame[IndexHistoric].ListCards.Add(card);
+
+    }
+
+    public void AddManagerOnHistoric(int round){
+
+        HistoricGame[IndexHistoric] = ValidateHistoric(HistoricGame[IndexHistoric]);
+
+        HistoricGame[IndexHistoric].ManagerGameFigth = Manager;
+        HistoricGame[IndexHistoric].round = round;
+        IndexHistoric++;
+    }
+
+    private HistoricGameFight_cls ValidateHistoric(HistoricGameFight_cls historic)
+    {
+        if (historic == null) historic = new HistoricGameFight_cls();
+
+        return historic;
+    }
 
 }

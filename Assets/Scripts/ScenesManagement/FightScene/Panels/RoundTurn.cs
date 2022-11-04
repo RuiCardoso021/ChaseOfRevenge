@@ -20,11 +20,7 @@ public class RoundTurn : MonoBehaviour
         myTurn = !myTurn;
         if (myTurn)
         {
-            //HistoricGameFight_cls manager = new HistoricGameFight_cls();
-            //manager = ManagerGameFigth.Instance.HistoricGame[ManagerGameFigth.Instance.IndexHistoric];
-            //manager.ManagerGameFigth = ManagerGameFigth.Instance.Manager;
-            //manager.round = Round;
-            //ManagerGameFigth.Instance.IndexHistoric++;         
+            ManagerGameFight.Instance.AddManagerOnHistoric(Round);
             Round++;
         }
     }
