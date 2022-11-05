@@ -72,7 +72,7 @@ public class ManagerGameFight_cls {
 
 
     //return true if was a friend
-    private bool IsFriend(Character_cls character)
+    public bool IsFriend(Character_cls character)
     {
         return (character.ClassType == Global.archerPlayerType
             || character.ClassType == Global.warriorPlayerType

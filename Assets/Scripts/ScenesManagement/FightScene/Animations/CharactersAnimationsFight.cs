@@ -20,11 +20,21 @@ public class CharactersAnimationsFight : MonoBehaviour
     {
         if (ManagerGameFight.Instance.Manager.CharactersOnFight != null && validation)
         {
+            foreach (GameObject item in ManagerGameFight.Instance.Manager.CharactersOnFight)
+            {
+                if (ManagerGameFight.Instance.Manager.IsFriend(item.GetComponent<Character_cls>()))
+                {
+                    item.transform.Rotate(0, 90f, 0);
+                }
+                else
+                {
+                    item.transform.Rotate(0, -90f, 0);
+                }
+            }
+
             _player = ManagerGameFight.Instance.Manager.CurrentCharacter;
             _enemy = ManagerGameFight.Instance.Manager.NextCharacter;
-            _player.transform.Rotate(0, 90f, 0);
-            _enemy.transform.Rotate(0, -90f, 0);
-
+            
             validation = false;
         }
 
