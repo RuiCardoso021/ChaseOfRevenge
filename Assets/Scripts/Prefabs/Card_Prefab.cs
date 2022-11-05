@@ -16,6 +16,8 @@ public class Card_Prefab : MonoBehaviour
     public bool activeClick;
     public Card dataCard;
 
+    //InventoryCard_cls _inventoryCard;
+
     public void setDataCard(bool _activeExpand)
     {
         activeClick = false;
@@ -26,7 +28,8 @@ public class Card_Prefab : MonoBehaviour
         _image.sprite = Resources.Load<Sprite>(Global.cardImage + dataCard.src);
     }
 
-    public void setDataCardStatic(TextMeshProUGUI mana, TextMeshProUGUI description, TextMeshProUGUI name, Image imageID){
+    public void setDataCardStatic(TextMeshProUGUI mana, TextMeshProUGUI description, TextMeshProUGUI name, Image imageID)
+    {
         _textMana = mana;
         _textDescription = description;
         _textName = name;
@@ -60,15 +63,16 @@ public class Card_Prefab : MonoBehaviour
         else if (GameObject.Find(Global.cardInventoryObject).GetComponent<InventoryManager>().cards2play != null)
         {
             //InventoryCard_cls inventoryCard = GameObject.Find("CardInventory").GetComponent<InventoryManager>().cards2play;
-         
-            foreach (InventoryCard_cls inventoryCard in GameObject.Find(Global.cardInventoryObject).GetComponent<InventoryManager>().cards2play) {
-                if (inventoryCard.card == dataCard)
+
+            foreach (GameObject inventoryCard in
+                GameObject.Find(Global.cardInventoryObject).GetComponent<InventoryManager>().cards2play)
+            {
+                if (inventoryCard.GetComponent<Card_Prefab>().dataCard == dataCard)
                 {
-                    
-                    inventoryCard.isActive = !inventoryCard.isActive;
-                    Debug.Log(inventoryCard.isActive);
+                    inventoryCard.GetComponent<InventoryCard_cls>().isActive = !inventoryCard.GetComponent<InventoryCard_cls>().isActive;
+                    Debug.Log(inventoryCard.GetComponent<InventoryCard_cls>().isActive);
                 }
-            }    
+            }
         }
         activeClick = true;
     }

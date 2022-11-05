@@ -6,73 +6,60 @@ using TMPro;
 
 public class InventoryManager : MonoBehaviour
 {
-    [SerializeField] private GameObject content;
+    [SerializeField] private GameObject contentCards2Play;
+    [SerializeField] private GameObject contentAllCards;
     private Deck deck;
     public TextAsset jsonFile;
 
-    public List<GameObject> allCards = new List<GameObject>();
-    public List<InventoryCard_cls> cards2play = new List<InventoryCard_cls>();
+    public List<GameObject> cards2play = new List<GameObject>();
     public GameObject cardGameObject;
-    public InventoryCard_cls cardChosen;
 
     private GameObject _player;
-
 
     private void Start()
     {
         _player = GameObject.Find(Global.findPlayer);
         deck = _player.GetComponent<Character_cls>().myDeck;
 
-        FirstInventory();       
-        getCardsToInventory();
+        FirstInventory();
     }
 
-    private void Update()
-    {
-        
-    }
-
-    private void getCardsToInventory()
+    // primeira lista com as cartas todas
+    private void FirstInventory()
     {
         GameObject gmTemp;
 
-        foreach(InventoryCard_cls card in cards2play)
-        {
-            //generate card
-            gmTemp = Instantiate(cardGameObject, Vector3.zero, Quaternion.identity);
-            gmTemp.transform.localScale = new Vector3(1f, 1f, 1f);
-            gmTemp.GetComponent<Card_Prefab>().dataCard = card.card;
-            gmTemp.GetComponent<Card_Prefab>().setDataCard(false);
-            gmTemp.transform.parent = content.transform;
-
-            allCards.Add(gmTemp);
-        }
-    }
-
-    private void FirstInventory()
-    {
         foreach (Card card in deck.cards)
         {
-            InventoryCard_cls tempCard = new InventoryCard_cls(card, true);
+            gmTemp = Instantiate(cardGameObject, Vector3.zero, Quaternion.identity);
+            gmTemp.transform.localScale = new Vector3(1f, 1f, 1f);
+            gmTemp.GetComponent<Card_Prefab>().dataCard = card;
+            gmTemp.GetComponent<Card_Prefab>().setDataCard(false);
+            gmTemp.transform.parent = contentCards2Play.transform;
+            gmTemp.GetComponent<InventoryCard_cls>().isActive = true;
 
-            cards2play.Add(tempCard);
+            cards2play.Add(gmTemp);
         }
     }
 
-    private bool CheckIfActive()
+    public void ChangeCardsInInventory(GameObject card)
     {
-        bool permission = false;
-        int count = 0;
-
-        foreach (InventoryCard_cls card in cards2play)
+        foreach (GameObject go in cards2play)
         {
-            if (card.isActive)
-                count++;
+            bool validationGo = go.GetComponent<InventoryCard_cls>().isActive;
+
+            if (card == go)
+            {
+                if (validationGo)
+                {
+                    go.transform.parent = contentAllCards.transform;
+                }
+                else
+                {
+                    go.transform.parent = contentCards2Play.transform;
+                }
+                go.GetComponent<InventoryCard_cls>().isActive = !go.GetComponent<InventoryCard_cls>().isActive;
+            }
         }
-
-        if (count == 15)
-            permission = true;
-
-        return permission;
     }
 }
