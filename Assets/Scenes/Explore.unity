@@ -2658,8 +2658,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 240175bdc21335543826cd16f92f6ca5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3060,8 +3060,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 240175bdc21335543826cd16f92f6ca5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3723,15 +3723,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1540189820771178785, guid: c08eb96ff740dcf469d2de0e12161050, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.6584231
       objectReference: {fileID: 0}
     - target: {fileID: 1540189820771178785, guid: c08eb96ff740dcf469d2de0e12161050, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 12.69792
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540189820771178785, guid: c08eb96ff740dcf469d2de0e12161050, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.6584231
       objectReference: {fileID: 0}
     - target: {fileID: 1540189820771178785, guid: c08eb96ff740dcf469d2de0e12161050, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 20.2
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2205860654654674222, guid: c08eb96ff740dcf469d2de0e12161050, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -4741,7 +4745,6 @@ GameObject:
   - component: {fileID: 1822874217}
   - component: {fileID: 1822874220}
   - component: {fileID: 1822874219}
-  - component: {fileID: 1822874218}
   m_Layer: 5
   m_Name: CardInventoryExpand
   m_TagString: Untagged
@@ -4770,36 +4773,6 @@ RectTransform:
   m_AnchoredPosition: {x: -372, y: -0.5739441}
   m_SizeDelta: {x: 350, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1822874218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1822874216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Content: {fileID: 0}
-  m_Horizontal: 1
-  m_Vertical: 1
-  m_MovementType: 1
-  m_Elasticity: 0.1
-  m_Inertia: 1
-  m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 20
-  m_Viewport: {fileID: 0}
-  m_HorizontalScrollbar: {fileID: 0}
-  m_VerticalScrollbar: {fileID: 0}
-  m_HorizontalScrollbarVisibility: 2
-  m_VerticalScrollbarVisibility: 2
-  m_HorizontalScrollbarSpacing: -3
-  m_VerticalScrollbarSpacing: -3
-  m_OnValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1822874219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4820,8 +4793,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 240175bdc21335543826cd16f92f6ca5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

@@ -15,7 +15,6 @@ public class InventoryManager : MonoBehaviour
     public GameObject cardGameObject;
 
     private GameObject _player;
-    InventoryManager inventoryManager;
     public GameObject cardPrefabExpand;
 
     private void Start()

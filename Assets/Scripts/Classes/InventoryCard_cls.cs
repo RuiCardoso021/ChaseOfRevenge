@@ -20,9 +20,7 @@ public class InventoryCard_cls : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        Time.timeScale = 0f;
+        
     }
 
     // verificar no foreach se está ativa a true e fazer um count que dá return de 15, senao nao deixo fechar
@@ -30,6 +28,10 @@ public class InventoryCard_cls : MonoBehaviour
 
     private void Update()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
+
         if (GameObject.Find("InventoryCanvas") != null)
         {
             inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
@@ -38,8 +40,7 @@ public class InventoryCard_cls : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             ExpandCard();
-            inventoryManager.cardPrefabExpand.SetActive(true);
-        }
+        } 
     }
 
     public void SelectCard()
@@ -47,9 +48,6 @@ public class InventoryCard_cls : MonoBehaviour
         if (inventoryManager != null)
         {
             inventoryManager.ChangeCardsInInventory(this.gameObject);
-            //Card_Prefab card = GetComponent<Card_Prefab>();
-            //this.gameObject.SetActive(true);
-            //inventoryManager.allCards.Add(this.gameObject);
         }
     }
 
@@ -65,7 +63,8 @@ public class InventoryCard_cls : MonoBehaviour
     {
         if (inventoryManager != null)
         {
-            inventoryManager.cardPrefabExpand.GetComponent<Card_Prefab>().dataCard = GetComponent<Card_Prefab>().dataCard;            
+            inventoryManager.cardPrefabExpand.GetComponent<Card_Prefab>().dataCard = GetComponent<Card_Prefab>().dataCard;
+            inventoryManager.cardPrefabExpand.SetActive(true);
         }
     }
 }
