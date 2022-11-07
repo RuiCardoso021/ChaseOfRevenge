@@ -13,9 +13,14 @@ public class Interactor : MonoBehaviour
     [SerializeField] private GameObject _player;
     private readonly Collider[] _colliders = new Collider[3];
     [SerializeField] private int _numFound;
+    private int index;
 
     private IInteractable _interactable;
 
+    private void Start()
+    {
+        index = 0;
+    }
 
     private void Update() {
         _numFound = Physics.OverlapSphereNonAlloc(_interactionPoint.position, _interactionPointRadius, _colliders, _interactionMask);
@@ -26,9 +31,10 @@ public class Interactor : MonoBehaviour
 
             if (_interactable != null){
 
-                if(!_interactionPromptUI.isDisplayed) _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
+                //if(!_interactionPromptUI.isDisplayed) _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
 
                 if (Input.GetKeyDown(KeyCode.E)){
+
                     TransferGameObject.Instance.LoadedCharacter.Add(_player);
                     GameObject tempEnemy = _interactable.InteractionGameObject;
                     tempEnemy.name = Global.findEnemy;
@@ -36,11 +42,37 @@ public class Interactor : MonoBehaviour
                     TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
                     TransferGameObject.Instance.LoadNextScene();
                 }
+
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                {          
+                    if (_interactable.GetObject != null)
+                    {
+                        if (index < _interactable.InteractionPromptArray.Length)
+                        {
+                            if (_interactable.InteractionPromptArray[index].CanSpeak == "Player")
+                            {
+                                _interactionPromptUI.SetUp("Player: " + _interactable.InteractionPromptArray[index].Dialog);
+                            }
+                            else
+                            {
+                                _interactionPromptUI.SetUp("Enemy: " + _interactable.InteractionPromptArray[index].Dialog);
+                            }
+                            
+                            index++;
+                        }
+                        else if (index == _interactable.InteractionPromptArray.Length)
+                        {
+                            if (_interactionPromptUI.isDisplayed) _interactionPromptUI.Close();
+                        }
+                    }
+                    
+                }
             }
 
         }else{
-                if (_interactable != null) _interactable = null;
-                if (_interactionPromptUI.isDisplayed) _interactionPromptUI.Close();
+            index = 0;
+            if (_interactable != null) _interactable = null;
+            if (_interactionPromptUI.isDisplayed) _interactionPromptUI.Close();
             
         }
     }
