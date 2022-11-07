@@ -51,11 +51,11 @@ public class Interactor : MonoBehaviour
                         {
                             if (_interactable.InteractionPromptArray[index].CanSpeak == "Player")
                             {
-                                _interactionPromptUI.SetUp("Player: " + _interactable.InteractionPromptArray[index].Dialog);
+                                _interactionPromptUI.SetUp(".:Player:. \n\n " + _interactable.InteractionPromptArray[index].Dialog);
                             }
                             else
                             {
-                                _interactionPromptUI.SetUp("Enemy: " + _interactable.InteractionPromptArray[index].Dialog);
+                                _interactionPromptUI.SetUp(".:Enemy:. \n\n " + _interactable.InteractionPromptArray[index].Dialog);
                             }
                             
                             index++;

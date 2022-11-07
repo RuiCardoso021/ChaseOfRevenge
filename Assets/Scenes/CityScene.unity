@@ -20458,7 +20458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8287458487189089131, guid: b7e1c9c30b81ab94daa1b396b84d8e4f, type: 3}
       propertyPath: _promptArray.Array.data[0].CanSpeak
-      value: player
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8287458487189089131, guid: b7e1c9c30b81ab94daa1b396b84d8e4f, type: 3}
       propertyPath: _promptArray.Array.data[1].CanSpeak
@@ -20466,7 +20466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8287458487189089131, guid: b7e1c9c30b81ab94daa1b396b84d8e4f, type: 3}
       propertyPath: _promptArray.Array.data[2].CanSpeak
-      value: player
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b7e1c9c30b81ab94daa1b396b84d8e4f, type: 3}
