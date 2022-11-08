@@ -31,7 +31,7 @@ public class ManagerGameFight : MonoBehaviour
         _validation = true;
         HistoricGame = new HistoricGameFight_cls[TOTAL_HISTORIC];
         IndexHistoric = 0;
-        Invoke("Inicialization", 2.5f);
+        Invoke("Inicialization", 1.5f);
     }
 
     private void Update()

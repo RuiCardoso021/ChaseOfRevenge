@@ -18,6 +18,7 @@ public class GamePlayFightScene : MonoBehaviour
     public Character_cls player;
     public Character_cls enemy;
     private int manaRound;
+    private bool nextRoundAnyCardDontCostMana;
 
     private void Start()
     {
@@ -61,6 +62,12 @@ public class GamePlayFightScene : MonoBehaviour
             Card cardChose = new Card();
             cardChose = _cardsToPlay.CardChoose;
 
+            if (nextRoundAnyCardDontCostMana)
+            {
+                _cardsToPlay.setManaAllCards(0);
+                nextRoundAnyCardDontCostMana = false;
+            }
+                
             //valida se a carta escolhida esta vazia
             if (!cardChose.IsEmpty())
             {
@@ -107,6 +114,9 @@ public class GamePlayFightScene : MonoBehaviour
                                 {
                                     _cardsToPlay.DestroyThisCardAndGetAnother(player.myDeck);
                                 }
+                                break;
+                            case var value when value == Global.Card_ManaCard:
+                                nextRoundAnyCardDontCostMana = true;
                                 break;
                             default:
                                 Debug.Log("This Ability, don´t exist!");

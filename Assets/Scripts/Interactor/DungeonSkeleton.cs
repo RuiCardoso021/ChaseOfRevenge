@@ -15,6 +15,7 @@ public class DungeonSkeleton : MonoBehaviour, IInteractable
 
     public GameObject GetObject => _enemy;
 
+    
 
     public void ChangeScene(GameObject player){
         // create the prefab in your scene

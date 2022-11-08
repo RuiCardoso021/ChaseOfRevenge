@@ -93,14 +93,14 @@
             "ability": 
             [
                 { 
-                    "tag": "Buff_Mana", 
+                    "tag": "Card_Mana", 
                     "value": 0, 
                     "effect_quantity": 1, 
                     "type_effect": "Card"
                 }
             ],
             "description": "Next card does not cost mana",
-            "mana": 3,
+            "mana": 1,
             "src": "generic"
         },
         {

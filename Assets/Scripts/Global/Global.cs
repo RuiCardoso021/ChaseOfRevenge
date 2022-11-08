@@ -42,9 +42,10 @@ public static class Global
     public static string ccCard = "CC";
     public static string ShuffleCard = "Shuffle";
     public static string BuffCard = "Buff";
+    public static string Card_ManaCard = "Card_Mana";
 
     // card objeto
-    public static string cardOnHand = "CardOnHand";
+    public static string cardContentFromGame = "ContentCardsGame";
     public static string cardPrefab = "Card/Card";
     public static string cardImage = "imagesCards/";
           

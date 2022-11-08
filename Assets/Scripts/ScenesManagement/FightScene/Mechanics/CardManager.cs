@@ -15,7 +15,7 @@ public class CardManager : MonoBehaviour
     public CardManager()
     {
         CardChoose = new Card();
-        GameObjectFather = GameObject.Find(Global.cardOnHand);
+        GameObjectFather = GameObject.Find(Global.cardContentFromGame);
         CardPrefab = Resources.Load(Global.cardPrefab) as GameObject;
     }
 
@@ -24,7 +24,6 @@ public class CardManager : MonoBehaviour
         //generate card list
         List<int> cardsToGive = new List<int>();
         int random;
-        float x = -2.4f;
 
         for (int i=0; i< TOTAL_CARDS_ON_HAND; i++)
         {
@@ -36,22 +35,12 @@ public class CardManager : MonoBehaviour
             cardsToGive.Add(random);
 
             //generate card
-            CardPrefab.GetComponent<Card_Prefab>().dataCard = deck.cards[random];
-            CardPrefab.GetComponent<Card_Prefab>().setDataCard(true);
-            CardPrefab.transform.localScale = new Vector3(0.025f, 0.025f, 0.025f);
-            CardsOnHand.Add(Instantiate(CardPrefab, new Vector3(x, 1.5f, -8.5f), Quaternion.identity, GameObjectFather.transform));
-            
-            x+= 0.85f;
-        }
-    }
-
-    public void rotationCardsFromCamera(Quaternion rotation)
-    {
-        if (CardsOnHand.Count != 0) {
-            foreach (GameObject gmCard in CardsOnHand)
-            {
-                gmCard.transform.LookAt(gmCard.transform.position + rotation * Vector3.forward, rotation * Vector3.up);
-            }
+            GameObject cardTemp = CardPrefab;
+            cardTemp = Instantiate(CardPrefab, GameObjectFather.transform);
+            cardTemp.GetComponent<Card_Prefab>().dataCard = deck.cards[random];
+            cardTemp.GetComponent<Card_Prefab>().setDataCard(true);
+            cardTemp.AddComponent<CardsAnimationFight>();
+            CardsOnHand.Add(cardTemp);
         }
     }
 
@@ -75,8 +64,6 @@ public class CardManager : MonoBehaviour
                 if (CardChoose == item.GetComponent<Card_Prefab>().dataCard)
                 {
                     tempListCardsOnHand.Add(item);
-                    //Destroy(item);
-                    //CardsOnHand.Remove(item);
                 }
             }
             
@@ -119,6 +106,14 @@ public class CardManager : MonoBehaviour
         }
 
         return TempCard;
+    }
+
+    public void setManaAllCards(int mana)
+    {
+        foreach (var card in CardsOnHand)
+        {
+            card.GetComponent<Card_Prefab>().dataCard.mana = mana;
+        }
     }
 
 }
