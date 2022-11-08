@@ -15,11 +15,18 @@ public class InventoryManager : MonoBehaviour
     public GameObject cardGameObject;
 
     private GameObject _player;
+    public GameObject cardPrefabExpand;
 
     private void Start()
     {
         _player = GameObject.Find(Global.findPlayer);
         deck = _player.GetComponent<Character_cls>().myDeck;
+        
+        //cardPrefabExpand.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
 
         FirstInventory();
     }

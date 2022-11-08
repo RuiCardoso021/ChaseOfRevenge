@@ -889,11 +889,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1300952961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c6201a2465c324db534c838e414c3c, type: 3}
+  m_Script: {fileID: 11500000, guid: 34977796f7011a842a0b560e2d532462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   LoadedCharacter: []
-  _nextSceneName: CityScene
+  _nextSceneName: Explore
 --- !u!1 &1306790352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4470061613590560578, guid: 3e944001186b739418491bde8735b260, type: 3}

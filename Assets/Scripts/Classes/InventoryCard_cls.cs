@@ -18,15 +18,29 @@ public class InventoryCard_cls : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        
+    }
+
     // verificar no foreach se está ativa a true e fazer um count que dá return de 15, senao nao deixo fechar
     // aviso que só pode ter 15 cartas
 
     private void Update()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
+
         if (GameObject.Find("InventoryCanvas") != null)
         {
             inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
         }
+
+        //if (Input.GetKeyDown(KeyCode.Mouse1))
+        //{
+        //    ExpandCard();
+        //} 
     }
 
     public void SelectCard()
@@ -34,17 +48,26 @@ public class InventoryCard_cls : MonoBehaviour
         if (inventoryManager != null)
         {
             inventoryManager.ChangeCardsInInventory(this.gameObject);
-            //Card_Prefab card = GetComponent<Card_Prefab>();
-            //this.gameObject.SetActive(true);
-            //inventoryManager.allCards.Add(this.gameObject);
         }
+
+        ExpandCard();
     }
 
-    public void RemoveCard()
+    //public void RemoveCard()
+    //{
+    //    if (inventoryManager != null)
+    //    {
+    //        inventoryManager.ChangeCardsInInventory(this.gameObject);
+    //    }
+    //}
+
+    public void ExpandCard()
     {
         if (inventoryManager != null)
         {
-            inventoryManager.ChangeCardsInInventory(this.gameObject);
+            Card_Prefab cp = inventoryManager.cardPrefabExpand.GetComponent<Card_Prefab>();
+            cp.dataCard = gameObject.GetComponent<Card_Prefab>().dataCard;
+            cp.setDataCard(false);
         }
     }
 }
