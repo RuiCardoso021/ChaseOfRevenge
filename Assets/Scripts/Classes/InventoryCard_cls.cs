@@ -37,10 +37,10 @@ public class InventoryCard_cls : MonoBehaviour
             inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            ExpandCard();
-        } 
+        //if (Input.GetKeyDown(KeyCode.Mouse1))
+        //{
+        //    ExpandCard();
+        //} 
     }
 
     public void SelectCard()
@@ -49,22 +49,25 @@ public class InventoryCard_cls : MonoBehaviour
         {
             inventoryManager.ChangeCardsInInventory(this.gameObject);
         }
+
+        ExpandCard();
     }
 
-    public void RemoveCard()
-    {
-        if (inventoryManager != null)
-        {
-            inventoryManager.ChangeCardsInInventory(this.gameObject);
-        }
-    }
+    //public void RemoveCard()
+    //{
+    //    if (inventoryManager != null)
+    //    {
+    //        inventoryManager.ChangeCardsInInventory(this.gameObject);
+    //    }
+    //}
 
     public void ExpandCard()
     {
         if (inventoryManager != null)
         {
-            inventoryManager.cardPrefabExpand.GetComponent<Card_Prefab>().dataCard = GetComponent<Card_Prefab>().dataCard;
-            inventoryManager.cardPrefabExpand.SetActive(true);
+            Card_Prefab cp = inventoryManager.cardPrefabExpand.GetComponent<Card_Prefab>();
+            cp.dataCard = gameObject.GetComponent<Card_Prefab>().dataCard;
+            cp.setDataCard(false);
         }
     }
 }

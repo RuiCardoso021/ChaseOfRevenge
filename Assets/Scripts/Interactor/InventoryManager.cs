@@ -21,8 +21,8 @@ public class InventoryManager : MonoBehaviour
     {
         _player = GameObject.Find(Global.findPlayer);
         deck = _player.GetComponent<Character_cls>().myDeck;
-        cardPrefabExpand = GameObject.Find("ShowCardInventory");
-        cardPrefabExpand.SetActive(false);
+        
+        //cardPrefabExpand.SetActive(false);
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
