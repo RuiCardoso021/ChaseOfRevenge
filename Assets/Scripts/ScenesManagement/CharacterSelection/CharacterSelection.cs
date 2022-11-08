@@ -8,25 +8,31 @@ public class CharacterSelection : MonoBehaviour
 
 	private int index;
 
-
     private void Start()
     {
 		index = PlayerPrefs.GetInt(Global.selectionObjects);
 		characters = new GameObject[transform.childCount];
-		
+
 		//Add GameObjects for to list
 		for (int i = 0; i < transform.childCount; i++)
+		{
 			characters[i] = transform.GetChild(i).gameObject;
-        
-		//active character
-		foreach (GameObject go in characters){
-			if (characters[index] == go) go.SetActive(true);
-			else go.SetActive(false);
 		}
 
+		//active character
+		foreach (GameObject go in characters){
+			if (characters[index] == go)
+			{
+				go.SetActive(true);
+			}
+			else
+			{
+				go.SetActive(false);
+			}
+		}
 	}
 
-	public void ToggleLeft()
+    public void ToggleLeft()
     {
 		characters[index].SetActive(false);
 		
