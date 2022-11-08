@@ -41,7 +41,6 @@ public class InventoryManager : MonoBehaviour
             gmTemp = Instantiate(cardGameObject, Vector3.zero, Quaternion.identity);
             gmTemp.transform.localScale = new Vector3(1f, 1f, 1f);
             gmTemp.GetComponent<Card_Prefab>().dataCard = card;
-            gmTemp.GetComponent<Card_Prefab>().setDataCard(false);
             gmTemp.transform.parent = contentCards2Play.transform;
             gmTemp.GetComponent<InventoryCard_cls>().isActive = true;
 

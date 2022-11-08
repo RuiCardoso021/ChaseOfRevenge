@@ -38,7 +38,6 @@ public class InventoryPlayableCardsManager : MonoBehaviour
         {
             //generate card          
             gmTemp = Instantiate(cardGameObject, Vector3.zero, Quaternion.identity);
-            gmTemp.GetComponent<Card_Prefab>().setDataCard(false);
             gmTemp.GetComponent<Card_Prefab>().dataCard = card;
             gmTemp.transform.parent = content.transform;
 
