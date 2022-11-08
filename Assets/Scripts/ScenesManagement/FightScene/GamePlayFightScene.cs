@@ -62,6 +62,7 @@ public class GamePlayFightScene : MonoBehaviour
 
             //atribui valores da carta que é clicada
             Card cardChose = new Card();
+            _cardsToPlay.getCardChoose();
             cardChose = _cardsToPlay.CardChoose;
                 
             //valida se a carta escolhida esta vazia

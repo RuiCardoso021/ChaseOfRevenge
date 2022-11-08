@@ -157,4 +157,22 @@ public class CardManager : MonoBehaviour
         }
     }
 
+    public void getCardChoose()
+    {
+        
+        foreach (var item in CardsOnHand)
+        {
+            if (item.GetComponent<CardsAnimationFight>() != null)
+            {
+                //set cardchose if click
+                if (item.GetComponent<CardsAnimationFight>().mouse_click)
+                {
+                    CardChoose = item.GetComponent<Card_Prefab>().dataCard;
+                    item.GetComponent<CardsAnimationFight>().mouse_click = false;
+                }
+            }
+
+        }
+    }
+
 }

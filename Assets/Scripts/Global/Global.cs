@@ -57,4 +57,5 @@ public static class Global
     public static string linkToPanelLose = "FightSceneComponents/PanelLoseCanvas";
     public static string linkToPanelWin = "FightSceneComponents/PanelWinCanvas";
     public static string linkToPanelLoading = "LoadingScenes/LoadingPanel";
+    public static string linkToEnemyStatus = "FightSceneComponents/EnemyStatus";
 }
