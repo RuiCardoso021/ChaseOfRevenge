@@ -67,7 +67,6 @@ public class InventoryCard_cls : MonoBehaviour
         {
             Card_Prefab cp = inventoryManager.cardPrefabExpand.GetComponent<Card_Prefab>();
             cp.dataCard = gameObject.GetComponent<Card_Prefab>().dataCard;
-            cp.setDataCard(false);
         }
     }
 }

@@ -10,28 +10,13 @@ using static UnityEditor.Progress;
 public class CardsAnimationFight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     // Start is called before the first frame update
-    [SerializeField] private Button buttonAction;
-    private Card _thisCard;
     public bool mouse_over;
+    public bool mouse_click;
 
     void Start()
     {
         mouse_over = false;
-        //_cardPrefab = gameObject.GetComponent<Card_Prefab>();
-        //buttonAction = gameObject.GetComponent<Button>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        //buttonAction = gameObject.GetComponent<Button>();
-       
-    }
-
-    public void Inicialization(Card Card)
-    {
-        _thisCard = Card;
+        mouse_click = false;
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -48,9 +33,6 @@ public class CardsAnimationFight : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (GameObject.Find(Global.gameplayObject).GetComponent<GamePlayFightScene>()._cardsToPlay.CardChoose != null)
-        {
-            GameObject.Find(Global.gameplayObject).GetComponent<GamePlayFightScene>()._cardsToPlay.CardChoose = _thisCard;
-        }
+        mouse_click = true;
     }
 }

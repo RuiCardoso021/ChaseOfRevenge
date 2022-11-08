@@ -12,12 +12,22 @@ public class CardManager : MonoBehaviour
     private GameObject CardPrefab;
     public List<GameObject> CardsOnHand = new List<GameObject>();
     public Card CardChoose;
+    public bool nextRoundAnyCardDontCostMana;
 
-    public CardManager()
+    private void Start()
     {
+        nextRoundAnyCardDontCostMana = false;
         CardChoose = new Card();
         GameObjectFather = GameObject.Find(Global.cardContentFromGame);
         CardPrefab = Resources.Load(Global.cardPrefab) as GameObject;
+    }
+
+    private void Update()
+    {
+        if (CardsOnHand.Count > 0)
+        {
+            setManaAllCards(0);
+        } 
     }
 
     public void InstanceCardsToPlay(Deck deck){
@@ -39,9 +49,7 @@ public class CardManager : MonoBehaviour
             GameObject cardTemp = CardPrefab;
             cardTemp = Instantiate(CardPrefab, GameObjectFather.transform);
             cardTemp.GetComponent<Card_Prefab>().dataCard = deck.cards[random];
-            cardTemp.GetComponent<Card_Prefab>().setDataCard(true);
             cardTemp.AddComponent<CardsAnimationFight>();
-            cardTemp.GetComponent<CardsAnimationFight>().Inicialization(deck.cards[random]);
             CardsOnHand.Add(cardTemp);
         }
     }
@@ -91,7 +99,6 @@ public class CardManager : MonoBehaviour
             int random = Random.Range(0, deck.cards.Length);
 
             CardPrefab.GetComponent<Card_Prefab>().dataCard = deck.cards[random];
-            CardPrefab.GetComponent<Card_Prefab>().setDataCard(true);
             CardPrefab.transform.localScale = tempGameObject.transform.localScale;
             CardsOnHand.Add(Instantiate(CardPrefab, tempGameObject.transform.position, Quaternion.identity, GameObjectFather.transform));
         }
@@ -110,20 +117,25 @@ public class CardManager : MonoBehaviour
         return TempCard;
     }
 
-    public void setManaAllCards(int mana)
+    private void setManaAllCards(int mana)
     {
-        foreach (var card in CardsOnHand)
+        if (nextRoundAnyCardDontCostMana)
         {
-            card.GetComponent<Card_Prefab>().dataCard.mana = mana;
-        }
+            foreach (var card in CardsOnHand)
+            {
+                card.GetComponent<Card_Prefab>().dataCard.mana = mana;
+            }
+            nextRoundAnyCardDontCostMana = false;
+        }    
     }
 
     public void addScaleCard()
     {
         foreach (var item in CardsOnHand)
         {
-            if (item.GetComponent<Card_Prefab>() != null)
+            if (item.GetComponent<CardsAnimationFight>() != null)
             {
+                //set transformation card if houver
                 if (item.GetComponent<CardsAnimationFight>().mouse_over)
                 {
                     RectTransform rect = item.gameObject.GetComponent<RectTransform>();
@@ -135,6 +147,11 @@ public class CardManager : MonoBehaviour
                     rect.transform.localScale = new Vector3(1f, 1f, 1f);
                 }
 
+                //set cardchose if click
+                if (item.GetComponent<CardsAnimationFight>().mouse_click)
+                {
+                    CardChoose = item.GetComponent<Card_Prefab>().dataCard;
+                }
             }
             
         }

@@ -18,7 +18,6 @@ public class GamePlayFightScene : MonoBehaviour
     public Character_cls player;
     public Character_cls enemy;
     private int manaRound;
-    private bool nextRoundAnyCardDontCostMana;
 
     private void Start()
     {
@@ -26,7 +25,7 @@ public class GamePlayFightScene : MonoBehaviour
         validate = true;
         _turn = GetComponent<RoundTurn>();
         _turn.myTurn = true;
-        _cardsToPlay = new CardManager();
+        _cardsToPlay = GetComponent<CardManager>();
         
     }
 
@@ -41,9 +40,9 @@ public class GamePlayFightScene : MonoBehaviour
 
             //codigo rodado enquanto não existir um ecrã de vitoria ou derrota
 
-                manaRound = 4;
+            manaRound = 4;
 
-                roudnd();
+            roudnd();
 
 
             
@@ -64,12 +63,6 @@ public class GamePlayFightScene : MonoBehaviour
             //atribui valores da carta que é clicada
             Card cardChose = new Card();
             cardChose = _cardsToPlay.CardChoose;
-
-            if (nextRoundAnyCardDontCostMana)
-            {
-                _cardsToPlay.setManaAllCards(0);
-                nextRoundAnyCardDontCostMana = false;
-            }
                 
             //valida se a carta escolhida esta vazia
             if (!cardChose.IsEmpty())
@@ -119,7 +112,7 @@ public class GamePlayFightScene : MonoBehaviour
                                 }
                                 break;
                             case var value when value == Global.Card_ManaCard:
-                                nextRoundAnyCardDontCostMana = true;
+                                _cardsToPlay.nextRoundAnyCardDontCostMana = true;
                                 break;
                             default:
                                 Debug.Log("This Ability, don´t exist!");
