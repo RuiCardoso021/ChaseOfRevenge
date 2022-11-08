@@ -36,46 +36,46 @@ public class Card_Prefab : MonoBehaviour
         _image = imageID;
     }
 
-    private void OnMouseOver()
-    {
-        if (activeExpand)
-        {
-            RectTransform rect = this.gameObject.GetComponent<RectTransform>();
-            rect.transform.localScale = new Vector3(1f,1f,1f);
-        }
-    }
+    //private void OnMouseOver()
+    //{
+    //    if (activeExpand)
+    //    {
+    //        RectTransform rect = this.gameObject.GetComponent<RectTransform>();
+    //        rect.transform.localScale = new Vector3(1f,1f,1f);
+    //    }
+    //}
+    //
+    //private void OnMouseExit()
+    //{
+    //    if (activeExpand)
+    //    {
+    //        RectTransform rect = this.gameObject.GetComponent<RectTransform>();
+    //        rect.transform.localScale = new Vector3(0.025f, 0.025f, 0.025f);
+    //    }
+    //}
 
-    private void OnMouseExit()
-    {
-        if (activeExpand)
-        {
-            RectTransform rect = this.gameObject.GetComponent<RectTransform>();
-            rect.transform.localScale = new Vector3(0.025f, 0.025f, 0.025f);
-        }
-    }
-
-    private void OnMouseDown()
-    {
-        if (GameObject.Find(Global.gameplayObject).GetComponent<GamePlayFightScene>()._cardsToPlay.CardChoose != null)
-        {
-            GameObject.Find(Global.gameplayObject).GetComponent<GamePlayFightScene>()._cardsToPlay.CardChoose = dataCard;
-        }
-        else if (GameObject.Find(Global.cardInventoryObject).GetComponent<InventoryManager>().cards2play != null)
-        {
-            //InventoryCard_cls inventoryCard = GameObject.Find("CardInventory").GetComponent<InventoryManager>().cards2play;
-
-            foreach (GameObject inventoryCard in
-                GameObject.Find(Global.cardInventoryObject).GetComponent<InventoryManager>().cards2play)
-            {
-                if (inventoryCard.GetComponent<Card_Prefab>().dataCard == dataCard)
-                {
-                    inventoryCard.GetComponent<InventoryCard_cls>().isActive = !inventoryCard.GetComponent<InventoryCard_cls>().isActive;
-                    Debug.Log(inventoryCard.GetComponent<InventoryCard_cls>().isActive);
-                }
-            }
-        }
-        activeClick = true;
-    }
+    //private void OnMouseDown()
+    //{
+    //    if (GameObject.Find(Global.gameplayObject).GetComponent<GamePlayFightScene>()._cardsToPlay.CardChoose != null)
+    //    {
+    //        GameObject.Find(Global.gameplayObject).GetComponent<GamePlayFightScene>()._cardsToPlay.CardChoose = dataCard;
+    //    }
+    //    else if (GameObject.Find(Global.cardInventoryObject).GetComponent<InventoryManager>().cards2play != null)
+    //    {
+    //        //InventoryCard_cls inventoryCard = GameObject.Find("CardInventory").GetComponent<InventoryManager>().cards2play;
+    //
+    //        foreach (GameObject inventoryCard in
+    //            GameObject.Find(Global.cardInventoryObject).GetComponent<InventoryManager>().cards2play)
+    //        {
+    //            if (inventoryCard.GetComponent<Card_Prefab>().dataCard == dataCard)
+    //            {
+    //                inventoryCard.GetComponent<InventoryCard_cls>().isActive = !inventoryCard.GetComponent<InventoryCard_cls>().isActive;
+    //                Debug.Log(inventoryCard.GetComponent<InventoryCard_cls>().isActive);
+    //            }
+    //        }
+    //    }
+    //    activeClick = true;
+    //}
 }
 
 

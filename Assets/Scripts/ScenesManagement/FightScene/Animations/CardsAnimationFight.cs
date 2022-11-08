@@ -3,47 +3,54 @@ using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
-public class CardsAnimationFight : MonoBehaviour
+public class CardsAnimationFight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     // Start is called before the first frame update
     [SerializeField] private Button buttonAction;
-    private Card_Prefab _cardPrefab;
+    private Card _thisCard;
+    public bool mouse_over;
 
     void Start()
     {
-        _cardPrefab = gameObject.GetComponent<Card_Prefab>();
-        buttonAction = gameObject.GetComponent<Button>();
+        mouse_over = false;
+        //_cardPrefab = gameObject.GetComponent<Card_Prefab>();
+        //buttonAction = gameObject.GetComponent<Button>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        buttonAction = gameObject.GetComponent<Button>();
 
-        
+        //buttonAction = gameObject.GetComponent<Button>();
+       
     }
 
-    
-
-    private void OnMouseOver()
+    public void Inicialization(Card Card)
     {
-        RectTransform rect = this.gameObject.GetComponent<RectTransform>();
-        rect.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+        _thisCard = Card;
     }
 
-    private void OnMouseExit()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        RectTransform rect = this.gameObject.GetComponent<RectTransform>();
-        rect.transform.localScale = new Vector3(1f, 1f, 1f);    
+        mouse_over = true;
+
     }
 
-    private void OnMouseDown()
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        mouse_over = false;
+
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
     {
         if (GameObject.Find(Global.gameplayObject).GetComponent<GamePlayFightScene>()._cardsToPlay.CardChoose != null)
         {
-            GameObject.Find(Global.gameplayObject).GetComponent<GamePlayFightScene>()._cardsToPlay.CardChoose = _cardPrefab.dataCard;
+            GameObject.Find(Global.gameplayObject).GetComponent<GamePlayFightScene>()._cardsToPlay.CardChoose = _thisCard;
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -40,6 +41,7 @@ public class CardManager : MonoBehaviour
             cardTemp.GetComponent<Card_Prefab>().dataCard = deck.cards[random];
             cardTemp.GetComponent<Card_Prefab>().setDataCard(true);
             cardTemp.AddComponent<CardsAnimationFight>();
+            cardTemp.GetComponent<CardsAnimationFight>().Inicialization(deck.cards[random]);
             CardsOnHand.Add(cardTemp);
         }
     }
@@ -113,6 +115,28 @@ public class CardManager : MonoBehaviour
         foreach (var card in CardsOnHand)
         {
             card.GetComponent<Card_Prefab>().dataCard.mana = mana;
+        }
+    }
+
+    public void addScaleCard()
+    {
+        foreach (var item in CardsOnHand)
+        {
+            if (item.GetComponent<Card_Prefab>() != null)
+            {
+                if (item.GetComponent<CardsAnimationFight>().mouse_over)
+                {
+                    RectTransform rect = item.gameObject.GetComponent<RectTransform>();
+                    rect.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+                }
+                else if (!item.GetComponent<CardsAnimationFight>().mouse_over)
+                {
+                    RectTransform rect = item.gameObject.GetComponent<RectTransform>();
+                    rect.transform.localScale = new Vector3(1f, 1f, 1f);
+                }
+
+            }
+            
         }
     }
 

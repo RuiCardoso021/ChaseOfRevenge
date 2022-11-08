@@ -21,6 +21,7 @@ public class ManagerGameFight : MonoBehaviour
     public ManagerGameFight_cls Manager;
     public HistoricGameFight_cls[] HistoricGame;
     public int IndexHistoric;
+    [SerializeField] private Texture2D _cursorTexture;
 
     private bool _validation;
 
@@ -31,6 +32,9 @@ public class ManagerGameFight : MonoBehaviour
         _validation = true;
         HistoricGame = new HistoricGameFight_cls[TOTAL_HISTORIC];
         IndexHistoric = 0;
+
+        Vector2 hotSpot = new Vector2(_cursorTexture.width / 4, _cursorTexture.height / 4);
+        Cursor.SetCursor(_cursorTexture, hotSpot, CursorMode.ForceSoftware);
         Invoke("Inicialization", 1.5f);
     }
 

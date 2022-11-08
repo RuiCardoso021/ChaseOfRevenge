@@ -54,6 +54,9 @@ public class GamePlayFightScene : MonoBehaviour
     {
         if (_turn.myTurn)
         {
+            //animation mouseHover
+            _cardsToPlay.addScaleCard();
+
             //gera as cartas se nao existirem
             if (_cardsToPlay.CardsOnHand.Count == 0)
                 generateCards();
