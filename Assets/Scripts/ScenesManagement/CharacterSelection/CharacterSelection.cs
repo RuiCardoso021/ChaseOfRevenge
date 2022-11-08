@@ -5,6 +5,7 @@ using Cinemachine;
 public class CharacterSelection : MonoBehaviour
 {
 	public GameObject[] characters;
+	public InteractionCharacterSelectionPanel Panel;
 
 	private int index;
 
@@ -12,6 +13,7 @@ public class CharacterSelection : MonoBehaviour
     {
 		index = PlayerPrefs.GetInt(Global.selectionObjects);
 		characters = new GameObject[transform.childCount];
+		Panel = GameObject.Find("CharacterInformation").GetComponent<InteractionCharacterSelectionPanel>();
 
 		//Add GameObjects for to list
 		for (int i = 0; i < transform.childCount; i++)
@@ -29,6 +31,17 @@ public class CharacterSelection : MonoBehaviour
 			{
 				go.SetActive(false);
 			}
+		}
+	}
+
+    private void Update()
+    {
+		if(Panel != null)
+        {
+			Panel.Name = characters[index].GetComponent<Character_cls>().Name;
+			Panel.Health = characters[index].GetComponent<Character_cls>().Health;
+			Panel.Mana = characters[index].GetComponent<Character_cls>().Mana;
+			Panel.ClassType = characters[index].GetComponent<Character_cls>().ClassType;
 		}
 	}
 
