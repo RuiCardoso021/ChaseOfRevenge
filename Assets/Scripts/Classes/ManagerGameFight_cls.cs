@@ -53,6 +53,10 @@ public class ManagerGameFight_cls {
                 NextCharacter = gameObject;
                 firstEnemy = false;
             }
+
+            if (IsEnemy(gameObject.GetComponent<Character_cls>())){
+                gameObject.AddComponent<Enemy_Config_FightScene_Prefab>();
+            }
         }
 
         CharactersICanAttack = new GameObject[countEnemys()];
