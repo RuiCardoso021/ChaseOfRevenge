@@ -404,6 +404,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 5542144767590784213}
-  _txtLife: {fileID: 0}
   MaxLife: 0
   health: 20
