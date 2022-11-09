@@ -8,9 +8,9 @@ public class CardManager : MonoBehaviour
 {
     private const int TOTAL_CARDS_ON_HAND = 4;
 
-    private GameObject GameObjectFather;
     private GameObject CardPrefab;
     public List<GameObject> CardsOnHand = new List<GameObject>();
+    public List<GameObject> TempCardOffHand = new List<GameObject>();
     public Card CardChoose;
     public bool nextRoundAnyCardDontCostMana;
 
@@ -18,7 +18,6 @@ public class CardManager : MonoBehaviour
     {
         nextRoundAnyCardDontCostMana = false;
         CardChoose = new Card();
-        GameObjectFather = GameObject.Find(Global.cardContentFromGame);
         CardPrefab = Resources.Load(Global.cardPrefab) as GameObject;
     }
 
@@ -26,6 +25,8 @@ public class CardManager : MonoBehaviour
     {
         if (CardsOnHand.Count > 0)
         {
+            //animation mouseHover
+            AddAnimation();
             setManaAllCards(0);
         } 
     }
@@ -45,15 +46,26 @@ public class CardManager : MonoBehaviour
             } while (cardsToGive.Contains(random));
             cardsToGive.Add(random);
 
-            //generate card
-            GameObject cardTemp = CardPrefab;
-            cardTemp = Instantiate(CardPrefab, GameObjectFather.transform);
-            cardTemp.GetComponent<Card_Prefab>().dataCard = deck.cards[random];
-            cardTemp.AddComponent<CardsAnimationFight>();
-            CardsOnHand.Add(cardTemp);
+            InstanceCard(deck.cards[random]);
         }
     }
 
+    //generate card
+    private void InstanceCard(Card card)
+    {
+        if (card != null)
+        {
+            GameObject GameObjectFather = GameObject.Find(Global.cardContentFromGame);
+            GameObject cardTemp = CardPrefab;
+            cardTemp = Instantiate(CardPrefab, GameObjectFather.transform);
+            cardTemp.GetComponent<Card_Prefab>().dataCard = card;
+            cardTemp.AddComponent<CardsAnimationFight>();
+            CardsOnHand.Add(cardTemp);
+        }
+
+    }
+
+    //Destroy all Cards
     public void DestroyAllInstanceCards(){
         foreach (var item in CardsOnHand)
         {
@@ -63,6 +75,7 @@ public class CardManager : MonoBehaviour
         CardsOnHand = new List<GameObject>();
     }
 
+    //Destroy CardChoose
     public void DestroyThisCard()
     {
         List<GameObject> tempListCardsOnHand = new List<GameObject>();
@@ -87,6 +100,7 @@ public class CardManager : MonoBehaviour
 
     }
 
+    //Destroy CardChoose and get another
     public void DestroyThisCardAndGetAnother(Deck deck)
     {
         GameObject tempGameObject = FindGameObjWithThisCard(CardChoose);
@@ -98,16 +112,15 @@ public class CardManager : MonoBehaviour
             //indice random
             int random = Random.Range(0, deck.cards.Length);
 
-            CardPrefab.GetComponent<Card_Prefab>().dataCard = deck.cards[random];
-            CardPrefab.transform.localScale = tempGameObject.transform.localScale;
-            CardsOnHand.Add(Instantiate(CardPrefab, tempGameObject.transform.position, Quaternion.identity, GameObjectFather.transform));
+            InstanceCard(deck.cards[random]);
         }
         
     }
 
+    //Return GameObject if existe inside list "CardOnHand"
     private GameObject FindGameObjWithThisCard(Card card)
     {
-        GameObject TempCard = new GameObject();
+        GameObject TempCard = null;
         foreach (var item in CardsOnHand)
         {
             if (item.GetComponent<Card_Prefab>().dataCard == card)
@@ -117,6 +130,7 @@ public class CardManager : MonoBehaviour
         return TempCard;
     }
 
+    //Set mana value on all cards
     private void setManaAllCards(int mana)
     {
         if (nextRoundAnyCardDontCostMana)
@@ -129,7 +143,8 @@ public class CardManager : MonoBehaviour
         }    
     }
 
-    public void addScaleCard()
+    //Apply event mouse over on cards
+    public void AddAnimation()
     {
         foreach (var item in CardsOnHand)
         {
@@ -146,17 +161,12 @@ public class CardManager : MonoBehaviour
                     RectTransform rect = item.gameObject.GetComponent<RectTransform>();
                     rect.transform.localScale = new Vector3(1f, 1f, 1f);
                 }
-
-                //set cardchose if click
-                if (item.GetComponent<CardsAnimationFight>().mouse_click)
-                {
-                    CardChoose = item.GetComponent<Card_Prefab>().dataCard;
-                }
             }
             
         }
     }
 
+    //set "dataCard" on "CardChoose" if click in this card
     public void getCardChoose()
     {
         

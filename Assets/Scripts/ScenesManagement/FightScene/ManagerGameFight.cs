@@ -43,8 +43,26 @@ public class ManagerGameFight : MonoBehaviour
         //this permisse is active after method Invoke
         if (!_validation)
         {
-            Debug.Log("Management: " + Manager.CurrentCharacter.GetComponent<Character_cls>().Health);
+            updateSelectionCharacter();
+            //Debug.Log("Management: " + Manager.CurrentCharacter.GetComponent<Character_cls>().Health);
         }
+    }
+
+    private void updateSelectionCharacter()
+    {
+        if (Manager.CharactersOnFight != null)
+        {
+            foreach (GameObject gm in Manager.CharactersOnFight)
+            {  
+                Enemy_Config_FightScene_Prefab enemy_config = gm.GetComponent<Enemy_Config_FightScene_Prefab>();
+                if(enemy_config != null)
+                {
+                    if (gm == Manager.NextCharacter) enemy_config.checkSelection = true;
+                    else enemy_config.checkSelection = false;
+                }
+            }
+        }
+    
     }
 
     private void Inicialization()
@@ -54,7 +72,7 @@ public class ManagerGameFight : MonoBehaviour
         _validation = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
     }
 
     public void AddCardsOnHistoric(Card card)

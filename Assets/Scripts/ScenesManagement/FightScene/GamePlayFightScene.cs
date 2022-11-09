@@ -39,13 +39,9 @@ public class GamePlayFightScene : MonoBehaviour
             enemy = ManagerGameFight.Instance.Manager.NextCharacter.GetComponent<Character_cls>();
 
             //codigo rodado enquanto não existir um ecrã de vitoria ou derrota
-
             manaRound = 4;
 
             roudnd();
-
-
-            
         }
     }
 
@@ -53,9 +49,6 @@ public class GamePlayFightScene : MonoBehaviour
     {
         if (_turn.myTurn)
         {
-            //animation mouseHover
-            _cardsToPlay.addScaleCard();
-
             //gera as cartas se nao existirem
             if (_cardsToPlay.CardsOnHand.Count == 0)
                 generateCards();
@@ -157,6 +150,7 @@ public class GamePlayFightScene : MonoBehaviour
         //Variables Inicialization.
         if (character_cls_player_to_game.myDeck != null && character_cls_player_to_game.ClassType != Global.findEnemy)
         {
+            
             _deck = character_cls_player_to_game.myDeck;
 
                 

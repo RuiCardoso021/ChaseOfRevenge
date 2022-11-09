@@ -58,7 +58,6 @@ public class ManagerGameFight_cls {
                 gameObject.AddComponent<Enemy_Config_FightScene_Prefab>();
             }
         }
-
         CharactersICanAttack = new GameObject[countEnemys()];
         CharactersICanAttack[0] = NextCharacter;
 

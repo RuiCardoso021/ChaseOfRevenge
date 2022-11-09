@@ -11,7 +11,7 @@
                 { 
                     "tag": "Damage", 
                     "value": 2, 
-                    "effect_quantity": 4, 
+                    "effect_quantity": 0, 
                     "type_effect": "Other"
                 },
                  { 
