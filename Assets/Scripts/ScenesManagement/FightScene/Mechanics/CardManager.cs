@@ -169,7 +169,6 @@ public class CardManager : MonoBehaviour
     //set "dataCard" on "CardChoose" if click in this card
     public void getCardChoose()
     {
-        
         foreach (var item in CardsOnHand)
         {
             if (item.GetComponent<CardsAnimationFight>() != null)

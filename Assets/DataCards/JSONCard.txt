@@ -10,7 +10,7 @@
             [
                 { 
                     "tag": "Damage", 
-                    "value": 2, 
+                    "value": 2,
                     "effect_quantity": 0, 
                     "type_effect": "Other"
                 },
@@ -53,7 +53,7 @@
                 { 
                     "tag": "Damage", 
                     "value": 1, 
-                    "effect_quantity": 4, 
+                    "effect_quantity": 0, 
                     "type_effect": "Other"
                 },
                 { 
@@ -155,7 +155,7 @@
                 { 
                     "tag": "Damage", 
                     "value": 3, 
-                    "effect_quantity": 1, 
+                    "effect_quantity": -1, 
                     "type_effect": "Other"
                 }
             ],
@@ -209,7 +209,7 @@
                 { 
                     "tag": "Damage", 
                     "value": 2, 
-                    "effect_quantity": 1, 
+                    "effect_quantity": -1, 
                     "type_effect": "Other"
                 }
             ],
@@ -263,7 +263,7 @@
             [
                 { 
                     "tag": "Damage", 
-                    "value": 1, 
+                    "value": 0, 
                     "effect_quantity": 4, 
                     "type_effect": "Other"
                 }
@@ -318,7 +318,7 @@
                 { 
                     "tag": "Damage", 
                     "value": 3, 
-                    "effect_quantity": 1, 
+                    "effect_quantity": -1, 
                     "type_effect": "Other"
                 }
             ],
@@ -354,7 +354,7 @@
                 { 
                     "tag": "Damage", 
                     "value": 2, 
-                    "effect_quantity": 1, 
+                    "effect_quantity": -1, 
                     "type_effect": "Other"
                 }
             ],
@@ -389,7 +389,7 @@
             [
                 { 
                     "tag": "Damage", 
-                    "value": 1, 
+                    "value": 0, 
                     "effect_quantity": 4, 
                     "type_effect": "Other"
                 }
@@ -408,7 +408,7 @@
                 { 
                     "tag": "Heal", 
                     "value": 2, 
-                    "effect_quantity": 0, 
+                    "effect_quantity": 1, 
                     "type_effect": "Me"
                 }
             ],
@@ -444,13 +444,13 @@
                 { 
                     "tag": "Damage", 
                     "value": 3, 
-                    "effect_quantity": 1, 
+                    "effect_quantity": -1, 
                     "type_effect": "Other"
                 },
                 { 
                     "tag": "Heal", 
                     "value": 1, 
-                    "effect_quantity": 0, 
+                    "effect_quantity": 1, 
                     "type_effect": "Me"
                 }
             ],
@@ -468,7 +468,7 @@
                 { 
                     "tag": "Heal", 
                     "value": 5, 
-                    "effect_quantity": 0, 
+                    "effect_quantity": 1, 
                     "type_effect": "Me"
                 }
             ],
@@ -496,6 +496,30 @@
         },
         {
             "id": 27,
+            "type": "UN",
+            "name": "HealEnemy",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Heal", 
+                    "value": 0, 
+                    "effect_quantity": -1, 
+                    "type_effect": "Me"
+                },
+                { 
+                    "tag": "Heal", 
+                    "value": 10, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "Full heal but all enemies give 15 heal to",
+            "mana":4,
+            "src": "warrior"
+        },
+        {
+            "id": 28,
             "type": "WAR",
             "name": "Killemall",
             "number_effects": 1,
@@ -504,7 +528,7 @@
                 { 
                     "tag": "Damage", 
                     "value": 3, 
-                    "effect_quantity": 4, 
+                    "effect_quantity": 0, 
                     "type_effect": "Other"
                 }
             ],

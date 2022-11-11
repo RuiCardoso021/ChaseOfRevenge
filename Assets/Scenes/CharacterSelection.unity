@@ -855,6 +855,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894427765}
   m_CullTransparentMesh: 1
+--- !u!114 &903622480 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6293696364809620394, guid: 52017ddaf3808da4788e98d72e4020b6, type: 3}
+  m_PrefabInstance: {fileID: 1292330936}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1851,6 +1862,7 @@ MonoBehaviour:
   _txtLife: {fileID: 426610324}
   _txtMana: {fileID: 1247698309}
   _txtClassType: {fileID: 1005975984}
+  _healthBar: {fileID: 903622480}
   Name: 
   Health: 0
   Mana: 0
@@ -2050,9 +2062,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1300952961}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34977796f7011a842a0b560e2d532462, type: 3}
+  m_Script: {fileID: 11500000, guid: 75c6201a2465c324db534c838e414c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LoadedCharacter: []
+  _nextSceneName: TransferTestScene
 --- !u!1 &1306790352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4470061613590560578, guid: 3e944001186b739418491bde8735b260, type: 3}

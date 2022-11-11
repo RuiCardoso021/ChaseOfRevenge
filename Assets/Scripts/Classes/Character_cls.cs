@@ -7,13 +7,16 @@ using JetBrains.Annotations;
 
 public class Character_cls : MonoBehaviour
 {
+
+    [SerializeField] private TextAsset jsonFile;
+    private int _maxMana;
+
+    public float MaxHealth;
     public string Name;
     public int Mana;
     public string ClassType;
     public float Health;
     public Deck myDeck;
-
-    [SerializeField]private TextAsset jsonFile;
 
     private void Start()
     {
@@ -21,6 +24,8 @@ public class Character_cls : MonoBehaviour
         Deck deck = new Deck();     
         deck = JsonUtility.FromJson<Deck>(jsonFile.text);
         List<Card> inventoryCards = new List<Card>();
+        MaxHealth = Health;
+        _maxMana = Mana;
 
         foreach (Card card in deck.cards)
         {
@@ -30,6 +35,24 @@ public class Character_cls : MonoBehaviour
             }
         }
         myDeck.cards = inventoryCards.ToArray();
+    }
+
+
+    private void Update()
+    {
+        HealthValidation();
+        ManaValidation();
+    }
+
+    private void HealthValidation()
+    {
+        if (Health < 0) Health = 0;
+        if (Health > MaxHealth) Health = MaxHealth;
+    }
+
+    private void ManaValidation()
+    {
+        if (Mana < 0) Mana = 0;
     }
 
 }

@@ -9,24 +9,20 @@ using UnityEngine.SceneManagement;
 public class GamePlayFightScene : MonoBehaviour
 {
 
+    private CardManager _cardsToPlay;
     private RoundTurn _turn;
     private Deck _deck;
-    public CardManager _cardsToPlay ;
-    private bool validate;
-    //private int totalCharactersOnFight;
     private int indexCharacters;
-    public Character_cls player;
-    public Character_cls enemy;
-    private int manaRound;
+    private Character_cls player;
+    private Character_cls enemy;
+    private bool activeDestroyThisCard;
 
+    //Start
     private void Start()
     {
         indexCharacters = 0;
-        validate = true;
         _turn = GetComponent<RoundTurn>();
-        _turn.myTurn = true;
-        _cardsToPlay = GetComponent<CardManager>();
-        
+        _cardsToPlay = GetComponent<CardManager>(); 
     }
 
     // Update is called once per frame
@@ -39,13 +35,11 @@ public class GamePlayFightScene : MonoBehaviour
             enemy = ManagerGameFight.Instance.Manager.NextCharacter.GetComponent<Character_cls>();
 
             //codigo rodado enquanto não existir um ecrã de vitoria ou derrota
-            manaRound = 4;
-
-            roudnd();
+            MechanicsCards();
         }
     }
 
-    public void roudnd()
+    private void MechanicsCards()
     {
         if (_turn.myTurn)
         {
@@ -63,7 +57,7 @@ public class GamePlayFightScene : MonoBehaviour
             {
                 if (player.Mana >= cardChose.mana)
                 {
-                    bool activeDestroyThisCard = true;
+                    activeDestroyThisCard = true;
                     int countAbility = cardChose.ability.Length;
                     for (int i = 0; i < countAbility; i++)
                     {
@@ -72,41 +66,19 @@ public class GamePlayFightScene : MonoBehaviour
                         switch (ability.tag)
                         {
                             case var value when value == Global.damageCard:
-                                Debug.Log("Damage");
-                                if (ability.type_effect == Global.cardAffectsOther)
-                                    enemy.Health -= ability.value;
-                                else if (ability.type_effect == Global.cardAffectsPlayer)
-                                    player.Health -= ability.value;
+                                IfDamage(ability);
                                 break;
                             case var value when value == Global.healCard:
-                                if (ability.type_effect == Global.cardAffectsPlayer)
-                                {
-                                    player.Health += ability.value;
-                                }
-                                else if (ability.type_effect == Global.cardAffectsOther)
-                                {
-                                    enemy.Health += ability.value;
-                                }
-                                Debug.Log("health");
+                                IfHealth(ability);
                                 break;
                             case var value when value == Global.ccCard:
-                                Debug.Log("CC: " + ability);
+                                IfCC(ability);
                                 break;
                             case var value when value == Global.ShuffleCard:
-                                Debug.Log("Shuffle: " + ability);
-                                if (ability.effect_quantity == 4)
-                                {
-                                    _cardsToPlay.DestroyAllInstanceCards();
-                                    generateCards();
-                                    activeDestroyThisCard = false;
-                                }
-                                else if (ability.effect_quantity == 1)
-                                {
-                                    _cardsToPlay.DestroyThisCardAndGetAnother(player.myDeck);
-                                }
+                                IfShuffle(ability);
                                 break;
                             case var value when value == Global.Card_ManaCard:
-                                _cardsToPlay.nextRoundAnyCardDontCostMana = true;
+                                IfCardMana(ability);
                                 break;
                             default:
                                 Debug.Log("This Ability, don´t exist!");
@@ -125,7 +97,6 @@ public class GamePlayFightScene : MonoBehaviour
                 //clear cardChoose
                 _cardsToPlay.CardChoose = new Card();
 
-                if (player.Mana == 0) _turn.NextTurn();
             }
 
         }
@@ -144,6 +115,70 @@ public class GamePlayFightScene : MonoBehaviour
         
     }
 
+    //damage in character(s)
+    private void IfDamage(Ability _ab)
+    {
+        if (_ab.type_effect == Global.cardAffectsOther) {  //if others
+            
+            if (_ab.effect_quantity == 0)  //if all enemies
+                ManagerGameFight.Instance.Manager.SetNewValuesOnAllCharactersICanAttack(-_ab.value, 1);
+
+            else if (_ab.effect_quantity == -1) //if a random
+                ManagerGameFight.Instance.Manager.SetNewValuesOnRandomCharacter(-_ab.value, 1);
+
+        } else if (_ab.type_effect == Global.cardAffectsPlayer) //if player to play
+            player.Health -= _ab.value;
+    }
+
+    //heal mechanics
+    private void IfHealth(Ability _ab)
+    {
+        if (_ab.type_effect == Global.cardAffectsPlayer)
+        {
+            if (_ab.effect_quantity == 1) //recive heal value
+                player.Health += _ab.value;
+            else if (_ab.effect_quantity == 0) //recive heal value per player
+                player.Health += _ab.value * ManagerGameFight.Instance.Manager.CharactersICanAttack.Length;
+            else if (_ab.effect_quantity == -1) //player to play recibe full hp
+                player.Health = player.MaxHealth;
+
+        }
+        else if (_ab.type_effect == Global.cardAffectsOther)
+        {
+            if (_ab.effect_quantity == 0) //all enemies recibe heal
+                ManagerGameFight.Instance.Manager.SetNewValuesOnAllCharactersICanAttack(_ab.value, 1);
+            //enemy.Health += _ab.value;
+        }
+    }
+
+    //cc mechanics
+    private void IfCC(Ability _ab)
+    {
+        Debug.Log("CC: " + _ab.tag);
+    }
+
+    //shuffle mechanics
+    private void IfShuffle(Ability _ab)
+    {
+        if (_ab.effect_quantity == 4)
+        {
+            _cardsToPlay.DestroyAllInstanceCards();
+            generateCards();
+            //activeDestroyThisCard = false;
+        }
+        else if (_ab.effect_quantity == 1)
+        {
+            _cardsToPlay.DestroyThisCardAndGetAnother(player.myDeck);
+        }
+    }
+
+    //card mana mechanics
+    private void IfCardMana(Ability _ab)
+    {
+        _cardsToPlay.nextRoundAnyCardDontCostMana = true;
+    }
+
+    //generate inicial cards
     private void generateCards()
     {
         Character_cls character_cls_player_to_game = RecibeGameObject.Instance.SpawnerList[indexCharacters].GetComponent<Character_cls>();
@@ -155,7 +190,6 @@ public class GamePlayFightScene : MonoBehaviour
 
                 
             _cardsToPlay.InstanceCardsToPlay(_deck);
-
             
         }
     }

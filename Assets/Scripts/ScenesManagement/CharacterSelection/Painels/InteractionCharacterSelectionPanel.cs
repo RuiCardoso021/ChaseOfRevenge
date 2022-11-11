@@ -31,6 +31,7 @@ public class InteractionCharacterSelectionPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         _textName.text = Name;
         _txtLife.text = Health.ToString();
         _txtMana.text = Mana.ToString();
