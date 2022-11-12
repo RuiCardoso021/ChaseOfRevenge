@@ -2350,13 +2350,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b377919b276434cb65b5816e66abc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
+  MaxHealth: 0
   Name: Flora Raven
   Mana: 4
   ClassType: ARCH
   Health: 25
+  ImageProfile: {fileID: 0}
   myDeck:
     cards: []
-  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
 --- !u!1 &4519581575202206770
 GameObject:
   m_ObjectHideFlags: 0

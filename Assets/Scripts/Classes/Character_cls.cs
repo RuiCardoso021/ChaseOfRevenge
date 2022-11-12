@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using JetBrains.Annotations;
+using UnityEngine.UI;
 
 public class Character_cls : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class Character_cls : MonoBehaviour
     public int Mana;
     public string ClassType;
     public float Health;
+    public Image ImageProfile;
     public Deck myDeck;
 
     private void Start()

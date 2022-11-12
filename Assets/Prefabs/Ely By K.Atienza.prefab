@@ -608,8 +608,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Haskey: 0
   inventoryScreen: {fileID: 0}
-  inventoryOpen: {fileID: 0}
-  inventoryClose: {fileID: 0}
   isOpen: 0
   canClose: 0
 --- !u!114 &8077005773958875744
@@ -624,13 +622,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b377919b276434cb65b5816e66abc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
+  MaxHealth: 0
   Name: Miles Raven
   Mana: 3
   ClassType: war
   Health: 30
+  ImageProfile: {fileID: 439449010024317519}
   myDeck:
     cards: []
-  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
 --- !u!1 &1033260045540049509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,7 +1552,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3323687915788371535}
-  m_LocalRotation: {x: 0.27676266, y: -0.00000001653427, z: 0.0000000047620836, w: 0.96093833}
+  m_LocalRotation: {x: 0.27676266, y: 0.00000001653427, z: -0.0000000047620836, w: 0.96093833}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2944,7 +2944,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7506137253698290906}
-  m_LocalRotation: {x: 0.31622773, y: 5.5798553e-25, z: 1.6739567e-24, w: 0.9486833}
+  m_LocalRotation: {x: 0.31622776, y: 5.579856e-25, z: 1.6739567e-24, w: 0.9486833}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

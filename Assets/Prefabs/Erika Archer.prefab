@@ -536,8 +536,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585941110047305032}
-  m_LocalRotation: {x: 0.29215637, y: 0.36304536, z: -0.121015124, w: 0.8764691}
-  m_LocalPosition: {x: 0.0000010115243, y: 3.5696803e-30, z: 0.0000010115243}
+  m_LocalRotation: {x: 0.29215637, y: 0.3630454, z: -0.121015124, w: 0.87646914}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1345,7 +1345,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2459625271754765518}
   m_LocalRotation: {x: 6.7524694e-25, y: -0.38268343, z: -1.6301904e-24, w: 0.92387956}
-  m_LocalPosition: {x: -0.00000023841858, y: 3, z: -4}
+  m_LocalPosition: {x: 0, y: 3, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1906,8 +1906,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3617704904974102151}
-  m_LocalRotation: {x: 0.27395317, y: 0.36547235, z: -0.11347511, w: 0.8823283}
-  m_LocalPosition: {x: 0.0000007586433, y: 2.6772604e-30, z: 0.00000059005595}
+  m_LocalRotation: {x: 0.27395317, y: 0.3654723, z: -0.11347511, w: 0.8823283}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2604,8 +2604,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Haskey: 0
   inventoryScreen: {fileID: 0}
-  inventoryOpen: {fileID: 0}
-  inventoryClose: {fileID: 0}
   isOpen: 0
   canClose: 0
 --- !u!114 &4657515292139348291
@@ -2620,13 +2618,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b377919b276434cb65b5816e66abc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
+  MaxHealth: 0
   Name: Flora Raven
   Mana: 4
   ClassType: ARCH
   Health: 25
   myDeck:
     cards: []
-  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
 --- !u!1 &4734692164924307303
 GameObject:
   m_ObjectHideFlags: 3
@@ -2651,8 +2650,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4734692164924307303}
-  m_LocalRotation: {x: 0.25569537, y: 0.36773518, z: -0.105912484, w: 0.8877912}
-  m_LocalPosition: {x: 0.0000007586433, y: 2.6772604e-30, z: 0.00000059005595}
+  m_LocalRotation: {x: 0.25569537, y: 0.36773518, z: -0.105912484, w: 0.8877913}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

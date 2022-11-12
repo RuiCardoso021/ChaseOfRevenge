@@ -213,8 +213,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Haskey: 0
   inventoryScreen: {fileID: 0}
-  inventoryOpen: {fileID: 0}
-  inventoryClose: {fileID: 0}
   isOpen: 0
   canClose: 0
 --- !u!114 &750881744025329362
@@ -273,13 +271,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b377919b276434cb65b5816e66abc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
+  MaxHealth: 0
   Name: Magus Raven
   Mana: 5
   ClassType: Sorceress
   Health: 20
   myDeck:
     cards: []
-  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
 --- !u!1 &581988369881591867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,7 +1077,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750881744414701351}
-  m_LocalRotation: {x: 0.24866468, y: 0.20492178, z: -0.05391527, w: 0.9451276}
+  m_LocalRotation: {x: 0.24866472, y: 0.20492181, z: -0.053915285, w: 0.9451275}
   m_LocalPosition: {x: -0.00000042146854, y: -1.4873669e-30, z: -0.0000009272307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1156,7 +1155,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750881744929856792}
-  m_LocalRotation: {x: 0.22904976, y: 0.20599377, z: -0.04966235, w: 0.9500719}
+  m_LocalRotation: {x: 0.22904974, y: 0.2059938, z: -0.04966238, w: 0.95007175}
   m_LocalPosition: {x: -0.00000016858742, y: -5.9494675e-31, z: -0.0000005057622}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
