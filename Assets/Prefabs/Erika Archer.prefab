@@ -2603,7 +2603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Haskey: 0
-  inventoryScreen: {fileID: 0}
+  inventoryScreen: {fileID: 6802077206074220884, guid: 6c0cac09af6af1a4e93a5456e2da7999, type: 3}
   isOpen: 0
   canClose: 0
 --- !u!114 &4657515292139348291
@@ -2624,6 +2624,7 @@ MonoBehaviour:
   Mana: 4
   ClassType: ARCH
   Health: 25
+  ImageProfile: {fileID: 0}
   myDeck:
     cards: []
 --- !u!1 &4734692164924307303
