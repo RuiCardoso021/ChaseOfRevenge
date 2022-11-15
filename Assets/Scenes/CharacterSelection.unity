@@ -1791,7 +1791,6 @@ MonoBehaviour:
   Health: 0
   Mana: 0
   ClassType: 
-  ImageProfile: {fileID: 0}
 --- !u!1001 &1292330936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1822,6 +1821,10 @@ PrefabInstance:
     - target: {fileID: 6029193848377925006, guid: 52017ddaf3808da4788e98d72e4020b6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293696365809152845, guid: 52017ddaf3808da4788e98d72e4020b6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -33.3
       objectReference: {fileID: 0}
     - target: {fileID: 6293696365928993338, guid: 52017ddaf3808da4788e98d72e4020b6, type: 3}
       propertyPath: m_Name
@@ -1931,9 +1934,29 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 6293696366055435300, guid: 52017ddaf3808da4788e98d72e4020b6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5483821
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293696366055435300, guid: 52017ddaf3808da4788e98d72e4020b6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5483821
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293696366055435300, guid: 52017ddaf3808da4788e98d72e4020b6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5483821
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293696366055435300, guid: 52017ddaf3808da4788e98d72e4020b6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 18.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6293696366055435301, guid: 52017ddaf3808da4788e98d72e4020b6, type: 3}
+      propertyPath: m_Name
+      value: ProfilePicture
+      objectReference: {fileID: 0}
     - target: {fileID: 6293696366517787824, guid: 52017ddaf3808da4788e98d72e4020b6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52017ddaf3808da4788e98d72e4020b6, type: 3}
