@@ -13,12 +13,12 @@ public class InventoryManager : MonoBehaviour
 
     public List<GameObject> cards2play = new List<GameObject>();
     public GameObject cardGameObject;
-  
+    public GameObject Player;
     public GameObject cardPrefabExpand;
 
     private void Start()
     {
-        deck = GetComponent<Character_cls>().myDeck;
+        deck = Player.GetComponent<Character_cls>().myDeck;
         
         //cardPrefabExpand.SetActive(false);
 

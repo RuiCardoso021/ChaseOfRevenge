@@ -2214,7 +2214,6 @@ GameObject:
   - component: {fileID: 3659650284145363714}
   - component: {fileID: 4657515292139348291}
   - component: {fileID: -901125789779915601}
-  - component: {fileID: 2760138150571290834}
   m_Layer: 0
   m_Name: Flora Raven
   m_TagString: Player
@@ -2359,7 +2358,7 @@ MonoBehaviour:
   Mana: 4
   ClassType: ARCH
   Health: 25
-  ImageProfile: {fileID: 2800000, guid: 8f0dbc8cbb14b8541ab023c42e09f620, type: 3}
+  ImageProfile: {fileID: 21300000, guid: 8f0dbc8cbb14b8541ab023c42e09f620, type: 3}
   myDeck:
     cards: []
 --- !u!114 &-901125789779915601
@@ -2378,24 +2377,6 @@ MonoBehaviour:
   inventoryScreen: {fileID: 8831512723080108753}
   isOpen: 0
   canClose: 0
---- !u!114 &2760138150571290834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4470061613590560578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeebf9f75d922ca49be22eb8738df26c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contentCards2Play: {fileID: 7570579146731010885}
-  contentAllCards: {fileID: 7570579148194738683}
-  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
-  cards2play: []
-  cardGameObject: {fileID: 287939272434314505, guid: 07d6ad9189f009f419ef57647c9b2ba8, type: 3}
-  cardPrefabExpand: {fileID: 7705358392020929954}
 --- !u!1 &4519581575202206770
 GameObject:
   m_ObjectHideFlags: 0
@@ -4456,6 +4437,30 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 483828808211137599, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
   m_PrefabInstance: {fileID: 8045397211239610588}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7570579148349668581 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 483828808211137593, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+  m_PrefabInstance: {fileID: 8045397211239610588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7039408521138553427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7570579148349668581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeebf9f75d922ca49be22eb8738df26c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contentCards2Play: {fileID: 7570579146731010885}
+  contentAllCards: {fileID: 7570579148194738683}
+  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
+  cards2play: []
+  cardGameObject: {fileID: 287939272434314505, guid: 07d6ad9189f009f419ef57647c9b2ba8, type: 3}
+  Player: {fileID: 4470061613590560578}
+  cardPrefabExpand: {fileID: 7705358392020929954}
 --- !u!1 &7705358392020929954 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 380572322729391486, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}

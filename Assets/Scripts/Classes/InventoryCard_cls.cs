@@ -32,9 +32,9 @@ public class InventoryCard_cls : MonoBehaviour
         Cursor.visible = true;
         //Time.timeScale = 0f;
 
-        if (GameObject.Find("InventoryCanvas") != null)
+        if (inventoryManager == null)
         {
-            inventoryManager = GameObject.Find("Panel").GetComponentInChildren<InventoryManager>();
+            inventoryManager = GameObject.Find("InventoryCanvas 1").GetComponent<InventoryManager>();
         }
 
         //if (Input.GetKey(KeyCode.Mouse1))
