@@ -14,8 +14,6 @@ public class InteractionCharacterSelectionPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _txtClassType;
     [SerializeField] private Image _healthBar;
 
-    private Character_cls player;
-
     public string Name;
     public float Health;
     public int Mana;
@@ -29,7 +27,6 @@ public class InteractionCharacterSelectionPanel : MonoBehaviour
         Name = "Nick Name";
         Mana = 1;
         ClassType = "class";
-        ImageProfile = player.GetComponent<Character_cls>().ImageProfile;
     }
 
     // Update is called once per frame
