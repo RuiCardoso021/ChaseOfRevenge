@@ -8,7 +8,7 @@ public class InteractionCharacterSelectionPanel : MonoBehaviour
 {
 
     [SerializeField] private TextMeshProUGUI _textName;
-    //[SerializeField] private Image _imageProfile;
+    [SerializeField] private Image _imageProfile;
     [SerializeField] private TextMeshProUGUI _txtLife;
     [SerializeField] private TextMeshProUGUI _txtMana;
     [SerializeField] private TextMeshProUGUI _txtClassType;

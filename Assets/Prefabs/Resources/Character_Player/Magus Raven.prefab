@@ -339,6 +339,7 @@ MonoBehaviour:
   Mana: 5
   ClassType: SORCE
   Health: 20
+  ImageProfile: {fileID: 2800000, guid: 651a6d299c0da6e4eb02800eff6c9307, type: 3}
   myDeck:
     cards: []
 --- !u!114 &3753662353496952735

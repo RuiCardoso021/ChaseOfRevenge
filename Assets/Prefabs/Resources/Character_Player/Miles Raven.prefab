@@ -457,6 +457,7 @@ MonoBehaviour:
   Mana: 3
   ClassType: WAR
   Health: 30
+  ImageProfile: {fileID: 2800000, guid: 54282006af863c44f9167c10bccc1a01, type: 3}
   myDeck:
     cards: []
 --- !u!114 &-4566717915161671594

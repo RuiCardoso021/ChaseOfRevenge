@@ -17,7 +17,7 @@ public class Character_cls : MonoBehaviour
     public int Mana;
     public string ClassType;
     public float Health;
-    //public Image ImageProfile;
+    public Image ImageProfile;
     public Deck myDeck;
 
     private void Start()
