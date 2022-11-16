@@ -48,6 +48,7 @@ public class ManagerGameFight : MonoBehaviour
         }
     }
 
+    //update checkSelectionOnPrefab
     private void updateSelectionCharacter()
     {
         if (Manager.CharactersOnFight != null)

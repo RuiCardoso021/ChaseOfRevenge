@@ -22,7 +22,6 @@ public class CardsAnimationFight : MonoBehaviour, IPointerEnterHandler, IPointer
     public void OnPointerEnter(PointerEventData eventData)
     {
         mouse_over = true;
-
     }
 
     public void OnPointerExit(PointerEventData eventData)

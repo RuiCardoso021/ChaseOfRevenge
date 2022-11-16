@@ -38,6 +38,7 @@ public class Interface_FightScene : MonoBehaviour
                 maxHealth = player.Health;
                 active = false;
             }
+
             if (!active)
             {
                 healthBar.fillAmount = player.Health / maxHealth;
@@ -47,13 +48,6 @@ public class Interface_FightScene : MonoBehaviour
                 _textName.text = player.Name.ToString();    
             }
                   
-        }
-
-        if (_mainCam != null)
-        {
-            var rotation = _mainCam.transform.rotation;
-            transform.LookAt(transform.position + rotation * Vector3.forward, rotation * Vector3.up);
-
         }
     }
 }

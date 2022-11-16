@@ -27,8 +27,10 @@ public class CardManager : MonoBehaviour
         {
             //animation mouseHover
             AddAnimation();
+
+            //set mana 0 on all cards if "nextRoundAnyCardDontCostMana" is true
             setManaAllCards(0);
-        } 
+        }
     }
 
     public void InstanceCardsToPlay(Deck deck){

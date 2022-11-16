@@ -177,7 +177,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "Deal 5 damage to first enemy",
+            "description": "Deal 5 damage to any enemy",
             "mana":3,
             "src": "generic"
         },
@@ -195,7 +195,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "Deal 2 damage to first enemy",
+            "description": "Deal 2 damage to any enemy",
             "mana":1,
             "src": "generic"
         },

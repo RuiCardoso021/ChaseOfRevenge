@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,7 +11,7 @@ public class ManagerGameFight_cls {
     public GameObject CurrentCharacter;
     public GameObject NextCharacter;
     public GameObject[] CharactersICanAttack;
-
+    public GameObject[] CharactersSelection;
 
     public void changeCharacters()
     {
@@ -18,7 +19,7 @@ public class ManagerGameFight_cls {
         NextCharacter = CharactersOnFight[ValidationNextIndex(GetIndexCharactersOnFight(CurrentCharacter)+1)];
     }
 
-    //
+    //return first index if index to send it is invalid
     private int ValidationNextIndex(int index)
     {
         if (index > CharactersOnFight.Length)
@@ -27,6 +28,7 @@ public class ManagerGameFight_cls {
         return index;
     }
 
+    //return index if existe gameobject to send
     private int GetIndexCharactersOnFight(GameObject gameObject)
     {
 
@@ -70,8 +72,6 @@ public class ManagerGameFight_cls {
                 gameObject.AddComponent<Enemy_Config_FightScene_Prefab>();
             }
         }
-
-        CharactersICanAttack[0] = NextCharacter;
 
     }
 
@@ -124,6 +124,7 @@ public class ManagerGameFight_cls {
     //selection - Whant data you can change (0 - Mana / 1 - Health)
     public void SetNewValuesOnAllCharactersICanAttack(int value, int selection)
     {
+
         foreach (GameObject item in CharactersICanAttack)
         {
             Character_cls character = item.GetComponent<Character_cls>();
@@ -141,9 +142,11 @@ public class ManagerGameFight_cls {
     //selection - Whant data you can change (0 - Mana / 1 - Health)
     public void SetNewValuesOnRandomCharacter(int value, int selection)
     {
-        int random = Random.Range(0, CharactersICanAttack.Length+1);
+        int random = Random.Range(0, CharactersICanAttack.Length);
 
         SetNewValuesOnCharacter(CharactersICanAttack[random], value, selection);
     }
+
+
 
 }
