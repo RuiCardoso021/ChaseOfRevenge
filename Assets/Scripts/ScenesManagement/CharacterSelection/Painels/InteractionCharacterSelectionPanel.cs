@@ -12,7 +12,6 @@ public class InteractionCharacterSelectionPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _txtLife;
     [SerializeField] private TextMeshProUGUI _txtMana;
     [SerializeField] private TextMeshProUGUI _txtClassType;
-    [SerializeField] private Image _healthBar;
 
     public string Name;
     public float Health;
@@ -37,6 +36,5 @@ public class InteractionCharacterSelectionPanel : MonoBehaviour
         _txtLife.text = Health.ToString();
         _txtMana.text = Mana.ToString();
         _txtClassType.text = ClassType;
-        _healthBar.fillAmount = Health / Health;
     }
 }

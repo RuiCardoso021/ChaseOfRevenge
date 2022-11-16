@@ -23,12 +23,10 @@ public class CharacterSelection : MonoBehaviour
 
 		//active character
 		foreach (GameObject go in characters){
-			if (characters[index] == go)
-			{
+			if (characters[index] == go){
 				go.SetActive(true);
 			}
-			else
-			{
+			else{
 				go.SetActive(false);
 			}
 		}
