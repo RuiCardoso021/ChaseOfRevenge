@@ -126,6 +126,14 @@ public class GamePlayFightScene : MonoBehaviour
             else if (_ab.effect_quantity == -1) //if a random
                 ManagerGameFight.Instance.Manager.SetNewValuesOnRandomCharacter(-_ab.value, 1);
 
+            else
+            {
+                //if(ManagerGameFight.Instance.Manager.CharactersICanAttack.Length == _ab.effect_quantity)
+                //{
+                //
+                //}
+            }
+
         } else if (_ab.type_effect == Global.cardAffectsPlayer) //if player to play
             player.Health -= _ab.value;
     }
