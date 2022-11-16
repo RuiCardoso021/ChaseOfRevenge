@@ -43,32 +43,34 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
         if (activePlayer) Move();
     }
 
     private void Move()
     {
+        float moveZ = Input.GetAxis("Vertical");
+
         // ground check
         isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, Ground);
         if (isGrounded)
         {
             if (velocity.y < 0) velocity.y = -2f;
-                
-            float moveZ = Input.GetAxis("Vertical");
-
+                         
             moveDirection = new Vector3(0, 0, moveZ);
             moveDirection = transform.TransformDirection(moveDirection);
 
-            if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift)) Walk();
-            if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift)) Run();
+            if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift) && moveZ > 0) Walk();
+            if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift) && moveZ > 0) Run();
             if (moveDirection == Vector3.zero) Idle();
 
             moveDirection *= moveSpeed;
  
         }
-        controller.Move(moveDirection * Time.deltaTime);
-        controller.Move(velocity * Time.deltaTime);
+        if (moveZ > 0)
+        {
+            controller.Move(moveDirection * Time.deltaTime);
+            controller.Move(velocity * Time.deltaTime);
+        }
     }
 
     private void Idle()
