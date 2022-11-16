@@ -22,30 +22,19 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P)) Haskey = !Haskey;
 
-        if (Input.GetKey(KeyCode.I) && isOpen == false && canClose == false)
+        if (Input.GetKeyDown(KeyCode.I) && isOpen == false && canClose == false)
         {
-            isOpen = true;
+            isOpen = true;          
             //inventoryOpen.Play();
             StartCoroutine(InvControl());
         }
-        if (Input.GetKey(KeyCode.I) && isOpen == true && canClose == true)
+        if (Input.GetKeyDown(KeyCode.I) && isOpen == true && canClose == true)
         {
-            Time.timeScale = 1;
-            Cursor.visible = false;
-            isOpen = false;
+            isOpen = false;   
             //inventoryClose.Play();
             StartCoroutine(InvControl());
         }
     }
-
-    //public void ExitButton()
-    //{
-    //    Time.timeScale = 1;
-    //    Cursor.visible = false;
-    //    isOpen = false;
-    //    //inventoryClose.Play();
-    //    StartCoroutine(InvControl());
-    //}
 
     IEnumerator InvControl()
     {

@@ -42,6 +42,7 @@ public class CharacterSelection : MonoBehaviour
 			Panel.Health = characters[index].GetComponent<Character_cls>().Health;
 			Panel.Mana = characters[index].GetComponent<Character_cls>().Mana;
 			Panel.ClassType = characters[index].GetComponent<Character_cls>().ClassType;
+			Panel.ImageProfile = characters[index].GetComponent<Character_cls>().ImageProfile;
 		}
 	}
 
