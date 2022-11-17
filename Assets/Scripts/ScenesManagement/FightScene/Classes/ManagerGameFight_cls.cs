@@ -31,12 +31,10 @@ public class ManagerGameFight_cls {
     //return index if existe gameobject to send
     private int GetIndexCharactersOnFight(GameObject gameObject)
     {
-
         for (int i = 0; i < CharactersOnFight.Length; i++)
             if (CharactersOnFight[i] == gameObject) return i;
 
-        return -1;
-        
+        return -1;   
     }
 
     //set default characters values
@@ -46,6 +44,7 @@ public class ManagerGameFight_cls {
         bool firstEnemy = true;
         int i = 0;
         CharactersICanAttack = new GameObject[countEnemys()];
+        CharactersSelection = new GameObject[countEnemys()];
 
         foreach (GameObject gameObject in CharactersOnFight)
         {
@@ -58,8 +57,6 @@ public class ManagerGameFight_cls {
             //get first enemy
             else if (IsEnemy(gameObject.GetComponent<Character_cls>()) && firstEnemy)
             {
-
-
                 NextCharacter = gameObject;
                 firstEnemy = false;
             }
@@ -84,7 +81,6 @@ public class ManagerGameFight_cls {
                 count++;
         return count;
     }
-
 
     //return true if was a friend
     public bool IsFriend(Character_cls character)
@@ -127,14 +123,14 @@ public class ManagerGameFight_cls {
 
         foreach (GameObject item in CharactersICanAttack)
         {
-            Character_cls character = item.GetComponent<Character_cls>();
+            Character_cls character = CharactersOnFight[GetIndexCharactersOnFight(item)].GetComponent<Character_cls>();
 
             if (character != null)
             {
                 if (selection == 0) character.Mana += value;
                 else if (selection == 1) character.Health += value;
             }
-        }  
+        }
     }
 
     /*----------------change values on random characters---------------------*/

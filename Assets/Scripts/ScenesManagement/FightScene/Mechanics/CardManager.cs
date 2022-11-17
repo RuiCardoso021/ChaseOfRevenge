@@ -8,47 +8,62 @@ public class CardManager : MonoBehaviour
 {
     private const int TOTAL_CARDS_ON_HAND = 4;
 
+    private bool returnDeck;
     private GameObject CardPrefab;
+    private List<int> cardsToGive = new List<int>();
+    
+    public Card[] deckCardManager;
+    public Card[] duplicateDeck;
     public List<GameObject> CardsOnHand = new List<GameObject>();
-    public List<GameObject> TempCardOffHand = new List<GameObject>();
+    public List<Card> TempCardOffHand = new List<Card>();
+    public bool nextCardDontCostMana;
+
+
     public Card CardChoose;
-    public bool nextRoundAnyCardDontCostMana;
+
 
     private void Start()
     {
-        nextRoundAnyCardDontCostMana = false;
+        nextCardDontCostMana = false;
+        returnDeck = false;
         CardChoose = new Card();
         CardPrefab = Resources.Load(Global.cardPrefab) as GameObject;
     }
 
     private void Update()
     {
+
         if (CardsOnHand.Count > 0)
         {
             //animation mouseHover
             AddAnimation();
 
-            //set mana 0 on all cards if "nextRoundAnyCardDontCostMana" is true
-            setManaAllCards(0);
         }
     }
 
-    public void InstanceCardsToPlay(Deck deck){
 
-        //generate card list
-        List<int> cardsToGive = new List<int>();
+
+    private int GetIndexRandom()
+    {
         int random;
-
-        for (int i=0; i< TOTAL_CARDS_ON_HAND; i++)
+        do
         {
-            //indice random
-            do
-            {
-                random = Random.Range(0, deck.cards.Length);
-            } while (cardsToGive.Contains(random));
-            cardsToGive.Add(random);
+            random = Random.Range(0, deckCardManager.Length);
+        } while (cardsToGive.Contains(random));
+        cardsToGive.Add(random);
 
-            InstanceCard(deck.cards[random]);
+        return random;
+    }
+
+    public void InstanceCardsToPlay(){
+        if (deckCardManager != null)
+        {
+            cardsToGive = new List<int>();
+            for (int i = 0; i < TOTAL_CARDS_ON_HAND; i++)
+            {
+                //indice random
+                InstanceCard(deckCardManager[GetIndexRandom()]);
+            }
         }
     }
 
@@ -103,20 +118,18 @@ public class CardManager : MonoBehaviour
     }
 
     //Destroy CardChoose and get another
-    public void DestroyThisCardAndGetAnother(Deck deck)
+    public void DestroyThisCardAndGetAnother()
     {
         GameObject tempGameObject = FindGameObjWithThisCard(CardChoose);
 
         if (tempGameObject != null)
         {
+            int random = GetIndexRandom();
+            
             DestroyThisCard();
 
-            //indice random
-            int random = Random.Range(0, deck.cards.Length);
-
-            InstanceCard(deck.cards[random]);
+            InstanceCard(deckCardManager[random]);
         }
-        
     }
 
     //Return GameObject if existe inside list "CardOnHand"
@@ -132,17 +145,37 @@ public class CardManager : MonoBehaviour
         return TempCard;
     }
 
-    //Set mana value on all cards
-    private void setManaAllCards(int mana)
+    //Set mana value on all cards last chosed
+    public void setManaAllCards(int mana)
     {
-        if (nextRoundAnyCardDontCostMana)
+        foreach (var card in CardsOnHand)
         {
-            foreach (var card in CardsOnHand)
-            {
+            if (card.GetComponent<Card_Prefab>().dataCard != CardChoose)
                 card.GetComponent<Card_Prefab>().dataCard.mana = mana;
+        }
+
+        returnDeck = true;   
+    }
+
+    //Get a inicial Deck
+    public void GetDataCardOnHandBeforeChange()
+    {
+        if (returnDeck)
+        {
+            foreach (var item in CardsOnHand)
+            {
+                if (item.GetComponent<Card_Prefab>().dataCard != CardChoose)
+                {
+                    for (int i = 0; i < deckCardManager.Length; i++)
+                    {
+                        if (item.GetComponent<Card_Prefab>().dataCard.id == deckCardManager[i].id)
+                            item.GetComponent<Card_Prefab>().dataCard.mana = duplicateDeck[i].mana;
+                    }
+                }
+                
             }
-            nextRoundAnyCardDontCostMana = false;
-        }    
+            returnDeck = false;
+        }
     }
 
     //Apply event mouse over on cards

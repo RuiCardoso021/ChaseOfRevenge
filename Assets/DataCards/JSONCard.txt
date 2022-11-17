@@ -11,7 +11,7 @@
                 { 
                     "tag": "Damage", 
                     "value": 2,
-                    "effect_quantity": 0, 
+                    "effect_quantity": 0,
                     "type_effect": "Other"
                 },
                  { 
@@ -93,9 +93,9 @@
             "ability": 
             [
                 { 
-                    "tag": "Card_Mana", 
+                    "tag": "Mana", 
                     "value": 0, 
-                    "effect_quantity": 1, 
+                    "effect_quantity": 1,
                     "type_effect": "Card"
                 }
             ],
@@ -113,7 +113,7 @@
                 { 
                     "tag": "Damage", 
                     "value": 1, 
-                    "effect_quantity": 2, 
+                    "effect_quantity": 0, 
                     "type_effect": "Other"
                 },
                 { 
@@ -123,7 +123,7 @@
                     "type_effect": "Card"
                 }
             ],
-            "description": "1 damage 2 enemies, get 1 card from deck",
+            "description": "1 damage to all enemies, get 1 card from deck",
             "mana": 3,
             "src": "generic"
        }, 
@@ -136,13 +136,13 @@
             [
                 { 
                     "tag": "Damage", 
-                    "value": 2, 
+                    "value": 100, 
                     "effect_quantity": 1, 
                     "type_effect": "Other"
                 }
             ],
-            "description": "Deal 1 damage to an enemy or kill the weaker",
-            "mana":2,
+            "description": "Deal 100 damage to an enemy",
+            "mana":10,
             "src": "generic"
         },
          {
@@ -227,7 +227,7 @@
                 { 
                     "tag": "CC", 
                     "value": 0, 
-                    "effect_quantity": 4, 
+                    "effect_quantity": 0, 
                     "type_effect": "Other"
                 }
             ],
@@ -263,12 +263,12 @@
             [
                 { 
                     "tag": "Damage", 
-                    "value": 0, 
-                    "effect_quantity": 4, 
+                    "value": 2, 
+                    "effect_quantity": 0, 
                     "type_effect": "Other"
                 }
             ],
-            "description": "1 damage to all enemies",
+            "description": "2 damage to all enemies",
             "mana":1,
             "src": "sorceress"
         },
@@ -390,7 +390,7 @@
                 { 
                     "tag": "Damage", 
                     "value": 0, 
-                    "effect_quantity": 4, 
+                    "effect_quantity": 0, 
                     "type_effect": "Other"
                 }
             ],
@@ -514,7 +514,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "Full heal but all enemies give 15 heal to",
+            "description": "Full heal but all enemies give 15 heal too",
             "mana":4,
             "src": "warrior"
         },
@@ -533,6 +533,24 @@
                 }
             ],
             "description": "3 damage to all enemie",
+            "mana":3,
+            "src": "warrior"
+        },
+        {
+            "id": 29,
+            "type": "UN",
+            "name": "ManaMore",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Mana", 
+                    "value": 6, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Me"
+                }
+            ],
+            "description": "Give 6 more Mana",
             "mana":3,
             "src": "warrior"
         }

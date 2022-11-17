@@ -36,13 +36,12 @@ public static class Global
     public static string healthBar = "FightSceneComponents/HealthBar";
          
     // tipos de cartas
-    public static string attackCard = "Attack";
     public static string damageCard = "Damage";
     public static string healCard = "Heal";
     public static string ccCard = "CC";
     public static string ShuffleCard = "Shuffle";
     public static string BuffCard = "Buff";
-    public static string Card_ManaCard = "Card_Mana";
+    public static string ManaCard = "Mana";
 
     // card objeto
     public static string cardContentFromGame = "ContentCardsGame";

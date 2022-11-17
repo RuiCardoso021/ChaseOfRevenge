@@ -22,7 +22,7 @@ public class GamePlayFightScene : MonoBehaviour
     {
         indexCharacters = 0;
         _turn = GetComponent<RoundTurn>();
-        _cardsToPlay = GetComponent<CardManager>(); 
+        _cardsToPlay = GetComponent<CardManager>();
     }
 
     // Update is called once per frame
@@ -51,14 +51,17 @@ public class GamePlayFightScene : MonoBehaviour
             Card cardChose = new Card();
             _cardsToPlay.getCardChoose();
             cardChose = _cardsToPlay.CardChoose;
-                
+
             //valida se a carta escolhida esta vazia
             if (!cardChose.IsEmpty())
             {
+                _cardsToPlay.GetDataCardOnHandBeforeChange();
+
                 if (player.Mana >= cardChose.mana)
                 {
                     activeDestroyThisCard = true;
-                    int countAbility = cardChose.ability.Length;
+
+                        int countAbility = cardChose.ability.Length;
                     for (int i = 0; i < countAbility; i++)
                     {
                         Ability ability = cardChose.ability[i];
@@ -77,7 +80,7 @@ public class GamePlayFightScene : MonoBehaviour
                             case var value when value == Global.ShuffleCard:
                                 IfShuffle(ability);
                                 break;
-                            case var value when value == Global.Card_ManaCard:
+                            case var value when value == Global.ManaCard:
                                 IfCardMana(ability);
                                 break;
                             default:
@@ -86,7 +89,11 @@ public class GamePlayFightScene : MonoBehaviour
                         }
                     }
 
-                    if (activeDestroyThisCard) _cardsToPlay.DestroyThisCard();
+                    if (activeDestroyThisCard)
+                    {
+                        _cardsToPlay.DestroyThisCard();
+                        
+                    }
 
                     player.Mana -= cardChose.mana;
 
@@ -112,26 +119,27 @@ public class GamePlayFightScene : MonoBehaviour
             player.Mana = 4;
             player.Health -= Random.Range(1, 7);
         }
-        
+
     }
 
     //damage in character(s)
     private void IfDamage(Ability _ab)
     {
         if (_ab.type_effect == Global.cardAffectsOther) {  //if others
-            
-            if (_ab.effect_quantity == 0)  //if all enemies
+
+            if (_ab.effect_quantity == 0)
+            {   //if all enemies
                 ManagerGameFight.Instance.Manager.SetNewValuesOnAllCharactersICanAttack(-_ab.value, 1);
 
-            else if (_ab.effect_quantity == -1) //if a random
+            }
+            else if (_ab.effect_quantity == -1)
+            {  //if a random
                 ManagerGameFight.Instance.Manager.SetNewValuesOnRandomCharacter(-_ab.value, 1);
 
-            else
+            }
+            else if (_ab.effect_quantity == 1 && ManagerGameFight.Instance.Manager.NextCharacter != null)
             {
-                //if(ManagerGameFight.Instance.Manager.CharactersICanAttack.Length == _ab.effect_quantity)
-                //{
-                //
-                //}
+                ManagerGameFight.Instance.Manager.SetNewValuesOnCharacter(ManagerGameFight.Instance.Manager.NextCharacter, -_ab.value, 1);
             }
 
         } else if (_ab.type_effect == Global.cardAffectsPlayer) //if player to play
@@ -145,7 +153,7 @@ public class GamePlayFightScene : MonoBehaviour
         {
             if (_ab.effect_quantity == 1) //recive heal value
                 player.Health += _ab.value;
-            else if (_ab.effect_quantity == 0) //recive heal value per player
+            else if (_ab.effect_quantity == 0) //recive heal value per enemy
                 player.Health += _ab.value * ManagerGameFight.Instance.Manager.CharactersICanAttack.Length;
             else if (_ab.effect_quantity == -1) //player to play recibe full hp
                 player.Health = player.MaxHealth;
@@ -155,6 +163,8 @@ public class GamePlayFightScene : MonoBehaviour
         {
             if (_ab.effect_quantity == 0) //all enemies recibe heal
                 ManagerGameFight.Instance.Manager.SetNewValuesOnAllCharactersICanAttack(_ab.value, 1);
+            else if (_ab.effect_quantity == -1) //heal random enemy
+                ManagerGameFight.Instance.Manager.SetNewValuesOnRandomCharacter(_ab.value, 1);
             //enemy.Health += _ab.value;
         }
     }
@@ -164,6 +174,7 @@ public class GamePlayFightScene : MonoBehaviour
     {
         Debug.Log("CC: " + _ab.tag);
     }
+
 
     //shuffle mechanics
     private void IfShuffle(Ability _ab)
@@ -176,14 +187,19 @@ public class GamePlayFightScene : MonoBehaviour
         }
         else if (_ab.effect_quantity == 1)
         {
-            _cardsToPlay.DestroyThisCardAndGetAnother(player.myDeck);
+            _cardsToPlay.DestroyThisCardAndGetAnother();
         }
     }
 
     //card mana mechanics
     private void IfCardMana(Ability _ab)
     {
-        _cardsToPlay.nextRoundAnyCardDontCostMana = true;
+        if (_ab.type_effect == Global.cardAffectsCard)
+            _cardsToPlay.setManaAllCards(_ab.value);
+        else if (_ab.type_effect == Global.cardAffectsPlayer)
+        {
+            player.Mana += _ab.value;
+        }
     }
 
     //generate inicial cards
@@ -193,11 +209,16 @@ public class GamePlayFightScene : MonoBehaviour
         //Variables Inicialization.
         if (character_cls_player_to_game.myDeck != null && character_cls_player_to_game.ClassType != Global.findEnemy)
         {
-            
-            _deck = character_cls_player_to_game.myDeck;
+            _cardsToPlay.deckCardManager = new Card[character_cls_player_to_game.myDeck.cards.Length];
+            _cardsToPlay.duplicateDeck = new Card[character_cls_player_to_game.myDeck.cards.Length];
 
-                
-            _cardsToPlay.InstanceCardsToPlay(_deck);
+            for (int i = 0; i < character_cls_player_to_game.myDeck.cards.Length; i++)
+            {
+                _cardsToPlay.deckCardManager[i] = new Card(character_cls_player_to_game.myDeck.cards[i]);
+                _cardsToPlay.duplicateDeck[i] = new Card(character_cls_player_to_game.myDeck.cards[i]);
+            }
+
+            _cardsToPlay.InstanceCardsToPlay();
             
         }
     }
