@@ -363,8 +363,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89956269}
-  m_LocalRotation: {x: 0.51433134, y: 0.31796, z: -0.21309558, w: 0.76743406}
-  m_LocalPosition: {x: -0.00000012644054, y: -4.4621004e-31, z: -0.00000021073424}
+  m_LocalRotation: {x: 0.29215157, y: 0.36307985, z: -0.121026605, w: 0.8764549}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1227,7 +1227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 4.9321756, z: -2.0230756}
+  m_FollowOffset: {x: 0, y: 3, z: -4}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2460,7 +2460,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485043274}
   m_LocalRotation: {x: 6.7524694e-25, y: -0.38268343, z: -1.6301904e-24, w: 0.92387956}
-  m_LocalPosition: {x: -0.00035345554, y: 4.932191, z: -2.0268939}
+  m_LocalPosition: {x: -0.0003144741, y: 3, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2516,6 +2516,8 @@ MonoBehaviour:
   player: {fileID: 1963668259}
   playerObj: {fileID: 1963668259}
   rb: {fileID: 0}
+  virtualCamera: {fileID: 0}
+  sensitivity: 10
   rotationSpeed: 0
 --- !u!114 &485043278
 MonoBehaviour:
@@ -2802,6 +2804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
+  MaxMana: 0
   MaxHealth: 0
   Name: DungeonSkeleton
   Mana: 3
@@ -3700,6 +3703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
+  MaxMana: 0
   MaxHealth: 0
   Name: DungeonSkeleton
   Mana: 3
@@ -5284,8 +5288,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c9fd5987c647aa4f8764d8e69f2c589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deckCardManager: []
+  duplicateDeck: []
   CardsOnHand: []
   TempCardOffHand: []
+  nextCardDontCostMana: 0
   CardChoose:
     id: 0
     type: 
@@ -5295,7 +5302,6 @@ MonoBehaviour:
     description: 
     mana: 0
     src: 
-  nextRoundAnyCardDontCostMana: 0
 --- !u!1 &1126810746
 GameObject:
   m_ObjectHideFlags: 0
@@ -5696,7 +5702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 4.9321756, z: -2.0230756}
+  m_FollowOffset: {x: 0, y: 3, z: -4}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -9688,6 +9694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
+  MaxMana: 0
   MaxHealth: 0
   Name: Flora Raven
   Mana: 4
@@ -10080,8 +10087,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987166036}
-  m_LocalRotation: {x: 0.48220435, y: 0.32646185, z: -0.19976497, w: 0.7880327}
-  m_LocalPosition: {x: 0.00022093378, y: 0.0000047683716, z: 0.000018123152}
+  m_LocalRotation: {x: 0.25569117, y: 0.36777005, z: -0.10592252, w: 0.88777685}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10328,8 +10335,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007278810}
-  m_LocalRotation: {x: 0.4983373, y: 0.3223023, z: -0.20646891, w: 0.777915}
-  m_LocalPosition: {x: -0.00000012644054, y: -4.4621004e-31, z: -0.00000021073424}
+  m_LocalRotation: {x: 0.27394867, y: 0.36550698, z: -0.11348587, w: 0.8823138}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10658,6 +10665,7 @@ GameObject:
   - component: {fileID: 2102772579}
   - component: {fileID: 2102772578}
   - component: {fileID: 2102772577}
+  - component: {fileID: 2102772580}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10696,11 +10704,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 45
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -10723,14 +10731,48 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102772576}
-  m_LocalRotation: {x: 0.18074971, y: -0, z: -0, w: 0.98352915}
-  m_LocalPosition: {x: -2.33, y: 2.78, z: -10.79}
+  m_LocalRotation: {x: 0.2865619, y: 0.24547778, z: -0.07621815, w: 0.9229376}
+  m_LocalPosition: {x: -2.6613646, y: 3.08, z: -4.177046}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 20.827, y: 0, z: 0}
+--- !u!114 &2102772580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102772576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2107658084
 GameObject:
   m_ObjectHideFlags: 0
@@ -10869,7 +10911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 4.9321756, z: -2.0230756}
+  m_FollowOffset: {x: 0, y: 3, z: -4}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
