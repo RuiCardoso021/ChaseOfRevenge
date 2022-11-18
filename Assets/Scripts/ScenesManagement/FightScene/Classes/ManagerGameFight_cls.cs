@@ -100,7 +100,7 @@ public class ManagerGameFight_cls {
     /*----------------change values on gameobject---------------------*/
     //gm - gameobject do you need change
     //intValue - value to set on data
-    //selection - Whant data you can change (0 - Mana / 1 - Health / 3 - Deck)
+    //selection - Whant data you can change (0 - Mana / 1 - Health / 2 - PermissedByAttack)
     public void SetNewValuesOnCharacter(GameObject gm, int value, int selection)
     {
         if (gm != null)
@@ -111,13 +111,19 @@ public class ManagerGameFight_cls {
             {
                 if (selection == 0) character.Mana += value;
                 else if (selection == 1) character.Health += value;
+                else if (selection == 2)
+                {
+                    bool validation = false;
+                    if (value != 0) validation = true;
+                    character.PermissedByAttack = validation;
+                }
             }          
         }
     }
 
     /*----------------change values on characters i can attack---------------------*/
     //intValue - value to set on data
-    //selection - Whant data you can change (0 - Mana / 1 - Health)
+    //selection - Whant data you can change (0 - Mana / 1 - Health / 2 - PermissedByAttack)
     public void SetNewValuesOnAllCharactersICanAttack(int value, int selection)
     {
 
@@ -129,13 +135,19 @@ public class ManagerGameFight_cls {
             {
                 if (selection == 0) character.Mana += value;
                 else if (selection == 1) character.Health += value;
+                else if (selection == 2)
+                {
+                    bool validation = false;
+                    if (value != 0) validation = true;
+                    character.PermissedByAttack = validation;
+                }
             }
         }
     }
 
     /*----------------change values on random characters---------------------*/
     //intValue - value to set on data
-    //selection - Whant data you can change (0 - Mana / 1 - Health)
+    //selection - Whant data you can change (0 - Mana / 1 - Health / 2 - PermissedByAttack)
     public void SetNewValuesOnRandomCharacter(int value, int selection)
     {
         int random = Random.Range(0, CharactersICanAttack.Length);

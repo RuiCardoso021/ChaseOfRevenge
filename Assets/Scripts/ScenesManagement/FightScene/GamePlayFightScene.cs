@@ -43,12 +43,16 @@ public class GamePlayFightScene : MonoBehaviour
     {
         if (_turn.myTurn)
         {
-            PlayerToPlay();
+            if (player.PermissedByAttack == true)
+                PlayerToPlay();
         }
         else
         {
             EnemiesToPlay();
+            
         }
+
+
 
     }
 
@@ -66,6 +70,9 @@ public class GamePlayFightScene : MonoBehaviour
         //valida se a carta escolhida esta vazia
         if (!cardChose.IsEmpty())
         {
+            //permissed attack all enemies on next round if not change on code player
+            ManagerGameFight.Instance.Manager.SetNewValuesOnAllCharactersICanAttack(1, 2);
+
             _cardsToPlay.GetDataCardOnHandBeforeChange();
 
             if (player.Mana >= cardChose.mana)
@@ -101,9 +108,8 @@ public class GamePlayFightScene : MonoBehaviour
                 }
 
                 if (activeDestroyThisCard)
-                {
                     _cardsToPlay.DestroyThisCard();
-                }
+                
 
                 player.Mana -= cardChose.mana;
 
@@ -118,14 +124,23 @@ public class GamePlayFightScene : MonoBehaviour
 
     private void EnemiesToPlay()
     {
+        //player get full mana
+        player.Mana = player.MaxMana;
+        //permissed attack player if enemies not change that
+        player.PermissedByAttack = true;
+
+
+        foreach (GameObject item in ManagerGameFight.Instance.Manager.CharactersICanAttack)
+        {
+            if (item.GetComponent<Character_cls>().PermissedByAttack)
+                player.Health -= Random.Range(1, 4);
+        }
+
         if (_cardsToPlay.CardsOnHand.Count > 0)
         {
             _cardsToPlay.DestroyAllInstanceCards();
             _turn.NextTurn();
         }
-
-        player.Mana = player.MaxMana;
-        player.Health -= Random.Range(1, 7);
     }
 
     //damage in character(s)
@@ -178,22 +193,29 @@ public class GamePlayFightScene : MonoBehaviour
     private void IfCC(Ability _ab)
     {
         if (_ab.type_effect == Global.cardAffectsPlayer)
-            Debug.Log("CC: " + _ab.tag);
+            player.PermissedByAttack = !player.PermissedByAttack;
         else if (_ab.type_effect == Global.cardAffectsOther)
-            Debug.Log("CC: " + _ab.tag);
+        {
+            if (_ab.effect_quantity == 0) //all enemies dont attack
+                ManagerGameFight.Instance.Manager.SetNewValuesOnAllCharactersICanAttack(_ab.value, 2);
+            else if (_ab.effect_quantity == -1) //random enemy dont attack
+                ManagerGameFight.Instance.Manager.SetNewValuesOnRandomCharacter(_ab.value, 2);
+            else if (_ab.effect_quantity == 1) //enemy choose dont attack next round
+                ManagerGameFight.Instance.Manager.SetNewValuesOnCharacter(ManagerGameFight.Instance.Manager.NextCharacter, _ab.value, 2);
+        }
     }
 
 
     //shuffle mechanics
     private void IfShuffle(Ability _ab)
     {
-        if (_ab.effect_quantity == 4)
+        if (_ab.effect_quantity == 4) //discart all cards and get again 4 cards
         {
             _cardsToPlay.DestroyAllInstanceCards();
             generateCards();
             activeDestroyThisCard = false;
         }
-        else if (_ab.effect_quantity == 1)
+        else if (_ab.effect_quantity == 1) //discart this card and get another
         {
             _cardsToPlay.DestroyThisCardAndGetAnother();
         }
@@ -202,12 +224,13 @@ public class GamePlayFightScene : MonoBehaviour
     //card mana mechanics
     private void IfCardMana(Ability _ab)
     {
-        if (_ab.type_effect == Global.cardAffectsCard)
-            _cardsToPlay.setManaAllCards(_ab.value);
-        else if (_ab.type_effect == Global.cardAffectsPlayer)
-        {
+        if (_ab.type_effect == Global.cardAffectsCard) 
+            if (_ab.value == 0)
+                _cardsToPlay.setManaAllCards(_ab.value); //next card dont cost mana
+            else _cardsToPlay.subtractManaAllCards(_ab.value); //next card to play reduce mana
+        else if (_ab.type_effect == Global.cardAffectsPlayer) //player get mana
             player.Mana += _ab.value;
-        }
+        
     }
 
     //generate inicial cards

@@ -157,6 +157,18 @@ public class CardManager : MonoBehaviour
         returnDeck = true;   
     }
 
+    //subtract Mana on cards until other card was play
+    public void subtractManaAllCards(int mana)
+    {
+        foreach (var card in CardsOnHand)
+        {
+            if (card.GetComponent<Card_Prefab>().dataCard != CardChoose)
+                card.GetComponent<Card_Prefab>().dataCard.mana -= mana;
+        }
+
+        returnDeck = true;
+    }
+
     //Get a inicial Deck
     public void GetDataCardOnHandBeforeChange()
     {

@@ -17,6 +17,7 @@ public class Character_cls : MonoBehaviour
     public int Mana;
     public string ClassType;
     public float Health;
+    public bool PermissedByAttack;
     public Sprite ImageProfile;
     public Deck myDeck;
 
@@ -28,6 +29,7 @@ public class Character_cls : MonoBehaviour
         List<Card> inventoryCards = new List<Card>();
         MaxHealth = Health;
         MaxMana = Mana;
+        PermissedByAttack = true;
 
         foreach (Card card in deck.cards)
         {
