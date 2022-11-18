@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 3, z: -4}
+  m_FollowOffset: {x: 0, y: 5, z: -4}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -451,11 +451,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
+  MaxMana: 0
   MaxHealth: 0
   Name: Miles Raven
   Mana: 3
   ClassType: WAR
   Health: 30
+  PermissedByAttack: 0
   ImageProfile: {fileID: 21300000, guid: 54282006af863c44f9167c10bccc1a01, type: 3}
   myDeck:
     cards: []
@@ -631,7 +633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 3, z: -4}
+  m_FollowOffset: {x: 0, y: 5, z: -4}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2268,7 +2270,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5548177331930116787}
-  m_LocalRotation: {x: 0.30904695, y: 0.20102197, z: -0.06700733, w: 0.9271409}
+  m_LocalRotation: {x: 0.42335197, y: 0.19098234, z: -0.09179083, w: 0.88083667}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2305,7 +2307,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 45
+    FieldOfView: 60
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -2644,6 +2646,7 @@ GameObject:
   - component: {fileID: 157218217090780344}
   - component: {fileID: 6190318126583425183}
   - component: {fileID: 2565759403402575634}
+  - component: {fileID: 91995628703530852}
   m_Layer: 0
   m_Name: 3rd Person Camera
   m_TagString: Untagged
@@ -2659,7 +2662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6769145279229641397}
   m_LocalRotation: {x: -6.75247e-25, y: 0.38268343, z: -1.6301904e-24, w: 0.92387956}
-  m_LocalPosition: {x: -3.74588, y: 3, z: -1.4029913}
+  m_LocalPosition: {x: -3.74588, y: 5, z: -1.4029913}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2691,7 +2694,7 @@ MonoBehaviour:
   m_Follow: {fileID: 554566235841465595}
   m_CommonLens: 1
   m_Lens:
-    FieldOfView: 45
+    FieldOfView: 60
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -2762,9 +2765,9 @@ MonoBehaviour:
   m_BindingMode: 4
   m_SplineCurvature: 0.2
   m_Orbits:
-  - m_Height: 6
+  - m_Height: 8
     m_Radius: 0
-  - m_Height: 3
+  - m_Height: 5
     m_Radius: 4
   - m_Height: 0
     m_Radius: 3
@@ -2788,7 +2791,6 @@ MonoBehaviour:
   orientation: {fileID: 554566235841465595}
   player: {fileID: 554566235841465595}
   playerObj: {fileID: 554566235841465595}
-  rb: {fileID: 0}
   rotationSpeed: 0
 --- !u!114 &2565759403402575634
 MonoBehaviour:
@@ -2820,6 +2822,38 @@ MonoBehaviour:
   m_Damping: 0
   m_DampingWhenOccluded: 0
   m_OptimalTargetDistance: 0
+--- !u!114 &91995628703530852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6769145279229641397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6fdda44c16403441918972934aa8a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minScale: 0.5
+  maxScale: 1
+  zAxis:
+    Value: 0.5
+    m_SpeedMode: 0
+    m_MaxSpeed: 50
+    m_AccelTime: 0.1
+    m_DecelTime: 0.1
+    m_InputAxisName: Mouse ScrollWheel
+    m_InputAxisValue: 0
+    m_InvertInput: 0
+    m_MinValue: 0
+    m_MaxValue: 1
+    m_Wrap: 0
+    m_Recentering:
+      m_enabled: 0
+      m_WaitTime: 1
+      m_RecenteringTime: 2
+      m_LegacyHeadingDefinition: -1
+      m_LegacyVelocityFilterStrength: -1
 --- !u!1 &7053672028530419877
 GameObject:
   m_ObjectHideFlags: 0
@@ -3272,7 +3306,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8129493831503405269}
-  m_LocalRotation: {x: 0.28979138, y: 0.2023657, z: -0.06283229, w: 0.93333876}
+  m_LocalRotation: {x: 0.39778015, y: 0.1935494, z: -0.086246386, w: 0.8926765}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3309,7 +3343,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 45
+    FieldOfView: 60
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000
@@ -3495,7 +3529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 3, z: -4}
+  m_FollowOffset: {x: 0, y: 5, z: -4}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -3715,7 +3749,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8999488594293107427}
-  m_LocalRotation: {x: 0.27047798, y: 0.20361876, z: -0.05864484, w: 0.93911767}
+  m_LocalRotation: {x: 0.37204975, y: 0.19594023, z: -0.08066756, w: 0.90370303}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3752,7 +3786,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
-    FieldOfView: 45
+    FieldOfView: 60
     OrthographicSize: 10
     NearClipPlane: 0.1
     FarClipPlane: 5000

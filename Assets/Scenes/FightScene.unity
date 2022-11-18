@@ -331,8 +331,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89956269}
-  m_LocalRotation: {x: 0.51433134, y: 0.31796, z: -0.21309558, w: 0.76743406}
-  m_LocalPosition: {x: -0.00000012644054, y: -4.4621004e-31, z: -0.00000021073424}
+  m_LocalRotation: {x: 0.29215157, y: 0.36307985, z: -0.121026605, w: 0.8764549}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 4.9321756, z: -2.0230756}
+  m_FollowOffset: {x: 0, y: 3, z: -4}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2093,7 +2093,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485043274}
   m_LocalRotation: {x: 6.7524694e-25, y: -0.38268343, z: -1.6301904e-24, w: 0.92387956}
-  m_LocalPosition: {x: -0.00035345554, y: 4.932191, z: -2.0268939}
+  m_LocalPosition: {x: -0.0003144741, y: 3, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2149,6 +2149,8 @@ MonoBehaviour:
   player: {fileID: 1963668259}
   playerObj: {fileID: 1963668259}
   rb: {fileID: 0}
+  virtualCamera: {fileID: 0}
+  sensitivity: 10
   rotationSpeed: 0
 --- !u!114 &485043278
 MonoBehaviour:
@@ -2352,6 +2354,311 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491856846}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &506552777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 506552778}
+  m_Layer: 8
+  m_Name: Bip001 Spine1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &506552778
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506552777}
+  m_LocalRotation: {x: -3.0117673e-14, y: 0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.286096, y: -0.00025197104, z: -6.98868e-10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1822635864}
+  m_Father: {fileID: 584347936}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &525808491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 525808492}
+  - component: {fileID: 525808496}
+  - component: {fileID: 525808495}
+  - component: {fileID: 525808494}
+  - component: {fileID: 525808493}
+  m_Layer: 8
+  m_Name: Enemy (1)
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &525808492
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525808491}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1963842752}
+  - {fileID: 1923243109}
+  - {fileID: 1413324279}
+  m_Father: {fileID: 1595726788}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &525808493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525808491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b377919b276434cb65b5816e66abc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
+  MaxMana: 0
+  MaxHealth: 0
+  Name: DungeonSkeleton
+  Mana: 3
+  ClassType: Enemy
+  Health: 30
+  ImageProfile: {fileID: 0}
+  myDeck:
+    cards:
+    - id: 1
+      type: UN
+      name: Aoe
+      number_effects: 2
+      ability:
+      - tag: Damage
+        value: 2
+        effect_quantity: 4
+        type_effect: Other
+      - tag: Damage
+        value: 2
+        effect_quantity: 0
+        type_effect: Me
+      description: '2 damage to all enemies, 2 damage to player '
+      mana: 1
+      src: generic
+    - id: 2
+      type: UN
+      name: Yolo
+      number_effects: 1
+      ability:
+      - tag: Damage
+        value: 2
+        effect_quantity: 1
+        type_effect: Other
+      description: '4 damage to enemy with highest life '
+      mana: 2
+      src: generic
+    - id: 3
+      type: UN
+      name: Stealer
+      number_effects: 2
+      ability:
+      - tag: Damage
+        value: 1
+        effect_quantity: 4
+        type_effect: Other
+      - tag: Heal
+        value: 1
+        effect_quantity: 0
+        type_effect: Me
+      description: 1 damage to all enemies, heal 1 life per enemy
+      mana: 2
+      src: generic
+    - id: 4
+      type: UN
+      name: Buff
+      number_effects: 1
+      ability:
+      - tag: Shuffle
+        value: 0
+        effect_quantity: 4
+        type_effect: Card
+      description: Shuffle your cards to deck and get 4 new cards
+      mana: 3
+      src: generic
+    - id: 5
+      type: UN
+      name: Generate
+      number_effects: 1
+      ability:
+      - tag: Buff_Mana
+        value: 0
+        effect_quantity: 1
+        type_effect: Card
+      description: Next card does not cost mana
+      mana: 3
+      src: generic
+    - id: 6
+      type: UN
+      name: Ancient
+      number_effects: 2
+      ability:
+      - tag: Damage
+        value: 1
+        effect_quantity: 2
+        type_effect: Other
+      - tag: Shuffle
+        value: 0
+        effect_quantity: 1
+        type_effect: Card
+      description: 1 damage 2 enemies, get 1 card from deck
+      mana: 3
+      src: generic
+    - id: 7
+      type: UN
+      name: Weaklink
+      number_effects: 1
+      ability:
+      - tag: Damage
+        value: 2
+        effect_quantity: 1
+        type_effect: Other
+      description: Deal 1 damage to an enemy or kill the weaker
+      mana: 2
+      src: generic
+    - id: 8
+      type: UN
+      name: Apologize
+      number_effects: 1
+      ability:
+      - tag: Damage
+        value: 3
+        effect_quantity: 1
+        type_effect: Other
+      description: Deal 3 damage to a random enemy
+      mana: 3
+      src: generic
+    - id: 9
+      type: UN
+      name: King Kongor
+      number_effects: 1
+      ability:
+      - tag: Damage
+        value: 5
+        effect_quantity: 1
+        type_effect: Other
+      description: Deal 5 damage to first enemy
+      mana: 3
+      src: generic
+    - id: 10
+      type: UN
+      name: Shotone
+      number_effects: 1
+      ability:
+      - tag: Damage
+        value: 2
+        effect_quantity: 1
+        type_effect: Other
+      description: Deal 2 damage to first enemy
+      mana: 1
+      src: generic
+--- !u!114 &525808494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525808491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f3656ca4307924493300a8af3690e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 525808491}
+  _prompt: FIGHT ME
+  _promptArray: []
+--- !u!136 &525808495
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525808491}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.6143708
+  m_Direction: 1
+  m_Center: {x: -0, y: 1.2871974, z: -0}
+--- !u!95 &525808496
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525808491}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: f227b5017a7c0184a96c2c26f1e4408d, type: 3}
+  m_Controller: {fileID: 9100000, guid: 47bb6ff9777609040bb3b36d9dae38f6, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &557412644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 557412645}
+  m_Layer: 8
+  m_Name: Bip001 R UpperArm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &557412645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557412644}
+  m_LocalRotation: {x: -0.27618048, y: 0.53255105, z: 0.15136026, w: 0.7856232}
+  m_LocalPosition: {x: -0.18044814, y: -0.000000001513958, z: -0.00000019378662}
+  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1883555869}
+  m_Father: {fileID: 704708500}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &570584612
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,6 +2980,311 @@ Transform:
   m_Father: {fileID: 2049677939}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &750332774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 750332775}
+  m_Layer: 8
+  m_Name: Bip001 R Toe0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &750332775
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750332774}
+  m_LocalRotation: {x: -0.00000001808849, y: 0.000000012820135, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.13996285, y: 0.18012601, z: 0}
+  m_LocalScale: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2073085188}
+  m_Father: {fileID: 1023402173}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &751810737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751810738}
+  m_Layer: 8
+  m_Name: Bip001 L Toe0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &751810738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751810737}
+  m_LocalRotation: {x: 0.000000015454312, y: -0.000000015454312, z: -0.70710677, w: 0.7071068}
+  m_LocalPosition: {x: -0.13996285, y: 0.18012601, z: 0.000000012111664}
+  m_LocalScale: {x: 0.99999994, y: 0.9999999, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1644551529}
+  m_Father: {fileID: 1461538623}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &754636501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 754636502}
+  - component: {fileID: 754636506}
+  - component: {fileID: 754636505}
+  - component: {fileID: 754636504}
+  - component: {fileID: 754636503}
+  m_Layer: 8
+  m_Name: Enemy
+  m_TagString: Enemy
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &754636502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754636501}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 665556600}
+  - {fileID: 350969317}
+  - {fileID: 686129712}
+  m_Father: {fileID: 1595726788}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &754636503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754636501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b377919b276434cb65b5816e66abc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
+  MaxMana: 0
+  MaxHealth: 0
+  Name: DungeonSkeleton
+  Mana: 3
+  ClassType: Enemy
+  Health: 30
+  ImageProfile: {fileID: 0}
+  myDeck:
+    cards:
+    - id: 1
+      type: UN
+      name: Aoe
+      number_effects: 2
+      ability:
+      - tag: Damage
+        value: 2
+        effect_quantity: 4
+        type_effect: Other
+      - tag: Damage
+        value: 2
+        effect_quantity: 0
+        type_effect: Me
+      description: '2 damage to all enemies, 2 damage to player '
+      mana: 1
+      src: generic
+    - id: 2
+      type: UN
+      name: Yolo
+      number_effects: 1
+      ability:
+      - tag: Damage
+        value: 2
+        effect_quantity: 1
+        type_effect: Other
+      description: '4 damage to enemy with highest life '
+      mana: 2
+      src: generic
+    - id: 3
+      type: UN
+      name: Stealer
+      number_effects: 2
+      ability:
+      - tag: Damage
+        value: 1
+        effect_quantity: 4
+        type_effect: Other
+      - tag: Heal
+        value: 1
+        effect_quantity: 0
+        type_effect: Me
+      description: 1 damage to all enemies, heal 1 life per enemy
+      mana: 2
+      src: generic
+    - id: 4
+      type: UN
+      name: Buff
+      number_effects: 1
+      ability:
+      - tag: Shuffle
+        value: 0
+        effect_quantity: 4
+        type_effect: Card
+      description: Shuffle your cards to deck and get 4 new cards
+      mana: 3
+      src: generic
+    - id: 5
+      type: UN
+      name: Generate
+      number_effects: 1
+      ability:
+      - tag: Buff_Mana
+        value: 0
+        effect_quantity: 1
+        type_effect: Card
+      description: Next card does not cost mana
+      mana: 3
+      src: generic
+    - id: 6
+      type: UN
+      name: Ancient
+      number_effects: 2
+      ability:
+      - tag: Damage
+        value: 1
+        effect_quantity: 2
+        type_effect: Other
+      - tag: Shuffle
+        value: 0
+        effect_quantity: 1
+        type_effect: Card
+      description: 1 damage 2 enemies, get 1 card from deck
+      mana: 3
+      src: generic
+    - id: 7
+      type: UN
+      name: Weaklink
+      number_effects: 1
+      ability:
+      - tag: Damage
+        value: 2
+        effect_quantity: 1
+        type_effect: Other
+      description: Deal 1 damage to an enemy or kill the weaker
+      mana: 2
+      src: generic
+    - id: 8
+      type: UN
+      name: Apologize
+      number_effects: 1
+      ability:
+      - tag: Damage
+        value: 3
+        effect_quantity: 1
+        type_effect: Other
+      description: Deal 3 damage to a random enemy
+      mana: 3
+      src: generic
+    - id: 9
+      type: UN
+      name: King Kongor
+      number_effects: 1
+      ability:
+      - tag: Damage
+        value: 5
+        effect_quantity: 1
+        type_effect: Other
+      description: Deal 5 damage to first enemy
+      mana: 3
+      src: generic
+    - id: 10
+      type: UN
+      name: Shotone
+      number_effects: 1
+      ability:
+      - tag: Damage
+        value: 2
+        effect_quantity: 1
+        type_effect: Other
+      description: Deal 2 damage to first enemy
+      mana: 1
+      src: generic
+--- !u!114 &754636504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754636501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f3656ca4307924493300a8af3690e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 754636501}
+  _prompt: FIGHT ME
+  _promptArray: []
+--- !u!136 &754636505
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754636501}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.6143708
+  m_Direction: 1
+  m_Center: {x: -0, y: 1.2871974, z: -0}
+--- !u!95 &754636506
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754636501}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: f227b5017a7c0184a96c2c26f1e4408d, type: 3}
+  m_Controller: {fileID: 9100000, guid: 47bb6ff9777609040bb3b36d9dae38f6, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &778296772
 GameObject:
   m_ObjectHideFlags: 0
@@ -4133,7 +4745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 4.9321756, z: -2.0230756}
+  m_FollowOffset: {x: 0, y: 3, z: -4}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -7477,8 +8089,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987166036}
-  m_LocalRotation: {x: 0.48220435, y: 0.32646185, z: -0.19976497, w: 0.7880327}
-  m_LocalPosition: {x: 0.00022093378, y: 0.0000047683716, z: 0.000018123152}
+  m_LocalRotation: {x: 0.25569117, y: 0.36777005, z: -0.10592252, w: 0.88777685}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7725,8 +8337,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007278810}
-  m_LocalRotation: {x: 0.4983373, y: 0.3223023, z: -0.20646891, w: 0.777915}
-  m_LocalPosition: {x: -0.00000012644054, y: -4.4621004e-31, z: -0.00000021073424}
+  m_LocalRotation: {x: 0.27394867, y: 0.36550698, z: -0.11348587, w: 0.8823138}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7992,6 +8604,7 @@ GameObject:
   - component: {fileID: 2102772579}
   - component: {fileID: 2102772578}
   - component: {fileID: 2102772577}
+  - component: {fileID: 2102772580}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8030,11 +8643,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 45
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8057,14 +8670,80 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102772576}
-  m_LocalRotation: {x: 0.18074971, y: -0, z: -0, w: 0.98352915}
-  m_LocalPosition: {x: -2.33, y: 2.78, z: -10.79}
+  m_LocalRotation: {x: 0.2865619, y: 0.24547778, z: -0.07621815, w: 0.9229376}
+  m_LocalPosition: {x: -2.6613646, y: 3.08, z: -4.177046}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 20.827, y: 0, z: 0}
+--- !u!114 &2102772580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102772576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!1 &2107658084
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2107658085}
+  m_Layer: 8
+  m_Name: Bip001 R Finger0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2107658085
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107658084}
+  m_LocalRotation: {x: 0.013785773, y: 0.047695305, z: -0.2707513, w: 0.9613682}
+  m_LocalPosition: {x: -0.15213335, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1583743640}
+  m_Father: {fileID: 2027980683}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2124247763
 GameObject:
   m_ObjectHideFlags: 0
@@ -8171,7 +8850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 4.9321756, z: -2.0230756}
+  m_FollowOffset: {x: 0, y: 3, z: -4}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
