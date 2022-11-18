@@ -59,7 +59,7 @@ public class GamePlayFightScene : MonoBehaviour
     private void PlayerToPlay()
     {
         //gera as cartas se nao existirem
-        if (_cardsToPlay.CardsOnHand.Count == 0)
+        if (_cardsToPlay.CardsOnHand.Count == 0 && _cardsToPlay.getCards)
             generateCards();
 
         //atribui valores da carta que é clicada
@@ -101,6 +101,9 @@ public class GamePlayFightScene : MonoBehaviour
                         case var value when value == Global.ManaCard:
                             IfCardMana(ability);
                             break;
+                        case var value when value == Global.DeBuffEnemyCard:
+                            IfDeBuffEnemy(ability);
+                            break;
                         default:
                             Debug.Log("This Ability, don´t exist!");
                             break;
@@ -119,6 +122,8 @@ public class GamePlayFightScene : MonoBehaviour
             //clear cardChoose
             _cardsToPlay.CardChoose = new Card();
 
+            if (_cardsToPlay.CardsOnHand.Count == 0) _cardsToPlay.getCards = false;
+
         }
     }
 
@@ -128,19 +133,22 @@ public class GamePlayFightScene : MonoBehaviour
         player.Mana = player.MaxMana;
         //permissed attack player if enemies not change that
         player.PermissedByAttack = true;
+        //permissed to player get cards
+        _cardsToPlay.getCards = true;
 
 
         foreach (GameObject item in ManagerGameFight.Instance.Manager.CharactersICanAttack)
         {
             if (item.GetComponent<Character_cls>().PermissedByAttack)
-                player.Health -= Random.Range(1, 4);
+                player.Health -= item.GetComponent<EnemyConfig_Prefab>().getRangeAttack();
+
+            //get a range default values attack
+            item.GetComponent<EnemyConfig_Prefab>().setInicialMinAndMaxAttack();
         }
 
         if (_cardsToPlay.CardsOnHand.Count > 0)
-        {
             _cardsToPlay.DestroyAllInstanceCards();
-            _turn.NextTurn();
-        }
+        _turn.NextTurn();
     }
 
     //damage in character(s)
@@ -192,8 +200,11 @@ public class GamePlayFightScene : MonoBehaviour
     //cc mechanics
     private void IfCC(Ability _ab)
     {
-        if (_ab.type_effect == Global.cardAffectsPlayer)
-            player.PermissedByAttack = !player.PermissedByAttack;
+        if (_ab.type_effect == Global.cardAffectsPlayer) //can not attack more this turn
+        {
+            _turn.NextTurn();
+            activeDestroyThisCard = false;
+        }
         else if (_ab.type_effect == Global.cardAffectsOther)
         {
             if (_ab.effect_quantity == 0) //all enemies dont attack
@@ -221,7 +232,7 @@ public class GamePlayFightScene : MonoBehaviour
         }
     }
 
-    //card mana mechanics
+    //mana mechanics
     private void IfCardMana(Ability _ab)
     {
         if (_ab.type_effect == Global.cardAffectsCard) 
@@ -231,6 +242,20 @@ public class GamePlayFightScene : MonoBehaviour
         else if (_ab.type_effect == Global.cardAffectsPlayer) //player get mana
             player.Mana += _ab.value;
         
+    }
+
+    //reduce attack enemies
+    private void IfDeBuffEnemy(Ability _ab)
+    {
+        if (_ab.type_effect == Global.cardAffectsOther)
+        {
+            if (_ab.effect_quantity == 0) //all enemies reduce attack
+                ManagerGameFight.Instance.Manager.SetNewValuesOnAllCharactersICanAttack(_ab.value, 3);
+            else if (_ab.effect_quantity == -1) //random enemy reduce attack
+                ManagerGameFight.Instance.Manager.SetNewValuesOnRandomCharacter(_ab.value, 3);
+            else if (_ab.effect_quantity == 1) //enemy choose reduce attack
+                ManagerGameFight.Instance.Manager.SetNewValuesOnCharacter(ManagerGameFight.Instance.Manager.NextCharacter, _ab.value, 3);
+        }
     }
 
     //generate inicial cards

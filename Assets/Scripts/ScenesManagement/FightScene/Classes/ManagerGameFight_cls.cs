@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
+using static UnityEditor.Progress;
 using Random = UnityEngine.Random;
 
 
@@ -100,7 +101,7 @@ public class ManagerGameFight_cls {
     /*----------------change values on gameobject---------------------*/
     //gm - gameobject do you need change
     //intValue - value to set on data
-    //selection - Whant data you can change (0 - Mana / 1 - Health / 2 - PermissedByAttack)
+    //selection - Whant data you can change (0 - Mana / 1 - Health / 2 - PermissedByAttack / 3 - Attack power)
     public void SetNewValuesOnCharacter(GameObject gm, int value, int selection)
     {
         if (gm != null)
@@ -117,13 +118,15 @@ public class ManagerGameFight_cls {
                     if (value != 0) validation = true;
                     character.PermissedByAttack = validation;
                 }
+                else if (selection == 3)
+                    CharactersOnFight[GetIndexCharactersOnFight(gm)].GetComponent<EnemyConfig_Prefab>().SubtractRangeAttack(value);
             }          
         }
     }
 
     /*----------------change values on characters i can attack---------------------*/
     //intValue - value to set on data
-    //selection - Whant data you can change (0 - Mana / 1 - Health / 2 - PermissedByAttack)
+    //selection - Whant data you can change (0 - Mana / 1 - Health / 2 - PermissedByAttack / 3 - Attack power)
     public void SetNewValuesOnAllCharactersICanAttack(int value, int selection)
     {
 
@@ -141,20 +144,20 @@ public class ManagerGameFight_cls {
                     if (value != 0) validation = true;
                     character.PermissedByAttack = validation;
                 }
+                else if (selection == 3)
+                    CharactersOnFight[GetIndexCharactersOnFight(item)].GetComponent<EnemyConfig_Prefab>().SubtractRangeAttack(value); 
             }
         }
     }
 
     /*----------------change values on random characters---------------------*/
     //intValue - value to set on data
-    //selection - Whant data you can change (0 - Mana / 1 - Health / 2 - PermissedByAttack)
+    //selection - Whant data you can change (0 - Mana / 1 - Health / 2 - PermissedByAttack / 3 - Attack power)
     public void SetNewValuesOnRandomCharacter(int value, int selection)
     {
         int random = Random.Range(0, CharactersICanAttack.Length);
 
         SetNewValuesOnCharacter(CharactersICanAttack[random], value, selection);
     }
-
-
 
 }

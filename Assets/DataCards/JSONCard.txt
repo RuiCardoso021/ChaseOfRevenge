@@ -238,18 +238,18 @@
         {
             "id": 13,
             "type": "ARCH",
-            "name": "DoubleDps",
+            "name": "Damage",
             "number_effects": 1,
             "ability": 
             [
                 { 
-                    "tag": "Buff", 
-                    "value": 0, 
-                    "effect_quantity": 4, 
-                    "type_effect": "Me"
+                    "tag": "Damage", 
+                    "value": 8, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Other"
                 }
             ],
-            "description": "Double atacks on next turn",
+            "description": "All enemies give a 8 damage",
             "mana":3,
             "src": "archery"
         },
@@ -280,13 +280,13 @@
             "ability": 
             [
                 { 
-                    "tag": "Buff", 
+                    "tag": "DeBuffEnemy", 
                     "value": 1, 
-                    "effect_quantity": 4, 
-                    "type_effect": "Me"
+                    "effect_quantity": 1, 
+                    "type_effect": "Other"
                 }
             ],
-            "description": "Buff 1 damage to all cards on this turn",
+            "description": "Reduce 1 of range attack any enemy on next turn",
             "mana":1,
             "src": "sorceress"
         },
@@ -322,25 +322,31 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "3 damage to a random enemy ",
+            "description": "3 damage to a random enemy",
             "mana":2,
             "src": "sorceress"
         },
          {
             "id": 18,
-            "type": "SORCE",
-            "name": "Shield",
+            "type": "UN",
+            "name": "OMG",
             "number_effects": 1,
             "ability": 
             [
+                {
+                    "tag": "Heal", 
+                    "value": 10, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Me"
+                },
                 { 
-                    "tag": "Buff", 
+                    "tag": "CC", 
                     "value": 0, 
-                    "effect_quantity": 2, 
+                    "effect_quantity": "0", 
                     "type_effect": "Me"
                 }
             ],
-            "description": "Player cannot take damage for two turns",
+            "description": "Get 10 Heal but pass turn",
             "mana":3,
             "src": "sorceress"
         },
@@ -364,19 +370,19 @@
         },
          {
             "id": 20,
-            "type": "WAR",
+            "type": "UN",
             "name": "Getfive",
             "number_effects": 1,
             "ability": 
             [
                 { 
-                    "tag": "Buff", 
-                    "value": 5, 
-                    "effect_quantity": 0, 
-                    "type_effect": "Me"
+                    "tag": "DeBuffEnemy", 
+                    "value": 3, 
+                    "effect_quantity": -1, 
+                    "type_effect": "Other"
                 }
             ],
-            "description": "Player gain 5 damage to an attack, but cannot attack this turn",
+            "description": "Reduce 3 range attack to ramdom enemy on next turn",
             "mana":1,
             "src": "warrior"
         },
@@ -418,19 +424,19 @@
         },
            {
             "id": 23,
-            "type": "WAR",
+            "type": "UN",
             "name": "Getfivenow",
             "number_effects": 1,
             "ability": 
             [
                 { 
-                    "tag": "Buff", 
-                    "value": 0, 
-                    "effect_quantity": 1, 
-                    "type_effect": "Me"
+                    "tag": "DeBuffEnemy", 
+                    "value": 10, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Other"
                 }
             ],
-            "description": "Player gain 5 damage on next attack",
+            "description": "Reduce 10 attack all enemies on next turn",
             "mana":2,
             "src": "warrior"
         },

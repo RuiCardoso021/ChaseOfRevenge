@@ -17,6 +17,7 @@ public class CardManager : MonoBehaviour
     public List<GameObject> CardsOnHand = new List<GameObject>();
     public List<Card> TempCardOffHand = new List<Card>();
     public bool nextCardDontCostMana;
+    public bool getCards;
 
 
     public Card CardChoose;
@@ -24,6 +25,7 @@ public class CardManager : MonoBehaviour
 
     private void Start()
     {
+        getCards = true;
         nextCardDontCostMana = false;
         returnDeck = false;
         CardChoose = new Card();
@@ -35,7 +37,6 @@ public class CardManager : MonoBehaviour
 
         if (CardsOnHand.Count > 0)
         {
-            //animation mouseHover
             AddAnimation();
 
         }

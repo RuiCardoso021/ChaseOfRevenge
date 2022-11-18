@@ -666,6 +666,7 @@ GameObject:
   - component: {fileID: 4591218618518814777}
   - component: {fileID: 8287458487189089131}
   - component: {fileID: 130166031127586128}
+  - component: {fileID: 262516111038850099}
   m_Layer: 8
   m_Name: DungeonSkeleton
   m_TagString: Enemy
@@ -752,13 +753,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b377919b276434cb65b5816e66abc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
+  MaxMana: 0
+  MaxHealth: 0
   Name: DungeonSkeleton
   Mana: 3
   ClassType: Enemy
   Health: 30
+  PermissedByAttack: 0
+  ImageProfile: {fileID: 0}
   myDeck:
     cards: []
-  jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
+--- !u!114 &262516111038850099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4591218618518783714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ac599eb3c118b46a6f4327a1c630df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinAttack: 1
+  MaxAttack: 4
 --- !u!1 &4591218618518783716
 GameObject:
   m_ObjectHideFlags: 0

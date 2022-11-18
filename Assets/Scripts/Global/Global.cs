@@ -40,7 +40,7 @@ public static class Global
     public static string healCard = "Heal";
     public static string ccCard = "CC";
     public static string ShuffleCard = "Shuffle";
-    public static string BuffCard = "Buff";
+    public static string DeBuffEnemyCard = "DeBuffEnemy";
     public static string ManaCard = "Mana";
 
     // card objeto
