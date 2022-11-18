@@ -10,8 +10,8 @@ public class Character_cls : MonoBehaviour
 {
 
     [SerializeField] private TextAsset jsonFile;
-    private int _maxMana;
-
+    
+    public int MaxMana;
     public float MaxHealth;
     public string Name;
     public int Mana;
@@ -27,7 +27,7 @@ public class Character_cls : MonoBehaviour
         deck = JsonUtility.FromJson<Deck>(jsonFile.text);
         List<Card> inventoryCards = new List<Card>();
         MaxHealth = Health;
-        _maxMana = Mana;
+        MaxMana = Mana;
 
         foreach (Card card in deck.cards)
         {

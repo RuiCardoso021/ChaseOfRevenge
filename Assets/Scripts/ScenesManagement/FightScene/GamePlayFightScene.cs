@@ -43,83 +43,89 @@ public class GamePlayFightScene : MonoBehaviour
     {
         if (_turn.myTurn)
         {
-            //gera as cartas se nao existirem
-            if (_cardsToPlay.CardsOnHand.Count == 0)
-                generateCards();
-
-            //atribui valores da carta que é clicada
-            Card cardChose = new Card();
-            _cardsToPlay.getCardChoose();
-            cardChose = _cardsToPlay.CardChoose;
-
-            //valida se a carta escolhida esta vazia
-            if (!cardChose.IsEmpty())
-            {
-                _cardsToPlay.GetDataCardOnHandBeforeChange();
-
-                if (player.Mana >= cardChose.mana)
-                {
-                    activeDestroyThisCard = true;
-
-                        int countAbility = cardChose.ability.Length;
-                    for (int i = 0; i < countAbility; i++)
-                    {
-                        Ability ability = cardChose.ability[i];
-
-                        switch (ability.tag)
-                        {
-                            case var value when value == Global.damageCard:
-                                IfDamage(ability);
-                                break;
-                            case var value when value == Global.healCard:
-                                IfHealth(ability);
-                                break;
-                            case var value when value == Global.ccCard:
-                                IfCC(ability);
-                                break;
-                            case var value when value == Global.ShuffleCard:
-                                IfShuffle(ability);
-                                break;
-                            case var value when value == Global.ManaCard:
-                                IfCardMana(ability);
-                                break;
-                            default:
-                                Debug.Log("This Ability, don´t exist!");
-                                break;
-                        }
-                    }
-
-                    if (activeDestroyThisCard)
-                    {
-                        _cardsToPlay.DestroyThisCard();
-                        
-                    }
-
-                    player.Mana -= cardChose.mana;
-
-                    ManagerGameFight.Instance.AddCardsOnHistoric(cardChose);
-                }
-
-
-                //clear cardChoose
-                _cardsToPlay.CardChoose = new Card();
-
-            }
-
+            PlayerToPlay();
         }
         else
         {
-
-            if (_cardsToPlay.CardsOnHand.Count > 0)
-            {
-                _cardsToPlay.DestroyAllInstanceCards();
-                _turn.NextTurn();
-            }
-
-            player.Mana = 4;
-            player.Health -= Random.Range(1, 7);
+            EnemiesToPlay();
         }
 
+    }
+
+    private void PlayerToPlay()
+    {
+        //gera as cartas se nao existirem
+        if (_cardsToPlay.CardsOnHand.Count == 0)
+            generateCards();
+
+        //atribui valores da carta que é clicada
+        Card cardChose = new Card();
+        _cardsToPlay.getCardChoose();
+        cardChose = _cardsToPlay.CardChoose;
+
+        //valida se a carta escolhida esta vazia
+        if (!cardChose.IsEmpty())
+        {
+            _cardsToPlay.GetDataCardOnHandBeforeChange();
+
+            if (player.Mana >= cardChose.mana)
+            {
+                activeDestroyThisCard = true;
+
+                int countAbility = cardChose.ability.Length;
+                for (int i = 0; i < countAbility; i++)
+                {
+                    Ability ability = cardChose.ability[i];
+
+                    switch (ability.tag)
+                    {
+                        case var value when value == Global.damageCard:
+                            IfDamage(ability);
+                            break;
+                        case var value when value == Global.healCard:
+                            IfHealth(ability);
+                            break;
+                        case var value when value == Global.ccCard:
+                            IfCC(ability);
+                            break;
+                        case var value when value == Global.ShuffleCard:
+                            IfShuffle(ability);
+                            break;
+                        case var value when value == Global.ManaCard:
+                            IfCardMana(ability);
+                            break;
+                        default:
+                            Debug.Log("This Ability, don´t exist!");
+                            break;
+                    }
+                }
+
+                if (activeDestroyThisCard)
+                {
+                    _cardsToPlay.DestroyThisCard();
+                }
+
+                player.Mana -= cardChose.mana;
+
+                ManagerGameFight.Instance.AddCardsOnHistoric(cardChose);
+            }
+
+            //clear cardChoose
+            _cardsToPlay.CardChoose = new Card();
+
+        }
+    }
+
+    private void EnemiesToPlay()
+    {
+        if (_cardsToPlay.CardsOnHand.Count > 0)
+        {
+            _cardsToPlay.DestroyAllInstanceCards();
+            _turn.NextTurn();
+        }
+
+        player.Mana = player.MaxMana;
+        player.Health -= Random.Range(1, 7);
     }
 
     //damage in character(s)
@@ -165,14 +171,16 @@ public class GamePlayFightScene : MonoBehaviour
                 ManagerGameFight.Instance.Manager.SetNewValuesOnAllCharactersICanAttack(_ab.value, 1);
             else if (_ab.effect_quantity == -1) //heal random enemy
                 ManagerGameFight.Instance.Manager.SetNewValuesOnRandomCharacter(_ab.value, 1);
-            //enemy.Health += _ab.value;
         }
     }
 
     //cc mechanics
     private void IfCC(Ability _ab)
     {
-        Debug.Log("CC: " + _ab.tag);
+        if (_ab.type_effect == Global.cardAffectsPlayer)
+            Debug.Log("CC: " + _ab.tag);
+        else if (_ab.type_effect == Global.cardAffectsOther)
+            Debug.Log("CC: " + _ab.tag);
     }
 
 
@@ -183,7 +191,7 @@ public class GamePlayFightScene : MonoBehaviour
         {
             _cardsToPlay.DestroyAllInstanceCards();
             generateCards();
-            //activeDestroyThisCard = false;
+            activeDestroyThisCard = false;
         }
         else if (_ab.effect_quantity == 1)
         {

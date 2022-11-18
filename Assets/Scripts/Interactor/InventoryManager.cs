@@ -45,6 +45,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+
     public void ChangeCardsInInventory(GameObject card)
     {
         foreach (GameObject go in cards2play)

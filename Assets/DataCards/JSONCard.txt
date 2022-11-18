@@ -300,7 +300,7 @@
                 { 
                     "tag": "CC", 
                     "value": 0, 
-                    "effect_quantity": 4, 
+                    "effect_quantity": 0, 
                     "type_effect": "Other"
                 }
             ],
