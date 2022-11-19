@@ -614,7 +614,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585941110047305032}
-  m_LocalRotation: {x: 0.4002142, y: 0.34491384, z: -0.16577414, w: 0.83269566}
+  m_LocalRotation: {x: 0.69045854, y: 0.12270847, z: -0.12058526, w: 0.7026158}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 5, z: -4}
+  m_FollowOffset: {x: 0, y: 7.98135, z: -0.06512738}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -815,7 +815,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: -25.187576
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 5, z: -4}
+  m_FollowOffset: {x: 0, y: 7.98135, z: -0.06512738}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1348,7 +1348,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: -25.187576
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -1424,7 +1424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2459625271754765518}
   m_LocalRotation: {x: 6.7524694e-25, y: -0.38268343, z: -1.6301904e-24, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 5, z: -4}
+  m_LocalPosition: {x: 0.027717112, y: 7.98135, z: -0.058935028}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1479,7 +1479,7 @@ MonoBehaviour:
     m_AccelTime: 0.2
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
-    m_InputAxisValue: 0
+    m_InputAxisValue: 0.05
     m_InvertInput: 1
     m_MinValue: 0
     m_MaxValue: 1
@@ -1497,7 +1497,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: -25.187576
     m_SpeedMode: 0
     m_MaxSpeed: 150
     m_AccelTime: 0.1
@@ -2016,7 +2016,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3617704904974102151}
-  m_LocalRotation: {x: 0.37603998, y: 0.34954995, z: -0.15576084, w: 0.8438883}
+  m_LocalRotation: {x: 0.6732634, y: 0.12558563, z: -0.11757885, w: 0.71911055}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2288,8 +2288,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.7263938, y: 1.7845614, z: 0.36600244}
-  m_Center: {x: 0.009419262, y: 0.90098345, z: 0.012562066}
+  m_Size: {x: 1, y: 2, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!143 &3659650284145363725
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2304,7 +2304,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.2
+  m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
@@ -2318,7 +2318,7 @@ Animator:
   m_GameObject: {fileID: 4470061613590560578}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 21a06be8de501b54cb6c498a493f13b6, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4cdea5689364d3641a757b76f6426857, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -2391,6 +2391,7 @@ MonoBehaviour:
   Mana: 4
   ClassType: ARCH
   Health: 25
+  PermissedByAttack: 0
   ImageProfile: {fileID: 21300000, guid: 8f0dbc8cbb14b8541ab023c42e09f620, type: 3}
   myDeck:
     cards: []
@@ -2510,7 +2511,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4734692164924307303}
-  m_LocalRotation: {x: 0.35171583, y: 0.3538677, z: -0.14568546, w: 0.8543123}
+  m_LocalRotation: {x: 0.65239125, y: 0.12890089, z: -0.11393304, w: 0.7380986}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3624,7 +3625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 5, z: -4}
+  m_FollowOffset: {x: 0, y: 7.98135, z: -0.06512738}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -3644,7 +3645,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 0
+    Value: -25.187576
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
