@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyConfig_Prefab : MonoBehaviour
 {
+    public GameObject[] Teammates = new GameObject[3];
     public int MinAttack;
     public int MaxAttack;
     private int InicialMinAttack;

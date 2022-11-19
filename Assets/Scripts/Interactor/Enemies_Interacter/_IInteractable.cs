@@ -4,13 +4,9 @@ using UnityEngine;
 
 public interface IInteractable {
 
-     public string InteractionPrompt{get;}
+     public Dialog_cls[] InteractionPromptArray { get; }
 
-    public Dialog_cls[] InteractionPromptArray { get; }
-
-     public GameObject InteractionGameObject{get;}
-
-     public GameObject GetObject { get; }
+     public GameObject GetInteractionGameObject { get;}
 
      public void ChangeScene(GameObject player);
 

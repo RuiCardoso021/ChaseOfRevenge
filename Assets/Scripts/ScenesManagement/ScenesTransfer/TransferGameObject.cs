@@ -33,23 +33,25 @@ public class TransferGameObject : MonoBehaviour
         GameObject gameObjectToSend = new GameObject();
         gameObjectToSend.name = Global.recivedObjects;
 
+
         SendDataFromOtherScene();
 
         foreach (GameObject character in LoadedCharacter)
-            if(character != null)
-            {
-                character.transform.position = Vector3.zero;
+        {
+            if (character != null)
                 character.transform.SetParent(gameObjectToSend.transform);
-            }      
-        
+        }
+            
+            
+
         StartCoroutine(LoadSceneWithGameObject(gameObjectToSend));
     }
 
     public void BackToScene()
     {
-        if (ScenesName.Instance != null)
+        if (DataTransferScene.Instance != null)
         {
-            _nextSceneName = ScenesName.Instance.LastSceneName;
+            _nextSceneName = DataTransferScene.Instance.LastSceneName;
             LoadNextScene();
         }
     }
@@ -60,7 +62,7 @@ public class TransferGameObject : MonoBehaviour
         gameObjectToSend.name = Global.recivedObjects;
         _nextSceneName = SceneManager.GetActiveScene().name;
 
-        for (int i = 0; i < RecibeGameObject.Instance.indexCounter; i++)
+        for (int i = 0; i < RecibeGameObject.Instance.SpawnerList.Length; i++)
         {
             GameObject child = RecibeGameObject.Instance.ObjectPrefab.transform.GetChild(i).gameObject;
             LoadedCharacter.Add(child);
@@ -82,10 +84,11 @@ public class TransferGameObject : MonoBehaviour
     {
         GameObject GameObjectDataTransfer = new GameObject();
         GameObjectDataTransfer.name = Global.dataTransfer;
-        GameObjectDataTransfer.AddComponent<ScenesName>();
-        ScenesName scenesName = GameObjectDataTransfer.GetComponent<ScenesName>();
-        scenesName.LastSceneName = SceneManager.GetActiveScene().name;
-        scenesName.CurrentSceneName = _nextSceneName;
+        GameObjectDataTransfer.AddComponent<DataTransferScene>();
+        DataTransferScene dataTransferScene = GameObjectDataTransfer.GetComponent<DataTransferScene>();
+        dataTransferScene.LastSceneName = SceneManager.GetActiveScene().name;
+        dataTransferScene.CurrentSceneName = _nextSceneName;
+
         LoadedCharacter.Add(GameObjectDataTransfer);
     }
 }

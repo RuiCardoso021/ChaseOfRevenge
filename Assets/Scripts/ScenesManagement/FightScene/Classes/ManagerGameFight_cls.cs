@@ -49,26 +49,30 @@ public class ManagerGameFight_cls {
 
         foreach (GameObject gameObject in CharactersOnFight)
         {
-            //get first friend
-            if (IsFriend(gameObject.GetComponent<Character_cls>()) && firstFriend)
+            if (gameObject != null)
             {
-                CurrentCharacter = gameObject;
-                firstFriend = false;
-            }
-            //get first enemy
-            else if (IsEnemy(gameObject.GetComponent<Character_cls>()) && firstEnemy)
-            {
-                NextCharacter = gameObject;
-                firstEnemy = false;
-            }
+                //get first friend
+                if (IsFriend(gameObject.GetComponent<Character_cls>()) && firstFriend)
+                {
+                    CurrentCharacter = gameObject;
+                    firstFriend = false;
+                }
+                //get first enemy
+                else if (IsEnemy(gameObject.GetComponent<Character_cls>()) && firstEnemy)
+                {
+                    NextCharacter = gameObject;
+                    firstEnemy = false;
+                }
 
-            //search all enemies
-            if (IsEnemy(gameObject.GetComponent<Character_cls>())){
-                CharactersICanAttack[i] = gameObject;
-                i++;
+                //search all enemies
+                if (IsEnemy(gameObject.GetComponent<Character_cls>()))
+                {
+                    CharactersICanAttack[i] = gameObject;
+                    i++;
 
-                gameObject.AddComponent<Enemy_Config_FightScene_Prefab>();
-            }
+                    gameObject.AddComponent<Enemy_Config_FightScene_Prefab>();
+                }
+            }  
         }
 
     }
@@ -78,8 +82,10 @@ public class ManagerGameFight_cls {
     {
         int count = 0;
         foreach (GameObject gameObject in CharactersOnFight)
-            if (IsEnemy(gameObject.GetComponent<Character_cls>()))
-                count++;
+            if (gameObject != null)
+                if (IsEnemy(gameObject.GetComponent<Character_cls>()))
+                    count++;
+
         return count;
     }
 

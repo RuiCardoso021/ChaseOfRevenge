@@ -36,16 +36,16 @@ public class Interactor : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E)){
 
                     TransferGameObject.Instance.LoadedCharacter.Add(_player);
-                    GameObject tempEnemy = _interactable.InteractionGameObject;
+                    GameObject tempEnemy = _interactable.GetInteractionGameObject;
                     tempEnemy.name = Global.findEnemy;
                     TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
-                    TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
+                    //TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
                     TransferGameObject.Instance.LoadNextScene();
                 }
 
                 if (Input.GetKeyDown(KeyCode.Mouse0))
                 {          
-                    if (_interactable.GetObject != null)
+                    if (_interactable.GetInteractionGameObject != null)
                     {
                         if (index < _interactable.InteractionPromptArray.Length)
                         {
@@ -56,7 +56,7 @@ public class Interactor : MonoBehaviour
                             else
                             {
                                 
-                                _interactionPromptUI.SetUp(".:" + _interactable.InteractionGameObject.GetComponent<Character_cls>().Name + ":. \n\n " + _interactable.InteractionPromptArray[index].Dialog);
+                                _interactionPromptUI.SetUp(".:" + _interactable.GetInteractionGameObject.GetComponent<Character_cls>().Name + ":. \n\n " + _interactable.InteractionPromptArray[index].Dialog);
                             }
                             
                             index++;

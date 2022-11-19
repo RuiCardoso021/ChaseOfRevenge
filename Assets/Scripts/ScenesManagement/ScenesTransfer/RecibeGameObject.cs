@@ -7,6 +7,8 @@ using Unity.VisualScripting;
 
 public class RecibeGameObject : MonoBehaviour
 {
+    private const int MAX_CHARACTERS_SPAWN = 4;
+
     public static RecibeGameObject Instance;
     private GameObject _player;
     public GameObject[] spawnPoint;
@@ -14,7 +16,7 @@ public class RecibeGameObject : MonoBehaviour
     [HideInInspector] public GameObject[] SpawnerList;
     [HideInInspector] public GameObject ObjectPrefab;
     [HideInInspector] public GameObject SpawnedObject;
-    [HideInInspector] public int indexCounter;
+    [HideInInspector] public int spawnEnemiesCount = 2;
 
     
     private void Start()
@@ -33,8 +35,7 @@ public class RecibeGameObject : MonoBehaviour
     {
         _player = GameObject.Find(Global.findPlayer);
         ObjectPrefab = GameObject.Find(Global.recivedObjects);
-        indexCounter = ObjectPrefab.transform.childCount-1;
-        SpawnerList = new GameObject[indexCounter];
+        SpawnerList = new GameObject[MAX_CHARACTERS_SPAWN];
         ObjectPrefab.SetActive(false);
     }
 
@@ -42,26 +43,53 @@ public class RecibeGameObject : MonoBehaviour
     {
         if (SpawnedObject == null && _player != null)
         {
-            for (int i = 0; i < indexCounter+1; i++)
+            for (int i = 0; i < ObjectPrefab.transform.childCount; i++)
             {
                 GameObject child = ObjectPrefab.transform.GetChild(i).gameObject;
 
-                if (child.name == Global.dataTransfer) { Instantiate(child); }
-                else{
+                if (child.name == Global.dataTransfer) { 
+                    GameObject Data = Instantiate(child); 
+                    Data.name = Global.dataTransfer; 
+                }
+                else if (IsFriend(child.GetComponent<Character_cls>()))
+                {
                     SpawnedObject = Instantiate(getCharacterPrefab(child), spawnPoint[i].transform.position, Quaternion.identity);
-
-                    if (SpawnedObject.GetComponent<Character_cls>().ClassType != Global.findEnemy)
-                    {
-                        SpawnedObject.name = Global.findPlayer;
-                        SpawnedObject.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
-                        SpawnedObject.GetComponent<Character_cls>().myDeck = _player.GetComponent<Character_cls>().myDeck;
-                    }
+                    SpawnedObject.name = Global.findPlayer;
+                    SpawnedObject.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
+                    SpawnedObject.GetComponent<Character_cls>().myDeck = _player.GetComponent<Character_cls>().myDeck;
                     SpawnerList[i] = SpawnedObject;
                 }
+                else
+                {
+                    EnemyConfig_Prefab enemyConfig = child.GetComponent<EnemyConfig_Prefab>();
+                    if (enemyConfig != null)
+                    {
+                        foreach (GameObject item in enemyConfig.Teammates)
+                        {
+                            if (item != null)
+                            {
+                                SpawnedObject = Instantiate(getCharacterPrefab(child), spawnPoint[i].transform.position, Quaternion.identity);
+                                SpawnerList[i] = SpawnedObject;
+                                i++;
+                            }
+                                    
+                        }
+                    }
+                }
+
             }
 
             if (ObjectPrefab != null) Destroy(ObjectPrefab, 3f);
         }
+    }
+
+    //return true if was a friend
+    private bool IsFriend(Character_cls character)
+    {
+        return (character.ClassType == Global.archerPlayerType
+            || character.ClassType == Global.warriorPlayerType
+            || character.ClassType == Global.magePlayerType
+            );
     }
 
     private GameObject getCharacterPrefab(GameObject gm)
@@ -79,13 +107,14 @@ public class RecibeGameObject : MonoBehaviour
             case var value when value == Global.playerArcherName:
                 gm = Resources.Load(Global.linkToFlora) as GameObject;
                 break;
+            case var value when value == Global.DungeonSkeleton:
+                gm = Resources.Load(Global.linkToDungeonSkeleton) as GameObject;
+                break;
         }
 
         return gm;
     }
 
-    public bool CheckExistSpawnerList()
-    {
-        return (indexCounter != 0 && SpawnerList[indexCounter-1] != null);
-    }
+
+
 }

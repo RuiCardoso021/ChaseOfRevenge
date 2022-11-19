@@ -10,28 +10,20 @@ public class Enemy_Config_FightScene_Prefab : MonoBehaviour
 {
     // Start is called before the first frame update
     private ManagerGameFight ManagerGameFight;
-    public GameObject GameObjectSelection;
-    public bool checkSelection;
+    public CircleSelection_Prefab CircleSelection;
 
     void Start()
     {
-        GameObjectSelection = GameObject.Find("CircleSelection");
-        checkSelection = false;
-        GameObjectSelection.SetActive(false);
         ManagerGameFight = GameObject.Find("GamePlay").GetComponent<ManagerGameFight>();
-
+        CircleSelection = GetComponent<CircleSelection_Prefab>();
     }
 
-    private void Update()
-    {
-        GameObjectSelection.SetActive(checkSelection);
-    }
 
     private void OnMouseDown()
     {
         if (ManagerGameFight.Manager != null)
         {
-            checkSelection = true;
+            CircleSelection.setActive = true;
             ManagerGameFight.Manager.NextCharacter = this.gameObject;
         }
     }

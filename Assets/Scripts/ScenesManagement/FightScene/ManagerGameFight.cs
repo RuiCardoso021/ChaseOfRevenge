@@ -17,6 +17,7 @@ public class ManagerGameFight : MonoBehaviour
 
     public static ManagerGameFight Instance;
     private const int TOTAL_HISTORIC = 100;
+    private const float DELAY_TO_PLAY_GAME = 1.5f;
 
     public ManagerGameFight_cls Manager;
     public HistoricGameFight_cls[] HistoricGame;
@@ -32,14 +33,17 @@ public class ManagerGameFight : MonoBehaviour
         _validation = true;
         HistoricGame = new HistoricGameFight_cls[TOTAL_HISTORIC];
         IndexHistoric = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         Vector2 hotSpot = new Vector2(_cursorTexture.width / 4, _cursorTexture.height / 4);
         Cursor.SetCursor(_cursorTexture, hotSpot, CursorMode.ForceSoftware);
-        Invoke("Inicialization", 1.5f);
+        Invoke("Inicialization", DELAY_TO_PLAY_GAME);
     }
 
     private void Update()
     {
+
         //this permisse is active after method Invoke
         if (!_validation)
         {
@@ -55,12 +59,15 @@ public class ManagerGameFight : MonoBehaviour
         {
             foreach (GameObject gm in Manager.CharactersOnFight)
             {  
-                Enemy_Config_FightScene_Prefab enemy_config = gm.GetComponent<Enemy_Config_FightScene_Prefab>();
-                if(enemy_config != null)
+                if (gm != null)
                 {
-                    if (gm == Manager.NextCharacter) enemy_config.checkSelection = true;
-                    else enemy_config.checkSelection = false;
-                }
+                    Enemy_Config_FightScene_Prefab enemy_config = gm.GetComponent<Enemy_Config_FightScene_Prefab>();
+                    if (enemy_config != null)
+                    {
+                        if (gm == Manager.NextCharacter) enemy_config.CircleSelection.setActive = true;
+                        else enemy_config.CircleSelection.setActive = false;
+                    }
+                }   
             }
         }
     
@@ -71,8 +78,6 @@ public class ManagerGameFight : MonoBehaviour
         Manager.CharactersOnFight = RecibeGameObject.Instance.SpawnerList;
         Manager.SelectionCharacters();
         _validation = false;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
         //Time.timeScale = 0f;
     }
 

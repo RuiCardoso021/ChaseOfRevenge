@@ -20,7 +20,7 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) Haskey = !Haskey;
+        //if (Input.GetKeyDown(KeyCode.P)) Haskey = !Haskey;
 
         if (Input.GetKeyDown(KeyCode.I) && isOpen == false && canClose == false)
         {

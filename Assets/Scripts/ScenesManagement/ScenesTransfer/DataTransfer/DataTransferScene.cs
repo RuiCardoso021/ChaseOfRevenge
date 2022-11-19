@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEditor.SearchService;
 using UnityEngine;
 
-public class ScenesName : MonoBehaviour
+public class DataTransferScene : MonoBehaviour
 {
-    public static ScenesName Instance;
+    public static DataTransferScene Instance;
 
     public string LastSceneName;
     public string CurrentSceneName;

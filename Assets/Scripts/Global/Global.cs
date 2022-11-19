@@ -14,7 +14,11 @@ public static class Global
     public static string linkToMiles = "Character_Player/Miles Raven";
     public static string playerArcherName = "Flora Raven";
     public static string linkToFlora = "Character_Player/Flora Raven";
-           
+
+    //enemies
+    public static string DungeonSkeleton = "DungeonSkeleton";
+    public static string linkToDungeonSkeleton = "Enemies/DungeonSkeleton";
+
     // tipos de carta de personagem
     public static string magePlayerType = "SORCE";
     public static string warriorPlayerType = "WAR";
@@ -57,4 +61,5 @@ public static class Global
     public static string linkToPanelWin = "FightSceneComponents/PanelWinCanvas";
     public static string linkToPanelLoading = "LoadingScenes/LoadingPanel";
     public static string linkToEnemyStatus = "FightSceneComponents/EnemyStatus";
+    public static string lingToCircleSelection = "FightSceneComponents/CircleSelection";
 }

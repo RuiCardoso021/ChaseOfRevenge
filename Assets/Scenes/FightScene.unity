@@ -3711,6 +3711,7 @@ MonoBehaviour:
   ObjectPrefab: {fileID: 0}
   SpawnedObject: {fileID: 0}
   indexCounter: 0
+  spawnEnemiesCount: 2
 --- !u!114 &1122245181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5747,7 +5748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1595726788
 Transform:
   m_ObjectHideFlags: 0
@@ -7909,6 +7910,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 2043488775}
   Focus: {fileID: 1122245168}
+  transitionDuration: 2.5
+  target: {fileID: 0}
 --- !u!1 &2049677938
 GameObject:
   m_ObjectHideFlags: 0

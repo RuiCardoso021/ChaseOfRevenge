@@ -7,24 +7,14 @@ using UnityEngine;
 public class InteractionPromptUI : MonoBehaviour
 {
     // Start is called before the first frame update
-    private Camera _mainCam;
     [SerializeField] private GameObject _uiPanel;
     [SerializeField] private TextMeshProUGUI _promptText;
+    public bool isDisplayed;
 
     private void Start() {
-        if (_mainCam != null) _mainCam = Camera.main;  
+        isDisplayed = false;
         _uiPanel.SetActive(false);
     }
-
-    private void LateUpdate() {
-        if (_mainCam != null){
-            var rotation = _mainCam.transform.rotation;
-            transform.LookAt(transform.position + rotation * Vector3.forward, rotation * Vector3.up);
-        }
-
-    }
-
-    public bool isDisplayed = false;
 
     public void SetUp(string promptText){
         _promptText.text = promptText;

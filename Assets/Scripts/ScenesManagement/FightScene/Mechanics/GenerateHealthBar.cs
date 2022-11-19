@@ -44,17 +44,21 @@ public class GenerateHealthBar : MonoBehaviour
                 for (int i = 0; i < HealthBar.Length; i++)
                 {
                     //Enemy status dashboard
-                    if(ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().ClassType == Global.findEnemy)
+                    if (ManagerGameFight.Instance.Manager.CharactersOnFight[i] != null)
                     {
-                        EnemyStatusDashBoard[i] = Instantiate(enemyStatusTemp, _content.transform);
-                        EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>().MaxLife = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Health;
-                        EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>().Name = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Name;
+                        if(ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().ClassType == Global.findEnemy)
+                        {
+                            EnemyStatusDashBoard[i] = Instantiate(enemyStatusTemp, _content.transform);
+                            EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>().MaxLife = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Health;
+                            EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>().Name = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Name;
 
+                        }
+                    
+                        //healthBar on player
+                        HealthBar[i] = Instantiate(healthBarTemp, ManagerGameFight.Instance.Manager.CharactersOnFight[i].transform.position + new Vector3(0, 2.4f, 0), Quaternion.identity);
+                        HealthBar[i].GetComponent<HealthBar_Prefab>().MaxLife = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Health;
                     }
                     
-                    //healthBar on player
-                    HealthBar[i] = Instantiate(healthBarTemp, ManagerGameFight.Instance.Manager.CharactersOnFight[i].transform.position + new Vector3(0, 2.4f, 0), Quaternion.identity);
-                    HealthBar[i].GetComponent<HealthBar_Prefab>().MaxLife = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Health;
                 }
             }
 
@@ -68,13 +72,16 @@ public class GenerateHealthBar : MonoBehaviour
         {
             for (int i = 0; i < HealthBar.Length; i++)
             {
-                if (ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().ClassType == Global.findEnemy)
+                if (ManagerGameFight.Instance.Manager.CharactersOnFight[i] != null)
                 {
-                    EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>().health = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Health;
-                    EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>().Name = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Name;
-                }
+                    if (ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().ClassType == Global.findEnemy)
+                    {
+                        EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>().health = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Health;
+                        EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>().Name = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Name;
+                    }
 
-                HealthBar[i].GetComponent<HealthBar_Prefab>().health = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Health;
+                    HealthBar[i].GetComponent<HealthBar_Prefab>().health = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Character_cls>().Health;
+                } 
             }
         }
     }
