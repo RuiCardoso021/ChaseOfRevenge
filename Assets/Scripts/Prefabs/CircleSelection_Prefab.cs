@@ -13,7 +13,7 @@ public class CircleSelection_Prefab : MonoBehaviour
     void Start()
     {
         _enemy = this.GameObject();
-        CircleSelection = Instantiate(Resources.Load(Global.lingToCircleSelection) as GameObject, _enemy.transform);
+        CircleSelection = Instantiate(Resources.Load(Global.linkToCircleSelection) as GameObject, _enemy.transform);
     }
 
     // Update is called once per frame

@@ -61,5 +61,6 @@ public static class Global
     public static string linkToPanelWin = "FightSceneComponents/PanelWinCanvas";
     public static string linkToPanelLoading = "LoadingScenes/LoadingPanel";
     public static string linkToEnemyStatus = "FightSceneComponents/EnemyStatus";
-    public static string lingToCircleSelection = "FightSceneComponents/CircleSelection";
+    public static string linkToCircleSelection = "FightSceneComponents/CircleSelection";
+    public static string linkToCanvasInteractEnemy = "CanvasInteractionsCharacters/CanvasInteractEnemy";
 }

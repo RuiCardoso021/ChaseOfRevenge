@@ -19,6 +19,7 @@ public class Enemy_Config_FightScene_Prefab : MonoBehaviour
     }
 
 
+
     private void OnMouseDown()
     {
         if (ManagerGameFight.Manager != null)

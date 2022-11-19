@@ -18,11 +18,6 @@ public class EnemyConfig_Prefab : MonoBehaviour
         InicialMaxAttack = MaxAttack;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void valitations()
     {
