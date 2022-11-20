@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CanvasIntercterEnemy_Prefab : MonoBehaviour
 {
     private Camera _mainCam;
     private GameObject GameObjectCanvas;
-    [SerializeField] private float heightPosition = 3f;
+    [SerializeField] private Vector3 _possitionFixed = Vector3.zero;
     public bool setAtiveCanvasLvl = false;
 
     // Start is called before the first frame update
@@ -20,15 +22,7 @@ public class CanvasIntercterEnemy_Prefab : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (GameObjectCanvas != null)
-        {
-            GameObjectCanvas.transform.localPosition = new Vector3(0f, heightPosition, 0f);
-            if (_mainCam != null)
-            {
-                var rotation = _mainCam.transform.rotation;
-                GameObjectCanvas.transform.LookAt(GameObjectCanvas.transform.position + rotation * Vector3.forward, rotation * Vector3.up);
-            }
-        }
+        setPositionAboveCharacter();
     }
 
     // Update is called once per frame
@@ -36,5 +30,22 @@ public class CanvasIntercterEnemy_Prefab : MonoBehaviour
     {
         if (GameObjectCanvas != null)
             GameObjectCanvas.SetActive(setAtiveCanvasLvl);
+    }
+
+    private void setPositionAboveCharacter()
+    {
+        if (GameObjectCanvas != null)
+        {
+            float height = 0;
+            if (GetComponent<CapsuleCollider>() != null)
+                height = GetComponent<CapsuleCollider>().height;
+            Vector3 position = _possitionFixed + new Vector3(0f, height, 0f);
+            GameObjectCanvas.transform.localPosition = position;
+            if (_mainCam != null)
+            {
+                var rotation = _mainCam.transform.rotation;
+                GameObjectCanvas.transform.LookAt(GameObjectCanvas.transform.position + rotation * Vector3.forward, rotation * Vector3.up);
+            }
+        }
     }
 }

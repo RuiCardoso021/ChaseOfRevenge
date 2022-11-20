@@ -39,7 +39,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "4 damage to enemy with highest life ",
+            "description": "4 damage to any enemy",
             "mana":2,
             "src": "generic"
         },

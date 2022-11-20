@@ -56,11 +56,15 @@ public static class Global
     public static string gameplayObject = "GamePlay";
     public static string cardInventoryObject = "CardInventory";
 
-    //panel lose/win da fight scene
+    //links
     public static string linkToPanelLose = "FightSceneComponents/PanelLoseCanvas";
     public static string linkToPanelWin = "FightSceneComponents/PanelWinCanvas";
     public static string linkToPanelLoading = "LoadingScenes/LoadingPanel";
     public static string linkToEnemyStatus = "FightSceneComponents/EnemyStatus";
     public static string linkToCircleSelection = "FightSceneComponents/CircleSelection";
     public static string linkToCanvasInteractEnemy = "CanvasInteractionsCharacters/CanvasInteractEnemy";
+    public static string linkToHealthBar = "FightSceneComponents/HealthBar";
+
+    //scenes name
+    public static string FightScene = "FightScene";
 }

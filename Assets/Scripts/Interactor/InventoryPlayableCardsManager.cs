@@ -20,7 +20,7 @@ public class InventoryPlayableCardsManager : MonoBehaviour
     private void Start()
     {
         _player = GameObject.Find(Global.findPlayer);
-        deck = _player.GetComponent<Character_cls>().myDeck;
+        deck = _player.GetComponent<Character_Prefab>().myDeck;
 
         getCardsToInventory();
     }

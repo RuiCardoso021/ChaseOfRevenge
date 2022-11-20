@@ -18,17 +18,17 @@ public class CharactersAnimationsFight : MonoBehaviour
 
     private void Update()
     {
-        if (ManagerGameFight.Instance.Manager.CharactersOnFight != null && validation)
+        if (ManagerGameFight.Instance.PermissedExecute && validation)
         {
             foreach (GameObject item in ManagerGameFight.Instance.Manager.CharactersOnFight)
             {
                 if (item != null)
                 {
-                    if (ManagerGameFight.Instance.Manager.IsFriend(item.GetComponent<Character_cls>()))
+                    if (item.GetComponent<Character_Prefab>() != null)
                     {
                         item.transform.Rotate(0, 90f, 0);
                     }
-                    else
+                    else if (item.GetComponent<Enemy_Prefab>() != null)
                     {
                         item.transform.Rotate(0, -90f, 0);
                     }

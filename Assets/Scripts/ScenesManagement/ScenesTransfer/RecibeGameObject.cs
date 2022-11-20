@@ -51,30 +51,26 @@ public class RecibeGameObject : MonoBehaviour
                     GameObject Data = Instantiate(child); 
                     Data.name = Global.dataTransfer; 
                 }
-                else if (IsFriend(child.GetComponent<Character_cls>()))
+                else if (child.GetComponent<Character_Prefab>() != null)
                 {
-                    SpawnedObject = Instantiate(getCharacterPrefab(child), spawnPoint[i].transform.position, Quaternion.identity);
+                    SpawnedObject = Instantiate(getCharacterPlayerPrefab(child), spawnPoint[i].transform.position, Quaternion.identity);
                     SpawnedObject.name = Global.findPlayer;
                     SpawnedObject.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
-                    SpawnedObject.GetComponent<Character_cls>().myDeck = _player.GetComponent<Character_cls>().myDeck;
+                    SpawnedObject.GetComponent<Character_Prefab>().myDeck = _player.GetComponent<Character_Prefab>().myDeck;
                     SpawnerList[i] = SpawnedObject;
                 }
-                else
+                else if (child.GetComponent<Enemy_Prefab>() != null)
                 {
-                    EnemyConfig_Prefab enemyConfig = child.GetComponent<EnemyConfig_Prefab>();
-                    if (enemyConfig != null)
+                    foreach (GameObject item in child.GetComponent<Enemy_Prefab>().Teammates)
                     {
-                        foreach (GameObject item in enemyConfig.Teammates)
+                        if (item != null)
                         {
-                            if (item != null)
-                            {
-                                SpawnedObject = Instantiate(getCharacterPrefab(child), spawnPoint[i].transform.position, Quaternion.identity);
-                                SpawnerList[i] = SpawnedObject;
-                                i++;
-                            }
-                                    
-                        }
+                            SpawnedObject = Instantiate(getCharacterEnemyPrefab(child), spawnPoint[i].transform.position, Quaternion.identity);
+                            SpawnerList[i] = SpawnedObject;
+                            i++;
+                        }         
                     }
+                    
                 }
 
             }
@@ -84,17 +80,10 @@ public class RecibeGameObject : MonoBehaviour
     }
 
     //return true if was a friend
-    private bool IsFriend(Character_cls character)
-    {
-        return (character.ClassType == Global.archerPlayerType
-            || character.ClassType == Global.warriorPlayerType
-            || character.ClassType == Global.magePlayerType
-            );
-    }
 
-    private GameObject getCharacterPrefab(GameObject gm)
+    private GameObject getCharacterPlayerPrefab(GameObject gm)
     {
-        string classType = gm.GetComponent<Character_cls>().Name;
+        string classType = gm.GetComponent<Character_Prefab>().Name;
 
         switch (classType)
         {
@@ -107,6 +96,17 @@ public class RecibeGameObject : MonoBehaviour
             case var value when value == Global.playerArcherName:
                 gm = Resources.Load(Global.linkToFlora) as GameObject;
                 break;
+        }
+
+        return gm;
+    }
+
+    private GameObject getCharacterEnemyPrefab(GameObject gm)
+    {
+        string classType = gm.GetComponent<Enemy_Prefab>().Name;
+
+        switch (classType)
+        {
             case var value when value == Global.DungeonSkeleton:
                 gm = Resources.Load(Global.linkToDungeonSkeleton) as GameObject;
                 break;

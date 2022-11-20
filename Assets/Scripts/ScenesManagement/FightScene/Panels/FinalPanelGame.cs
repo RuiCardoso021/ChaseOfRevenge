@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class FinalPanelGame : MonoBehaviour
 {
     private GameObject _resultOnFight;
-    private Character_cls _player;
-    private Character_cls _enemy;
+    private Character_Prefab _player;
+    private Enemy_Prefab _enemy;
     private bool activePanel;
 
     private void Start()
@@ -17,26 +17,16 @@ public class FinalPanelGame : MonoBehaviour
 
     private void Update()
     {
-        GetPlayersOnScene();
-        FightOutcome();
-    }
-
-    private void GetPlayersOnScene()
-    {
-        if (ManagerGameFight.Instance.Manager.CharactersOnFight != null)
-        {
-            _player = ManagerGameFight.Instance.Manager.CurrentCharacter.GetComponent<Character_cls>();
-            _enemy = ManagerGameFight.Instance.Manager.NextCharacter.GetComponent<Character_cls>();
-        }
+        if (ManagerGameFight.Instance.PermissedExecute)
+            FightOutcome();
     }
 
     public void FightOutcome()
-    {
-        if (_player != null && _enemy != null)
-            if (_player.Health <= 0 && activePanel)
-                ActivePanel(Global.linkToPanelLose);
-            else if (_enemy.Health <= 0 && activePanel)
-                ActivePanel(Global.linkToPanelWin);
+    {   
+        if (ManagerGameFight.Instance.Manager.PlayerIsDead() && activePanel)
+            ActivePanel(Global.linkToPanelLose);
+        else if (ManagerGameFight.Instance.Manager.EnemiesIsDead() && activePanel)
+            ActivePanel(Global.linkToPanelWin);
     }
 
     private void ActivePanel(string linkPanelSetActive)

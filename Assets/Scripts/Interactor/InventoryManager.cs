@@ -18,7 +18,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        deck = Player.GetComponent<Character_cls>().myDeck;
+        deck = Player.GetComponent<Character_Prefab>().myDeck;
         
         //cardPrefabExpand.SetActive(false);
 

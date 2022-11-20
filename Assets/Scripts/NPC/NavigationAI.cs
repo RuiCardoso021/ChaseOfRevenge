@@ -9,13 +9,13 @@ public class NavigationAI : MonoBehaviour
     NavMeshAgent npcAgent;
     public static bool canInteract;
     //public GameObject Player;
-    Character_cls player;
+    Character_Prefab player;
 
     // Start is called before the first frame update
     void Start()
     {
         npcAgent = GetComponent<NavMeshAgent>();
-        player = GameObject.Find("Character_Player").GetComponent<Character_cls>();
+        player = GameObject.Find("Character_Player").GetComponent<Character_Prefab>();
     }
 
     // Update is called once per frame

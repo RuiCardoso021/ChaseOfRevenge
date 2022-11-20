@@ -18,7 +18,6 @@ public class Interface_FightScene : MonoBehaviour
     private float maxMana;
     private float maxHealth;
     private bool active;
-    private GenerateHealthBar _healthBar;
 
     private void Start()
     {
@@ -31,7 +30,7 @@ public class Interface_FightScene : MonoBehaviour
         
         if (ManagerGameFight.Instance.Manager.CharactersOnFight != null)
         {
-            Character_cls player = ManagerGameFight.Instance.Manager.CurrentCharacter.GetComponent<Character_cls>();
+            Character_Prefab player = ManagerGameFight.Instance.Manager.CurrentCharacter.GetComponent<Character_Prefab>();
             if (player != null && active)
             {
                 maxMana = player.Mana;

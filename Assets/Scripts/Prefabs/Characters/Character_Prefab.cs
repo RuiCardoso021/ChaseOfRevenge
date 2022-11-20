@@ -5,24 +5,30 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using JetBrains.Annotations;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
-public class Character_cls : MonoBehaviour
+public class Character_Prefab : MonoBehaviour
 {
 
     [SerializeField] private TextAsset jsonFile;
-    
-    public int MaxMana;
-    public float MaxHealth;
+
+    [HideInInspector] public bool PermissedByAttack;
+    [HideInInspector] public int MaxMana;
+    [HideInInspector] public float MaxHealth;
+    [HideInInspector] public HealthBar_cls HealthBar;
+    [HideInInspector] public float HeightPlayer;
+
     public string Name;
     public int Mana;
     public string ClassType;
     public float Health;
-    public bool PermissedByAttack;
     public Sprite ImageProfile;
     public Deck myDeck;
 
     private void Start()
     {
+        HeightPlayer = GetComponent<PlayerMovement>().playerHeight;
+        HealthBar = new HealthBar_cls(SceneManager.GetActiveScene().name);
         myDeck = new Deck();
         Deck deck = new Deck();     
         deck = JsonUtility.FromJson<Deck>(jsonFile.text);
@@ -46,6 +52,7 @@ public class Character_cls : MonoBehaviour
     {
         HealthValidation();
         ManaValidation();
+        validateHealthBar();
     }
 
     private void HealthValidation()
@@ -59,5 +66,21 @@ public class Character_cls : MonoBehaviour
         if (Mana < 0) Mana = 0;
     }
 
+    private void validateHealthBar()
+    {
+        if (HealthBar.Validation)
+        {
+            HealthBar.GOHealthBar = Instantiate(Resources.Load(Global.linkToHealthBar) as GameObject, this.GameObject().transform);
+            HealthBar.GOHealthBar.name = "HealthBar " + name;
+            HealthBar.GOHealthBar.transform.RotateAroundLocal(Vector3.up, -80);
+            HealthBar.Validation = false;
+        }
+
+        if (HealthBar.GOHealthBar != null)
+        {
+
+            HealthBar.GOHealthBar.transform.localPosition = new Vector3(0f, HeightPlayer, 0f);
+        }
+    }
 }
 

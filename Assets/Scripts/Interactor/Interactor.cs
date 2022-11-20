@@ -51,12 +51,12 @@ public class Interactor : MonoBehaviour
                         {
                             if (_interactable.InteractionPromptArray[index].CanSpeak == "Player")
                             {
-                                _interactionPromptUI.SetUp(".:" + _player.GetComponent<Character_cls>().Name + ":. \n\n " +  _interactable.InteractionPromptArray[index].Dialog);
+                                _interactionPromptUI.SetUp(".:" + _player.GetComponent<Character_Prefab>().Name + ":. \n\n " +  _interactable.InteractionPromptArray[index].Dialog);
                             }
                             else
                             {
                                 
-                                _interactionPromptUI.SetUp(".:" + _interactable.GetInteractionGameObject.GetComponent<Character_cls>().Name + ":. \n\n " + _interactable.InteractionPromptArray[index].Dialog);
+                                _interactionPromptUI.SetUp(".:" + _interactable.GetInteractionGameObject.GetComponent<Enemy_Prefab>().Name + ":. \n\n " + _interactable.InteractionPromptArray[index].Dialog);
                             }
                             
                             index++;

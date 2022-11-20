@@ -36,11 +36,11 @@ public class CharacterSelection : MonoBehaviour
     {
 		if(Panel != null)
         {
-			Panel.Name = characters[index].GetComponent<Character_cls>().Name;
-			Panel.Health = characters[index].GetComponent<Character_cls>().Health;
-			Panel.Mana = characters[index].GetComponent<Character_cls>().Mana;
-			Panel.ClassType = characters[index].GetComponent<Character_cls>().ClassType;
-			Panel.ImageProfile = characters[index].GetComponent<Character_cls>().ImageProfile;
+			Panel.Name = characters[index].GetComponent<Character_Prefab>().Name;
+			Panel.Health = characters[index].GetComponent<Character_Prefab>().Health;
+			Panel.Mana = characters[index].GetComponent<Character_Prefab>().Mana;
+			Panel.ClassType = characters[index].GetComponent<Character_Prefab>().ClassType;
+			Panel.ImageProfile = characters[index].GetComponent<Character_Prefab>().ImageProfile;
 		}
 	}
 

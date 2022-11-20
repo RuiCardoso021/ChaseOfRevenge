@@ -24,13 +24,13 @@ public class ManagerGameFight : MonoBehaviour
     public int IndexHistoric;
     [SerializeField] private Texture2D _cursorTexture;
 
-    private bool _validation;
+    public bool PermissedExecute;
 
     private void Start()
     {
         Instance = this;
         Manager = new ManagerGameFight_cls();
-        _validation = true;
+        PermissedExecute = false;
         HistoricGame = new HistoricGameFight_cls[TOTAL_HISTORIC];
         IndexHistoric = 0;
         Cursor.lockState = CursorLockMode.None;
@@ -45,7 +45,7 @@ public class ManagerGameFight : MonoBehaviour
     {
 
         //this permisse is active after method Invoke
-        if (!_validation)
+        if (PermissedExecute)
         {
             updateSelectionCharacter();
             //Debug.Log("Management: " + Manager.CurrentCharacter.GetComponent<Character_cls>().Health);
@@ -77,7 +77,7 @@ public class ManagerGameFight : MonoBehaviour
     {
         Manager.CharactersOnFight = RecibeGameObject.Instance.SpawnerList;
         Manager.SelectionCharacters();
-        _validation = false;
+        PermissedExecute = true;
         //Time.timeScale = 0f;
     }
 

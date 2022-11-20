@@ -13,8 +13,8 @@ public class GamePlayFightScene : MonoBehaviour
     private RoundTurn _turn;
     private Deck _deck;
     private int indexCharacters;
-    private Character_cls player;
-    private Character_cls enemy;
+    private Character_Prefab player;
+    private Enemy_Prefab enemy;
     private bool activeDestroyThisCard;
 
     //Start
@@ -31,8 +31,8 @@ public class GamePlayFightScene : MonoBehaviour
         //Execute affter existe spown 
         if (ManagerGameFight.Instance.Manager.CharactersOnFight != null)
         {
-            player = ManagerGameFight.Instance.Manager.CurrentCharacter.GetComponent<Character_cls>();
-            enemy = ManagerGameFight.Instance.Manager.NextCharacter.GetComponent<Character_cls>();
+            player = ManagerGameFight.Instance.Manager.CurrentCharacter.GetComponent<Character_Prefab>();
+            enemy = ManagerGameFight.Instance.Manager.NextCharacter.GetComponent<Enemy_Prefab>();
 
             //codigo rodado enquanto não existir um ecrã de vitoria ou derrota
             MechanicsCards();
@@ -139,11 +139,14 @@ public class GamePlayFightScene : MonoBehaviour
 
         foreach (GameObject item in ManagerGameFight.Instance.Manager.CharactersICanAttack)
         {
-            if (item.GetComponent<Character_cls>().PermissedByAttack)
-                player.Health -= item.GetComponent<EnemyConfig_Prefab>().getRangeAttack();
+            if (item != null)
+            {
+                if (item.GetComponent<Enemy_Prefab>().PermissedByAttack)
+                    player.Health -= item.GetComponent<Enemy_Prefab>().getRangeAttack();
 
-            //get a range default values attack
-            item.GetComponent<EnemyConfig_Prefab>().setInicialMinAndMaxAttack();
+                //get a range default values attack
+                item.GetComponent<Enemy_Prefab>().setInicialMinAndMaxAttack();
+            }
         }
 
         if (_cardsToPlay.CardsOnHand.Count > 0)
@@ -261,7 +264,7 @@ public class GamePlayFightScene : MonoBehaviour
     //generate inicial cards
     private void generateCards()
     {
-        Character_cls character_cls_player_to_game = RecibeGameObject.Instance.SpawnerList[indexCharacters].GetComponent<Character_cls>();
+        Character_Prefab character_cls_player_to_game = RecibeGameObject.Instance.SpawnerList[indexCharacters].GetComponent<Character_Prefab>();
         //Variables Inicialization.
         if (character_cls_player_to_game.myDeck != null && character_cls_player_to_game.ClassType != Global.findEnemy)
         {
