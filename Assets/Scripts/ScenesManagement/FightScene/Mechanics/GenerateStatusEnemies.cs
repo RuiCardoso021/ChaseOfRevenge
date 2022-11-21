@@ -31,29 +31,28 @@ public class GenerateStatusEnemies : MonoBehaviour
 
     private void Inicialization()
     {
-        //if (ManagerGameFight.Instance.PermissedExecute && validate)
-        //{
-        //    EnemyStatusDashBoard = new GameObject[ManagerGameFight.Instance.Manager.CharactersOnFight.Length];
-        //    GameObject enemyStatusTemp = Resources.Load(Global.linkToEnemyStatus) as GameObject;
-        //
-        //    if (enemyStatusTemp != null && ManagerGameFight.Instance.Manager.CharactersICanAttack != null)
-        //    {
-        //        for (int i = 0; i < ManagerGameFight.Instance.Manager.CharactersICanAttack.Length; i++)
-        //        {
-        //            //Enemy status dashboard
-        //            if(ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Enemy_Prefab>() != null)
-        //            {
-        //                EnemyStatusDashBoard[i] = Instantiate(enemyStatusTemp, _content.transform);
-        //                EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>().MaxLife = ManagerGameFight.Instance.Manager.CharactersICanAttack[i].GetComponent<Enemy_Prefab>().Health;
-        //                EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>().Name = ManagerGameFight.Instance.Manager.CharactersICanAttack[i].GetComponent<Enemy_Prefab>().Name;
-        //
-        //            }    
-        //        }
-        //        validate = false;
-        //    }
-        //
-        //    
-        //}
+        if (ManagerGameFight.Instance.PermissedExecute && validate)
+        {
+
+            EnemyStatusDashBoard = new GameObject[ManagerGameFight.Instance.Manager.CharactersICanAttack.Length];
+        
+            for (int i = 0; i < ManagerGameFight.Instance.Manager.CharactersICanAttack.Length; i++)
+            {
+                //Enemy status dashboard
+                if(ManagerGameFight.Instance.Manager.CharactersICanAttack[i].GetComponent<Enemy_Prefab>() != null)
+                {
+                    GameObject status = Instantiate(Resources.Load(Global.linkToEnemyStatus) as GameObject, _content.transform);
+                    status.GetComponent<EnemyStatus_Prefab>().MaxLife = ManagerGameFight.Instance.Manager.CharactersICanAttack[i].GetComponent<Enemy_Prefab>().Health;
+                    status.GetComponent<EnemyStatus_Prefab>().Name = ManagerGameFight.Instance.Manager.CharactersICanAttack[i].GetComponent<Enemy_Prefab>().Name;
+                    EnemyStatusDashBoard[i] = status;
+        
+                }    
+            }
+            validate = false;
+        }
+        
+            
+        
     }
 
     private void UpdateHealth()
@@ -62,12 +61,16 @@ public class GenerateStatusEnemies : MonoBehaviour
         //{
         //    for (int i = 0; i < ManagerGameFight.Instance.Manager.CharactersICanAttack.Length; i++)
         //    {
-        //        if (ManagerGameFight.Instance.Manager.CharactersOnFight[i] != null)
+        //        if (ManagerGameFight.Instance.Manager.CharactersICanAttack[i] != null)
         //        {
-        //            if (ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Enemy_Prefab>() != null)
+        //            if (ManagerGameFight.Instance.Manager.CharactersICanAttack[i].GetComponent<Enemy_Prefab>() != null)
         //            {
-        //                EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>().health = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Enemy_Prefab>().Health;
-        //                EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>().Name = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Enemy_Prefab>().Name;
+        //                if (EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>() != null)
+        //                {
+        //                    EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>().health = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Enemy_Prefab>().Health;
+        //                    EnemyStatusDashBoard[i].GetComponent<EnemyStatus_Prefab>().Name = ManagerGameFight.Instance.Manager.CharactersOnFight[i].GetComponent<Enemy_Prefab>().Name;
+        //                }
+        //                
         //            }
         //        } 
         //    }

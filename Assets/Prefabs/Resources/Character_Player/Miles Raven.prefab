@@ -2859,11 +2859,11 @@ MonoBehaviour:
     Validation: 0
     NameScene: 
   HeightPlayer: 0
-  Name: Magus Raven
-  Mana: 5
-  ClassType: SORCE
-  Health: 20
-  ImageProfile: {fileID: 21300000, guid: 651a6d299c0da6e4eb02800eff6c9307, type: 3}
+  Name: Miles Raven
+  Mana: 3
+  ClassType: WAR
+  Health: 30
+  ImageProfile: {fileID: 21300000, guid: 54282006af863c44f9167c10bccc1a01, type: 3}
   myDeck:
     cards: []
 --- !u!114 &8804903803250645210
@@ -3897,7 +3897,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8804903803374933576}
-  m_LocalRotation: {x: 0.16914392, y: -0.8297568, z: 0.39880174, w: 0.3519251}
+  m_LocalRotation: {x: 0.1691441, y: -0.8297566, z: 0.3988022, w: 0.3519249}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1111112, y: 1.1111112, z: 1.1111112}
   m_ConstrainProportionsScale: 0
@@ -4050,7 +4050,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8804903803524328945}
-  m_LocalRotation: {x: 0.15445963, y: -0.8455249, z: 0.36417958, w: 0.35861284}
+  m_LocalRotation: {x: 0.15445982, y: -0.84552467, z: 0.36418, w: 0.35861275}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1111112, y: 1.1111112, z: 1.1111112}
   m_ConstrainProportionsScale: 0
