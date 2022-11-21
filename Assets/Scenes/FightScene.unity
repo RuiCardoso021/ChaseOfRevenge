@@ -1941,7 +1941,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60735bf9c7da664418ad207101131f9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthBar: []
   EnemyStatusDashBoard: []
 --- !u!114 &1122245176
 MonoBehaviour:
@@ -3659,6 +3658,7 @@ GameObject:
   - component: {fileID: 2043488777}
   - component: {fileID: 2043488776}
   - component: {fileID: 2043488779}
+  - component: {fileID: 2043488780}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -3724,8 +3724,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043488775}
-  m_LocalRotation: {x: 0.23559089, y: 0.020990433, z: -0.0015992274, w: 0.9716243}
-  m_LocalPosition: {x: -2.6613646, y: 3.86, z: -10.46}
+  m_LocalRotation: {x: 0.21905251, y: 0.38326004, z: 0.08672727, w: 0.893088}
+  m_LocalPosition: {x: -37.01, y: 14.43, z: -3.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3748,6 +3748,22 @@ MonoBehaviour:
   Focus: {fileID: 1122245168}
   transitionDuration: 2.5
   target: {fileID: 0}
+--- !u!111 &2043488780
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043488775}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 6debe78fac324bb4fad2374da5c25fab, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 6debe78fac324bb4fad2374da5c25fab, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &2055590909
 GameObject:
   m_ObjectHideFlags: 0
