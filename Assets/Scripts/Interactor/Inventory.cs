@@ -57,4 +57,20 @@ public class Inventory : MonoBehaviour
             canClose = false;
         }
     }
+
+    public void buttonDeck()
+    {
+        if (isOpen == false && canClose == false)
+        {
+            isOpen = true;
+            //inventoryOpen.Play();
+            StartCoroutine(InvControl());
+        }
+        if (isOpen == true && canClose == true)
+        {
+            isOpen = false;
+            //inventoryClose.Play();
+            StartCoroutine(InvControl());
+        }
+    }
 }

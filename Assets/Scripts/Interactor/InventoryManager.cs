@@ -14,13 +14,10 @@ public class InventoryManager : MonoBehaviour
     public List<GameObject> cards2play = new List<GameObject>();
     public GameObject cardGameObject;
     public GameObject Player;
-    public GameObject cardPrefabExpand;
 
     private void Start()
     {
         deck = Player.GetComponent<Character_Prefab>().myDeck;
-        
-        //cardPrefabExpand.SetActive(false);
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -29,7 +26,7 @@ public class InventoryManager : MonoBehaviour
     }
 
     // primeira lista com as cartas todas
-    private void FirstInventory()
+    public void FirstInventory()
     {
         GameObject gmTemp;
 
@@ -45,7 +42,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-
+    // escolha das cartas para levar para a fight
     public void ChangeCardsInInventory(GameObject card)
     {
         foreach (GameObject go in cards2play)

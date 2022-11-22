@@ -87,7 +87,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &8152518061021064098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,11 +120,15 @@ MonoBehaviour:
   _textMana: {fileID: 1653054411040900423}
   _textDescription: {fileID: 3238267871621781504}
   _textName: {fileID: 2923862632410661333}
+  _textRarity: {fileID: 0}
+  _textCategory: {fileID: 0}
   _image: {fileID: 5969949448373332886}
   dataCard:
     id: 13
     type: ARCH
     name: DoubleDps
+    rarity: 0
+    category: 
     number_effects: 1
     ability:
     - tag: Buff
