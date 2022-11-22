@@ -15,7 +15,7 @@ public class NavigationAI : MonoBehaviour
     void Start()
     {
         npcAgent = GetComponent<NavMeshAgent>();
-        player = GameObject.Find("Character_Player").GetComponent<Character_Prefab>();
+        //player = GameObject.Find("Character_Player").GetComponent<Character_Prefab>();
     }
 
     // Update is called once per frame
