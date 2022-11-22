@@ -5,6 +5,8 @@
             "id": 1,
             "type": "UN",
             "name": "Aoe",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 2,
             "ability": 
             [
@@ -29,6 +31,8 @@
             "id": 2,
             "type": "UN",
             "name": "Yolo",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -48,6 +52,8 @@
             "type": "UN",
             "name": "Stealer",
             "number_effects": 2,
+            "rarity": 1,
+            "category": "Heal",
             "ability": 
             [
                 { 
@@ -71,6 +77,10 @@
             "id": 4,
             "type": "UN",
             "name": "Buff",
+            "rarity": 1,
+            "category": "Attack",
+            "rarity": 1,
+            "category": "Magic",
             "number_effects": 1,
             "ability": 
             [
@@ -89,6 +99,8 @@
             "id": 5,
             "type": "UN",
             "name": "Generate",
+            "rarity": 3,
+            "category": "Magic",
             "number_effects": 1,
             "ability": 
             [
@@ -107,6 +119,8 @@
             "id": 6,
             "type": "UN",
             "name": "Ancient",
+            "rarity": 2,
+            "category": "Attack/Magic",
             "number_effects": 2,
             "ability": 
             [
@@ -131,6 +145,8 @@
             "id": 7,
             "type": "UN",
             "name": "Weaklink",
+            "rarity": 4,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -149,6 +165,8 @@
             "id": 8,
             "type": "UN",
             "name": "Apologize",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -167,6 +185,8 @@
             "id": 9,
             "type": "UN",
             "name": "King Kongor",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -185,6 +205,8 @@
             "id": 10,
             "type": "UN",
             "name": "Shotone",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -203,6 +225,8 @@
             "id": 11,
             "type": "ARCH",
             "name": "Dup",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -221,6 +245,8 @@
             "id": 12,
             "type": "ARCH",
             "name": "Imobilize",
+            "rarity": 2,
+            "category": "Stun",
             "number_effects": 1,
             "ability": 
             [
@@ -239,6 +265,8 @@
             "id": 13,
             "type": "ARCH",
             "name": "Damage",
+            "rarity": 2,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -258,6 +286,8 @@
             "id": 14,
             "type": "SORCE",
             "name": "FireAoe",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -276,6 +306,8 @@
             "id": 15,
             "type": "SORCE",
             "name": "Plusone",
+            "rarity": 1,
+            "category": "Buff",
             "number_effects": 1,
             "ability": 
             [
@@ -294,6 +326,8 @@
             "id": 16,
             "type": "SORCE",
             "name": "Freeze",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -312,6 +346,8 @@
             "id": 17,
             "type": "SORCE",
             "name": "Corrupt",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -330,6 +366,8 @@
             "id": 18,
             "type": "UN",
             "name": "OMG",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -354,6 +392,8 @@
             "id": 19,
             "type": "WAR",
             "name": "Slash",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -372,6 +412,8 @@
             "id": 20,
             "type": "UN",
             "name": "Getfive",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -390,6 +432,8 @@
             "id": 21,
             "type": "WAR",
             "name": "Onetoall",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -408,6 +452,8 @@
             "id": 22,
             "type": "WAR",
             "name": "Healme",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -426,6 +472,8 @@
             "id": 23,
             "type": "UN",
             "name": "Getfivenow",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -444,6 +492,8 @@
             "id": 24,
             "type": "WAR",
             "name": "Maxcoil",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 2,
             "ability": 
             [
@@ -468,6 +518,8 @@
             "id": 25,
             "type": "WAR",
             "name": "Priest",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -486,6 +538,8 @@
             "id": 26,
             "type": "WAR",
             "name": "Light",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -504,6 +558,8 @@
             "id": 27,
             "type": "UN",
             "name": "HealEnemy",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -528,6 +584,8 @@
             "id": 28,
             "type": "WAR",
             "name": "Killemall",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -546,6 +604,8 @@
             "id": 29,
             "type": "UN",
             "name": "ManaMore",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [
@@ -564,6 +624,8 @@
             "id": 30,
             "type": "UN",
             "name": "Reduce",
+            "rarity": 1,
+            "category": "Attack",
             "number_effects": 1,
             "ability": 
             [

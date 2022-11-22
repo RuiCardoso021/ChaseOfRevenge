@@ -8,6 +8,8 @@ public class Card
     public int id;
     public string type;
     public string name;
+    public int rarity;
+    public string category;
     public int number_effects;
     public Ability[] ability;
     public string description;
@@ -23,6 +25,8 @@ public class Card
         this.id = card.id;
         this.type = card.type;
         this.name = card.name;
+        this.rarity = card.rarity;
+        this.category = card.category;
         this.number_effects = card.number_effects;
         this.ability = new Ability[card.ability.Length];
         for (int i = 0; i < card.ability.Length; i++)
