@@ -43,7 +43,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "4 damage to any enemy",
+            "description": "4 damage to a selected enemy",
             "mana":2,
             "src": "generic"
         },
@@ -69,7 +69,7 @@
                     "type_effect": "Me"
                 }
             ],
-            "description": "1 damage to all enemies, heal 1 life per enemy",
+            "description": "1 damage to all enemies, heal 1 life per enemy damaged",
             "mana": 2,
             "src": "generic"
        }, 
@@ -157,7 +157,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "Deal 100 damage to an enemy",
+            "description": "100 damage to a selected enemy",
             "mana":10,
             "src": "generic"
         },
@@ -177,7 +177,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "Deal 3 damage to a random enemy",
+            "description": "3 damage to a random enemy",
             "mana":3,
             "src": "generic"
         },
@@ -197,7 +197,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "Deal 5 damage to any enemy",
+            "description": "5 damage to an enemy",
             "mana":3,
             "src": "generic"
         },
@@ -217,7 +217,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "Deal 2 damage to any enemy",
+            "description": "2 damage to selected enemy",
             "mana":1,
             "src": "generic"
         },
@@ -277,7 +277,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "All enemies give a 8 damage",
+            "description": "6 damage to all enemies",
             "mana":3,
             "src": "archery"
         },
@@ -318,7 +318,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "Reduce 1 of range attack any enemy on next turn",
+            "description": "Enemy attacks has 1 damage reduced on next turn",
             "mana":1,
             "src": "sorceress"
         },
@@ -384,7 +384,7 @@
                     "type_effect": "Me"
                 }
             ],
-            "description": "Get 10 Heal but pass turn",
+            "description": "Get 10 Heal and pass turn",
             "mana":3,
             "src": "sorceress"
         },
@@ -576,7 +576,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "Full heal but all enemies give 15 heal too",
+            "description": "Full heal, all enemies receive 15 health ",
             "mana":4,
             "src": "warrior"
         },
@@ -616,7 +616,7 @@
                     "type_effect": "Me"
                 }
             ],
-            "description": "Give 6 more Mana",
+            "description": "Gain 6 Mana on this turn",
             "mana":3,
             "src": "warrior"
         },
@@ -636,7 +636,7 @@
                     "type_effect": "Card"
                 }
             ],
-            "description": "All cards reduce 3 mana on next play",
+            "description": "Reduce 3 mana on next card",
             "mana": 1,
             "src": "generic"
         }
