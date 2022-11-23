@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class HealthBar_Prefab : MonoBehaviour
 {
-    [SerializeField] private Image healthBar;
+    public Image healthBar;
     public float MaxLife;
     public float health;
 

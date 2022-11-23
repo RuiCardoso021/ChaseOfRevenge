@@ -28,15 +28,19 @@ public class GamePlayFightScene : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        //Execute affter existe spown 
-        if (ManagerGameFight.Instance.Manager.CharactersOnFight != null)
+        if (ManagerGameFight.Instance.PermissedExecute)
         {
-            player = ManagerGameFight.Instance.Manager.CurrentCharacter.GetComponent<Character_Prefab>();
-            enemy = ManagerGameFight.Instance.Manager.NextCharacter.GetComponent<Enemy_Prefab>();
+            //Execute affter existe spown 
+            if (ManagerGameFight.Instance.Manager.CharactersOnFight != null)
+            {
+                player = ManagerGameFight.Instance.Manager.CurrentCharacter.GetComponent<Character_Prefab>();
+                enemy = ManagerGameFight.Instance.Manager.NextCharacter.GetComponent<Enemy_Prefab>();
 
-            //codigo rodado enquanto não existir um ecrã de vitoria ou derrota
-            MechanicsCards();
+                //codigo rodado enquanto não existir um ecrã de vitoria ou derrota
+                MechanicsCards();
+            }
         }
+       
     }
 
     private void MechanicsCards()
@@ -197,6 +201,8 @@ public class GamePlayFightScene : MonoBehaviour
                 ManagerGameFight.Instance.Manager.SetNewValuesOnAllCharactersICanAttack(_ab.value, 1);
             else if (_ab.effect_quantity == -1) //heal random enemy
                 ManagerGameFight.Instance.Manager.SetNewValuesOnRandomCharacter(_ab.value, 1);
+            else if (_ab.effect_quantity == 1) //heal choose enemy
+                ManagerGameFight.Instance.Manager.SetNewValuesOnCharacter(ManagerGameFight.Instance.Manager.NextCharacter,_ab.value, 1);
         }
     }
 

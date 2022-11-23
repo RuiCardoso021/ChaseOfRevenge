@@ -17,7 +17,8 @@ public class ManagerGameFight : MonoBehaviour
 
     public static ManagerGameFight Instance;
     private const int TOTAL_HISTORIC = 100;
-    private const float DELAY_TO_PLAY_GAME = 1.5f;
+    private const float DELAY_TO_PLAY_GAME = 1f;
+    private bool validation;
 
     public ManagerGameFight_cls Manager;
     public HistoricGameFight_cls[] HistoricGame;
@@ -29,6 +30,7 @@ public class ManagerGameFight : MonoBehaviour
     private void Start()
     {
         Instance = this;
+        validation = false;
         Manager = new ManagerGameFight_cls();
         PermissedExecute = false;
         HistoricGame = new HistoricGameFight_cls[TOTAL_HISTORIC];
@@ -42,8 +44,7 @@ public class ManagerGameFight : MonoBehaviour
     }
 
     private void Update()
-    {
-
+    {       
         //this permisse is active after method Invoke
         if (PermissedExecute)
         {

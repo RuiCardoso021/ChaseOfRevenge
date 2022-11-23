@@ -58,26 +58,26 @@ public class TransferGameObject : MonoBehaviour
 
     public void ReloadScene()
     {
-        GameObject gameObjectToSend = new GameObject();
-        gameObjectToSend.name = Global.recivedObjects;
-        _nextSceneName = SceneManager.GetActiveScene().name;
+        //GameObject gameObjectToSend = new GameObject();
+        //gameObjectToSend.name = Global.recivedObjects;
+        //_nextSceneName = SceneManager.GetActiveScene().name;
+        //
+        //for (int i = 0; i < RecibeGameObject.Instance.SpawnerList.Length; i++)
+        //{
+        //    GameObject child = RecibeGameObject.Instance.ObjectPrefab.transform.GetChild(i).gameObject;
+        //    LoadedCharacter.Add(child);
+        //}
+        //
+        //foreach (GameObject character in LoadedCharacter)
+        //    if (character != null)
+        //    {
+        //        character.transform.position = Vector3.zero;
+        //        character.transform.SetParent(gameObjectToSend.transform);
+        //    }
 
-        for (int i = 0; i < RecibeGameObject.Instance.SpawnerList.Length; i++)
-        {
-            GameObject child = RecibeGameObject.Instance.ObjectPrefab.transform.GetChild(i).gameObject;
-            LoadedCharacter.Add(child);
-        }
+        SceneManager.LoadScene(DataTransferScene.Instance.CurrentSceneName);
 
-        foreach (GameObject character in LoadedCharacter)
-            if (character != null)
-            {
-                character.transform.position = Vector3.zero;
-                character.transform.SetParent(gameObjectToSend.transform);
-            }
-
-
-
-        StartCoroutine(LoadSceneWithGameObject(gameObjectToSend));
+        //StartCoroutine(LoadSceneWithGameObject(gameObjectToSend));
     }
 
     private void SendDataFromOtherScene()

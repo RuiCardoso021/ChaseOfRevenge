@@ -839,7 +839,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 3071
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 8400000, guid: d72322d205218bf48ae54e895f89726c, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 14be73c74bd616a4581e9a36d89a4428, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -873,10 +873,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 931816135}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa5d621ed8bd27949b9410710cb3341a, type: 3}
+  m_Script: {fileID: 11500000, guid: 08f40c5e542fb8a43a86ea45c08ed619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPlayer: {fileID: 1965178764}
 --- !u!1001 &1025047864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1411,7 +1410,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: d72322d205218bf48ae54e895f89726c, type: 2}
+  m_Texture: {fileID: 8400000, guid: 14be73c74bd616a4581e9a36d89a4428, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1876,8 +1875,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!4 &1965178764 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 94946b4cb998c484e88029f809a9e561, type: 3}
-  m_PrefabInstance: {fileID: 1025047864}
-  m_PrefabAsset: {fileID: 0}

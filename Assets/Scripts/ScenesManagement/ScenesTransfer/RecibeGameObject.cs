@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class RecibeGameObject : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class RecibeGameObject : MonoBehaviour
     private GameObject _player;
     public GameObject[] spawnPoint;
     public bool activeMovimentPlayer = false;
+    public bool DestroyObjectsTransfer = false;
     [HideInInspector] public GameObject[] SpawnerList;
     [HideInInspector] public GameObject ObjectPrefab;
     [HideInInspector] public GameObject SpawnedObject;
@@ -75,7 +77,7 @@ public class RecibeGameObject : MonoBehaviour
 
             }
 
-            if (ObjectPrefab != null) Destroy(ObjectPrefab, 3f);
+            if (ObjectPrefab != null && DestroyObjectsTransfer) Destroy(ObjectPrefab, 3f);
         }
     }
 

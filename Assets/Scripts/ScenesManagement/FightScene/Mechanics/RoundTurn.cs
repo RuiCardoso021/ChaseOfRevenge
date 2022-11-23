@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class RoundTurn : MonoBehaviour
 {
     [SerializeField] private GameObject button;
+    [SerializeField] private TextMeshProUGUI roundText;
     public bool myTurn;
     public int Round = 1;
 
@@ -16,9 +18,18 @@ public class RoundTurn : MonoBehaviour
     }
 
     private void Update() {
-        if (myTurn){
-            button.SetActive(true);
-        }else button.SetActive(false);
+
+        if (roundText != null)
+            roundText.text = Round.ToString();
+
+        if (ManagerGameFight.Instance.PermissedExecute)
+        {
+            if (myTurn)
+            {
+                button.SetActive(true);
+            }
+            else button.SetActive(false);
+        }
     }
 
     //chenge next turn

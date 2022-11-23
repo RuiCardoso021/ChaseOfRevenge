@@ -34,12 +34,15 @@ public class CardManager : MonoBehaviour
 
     private void Update()
     {
-
-        if (CardsOnHand.Count > 0)
+        if (ManagerGameFight.Instance.PermissedExecute)
         {
-            AddAnimation();
+            if (CardsOnHand.Count > 0)
+            {
+                AddAnimation();
 
+            }
         }
+
     }
 
 
@@ -74,11 +77,14 @@ public class CardManager : MonoBehaviour
         if (card != null)
         {
             GameObject GameObjectFather = GameObject.Find(Global.cardContentFromGame);
-            GameObject cardTemp = CardPrefab;
-            cardTemp = Instantiate(CardPrefab, GameObjectFather.transform);
-            cardTemp.GetComponent<Card_Prefab>().dataCard = card;
-            cardTemp.AddComponent<CardsAnimationFight>();
-            CardsOnHand.Add(cardTemp);
+            if (GameObjectFather != null)
+            {
+                GameObject cardTemp = CardPrefab;
+                cardTemp = Instantiate(CardPrefab, GameObjectFather.transform);
+                cardTemp.GetComponent<Card_Prefab>().dataCard = card;
+                cardTemp.AddComponent<CardsAnimationFight>();
+                CardsOnHand.Add(cardTemp);
+            }   
         }
 
     }

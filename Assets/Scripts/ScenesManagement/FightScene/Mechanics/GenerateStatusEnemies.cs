@@ -17,13 +17,15 @@ public class GenerateStatusEnemies : MonoBehaviour
 
     public void Update()
     {
-        //Inicialization vars and instancies;
-        Inicialization();
+        if (ManagerGameFight.Instance.PermissedExecute)
+        {
+            //Inicialization vars and instancies;
+            Inicialization();
 
 
-        //update Life
-        UpdateHealth();
-
+            //update Life
+            UpdateHealth();
+        }
 
 
 
