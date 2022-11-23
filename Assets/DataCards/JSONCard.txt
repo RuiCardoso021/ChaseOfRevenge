@@ -424,7 +424,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "Reduce 3 range attack to ramdom enemy on next turn",
+            "description": "Enemy attacks has 3 reduced damage on next turn",
             "mana":1,
             "src": "warrior"
         },
@@ -484,7 +484,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "Reduce 10 attack all enemies on next turn",
+            "description": "Enemy attacks has 10 reduced damage on next turn",
             "mana":2,
             "src": "warrior"
         },
