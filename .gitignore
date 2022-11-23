@@ -69,7 +69,6 @@ crashlytics-build.properties
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 
 # Temporary auto-generated Android Assets
-/[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 ### VisualStudioCode ###
@@ -637,8 +636,6 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/vs,visualstudiocode,visualstudio,unity
-*.meta
-*.meta
 Assets/Unity_Store/Visual Design Cafe/Nature Shaders/Plugins/VisualDesignCafe.Nature.Editor.pdb.meta
 Assets/Unity_Store/Visual Design Cafe/Nature Shaders/Plugins/VisualDesignCafe.Nature.pdb.meta
 Assets/Unity_Store/Visual Design Cafe/Package Manager/VisualDesignCafe.Editor.Community.pdb.meta
