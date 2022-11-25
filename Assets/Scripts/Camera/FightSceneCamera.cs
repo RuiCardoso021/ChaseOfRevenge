@@ -10,7 +10,7 @@ public class FightSceneCamera : MonoBehaviour
     private Camera mainCamera;
     private Vector3 currentPosition;
     private Vector3 finalPosition;
-    public bool isVisible;
+    public bool validation;
 
     // Start is called before the first frame update
     void Start()
@@ -19,21 +19,25 @@ public class FightSceneCamera : MonoBehaviour
         mainCamera = GetComponent<Camera>();
         currentPosition = mainCamera.transform.position;
         finalPosition = new Vector3(-2.6f, 4.5f, -12f);
-        isVisible = false;
+        validation = true;
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (InterfacePanelFight != null)
-            InterfacePanelFight.SetActive(isVisible);
+        if (InterfacePanelFight != null && validation)
+            InterfacePanelFight.SetActive(false);
 
-        if (mainCamera != null && !isVisible)
+        if (mainCamera != null && validation)
         {
             currentPosition = mainCamera.transform.position;
             if (currentPosition == finalPosition)
-                isVisible = true;
+            {
+                InterfacePanelFight.SetActive(true);
+                validation = false;
+            }
+                
         }
             
     }

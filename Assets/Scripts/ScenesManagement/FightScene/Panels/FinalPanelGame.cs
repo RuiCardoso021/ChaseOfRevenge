@@ -15,6 +15,8 @@ public class FinalPanelGame : MonoBehaviour
 
     private void Start()
     {
+        PanelLose.SetActive(false);
+        PanelWin.SetActive(false);
         activePanel = true;
 
     }

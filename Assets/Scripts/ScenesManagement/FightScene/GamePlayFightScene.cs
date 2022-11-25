@@ -146,7 +146,7 @@ public class GamePlayFightScene : MonoBehaviour
             if (item != null)
             {
                 if (item.GetComponent<Enemy_Prefab>().PermissedByAttack)
-                    player.Health -= item.GetComponent<Enemy_Prefab>().getRangeAttack();
+                    player.HealthUpdate(-item.GetComponent<Enemy_Prefab>().getRangeAttack());
 
                 //get a range default values attack
                 item.GetComponent<Enemy_Prefab>().setInicialMinAndMaxAttack();
@@ -179,7 +179,7 @@ public class GamePlayFightScene : MonoBehaviour
             }
 
         } else if (_ab.type_effect == Global.cardAffectsPlayer) //if player to play
-            player.Health -= _ab.value;
+            player.HealthUpdate(-_ab.value);
     }
 
     //heal mechanics
@@ -188,11 +188,11 @@ public class GamePlayFightScene : MonoBehaviour
         if (_ab.type_effect == Global.cardAffectsPlayer)
         {
             if (_ab.effect_quantity == 1) //recive heal value
-                player.Health += _ab.value;
+                player.HealthUpdate(_ab.value);
             else if (_ab.effect_quantity == 0) //recive heal value per enemy
-                player.Health += _ab.value * ManagerGameFight.Instance.Manager.CharactersICanAttack.Length;
+                player.HealthUpdate(_ab.value * ManagerGameFight.Instance.Manager.CharactersICanAttack.Length);
             else if (_ab.effect_quantity == -1) //player to play recibe full hp
-                player.Health = player.MaxHealth;
+                player.HealthUpdate(player.MaxHealth);
 
         }
         else if (_ab.type_effect == Global.cardAffectsOther)

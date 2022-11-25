@@ -8,15 +8,14 @@ using UnityEngine.UI;
 public class Interface_FightScene : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private Camera _mainCam;
     [SerializeField] private GameObject _uiPanel;
-    [SerializeField] private TextMeshProUGUI _textName;
+    //[SerializeField] private TextMeshProUGUI _textName;
     [SerializeField] private TextMeshProUGUI _textMana;
-    [SerializeField] private TextMeshProUGUI _textHealth;
-    [SerializeField] private Image healthBar;
+    //[SerializeField] private TextMeshProUGUI _textHealth;
+    //[SerializeField] private Image healthBar;
     [SerializeField] private Image manaBar;
     private float maxMana;
-    private float maxHealth;
+    //private float maxHealth;
     private bool active;
 
     private void Start()
@@ -34,17 +33,17 @@ public class Interface_FightScene : MonoBehaviour
             if (player != null && active)
             {
                 maxMana = player.Mana;
-                maxHealth = player.Health;
+                //maxHealth = player.Health;
                 active = false;
             }
 
             if (!active)
             {
-                healthBar.fillAmount = player.Health / maxHealth;
+                //healthBar.fillAmount = player.Health / maxHealth;
                 manaBar.fillAmount = player.Mana / maxMana;
-                _textHealth.text = player.Health.ToString() + "/" + maxHealth;
+                //_textHealth.text = player.Health.ToString() + "/" + maxHealth;
                 _textMana.text = player.Mana.ToString() + "/" + maxMana;
-                _textName.text = player.Name.ToString();    
+                //_textName.text = player.Name.ToString();    
             }
                   
         }

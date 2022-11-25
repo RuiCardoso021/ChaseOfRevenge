@@ -10,8 +10,10 @@ public class Card_Prefab : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textMana;
     [SerializeField] private TextMeshProUGUI _textDescription;
     [SerializeField] private TextMeshProUGUI _textName;
-    [SerializeField] private TextMeshProUGUI _textRarity;
     [SerializeField] private TextMeshProUGUI _textCategory;
+    [SerializeField] private GameObject _contentStars;
+    [SerializeField] private bool createStars = true;
+    [SerializeField] private GameObject _star;
     [SerializeField] private Image _image;
     public Card dataCard;
 
@@ -24,7 +26,15 @@ public class Card_Prefab : MonoBehaviour
             _textDescription.text = dataCard.description;
             _textName.text = dataCard.name;
             _textCategory.text = dataCard.category;
-            _textRarity.text = dataCard.rarity.ToString();
+            if (createStars)
+            {
+                for (int i = 1; i < dataCard.rarity; i++)
+                {
+                    Instantiate(_star, _contentStars.transform);
+                }
+                createStars = false;
+            }
+
             _image.sprite = Resources.Load<Sprite>(Global.cardImage + dataCard.src);
         }
     }

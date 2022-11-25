@@ -76,19 +76,23 @@ public class Enemy_Prefab : MonoBehaviour
 
     private void validateHealthBar()
     {  
-        if (HealthBar.Validation)
+        if (HealthBar!= null)
         {
-            HealthBar.GOHealthBar = Instantiate(Resources.Load(Global.linkToHealthBar) as GameObject, this.GameObject().transform);
-            HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().health = Health;
-            HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().MaxLife = Health;
-            HealthBar.GOHealthBar.transform.RotateAroundLocal(Vector3.up, -80);
-            HealthBar.Validation = false;
-        }
+            if (HealthBar.Validation)
+            {
+                HealthBar.GOHealthBar = Instantiate(Resources.Load(Global.linkToHealthBar) as GameObject, this.GameObject().transform);
+                HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().health = Health;
+                HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().MaxLife = Health;
+                HealthBar.GOHealthBar.transform.RotateAroundLocal(Vector3.up, -80);
+                HealthBar.Validation = false;
+            }
 
-        if (HealthBar.GOHealthBar != null)
-        {
-            HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().health = Health;
-            HealthBar.GOHealthBar.transform.localPosition = new Vector3(0f, HeightEnemy, 0f);
+            if (HealthBar.GOHealthBar != null)
+            {
+                HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().health = Health;
+                HealthBar.GOHealthBar.transform.localPosition = new Vector3(0f, HeightEnemy, 0f);
+            }
         }
+        
     }
 }

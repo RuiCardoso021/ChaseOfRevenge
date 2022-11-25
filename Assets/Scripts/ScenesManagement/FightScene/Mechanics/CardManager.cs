@@ -20,6 +20,7 @@ public class CardManager : MonoBehaviour
     public bool getCards;
 
 
+
     public Card CardChoose;
 
 
@@ -31,20 +32,6 @@ public class CardManager : MonoBehaviour
         CardChoose = new Card();
         CardPrefab = Resources.Load(Global.cardPrefab) as GameObject;
     }
-
-    private void Update()
-    {
-        if (ManagerGameFight.Instance.PermissedExecute)
-        {
-            if (CardsOnHand.Count > 0)
-            {
-                AddAnimation();
-
-            }
-        }
-
-    }
-
 
 
     private int GetIndexRandom()
@@ -74,6 +61,7 @@ public class CardManager : MonoBehaviour
     //generate card
     private void InstanceCard(Card card)
     {
+
         if (card != null)
         {
             GameObject GameObjectFather = GameObject.Find(Global.cardContentFromGame);
@@ -83,6 +71,7 @@ public class CardManager : MonoBehaviour
                 cardTemp = Instantiate(CardPrefab, GameObjectFather.transform);
                 cardTemp.GetComponent<Card_Prefab>().dataCard = card;
                 cardTemp.AddComponent<CardsAnimationFight>();
+
                 CardsOnHand.Add(cardTemp);
             }   
         }
@@ -197,28 +186,7 @@ public class CardManager : MonoBehaviour
         }
     }
 
-    //Apply event mouse over on cards
-    public void AddAnimation()
-    {
-        foreach (var item in CardsOnHand)
-        {
-            if (item.GetComponent<CardsAnimationFight>() != null)
-            {
-                //set transformation card if houver
-                if (item.GetComponent<CardsAnimationFight>().mouse_over)
-                {
-                    RectTransform rect = item.gameObject.GetComponent<RectTransform>();
-                    rect.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
-                }
-                else if (!item.GetComponent<CardsAnimationFight>().mouse_over)
-                {
-                    RectTransform rect = item.gameObject.GetComponent<RectTransform>();
-                    rect.transform.localScale = new Vector3(1f, 1f, 1f);
-                }
-            }
-            
-        }
-    }
+    
 
     //set "dataCard" on "CardChoose" if click in this card
     public void getCardChoose()

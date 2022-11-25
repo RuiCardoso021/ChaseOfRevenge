@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEditor.UI;
 using UnityEngine;
@@ -12,9 +13,11 @@ public class CardsAnimationFight : MonoBehaviour, IPointerEnterHandler, IPointer
     // Start is called before the first frame update
     public bool mouse_over;
     public bool mouse_click;
+    public bool isNewItem;
 
     void Start()
     {
+        isNewItem = true;
         mouse_over = false;
         mouse_click = false;
     }

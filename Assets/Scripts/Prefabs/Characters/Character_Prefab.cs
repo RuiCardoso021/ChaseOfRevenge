@@ -24,10 +24,13 @@ public class Character_Prefab : MonoBehaviour
     public float Health;
     public Sprite ImageProfile;
     public Deck myDeck;
+    private Animator animator;
+    
 
     private void Start()
     {
         HeightPlayer = GetComponent<PlayerMovement>().playerHeight;
+        animator = GetComponentInChildren<Animator>();
         HealthBar = new HealthBar_cls(SceneManager.GetActiveScene().name);
         myDeck = new Deck();
         Deck deck = new Deck();     
@@ -64,6 +67,19 @@ public class Character_Prefab : MonoBehaviour
     private void ManaValidation()
     {
         if (Mana < 0) Mana = 0;
+    }
+
+    public void HealthUpdate(float value)
+    {
+        Health += value;
+        if (value < 0)
+        {
+            animator.SetBool("Idle", false);
+            animator.SetBool("Damage", true);
+            
+        }
+
+
     }
 
     private void validateHealthBar()
