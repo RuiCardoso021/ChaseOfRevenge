@@ -22,16 +22,19 @@ public class Enemy_Prefab : MonoBehaviour
     public int MinAttack;
     public int MaxAttack;
     public Sprite ImageProfile;
+    private Animator _animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponent<Animator>();
         HeightEnemy = GetComponent<CapsuleCollider>().height;
         HealthBar = new HealthBar_cls(SceneManager.GetActiveScene().name);
         MaxHealth = Health;
         PermissedByAttack = true;
         InicialMinAttack = MinAttack;
         InicialMaxAttack = MaxAttack;
+        _animator.SetInteger("Transition", 0);
     }
 
     void Update()
@@ -50,15 +53,18 @@ public class Enemy_Prefab : MonoBehaviour
 
     public int getRangeAttack()
     {
+        if (MaxAttack > 1) _animator.SetInteger("Transition", 2);
         return Random.Range(MinAttack, MaxAttack);
     }
 
     public void SubtractRangeAttack(int value)
     {
+        
         MinAttack -= value;
         MaxAttack -= value;
         valitationRangeAttack();
     }
+
 
     private void HealthValidation()
     {

@@ -1,10 +1,12 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Progress;
 
 public class GamePlayFightScene : MonoBehaviour
 {
@@ -16,11 +18,13 @@ public class GamePlayFightScene : MonoBehaviour
     private Character_Prefab player;
     private Enemy_Prefab enemy;
     private bool activeDestroyThisCard;
+    private bool _enemyPermissed;
 
     //Start
     private void Start()
     {
         indexCharacters = 0;
+        _enemyPermissed = true;
         _turn = GetComponent<RoundTurn>();
         _cardsToPlay = GetComponent<CardManager>();
     }
@@ -47,17 +51,40 @@ public class GamePlayFightScene : MonoBehaviour
     {
         if (_turn.myTurn)
         {
+            _enemyPermissed = true;
+
             if (player.PermissedByAttack == true)
                 PlayerToPlay();
+
+  
         }
         else
         {
-            EnemiesToPlay();
-            
+
+            GetDefaultValuesPlayer();
+
+            if (_enemyPermissed)
+            {
+                _enemyPermissed = false;
+                EnemiesToPlay();
+            }
         }
 
 
 
+    }
+
+    private void GetDefaultValuesPlayer()
+    {
+        //player get full mana
+        player.Mana = player.MaxMana;
+        //permissed attack player if enemies not change that
+        player.PermissedByAttack = true;
+        //permissed to player get cards
+        _cardsToPlay.getCards = true;
+        //if exist, destroy all cards
+        if (_cardsToPlay.CardsOnHand.Count > 0)
+            _cardsToPlay.DestroyAllInstanceCards();
     }
 
     private void PlayerToPlay()
@@ -133,29 +160,37 @@ public class GamePlayFightScene : MonoBehaviour
 
     private void EnemiesToPlay()
     {
-        //player get full mana
-        player.Mana = player.MaxMana;
-        //permissed attack player if enemies not change that
-        player.PermissedByAttack = true;
-        //permissed to player get cards
-        _cardsToPlay.getCards = true;
-
-
+        float time = 0;
         foreach (GameObject item in ManagerGameFight.Instance.Manager.CharactersICanAttack)
         {
             if (item != null)
             {
-                if (item.GetComponent<Enemy_Prefab>().PermissedByAttack)
-                    player.HealthUpdate(-item.GetComponent<Enemy_Prefab>().getRangeAttack());
+                if (item.GetComponent<Enemy_Prefab>().PermissedByAttack && item.GetComponent<Enemy_Prefab>().MaxAttack > 1)
+                {
 
-                //get a range default values attack
-                item.GetComponent<Enemy_Prefab>().setInicialMinAndMaxAttack();
+                    StartCoroutine(SetAttackEnemy(item, time));
+                    time += 1.2f;
+                }   
             }
         }
 
-        if (_cardsToPlay.CardsOnHand.Count > 0)
-            _cardsToPlay.DestroyAllInstanceCards();
+
+        Invoke("nextTurn", time + 0.1f);
+    }
+
+    private void nextTurn()
+    {
         _turn.NextTurn();
+    }
+
+    private IEnumerator SetAttackEnemy(GameObject item, float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        player.HealthUpdate(-item.GetComponent<Enemy_Prefab>().getRangeAttack());
+        //get a range default values attack
+        item.GetComponent<Enemy_Prefab>().setInicialMinAndMaxAttack();
+        item.GetComponent<Enemy_Prefab>().PermissedByAttack = true;
     }
 
     //damage in character(s)

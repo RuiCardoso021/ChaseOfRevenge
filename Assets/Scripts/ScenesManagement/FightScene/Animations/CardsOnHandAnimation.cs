@@ -58,7 +58,7 @@ public class CardsOnHandAnimation : MonoBehaviour
                 {
                     RectTransform rect = child.gameObject.GetComponent<RectTransform>();
                     rect.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
-                    rect.pivot = new Vector2(0f, 0f);
+                    rect.pivot = new Vector2(0.5f, 0.5f);
                     canvas.overrideSorting = true;
                     canvas.sortingOrder = 1;
                     cardAnimation.isNewItem = false;
@@ -79,6 +79,7 @@ public class CardsOnHandAnimation : MonoBehaviour
             //set transformation card if houver
             if (canvas != null)
             {
+                Animator animator = child.GetComponent<Animator>();
                 if (!cardAnimation.isNewItem)
                 {
                     if (cardAnimation.mouse_over)
@@ -86,14 +87,16 @@ public class CardsOnHandAnimation : MonoBehaviour
                         RectTransform rect = child.gameObject.GetComponent<RectTransform>();
                         //rect.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
                         rect.pivot = new Vector2(0.5f, 0.22f);
+                        //animator.SetInteger("Transition", 2);
                         canvas.overrideSorting = true;
                         canvas.sortingOrder = 1;
                     }
                     else if (!cardAnimation.mouse_over)
                     {
                         RectTransform rect = child.gameObject.GetComponent<RectTransform>();
-                        rect.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+                        //rect.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
                         rect.pivot = new Vector2(0.5f, 0.5f);
+                        //animator.SetInteger("Transition", 0);
                         canvas.overrideSorting = false;
                         canvas.sortingOrder = 0;
                     }

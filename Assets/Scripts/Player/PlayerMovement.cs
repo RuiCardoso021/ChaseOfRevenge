@@ -75,10 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Idle()
     {
-        //animator.SetInteger("Transition",1);
-        animator.SetBool("Idle", true);
-        animator.SetBool("Walk", false);
-        animator.SetBool("Run", false);
+        animator.SetInteger("Transition", 0);
     }
 
     private void Walk()
@@ -89,10 +86,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else moveSpeed = walkSpeed;
 
-        //animator.SetInteger("Transition",2);
-        animator.SetBool("Idle", false);
-        animator.SetBool("Run", false);
-        animator.SetBool("Walk", true);
+        animator.SetInteger("Transition", 1);
     }
     private void Run()
     {
@@ -102,10 +96,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else moveSpeed = runSpeed;
 
-        //animator.SetInteger("Transition",3);
-        animator.SetBool("Idle", false);
-        animator.SetBool("Walk", false);
-        animator.SetBool("Run", true);
+        animator.SetInteger("Transition",2);
+    
     }
 
     public void SetActivePlayerMoviment(bool value){

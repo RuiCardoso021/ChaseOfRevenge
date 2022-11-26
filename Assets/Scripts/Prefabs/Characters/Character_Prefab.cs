@@ -74,8 +74,7 @@ public class Character_Prefab : MonoBehaviour
         Health += value;
         if (value < 0)
         {
-            animator.SetBool("Idle", false);
-            animator.SetBool("Damage", true);
+            animator.SetInteger("Transition", 3);
             
         }
 
