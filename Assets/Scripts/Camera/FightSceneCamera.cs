@@ -7,7 +7,7 @@ public class FightSceneCamera : MonoBehaviour
     public static FightSceneCamera Instance;
 
     [SerializeField] private GameObject InterfacePanelFight;
-    private Camera mainCamera;
+    public Camera mainCamera;
     private Vector3 currentPosition;
     private Vector3 finalPosition;
     public bool validation;

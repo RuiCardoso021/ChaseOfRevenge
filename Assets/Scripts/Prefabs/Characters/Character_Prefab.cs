@@ -88,7 +88,8 @@ public class Character_Prefab : MonoBehaviour
             HealthBar.GOHealthBar = Instantiate(Resources.Load(Global.linkToHealthBar) as GameObject, this.GameObject().transform);
             HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().health = Health;
             HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().MaxLife = Health;
-            HealthBar.GOHealthBar.transform.RotateAroundLocal(Vector3.up, -80);
+            HealthBar.GOHealthBar.transform.RotateAroundLocal(Vector3.up, 80);
+            //HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().healthBar.GetComponent<Image>().fillOrigin = 1;
             HealthBar.Validation = false;
         }
 
