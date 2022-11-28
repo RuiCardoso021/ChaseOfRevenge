@@ -55,7 +55,7 @@ public class RecibeGameObject : MonoBehaviour
                 }
                 else if (child.GetComponent<Character_Prefab>() != null)
                 {
-                    SpawnedObject = Instantiate(getCharacterPlayerPrefab(child), spawnPoint[i].transform.position, Quaternion.identity);
+                    SpawnedObject = Instantiate(getCharacterPlayerPrefab(child), spawnPoint[i].transform);
                     SpawnedObject.name = Global.findPlayer;
                     SpawnedObject.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
                     SpawnedObject.GetComponent<Character_Prefab>().myDeck = _player.GetComponent<Character_Prefab>().myDeck;
@@ -67,7 +67,7 @@ public class RecibeGameObject : MonoBehaviour
                     {
                         if (item != null)
                         {
-                            SpawnedObject = Instantiate(getCharacterEnemyPrefab(child), spawnPoint[i].transform.position, Quaternion.identity);
+                            SpawnedObject = Instantiate(getCharacterEnemyPrefab(child), spawnPoint[i].transform);
                             SpawnerList[i] = SpawnedObject;
                             i++;
                         }         
