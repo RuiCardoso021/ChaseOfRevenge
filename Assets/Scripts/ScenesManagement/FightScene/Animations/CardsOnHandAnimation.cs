@@ -46,7 +46,7 @@ public class CardsOnHandAnimation : MonoBehaviour
     private void FirstAnimation(GameObject child)
     {
         CardsAnimationFight cardAnimation = child.GetComponent<CardsAnimationFight>();
-        float time = 0;
+        //float time = 0;
 
         if (cardAnimation != null)
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MiniMap : MonoBehaviour
 {
     Transform targetPlayer;
-    bool validation = false;
+    //bool validation = false;
 
     private void Start()
     {

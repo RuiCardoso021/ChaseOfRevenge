@@ -1,22 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [System.Serializable]
-public class InventoryCard_cls : MonoBehaviour
+public class InventoryCard_cls : MonoBehaviour, IPointerClickHandler
 {
     public bool isActive;
     InventoryManager inventoryManager;
-
-    public InventoryCard_cls(bool _isActive)
-    {
-        isActive = _isActive;
-    }
-
-    public InventoryCard_cls()
-    {
-
-    }
 
     private void Start()
     {
@@ -28,21 +19,19 @@ public class InventoryCard_cls : MonoBehaviour
 
     private void Update()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
         if (inventoryManager == null)
         {
             inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
         }
     }
 
-    public void SelectCard()
+    public void OnPointerClick(PointerEventData eventData)
     {
         if (inventoryManager != null)
         {
             inventoryManager.ChangeCardsInInventory(this.gameObject);
         }
     }
+
 }
 

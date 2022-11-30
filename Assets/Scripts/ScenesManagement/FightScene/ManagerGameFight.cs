@@ -18,7 +18,7 @@ public class ManagerGameFight : MonoBehaviour
     public static ManagerGameFight Instance;
     private const int TOTAL_HISTORIC = 100;
     private const float DELAY_TO_PLAY_GAME = 0.6f;
-    private bool validation;
+    //private bool validation;
 
     public ManagerGameFight_cls Manager;
     public HistoricGameFight_cls[] HistoricGame;
@@ -30,7 +30,7 @@ public class ManagerGameFight : MonoBehaviour
     private void Start()
     {
         Instance = this;
-        validation = false;
+        //validation = false;
         Manager = new ManagerGameFight_cls();
         PermissedExecute = false;
         HistoricGame = new HistoricGameFight_cls[TOTAL_HISTORIC];

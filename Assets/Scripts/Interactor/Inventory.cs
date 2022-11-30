@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public bool Haskey = false;
+    //public bool Haskey = false;
 
     public GameObject inventoryScreen;
     //public AudioSource inventoryOpen;
@@ -24,7 +24,9 @@ public class Inventory : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.I) && isOpen == false && canClose == false)
         {
-            isOpen = true;          
+            isOpen = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             //inventoryOpen.Play();
             StartCoroutine(InvControl());
         }
@@ -73,4 +75,6 @@ public class Inventory : MonoBehaviour
             StartCoroutine(InvControl());
         }
     }
+
+
 }

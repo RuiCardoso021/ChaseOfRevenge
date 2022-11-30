@@ -81,6 +81,7 @@ public class Character_Prefab : MonoBehaviour
 
     }
 
+    [System.Obsolete]
     private void validateHealthBar()
     {
         if (HealthBar.Validation)

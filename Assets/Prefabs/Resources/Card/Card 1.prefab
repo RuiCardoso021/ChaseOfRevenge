@@ -87,7 +87,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &8152518061021064098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,8 +120,10 @@ MonoBehaviour:
   _textMana: {fileID: 1653054411040900423}
   _textDescription: {fileID: 3238267871621781504}
   _textName: {fileID: 2923862632410661333}
-  _textRarity: {fileID: 0}
   _textCategory: {fileID: 0}
+  _contentStars: {fileID: 0}
+  createStars: 1
+  _star: {fileID: 0}
   _image: {fileID: 5969949448373332886}
   dataCard:
     id: 13
@@ -596,7 +598,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 57.53662, y: -9.775314, z: 59.277954, w: -10.017242}
+  m_margin: {x: 57.53662, y: 0.315135, z: 59.277954, w: -0.39377022}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

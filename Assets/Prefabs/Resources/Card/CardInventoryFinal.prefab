@@ -121,8 +121,10 @@ MonoBehaviour:
   _textMana: {fileID: 1653054411040900423}
   _textDescription: {fileID: 3238267871621781504}
   _textName: {fileID: 2923862632410661333}
-  _textRarity: {fileID: 8919092486590463914}
   _textCategory: {fileID: 2431115704119042607}
+  _contentStars: {fileID: 0}
+  createStars: 1
+  _star: {fileID: 0}
   _image: {fileID: 5969949448373332886}
   dataCard:
     id: 13
