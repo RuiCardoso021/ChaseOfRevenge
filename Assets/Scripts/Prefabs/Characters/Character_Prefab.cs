@@ -32,22 +32,11 @@ public class Character_Prefab : MonoBehaviour
         HeightPlayer = GetComponent<PlayerMovement>().playerHeight;
         animator = GetComponentInChildren<Animator>();
         HealthBar = new HealthBar_cls(SceneManager.GetActiveScene().name);
-        myDeck = new Deck();
-        Deck deck = new Deck();     
-        deck = JsonUtility.FromJson<Deck>(jsonFile.text);
-        List<Card> inventoryCards = new List<Card>();
+        myDeck = JsonUtility.FromJson<Deck>(jsonFile.text);
+        myDeck.GetInicialCards(ClassType);
         MaxHealth = Health;
         MaxMana = Mana;
         PermissedByAttack = true;
-
-        foreach (Card card in deck.cards)
-        {
-            if (card.type == ClassType || card.type == Global.universalCard)
-            {
-                inventoryCards.Add(card);
-            }
-        }
-        myDeck.cards = inventoryCards.ToArray();
     }
 
 

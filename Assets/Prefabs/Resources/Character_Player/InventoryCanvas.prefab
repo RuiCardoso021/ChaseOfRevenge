@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 3503296219098018868}
   - component: {fileID: 3956740236036615897}
   m_Layer: 5
-  m_Name: CardInventory
+  m_Name: InventoryCardsToPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,13 +231,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 623559885228144155}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
-  m_Elasticity: 0.1
+  m_Elasticity: 0
   m_Inertia: 1
-  m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 20
+  m_DecelerationRate: 0.1
+  m_ScrollSensitivity: 100
   m_Viewport: {fileID: 4198046750432659249}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -1718,7 +1718,7 @@ GameObject:
   - component: {fileID: 7944530384768376035}
   - component: {fileID: 7998355194384775759}
   m_Layer: 5
-  m_Name: Content
+  m_Name: ContentInventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2264,7 +2264,7 @@ GameObject:
   - component: {fileID: 1243033348195362614}
   - component: {fileID: 4147866005904589600}
   m_Layer: 5
-  m_Name: Content
+  m_Name: ContentCardsToPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2494,7 +2494,7 @@ GameObject:
   - component: {fileID: 6783529284874422244}
   - component: {fileID: 3613301841313583323}
   m_Layer: 5
-  m_Name: CardInventoryFight
+  m_Name: Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2574,13 +2574,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 5689279548146623399}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
-  m_Elasticity: 0.1
+  m_Elasticity: 0
   m_Inertia: 1
-  m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 20
+  m_DecelerationRate: 0.1
+  m_ScrollSensitivity: 100
   m_Viewport: {fileID: 2348862777577676416}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}

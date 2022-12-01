@@ -2878,8 +2878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2cefc2e8a7b29498776f4e6b6ab02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Haskey: 0
-  inventoryScreen: {fileID: 8005259935856676773}
+  inventoryScreen: {fileID: 5302407169928338355}
   isOpen: 0
   canClose: 0
 --- !u!1 &8659981318633085591
@@ -4597,20 +4596,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 623559885228144155, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 44.299988
+      objectReference: {fileID: 0}
+    - target: {fileID: 623559885228144155, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -651.75
+      objectReference: {fileID: 0}
     - target: {fileID: 1524794087756177933, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3721277733186434587, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689279548146623399, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 44.299988
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689279548146623399, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -651.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
---- !u!1 &8005259935856676773 stripped
+--- !u!1 &1662717001114056821 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1524794087756177933, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7863959044679144925, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
   m_PrefabInstance: {fileID: 8804903802394504616}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8973328692395552305 stripped
+--- !u!1 &2874655882055126970 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 483828807652557721, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6761478713094169106, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+  m_PrefabInstance: {fileID: 8804903802394504616}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5302407169928338355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3721277733186434587, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
   m_PrefabInstance: {fileID: 8804903802394504616}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8973328692926441873 stripped
@@ -4630,19 +4654,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeebf9f75d922ca49be22eb8738df26c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contentCards2Play: {fileID: 8973328692395552305}
-  contentAllCards: {fileID: 8973328693079270543}
+  contentCards2Play: {fileID: 1662717001114056821}
+  contentAllCards: {fileID: 2874655882055126970}
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
   cards2play: []
-  cardGameObject: {fileID: 287939272434314505, guid: 07d6ad9189f009f419ef57647c9b2ba8, type: 3}
+  cardGameObject: {fileID: 287939272434314505, guid: 988d3f667e1b0dd4fab9bbb669426b80, type: 3}
   Player: {fileID: 8570390266919298432}
 --- !u!224 &8973328692926441879 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 483828808211137599, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
-  m_PrefabInstance: {fileID: 8804903802394504616}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8973328693079270543 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 483828808067746087, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
   m_PrefabInstance: {fileID: 8804903802394504616}
   m_PrefabAsset: {fileID: 0}

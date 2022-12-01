@@ -5116,6 +5116,34 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: -651.75
       objectReference: {fileID: 0}
+    - target: {fileID: 1401480982649259783, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401480982649259783, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401480982649259783, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4864703072871686984}
+    - target: {fileID: 1401480982649259783, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401480982649259783, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: saveDeck
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401480982649259783, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InventoryManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401480982649259783, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1524794087756177933, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5124,6 +5152,34 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 1636c30fd461d7543b7d3e0438d525b4, type: 3}
+    - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4864703072871686984}
+    - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: getDeckAgain
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InventoryManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3721277733186434587, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5169,7 +5225,9 @@ MonoBehaviour:
   contentAllCards: {fileID: 2186353288693367120}
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
   cards2play: []
-  cardGameObject: {fileID: 287939272434314505, guid: 07d9210892711af4c8b67c5774483b30, type: 3}
+  cardsOnInventory:
+    cards: []
+  cardGameObject: {fileID: 287939272434314505, guid: 988d3f667e1b0dd4fab9bbb669426b80, type: 3}
   Player: {fileID: 5711563209960308849}
 --- !u!224 &4986612987122034557 stripped
 RectTransform:

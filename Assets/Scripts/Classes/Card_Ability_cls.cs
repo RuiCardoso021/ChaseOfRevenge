@@ -9,6 +9,8 @@ public class Ability{
     public int effect_quantity;
     public string type_effect;
 
+    public Ability() { }
+
     public Ability(string tag, int value, int effect_quantity, string type_effect)
     {
         this.tag = tag;
