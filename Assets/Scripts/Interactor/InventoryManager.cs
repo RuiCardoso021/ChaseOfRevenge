@@ -7,23 +7,30 @@ using TMPro;
 public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private GameObject contentCards2Play;
-    [SerializeField] private GameObject contentAllCards;
-    private Deck deck;
+    [SerializeField] private GameObject contentInventory;
+    public Deck deck;
     public TextAsset jsonFile;
 
     public List<GameObject> cards2play = new List<GameObject>();
-    public Deck cardsOnInventory = new Deck();
+    //public Deck cardsOnInventory = new Deck();
     public GameObject cardGameObject;
     public GameObject Player;
 
     private void Start()
     {
         deck = Player.GetComponent<Character_Prefab>().myDeck;
-        cardsOnInventory.cards = new Card[200];
+        //cardsOnInventory.cards = new Card[200];
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
         FirstInventory();
+    }
+
+    private void Update()
+    {
+        Inventory inventory = GetComponent<Inventory>();
+        if(inventory != null && inventory.isOpen)
+            ChangeCardsInInventory();
     }
 
     // primeira lista com as cartas todas
@@ -37,41 +44,36 @@ public class InventoryManager : MonoBehaviour
             gmTemp.AddComponent<InventoryCard_cls>();
             gmTemp.GetComponent<Card_Prefab>().dataCard = card;
             gmTemp.transform.parent = contentCards2Play.transform;
-            gmTemp.GetComponent<InventoryCard_cls>().isActive = true;
 
             cards2play.Add(gmTemp);
         }
     }
 
     // escolha das cartas para levar para a fight
-    public void ChangeCardsInInventory(GameObject card)
+    public void ChangeCardsInInventory()
     {
         foreach (GameObject go in cards2play)
         {
-            bool validationGo = go.GetComponent<InventoryCard_cls>().isActive;
-
-            if (card == go)
+            if (go != null)
             {
-                if (validationGo)
-                {
-                    go.transform.parent = contentAllCards.transform;
-                }
+                if (go.GetComponent<InventoryCard_cls>().transferItemToInventory)
+                    go.transform.parent = contentInventory.transform;
+                
                 else
-                {
-                    go.transform.parent = contentCards2Play.transform;
-                }
-                go.GetComponent<InventoryCard_cls>().isActive = !go.GetComponent<InventoryCard_cls>().isActive;
+                    go.transform.parent = contentCards2Play.transform;     
             }
         }
     }
 
+
+
     public void saveDeck()
     {
-        Deck.saveDeckPref(deck, 1);
+        CardPref.instance.saveDeckPref(deck, 1);
     }
 
     public void getDeckAgain()
     {
-        deck = Deck.LoadDeckPref(1);
+        deck = CardPref.instance.LoadDeckPref(1);
     }
 }

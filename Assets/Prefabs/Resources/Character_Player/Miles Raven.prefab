@@ -2711,7 +2711,6 @@ GameObject:
   - component: {fileID: 8804903803250645209}
   - component: {fileID: 8804903803250645208}
   - component: {fileID: 8804903803250645211}
-  - component: {fileID: 8804903803250645210}
   m_Layer: 0
   m_Name: Miles Raven
   m_TagString: Player
@@ -2866,21 +2865,6 @@ MonoBehaviour:
   ImageProfile: {fileID: 21300000, guid: 54282006af863c44f9167c10bccc1a01, type: 3}
   myDeck:
     cards: []
---- !u!114 &8804903803250645210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8570390266919298432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b2cefc2e8a7b29498776f4e6b6ab02c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryScreen: {fileID: 5302407169928338355}
-  isOpen: 0
-  canClose: 0
 --- !u!1 &8659981318633085591
 GameObject:
   m_ObjectHideFlags: 0
@@ -4608,6 +4592,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4223191604770642596}
+    - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: buttonDeck
+      objectReference: {fileID: 0}
     - target: {fileID: 3721277733186434587, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4632,11 +4624,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6761478713094169106, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
   m_PrefabInstance: {fileID: 8804903802394504616}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5302407169928338355 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3721277733186434587, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+--- !u!114 &4223191604770642596 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4659685439122306828, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
   m_PrefabInstance: {fileID: 8804903802394504616}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8973328692926441873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2cefc2e8a7b29498776f4e6b6ab02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8973328692926441873 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 483828808211137593, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
@@ -4655,7 +4653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contentCards2Play: {fileID: 1662717001114056821}
-  contentAllCards: {fileID: 2874655882055126970}
+  contentInventory: {fileID: 2874655882055126970}
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
   cards2play: []
   cardGameObject: {fileID: 287939272434314505, guid: 988d3f667e1b0dd4fab9bbb669426b80, type: 3}

@@ -5,7 +5,8 @@ using Cinemachine;
 public class CharacterSelection : MonoBehaviour
 {
 	public GameObject[] characters;
-	public InteractionCharacterSelectionPanel Panel;
+	public GameObject InventoryCanvas;
+	private InventoryManager inventoryManager;
 
 	private int index;
 
@@ -13,19 +14,22 @@ public class CharacterSelection : MonoBehaviour
     {
 		index = PlayerPrefs.GetInt(Global.selectionObjects);
 		characters = new GameObject[transform.childCount];
-		Panel = GameObject.Find("CharacterInformation").GetComponent<InteractionCharacterSelectionPanel>();
+		inventoryManager = InventoryCanvas.GetComponent<InventoryManager>();
 
 		//Add GameObjects for to list
 		for (int i = 0; i < transform.childCount; i++)
 		{
 			characters[i] = transform.GetChild(i).gameObject;
-		}
+
+        }
 
 		//active character
 		foreach (GameObject go in characters){
 			if (characters[index] == go){
 				go.SetActive(true);
-			}
+                inventoryManager.deck = go.GetComponent<Character_Prefab>().myDeck;
+                inventoryManager.FirstInventory();
+            }
 			else{
 				go.SetActive(false);
 			}
@@ -34,14 +38,14 @@ public class CharacterSelection : MonoBehaviour
 
     private void Update()
     {
-		if(Panel != null)
-        {
-			Panel.Name = characters[index].GetComponent<Character_Prefab>().Name;
-			Panel.Health = characters[index].GetComponent<Character_Prefab>().Health;
-			Panel.Mana = characters[index].GetComponent<Character_Prefab>().Mana;
-			Panel.ClassType = characters[index].GetComponent<Character_Prefab>().ClassType;
-			Panel.ImageProfile = characters[index].GetComponent<Character_Prefab>().ImageProfile;
-		}
+		//if(Panel != null)
+        //{
+		//	Panel.Name = characters[index].GetComponent<Character_Prefab>().Name;
+		//	Panel.Health = characters[index].GetComponent<Character_Prefab>().Health;
+		//	Panel.Mana = characters[index].GetComponent<Character_Prefab>().Mana;
+		//	Panel.ClassType = characters[index].GetComponent<Character_Prefab>().ClassType;
+		//	Panel.ImageProfile = characters[index].GetComponent<Character_Prefab>().ImageProfile;
+		//}
 	}
 
     public void ToggleLeft()

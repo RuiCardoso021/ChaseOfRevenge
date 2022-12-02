@@ -3194,7 +3194,6 @@ GameObject:
   - component: {fileID: 4864703072629357864}
   - component: {fileID: 4864703072629357865}
   - component: {fileID: 4864703072629357862}
-  - component: {fileID: 4864703072629357863}
   m_Layer: 0
   m_Name: Flora Raven
   m_TagString: Player
@@ -3351,21 +3350,6 @@ MonoBehaviour:
   ImageProfile: {fileID: 21300000, guid: 8f0dbc8cbb14b8541ab023c42e09f620, type: 3}
   myDeck:
     cards: []
---- !u!114 &4864703072629357863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5711563209960308849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b2cefc2e8a7b29498776f4e6b6ab02c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryScreen: {fileID: 8081225516174103897}
-  isOpen: 0
-  canClose: 0
 --- !u!1 &5721359693597137274
 GameObject:
   m_ObjectHideFlags: 0
@@ -5163,18 +5147,18 @@ PrefabInstance:
     - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 4864703072871686984}
+      objectReference: {fileID: 227540167495603278}
     - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: getDeckAgain
+      value: buttonDeck
       objectReference: {fileID: 0}
     - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: InventoryManager, Assembly-CSharp
+      value: Inventory, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -5194,6 +5178,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+--- !u!114 &227540167495603278 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4659685439122306828, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+  m_PrefabInstance: {fileID: 4864703072871686978}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4986612987122034555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2cefc2e8a7b29498776f4e6b6ab02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2186353288693367120 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6761478713094169106, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
@@ -5222,20 +5217,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contentCards2Play: {fileID: 3359826874176288415}
-  contentAllCards: {fileID: 2186353288693367120}
+  contentInventory: {fileID: 2186353288693367120}
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
   cards2play: []
-  cardsOnInventory:
-    cards: []
   cardGameObject: {fileID: 287939272434314505, guid: 988d3f667e1b0dd4fab9bbb669426b80, type: 3}
   Player: {fileID: 5711563209960308849}
 --- !u!224 &4986612987122034557 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 483828808211137599, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
-  m_PrefabInstance: {fileID: 4864703072871686978}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8081225516174103897 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3721277733186434587, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
   m_PrefabInstance: {fileID: 4864703072871686978}
   m_PrefabAsset: {fileID: 0}

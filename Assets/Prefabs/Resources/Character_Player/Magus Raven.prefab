@@ -196,7 +196,6 @@ GameObject:
   - component: {fileID: 750881744025329362}
   - component: {fileID: 750881744025329361}
   - component: {fileID: 7794731673269814223}
-  - component: {fileID: 3753662353496952735}
   m_Layer: 0
   m_Name: Magus Raven
   m_TagString: Player
@@ -348,21 +347,6 @@ MonoBehaviour:
   ImageProfile: {fileID: 21300000, guid: 651a6d299c0da6e4eb02800eff6c9307, type: 3}
   myDeck:
     cards: []
---- !u!114 &3753662353496952735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480410878680319498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b2cefc2e8a7b29498776f4e6b6ab02c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryScreen: {fileID: 1488060296866642254}
-  isOpen: 0
-  canClose: 0
 --- !u!1 &581988369881591867
 GameObject:
   m_ObjectHideFlags: 0
@@ -5197,6 +5181,14 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7469364762687387737}
+    - target: {fileID: 2014812051088080578, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: buttonDeck
+      objectReference: {fileID: 0}
     - target: {fileID: 3503296219098018868, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
       propertyPath: m_Maskable
       value: 1
@@ -5264,11 +5256,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4439476795362279736, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
---- !u!1 &1488060296866642254 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3721277733186434587, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
-  m_PrefabInstance: {fileID: 2810814157077401429}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2428815867375143786 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 483828808211137599, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
@@ -5292,7 +5279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contentCards2Play: {fileID: 5341376375082113672}
-  contentAllCards: {fileID: 8851716790136024391}
+  contentInventory: {fileID: 8851716790136024391}
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
   cards2play: []
   cardGameObject: {fileID: 287939272434314505, guid: 988d3f667e1b0dd4fab9bbb669426b80, type: 3}
@@ -5302,6 +5289,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7863959044679144925, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
   m_PrefabInstance: {fileID: 2810814157077401429}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7469364762687387737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4659685439122306828, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+  m_PrefabInstance: {fileID: 2810814157077401429}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2428815867375143788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2cefc2e8a7b29498776f4e6b6ab02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8851716790136024391 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6761478713094169106, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}

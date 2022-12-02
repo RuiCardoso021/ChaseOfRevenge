@@ -1745,6 +1745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1851161744}
   - component: {fileID: 1851161746}
+  - component: {fileID: 1851161747}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1787,6 +1788,20 @@ MonoBehaviour:
   ObjectPrefab: {fileID: 0}
   SpawnedObject: {fileID: 0}
   spawnEnemiesCount: 2
+--- !u!114 &1851161747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851161743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e34eb69c6f4153b47a49b428b77511fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extensionType: 0
+  sceneID: 0
 --- !u!1 &1965178756 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 94946b4cb998c484e88029f809a9e561, type: 3}
