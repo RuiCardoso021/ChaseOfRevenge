@@ -81,9 +81,11 @@ public class Enemy_Prefab : MonoBehaviour
     }
 
     private void validateHealthBar()
-    {  
-        if (HealthBar!= null)
+    {
+        string nameScene = SceneManager.GetActiveScene().name;
+        if (nameScene != null)
         {
+            HealthBar = new HealthBar_cls(nameScene);
             if (HealthBar.Validation)
             {
                 HealthBar.GOHealthBar = Instantiate(Resources.Load(Global.linkToHealthBar) as GameObject, this.GameObject().transform);
