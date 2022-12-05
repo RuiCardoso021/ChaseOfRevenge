@@ -344,7 +344,7 @@ MonoBehaviour:
   Mana: 5
   ClassType: SORCE
   Health: 20
-  ImageProfile: {fileID: 21300000, guid: 651a6d299c0da6e4eb02800eff6c9307, type: 3}
+  ImageProfile: {fileID: 21300000, guid: 6a17a62d3b1dd1e4eb5661c962970412, type: 3}
   myDeck:
     cards: []
 --- !u!1 &581988369881591867
@@ -5280,6 +5280,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contentCards2Play: {fileID: 5341376375082113672}
   contentInventory: {fileID: 8851716790136024391}
+  deck:
+    cards: []
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
   cards2play: []
   cardGameObject: {fileID: 287939272434314505, guid: 988d3f667e1b0dd4fab9bbb669426b80, type: 3}

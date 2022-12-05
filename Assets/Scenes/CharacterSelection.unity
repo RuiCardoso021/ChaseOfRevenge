@@ -3230,7 +3230,7 @@ PrefabInstance:
     - target: {fileID: 8804903803250645211, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
       propertyPath: ImageProfile
       value: 
-      objectReference: {fileID: 21300000, guid: 54282006af863c44f9167c10bccc1a01, type: 3}
+      objectReference: {fileID: 21300000, guid: 44e45508bc606ac45b2b81c5d421c1d5, type: 3}
     - target: {fileID: 9060103522325954362, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3850,6 +3850,7 @@ MonoBehaviour:
   - {fileID: 1189959442}
   - {fileID: 1485898113}
   InventoryCanvas: {fileID: 946908780}
+  CharacterInformation: {fileID: 0}
 --- !u!114 &1300952964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4060,7 +4061,7 @@ PrefabInstance:
     - target: {fileID: 4864703072629357862, guid: 78080c294971ce848abd752f49bb37b0, type: 3}
       propertyPath: ImageProfile
       value: 
-      objectReference: {fileID: 21300000, guid: 8f0dbc8cbb14b8541ab023c42e09f620, type: 3}
+      objectReference: {fileID: 21300000, guid: b0c9b1db33f774a41a85317615b8c3c1, type: 3}
     - target: {fileID: 4864703072629357864, guid: 78080c294971ce848abd752f49bb37b0, type: 3}
       propertyPath: activePlayer
       value: 0
