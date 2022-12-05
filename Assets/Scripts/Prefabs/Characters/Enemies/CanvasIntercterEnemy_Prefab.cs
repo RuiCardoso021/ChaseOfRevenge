@@ -9,14 +9,15 @@ public class CanvasIntercterEnemy_Prefab : MonoBehaviour
 {
     private Camera _mainCam;
     private GameObject GameObjectCanvas;
-    [SerializeField] private Vector3 _possitionFixed = Vector3.zero;
+    [SerializeField] private float height;
+    [SerializeField] private GameObject gmFather;
     public bool setAtiveCanvasLvl = false;
 
     // Start is called before the first frame update
     void Start()
     {
         _mainCam = Camera.main;
-        GameObjectCanvas = Instantiate(Resources.Load(Global.linkToCanvasInteractEnemy) as GameObject, Vector3.zero, Quaternion.identity, this.GameObject().transform);
+        GameObjectCanvas = Instantiate(Resources.Load(Global.linkToCanvasInteractEnemy) as GameObject, gmFather.transform);
     }
 
     // Update is called once per frame
@@ -36,11 +37,7 @@ public class CanvasIntercterEnemy_Prefab : MonoBehaviour
     {
         if (GameObjectCanvas != null)
         {
-            float height = 0;
-            if (GetComponent<CapsuleCollider>() != null)
-                height = GetComponent<CapsuleCollider>().height;
-            Vector3 position = _possitionFixed + new Vector3(0f, height, 0f);
-            GameObjectCanvas.transform.localPosition = position;
+            GameObjectCanvas.transform.localPosition = new Vector3(height, 0f, 0f);
             if (_mainCam != null)
             {
                 var rotation = _mainCam.transform.rotation;

@@ -8,6 +8,7 @@ public class InfoValuesCharacter_Prefab : MonoBehaviour
     // Start is called before the first frame update
     private GameObject gm;
 
+
     void Start()
     {
 
@@ -21,12 +22,6 @@ public class InfoValuesCharacter_Prefab : MonoBehaviour
             gm = Resources.Load(Global.linkToInfoValuesCharacter) as GameObject;
             Instantiate(gm, transform);
         }
-
-        //if (gm != null)
-        //{
-        //    gm.transform.position = new Vector3(-1.2f, 1.5f, 0.5f);
-        //    gm.transform.rotation = Quaternion.AngleAxis(7f, Vector3.up);
-        //}
 
         if  (gm != null)
         {

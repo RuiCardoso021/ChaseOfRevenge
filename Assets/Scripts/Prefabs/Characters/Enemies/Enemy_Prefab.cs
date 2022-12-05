@@ -9,6 +9,7 @@ public class Enemy_Prefab : MonoBehaviour
 {
     private int InicialMinAttack;
     private int InicialMaxAttack;
+    [SerializeField] private GameObject _canvasLife;
 
     [HideInInspector] public float MaxHealth;
     [HideInInspector] public bool PermissedByAttack;
@@ -40,10 +41,9 @@ public class Enemy_Prefab : MonoBehaviour
     void Update()
     {
         HealthValidation();
-        validateHealthBar();
+        validateHealthBar();  
+        
     }
-
-
 
     public void setInicialMinAndMaxAttack()
     {
@@ -59,7 +59,7 @@ public class Enemy_Prefab : MonoBehaviour
 
     public void SubtractRangeAttack(int value)
     {
-        
+
         MinAttack -= value;
         MaxAttack -= value;
         valitationRangeAttack();
@@ -82,25 +82,10 @@ public class Enemy_Prefab : MonoBehaviour
 
     private void validateHealthBar()
     {
-        string nameScene = SceneManager.GetActiveScene().name;
-        if (nameScene != null)
+        if (_canvasLife.GetComponent<LifeManager_Prefab>() != null)
         {
-            HealthBar = new HealthBar_cls(nameScene);
-            if (HealthBar.Validation)
-            {
-                HealthBar.GOHealthBar = Instantiate(Resources.Load(Global.linkToHealthBar) as GameObject, this.GameObject().transform);
-                HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().health = Health;
-                HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().MaxLife = Health;
-                HealthBar.GOHealthBar.transform.RotateAroundLocal(Vector3.up, -80);
-                HealthBar.Validation = false;
-            }
-
-            if (HealthBar.GOHealthBar != null)
-            {
-                HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().health = Health;
-                HealthBar.GOHealthBar.transform.localPosition = new Vector3(0f, HeightEnemy, 0f);
-            }
+            _canvasLife.GetComponent<LifeManager_Prefab>()._healthbarPrefab.GetComponent<HealthBar_Prefab>().UpdateLife(Health, MaxHealth);
         }
-        
     }
+
 }

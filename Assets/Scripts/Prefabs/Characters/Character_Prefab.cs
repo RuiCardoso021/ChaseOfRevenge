@@ -11,6 +11,7 @@ public class Character_Prefab : MonoBehaviour
 {
 
     [SerializeField] private TextAsset jsonFile;
+    [SerializeField] private GameObject _canvasLife;
 
     [HideInInspector] public bool PermissedByAttack;
     [HideInInspector] public int MaxMana;
@@ -70,30 +71,11 @@ public class Character_Prefab : MonoBehaviour
 
     }
 
-    [System.Obsolete]
     private void validateHealthBar()
     {
-        string nameScene = SceneManager.GetActiveScene().name;
-        if (nameScene != null)
+        if (_canvasLife.GetComponent<LifeManager_Prefab>() != null)
         {
-            HealthBar = new HealthBar_cls(nameScene);
-            if (HealthBar.Validation)
-            {
-                HealthBar.GOHealthBar = Instantiate(Resources.Load(Global.linkToHealthBar) as GameObject, this.GameObject().transform);
-                HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().health = Health;
-                HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().MaxLife = Health;
-                HealthBar.GOHealthBar.transform.RotateAroundLocal(Vector3.up, 80);
-                //HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().healthBar.GetComponent<Image>().fillOrigin = 1;
-                HealthBar.Validation = false;
-            }
-
-            if (HealthBar.GOHealthBar != null)
-            {
-                HealthBar.GOHealthBar.transform.localPosition = new Vector3(0f, HeightPlayer, 0f);
-                HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().health = Health;
-                HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().healthBar.GetComponent<Image>().fillOrigin = 1;
-
-            }
+            _canvasLife.GetComponent<LifeManager_Prefab>()._healthbarPrefab.GetComponent<HealthBar_Prefab>().UpdateLife(Health, MaxHealth);
         }
     }
 }

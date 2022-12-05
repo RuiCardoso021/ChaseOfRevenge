@@ -8,19 +8,13 @@ public class HealthBar_Prefab : MonoBehaviour
 {
     public Image healthBar;
     public TextMeshProUGUI textMeshProUGUI;
-    public float MaxLife { get; set; }
-    public float health { get; set; }
-
-    void Start()
-    {
-        health = MaxLife;
-    }
 
     // Update is called once per frame
-    void Update()
+
+    public void UpdateLife(float life, float maxlife)
     {
-        textMeshProUGUI.text = health.ToString() + "/" + MaxLife.ToString();
-        healthBar.fillAmount = health / MaxLife;
+        textMeshProUGUI.text = life.ToString() + "/" + maxlife.ToString();
+        healthBar.fillAmount = life / maxlife;
     }
 
 

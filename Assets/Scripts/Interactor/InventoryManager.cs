@@ -48,6 +48,7 @@ public class InventoryManager : MonoBehaviour
                 gmTemp.transform.parent = contentCards2Play.transform;
 
                 cards2play.Add(gmTemp);
+
             }
         }
     }
