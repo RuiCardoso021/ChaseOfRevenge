@@ -7,6 +7,7 @@ public class CharacterSelection : MonoBehaviour
 	public GameObject[] characters;
 	public GameObject InventoryCanvas;
 	private InventoryManager inventoryManager;
+	[SerializeField] private GameObject CharacterInformation;
 
 	private int index;
 
@@ -38,14 +39,22 @@ public class CharacterSelection : MonoBehaviour
 
     private void Update()
     {
-		//if(Panel != null)
-        //{
-		//	Panel.Name = characters[index].GetComponent<Character_Prefab>().Name;
-		//	Panel.Health = characters[index].GetComponent<Character_Prefab>().Health;
-		//	Panel.Mana = characters[index].GetComponent<Character_Prefab>().Mana;
-		//	Panel.ClassType = characters[index].GetComponent<Character_Prefab>().ClassType;
-		//	Panel.ImageProfile = characters[index].GetComponent<Character_Prefab>().ImageProfile;
-		//}
+		if (CharacterInformation == null)
+			CharacterInformation = GameObject.Find("CharacterInformation");
+		if(CharacterInformation != null)
+        {
+            InteractionCharacterSelectionPanel Panel = CharacterInformation.GetComponent<InteractionCharacterSelectionPanel>();
+
+			if(Panel != null)
+			{
+                Panel.Name = characters[index].GetComponent<Character_Prefab>().Name;
+                Panel.Health = characters[index].GetComponent<Character_Prefab>().Health;
+                Panel.Mana = characters[index].GetComponent<Character_Prefab>().Mana;
+                Panel.ClassType = characters[index].GetComponent<Character_Prefab>().ClassType;
+                Panel.ImageProfile = characters[index].GetComponent<Character_Prefab>().ImageProfile;
+            }
+
+		}
 	}
 
     public void ToggleLeft()
