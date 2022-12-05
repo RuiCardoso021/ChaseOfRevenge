@@ -3850,7 +3850,7 @@ MonoBehaviour:
   - {fileID: 1189959442}
   - {fileID: 1485898113}
   InventoryCanvas: {fileID: 946908780}
-  CharacterInformation: {fileID: 0}
+  CharacterInformation: {fileID: 1283826640}
 --- !u!114 &1300952964
 MonoBehaviour:
   m_ObjectHideFlags: 0

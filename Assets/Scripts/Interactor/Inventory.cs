@@ -9,8 +9,8 @@ public class Inventory : MonoBehaviour
     //public bool Haskey = false;
 
     public GameObject inventoryScreen;
-    //public AudioSource inventoryOpen;
-    //public AudioSource inventoryClose;
+    public AudioSource inventoryOpen;
+    public AudioSource inventoryClose;
     public bool isOpen = false;
     public bool canClose = false;
 
@@ -39,13 +39,13 @@ public class Inventory : MonoBehaviour
             {
                 isOpen = true;
 
-                //inventoryOpen.Play();
+                inventoryOpen.Play();
                 StartCoroutine(InvControl());
             }
             if (Input.GetKeyDown(KeyCode.I) && isOpen && canClose)
             {
                 isOpen = false;
-                //inventoryClose.Play();
+                inventoryClose.Play();
                 StartCoroutine(InvControl());
             }
         }
