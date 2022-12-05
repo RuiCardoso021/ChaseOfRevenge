@@ -3347,7 +3347,7 @@ MonoBehaviour:
   Mana: 4
   ClassType: ARCH
   Health: 25
-  ImageProfile: {fileID: 21300000, guid: 8f0dbc8cbb14b8541ab023c42e09f620, type: 3}
+  ImageProfile: {fileID: 21300000, guid: b0c9b1db33f774a41a85317615b8c3c1, type: 3}
   myDeck:
     cards: []
 --- !u!1 &5721359693597137274
