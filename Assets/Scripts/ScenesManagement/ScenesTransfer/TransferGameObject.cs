@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class TransferGameObject : MonoBehaviour
@@ -8,6 +9,8 @@ public class TransferGameObject : MonoBehaviour
     public static TransferGameObject Instance;
     public List<GameObject> LoadedCharacter = new List<GameObject>();
     [SerializeField] private string _nextSceneName = "TransferTestScene";
+    [SerializeField] private GameObject loaderUI;
+    [SerializeField] private Slider progressSlider;
 
     private string _lastScene;
 
@@ -17,11 +20,23 @@ public class TransferGameObject : MonoBehaviour
 
     private IEnumerator LoadSceneWithGameObject(GameObject objectToSend)
     {
+        progressSlider.value = 0;
+        loaderUI.SetActive(true);
         Scene currentScene = SceneManager.GetActiveScene();
         //objectToSend.AddComponent<GameObject>();
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(_nextSceneName, LoadSceneMode.Additive);
+        asyncLoad.allowSceneActivation = false;
+        float progress = 0f;
+
         while (!asyncLoad.isDone)
         {
+            progress = Mathf.MoveTowards(progress, asyncLoad.progress, Time.deltaTime);
+            progressSlider.value = progress;
+            if (progress >= 0.9f)
+            {
+                progressSlider.value = 1;
+                asyncLoad.allowSceneActivation = true;
+            }
             yield return null;
         }
         SceneManager.MoveGameObjectToScene(objectToSend, SceneManager.GetSceneByName(_nextSceneName));
