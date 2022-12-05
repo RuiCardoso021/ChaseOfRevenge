@@ -31,7 +31,7 @@ public class Character_Prefab : MonoBehaviour
     {
         HeightPlayer = GetComponent<PlayerMovement>().playerHeight;
         animator = GetComponentInChildren<Animator>();
-        HealthBar = new HealthBar_cls(SceneManager.GetActiveScene().name);
+
         myDeck = JsonUtility.FromJson<Deck>(jsonFile.text);
         myDeck.GetInicialCards(ClassType);
         MaxHealth = Health;
@@ -73,21 +73,27 @@ public class Character_Prefab : MonoBehaviour
     [System.Obsolete]
     private void validateHealthBar()
     {
-        if (HealthBar.Validation)
+        string nameScene = SceneManager.GetActiveScene().name;
+        if (nameScene != null)
         {
-            HealthBar.GOHealthBar = Instantiate(Resources.Load(Global.linkToHealthBar) as GameObject, this.GameObject().transform);
-            HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().health = Health;
-            HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().MaxLife = Health;
-            HealthBar.GOHealthBar.transform.RotateAroundLocal(Vector3.up, 80);
-            //HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().healthBar.GetComponent<Image>().fillOrigin = 1;
-            HealthBar.Validation = false;
-        }
+            HealthBar = new HealthBar_cls(nameScene);
+            if (HealthBar.Validation)
+            {
+                HealthBar.GOHealthBar = Instantiate(Resources.Load(Global.linkToHealthBar) as GameObject, this.GameObject().transform);
+                HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().health = Health;
+                HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().MaxLife = Health;
+                HealthBar.GOHealthBar.transform.RotateAroundLocal(Vector3.up, 80);
+                //HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().healthBar.GetComponent<Image>().fillOrigin = 1;
+                HealthBar.Validation = false;
+            }
 
-        if (HealthBar.GOHealthBar != null)
-        {
-            HealthBar.GOHealthBar.transform.localPosition = new Vector3(0f, HeightPlayer, 0f);
-            HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().health = Health;
-            HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().healthBar.GetComponent<Image>().fillOrigin = 1;
+            if (HealthBar.GOHealthBar != null)
+            {
+                HealthBar.GOHealthBar.transform.localPosition = new Vector3(0f, HeightPlayer, 0f);
+                HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().health = Health;
+                HealthBar.GOHealthBar.GetComponent<HealthBar_Prefab>().healthBar.GetComponent<Image>().fillOrigin = 1;
+
+            }
         }
     }
 }

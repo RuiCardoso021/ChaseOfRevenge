@@ -40,12 +40,15 @@ public class InventoryManager : MonoBehaviour
 
         foreach (Card card in deck.cards)
         {
-            gmTemp = Instantiate(cardGameObject, Vector3.zero, Quaternion.identity);
-            gmTemp.AddComponent<InventoryCard_cls>();
-            gmTemp.GetComponent<Card_Prefab>().dataCard = card;
-            gmTemp.transform.parent = contentCards2Play.transform;
+            if (card != null)
+            {
+                gmTemp = Instantiate(cardGameObject, Vector3.zero, Quaternion.identity);
+                gmTemp.AddComponent<InventoryCard_cls>();
+                gmTemp.GetComponent<Card_Prefab>().dataCard = card;
+                gmTemp.transform.parent = contentCards2Play.transform;
 
-            cards2play.Add(gmTemp);
+                cards2play.Add(gmTemp);
+            }
         }
     }
 

@@ -2584,7 +2584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4864703074139747985
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5218,6 +5218,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contentCards2Play: {fileID: 3359826874176288415}
   contentInventory: {fileID: 2186353288693367120}
+  deck:
+    cards: []
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
   cards2play: []
   cardGameObject: {fileID: 287939272434314505, guid: 988d3f667e1b0dd4fab9bbb669426b80, type: 3}

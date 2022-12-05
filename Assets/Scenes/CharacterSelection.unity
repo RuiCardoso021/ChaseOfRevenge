@@ -2375,6 +2375,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contentCards2Play: {fileID: 1380050649}
   contentInventory: {fileID: 1272745900}
+  deck:
+    cards: []
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
   cards2play: []
   cardGameObject: {fileID: 287939272434314505, guid: 988d3f667e1b0dd4fab9bbb669426b80, type: 3}
@@ -3861,7 +3863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadedCharacter: []
-  _nextSceneName: Explore
+  _nextSceneName: TownCity
 --- !u!4 &1347032185 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e462281aefb5a7743879e7ec89043e16, type: 3}

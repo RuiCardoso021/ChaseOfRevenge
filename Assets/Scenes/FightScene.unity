@@ -1720,7 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &76370139
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2436,7 +2436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &90142201
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4249,7 +4249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &209647377
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5821,7 +5821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &266949384
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7804,7 +7804,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contentCards2Play: {fileID: 1132357185}
-  contentAllCards: {fileID: 466637028}
+  contentInventory: {fileID: 0}
+  deck:
+    cards: []
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
   cards2play:
   - {fileID: 1783375780}
@@ -8884,7 +8886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &401380069
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9255,7 +9257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &416416683
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11222,7 +11224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &473456678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12451,7 +12453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &493458730
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20096,7 +20098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &910816994
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27906,7 +27908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &1235158114
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30769,7 +30771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &1375135830
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33807,7 +33809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &1528957780
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34949,7 +34951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &1623124690
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35612,7 +35614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &1655884342
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35868,7 +35870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &1667055180
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38271,7 +38273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &1783375783
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38979,7 +38981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &1810870382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39190,7 +39192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &1829024198
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -39741,7 +39743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed681e6458f471f48abe8185c9517f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActive: 1
+  transferItemToInventory: 0
 --- !u!61 &1859133971
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42337,7 +42339,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b2cefc2e8a7b29498776f4e6b6ab02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Haskey: 0
   inventoryScreen: {fileID: 215680875}
   isOpen: 0
   canClose: 0
