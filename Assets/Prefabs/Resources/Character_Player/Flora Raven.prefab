@@ -3413,6 +3413,9 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 8
+  Water:
+    serializedVersion: 2
+    m_Bits: 16
   _3dCameraObject: {fileID: 4864703073175597481}
   moveSpeed: 5
   walkSpeed: 2
@@ -3439,6 +3442,7 @@ MonoBehaviour:
   _interactionPromptUI: {fileID: 4864703074139747984}
   _player: {fileID: 5711563209960308849}
   _numFound: 0
+  rewardCanvas: {fileID: 0}
 --- !u!114 &4864703072629357862
 MonoBehaviour:
   m_ObjectHideFlags: 0
