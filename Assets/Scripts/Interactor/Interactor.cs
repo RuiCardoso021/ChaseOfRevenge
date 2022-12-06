@@ -14,7 +14,6 @@ public class Interactor : MonoBehaviour
     private readonly Collider[] _colliders = new Collider[3];
     [SerializeField] private int _numFound;
     private int index;
-    [SerializeField] private GameObject rewardCanvas;
 
     private IInteractable _interactable;
 
@@ -68,19 +67,6 @@ public class Interactor : MonoBehaviour
                         }
                     }
                     
-                }
-
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    if (_interactable.GetInteractionGameObject != null)
-                    {
-                        rewardCanvas.SetActive(true);
-                    }
-                    else
-                    {
-                        rewardCanvas.SetActive(false);
-                    }
-
                 }
             }
 

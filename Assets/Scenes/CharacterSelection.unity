@@ -4223,7 +4223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadedCharacter: []
-  _nextSceneName: TownCity
+  _nextSceneName: Explore
   loaderUI: {fileID: 1341789006}
   progressSlider: {fileID: 995928092}
 --- !u!1 &1341789006
