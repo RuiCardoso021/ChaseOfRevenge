@@ -386,7 +386,7 @@
             ],
             "description": "Get 10 Heal and pass turn",
             "mana":3,
-            "src": "sorceress"
+            "src": "generic"
         },
          {
             "id": 19,
@@ -426,7 +426,7 @@
             ],
             "description": "Enemy attacks has 3 reduced damage on next turn",
             "mana":1,
-            "src": "warrior"
+            "src": "generic"
         },
          {
             "id": 21,
@@ -486,7 +486,7 @@
             ],
             "description": "Enemy attacks has 10 reduced damage on next turn",
             "mana":2,
-            "src": "warrior"
+            "src": "generic"
         },
            {
             "id": 24,
@@ -578,7 +578,7 @@
             ],
             "description": "Full heal, all enemies receive 15 health ",
             "mana":4,
-            "src": "warrior"
+            "src": "generic"
         },
         {
             "id": 28,
@@ -618,7 +618,7 @@
             ],
             "description": "Gain 6 Mana on this turn",
             "mana":3,
-            "src": "warrior"
+            "src": "generic"
         },
         {
             "id": 30,
@@ -639,7 +639,47 @@
             "description": "Reduce 3 mana on next card",
             "mana": 1,
             "src": "generic"
-        }
+        },
+         {
+            "id": 30,
+            "type": "ARCH",
+            "name": "Threetime",
+            "rarity": 1,
+            "category": "Attack",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Damage", 
+                    "value": 2, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "4 damage to all enemie",
+            "mana":3,
+            "src": "archery"
+        },
+        {
+            "id": 31,
+            "type": "ARCH",
+            "name": "Twotime",
+            "rarity": 1,
+            "category": "Attack",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Damage", 
+                    "value": 1, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "3 damage to all enemie",
+            "mana":3,
+            "src": "archery"
+       }
     ]
 }
 
