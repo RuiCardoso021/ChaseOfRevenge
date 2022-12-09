@@ -10,6 +10,7 @@ public class DataTransferScene : MonoBehaviour
 
     public string LastSceneName;
     public string CurrentSceneName;
+    public GameObject Spawn;
 
     // Start is called before the first frame update
     void Start()

@@ -64,11 +64,14 @@ public class TransferGameObject : MonoBehaviour
 
     public void BackToScene()
     {
-        if (DataTransferScene.Instance != null)
-        {
-            _nextSceneName = DataTransferScene.Instance.LastSceneName;
-            LoadNextScene();
-        }
+        LoadedCharacter.Add(GameObject.Find(Global.findPlayer));
+        LoadNextScene();
+        //SceneManager.LoadScene("TownCity");
+        //if (DataTransferScene.Instance != null)
+        //{
+        //    _nextSceneName = DataTransferScene.Instance.LastSceneName;
+        //    LoadNextScene();
+        //}
     }
 
     public void ReloadScene()

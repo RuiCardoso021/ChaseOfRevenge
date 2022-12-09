@@ -15,6 +15,7 @@ public class RecibeGameObject : MonoBehaviour
     public GameObject[] spawnPoint;
     public bool activeMovimentPlayer = false;
     public bool DestroyObjectsTransfer = false;
+    [SerializeField] private bool savePrefab = false;
     [HideInInspector] public GameObject[] SpawnerList;
     [HideInInspector] public GameObject ObjectPrefab;
     [HideInInspector] public GameObject SpawnedObject;
@@ -38,13 +39,14 @@ public class RecibeGameObject : MonoBehaviour
         _player = GameObject.Find(Global.findPlayer);
         ObjectPrefab = GameObject.Find(Global.recivedObjects);
         SpawnerList = new GameObject[MAX_CHARACTERS_SPAWN];
-        ObjectPrefab.SetActive(false);
+        if (ObjectPrefab != null) ObjectPrefab.SetActive(false);
     }
 
     public void getComponentsOtherScene()
     {
         if (SpawnedObject == null && _player != null)
-        {
+        {       
+
             for (int i = 0; i < ObjectPrefab.transform.childCount; i++)
             {
                 GameObject child = ObjectPrefab.transform.GetChild(i).gameObject;
@@ -78,6 +80,7 @@ public class RecibeGameObject : MonoBehaviour
             }
 
             if (ObjectPrefab != null && DestroyObjectsTransfer) Destroy(ObjectPrefab, 3f);
+            
         }
     }
 

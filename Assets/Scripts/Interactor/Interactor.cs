@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -39,6 +40,7 @@ public class Interactor : MonoBehaviour
                     GameObject tempEnemy = _interactable.GetInteractionGameObject;
                     tempEnemy.name = Global.findEnemy;
                     TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
+                    PlayerSave.instance.SavePosAndRotPlayer();
                     //TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
                     TransferGameObject.Instance.LoadNextScene();
                 }

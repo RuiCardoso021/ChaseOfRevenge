@@ -73,10 +73,14 @@ public class Character_Prefab : MonoBehaviour
 
     private void validateHealthBar()
     {
-        if (_canvasLife.GetComponent<LifeManager_Prefab>() != null)
+        if (_canvasLife != null)
         {
-            _canvasLife.GetComponent<LifeManager_Prefab>()._healthbarPrefab.GetComponent<HealthBar_Prefab>().UpdateLife(Health, MaxHealth);
+            if (_canvasLife.GetComponent<LifeManager_Prefab>() != null)
+            {
+                _canvasLife.GetComponent<LifeManager_Prefab>()._healthbarPrefab.GetComponent<HealthBar_Prefab>().UpdateLife(Health, MaxHealth);
+            }
         }
+        
     }
 }
 
