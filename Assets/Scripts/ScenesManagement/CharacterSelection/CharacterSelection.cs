@@ -16,9 +16,10 @@ public class CharacterSelection : MonoBehaviour
 		index = PlayerPrefs.GetInt(Global.selectionObjects);
 		characters = new GameObject[transform.childCount];
 		inventoryManager = InventoryCanvas.GetComponent<InventoryManager>();
+		PlayerPrefs.DeleteAll();
 
-		//Add GameObjects for to list
-		for (int i = 0; i < transform.childCount; i++)
+        //Add GameObjects for to list
+        for (int i = 0; i < transform.childCount; i++)
 		{
 			characters[i] = transform.GetChild(i).gameObject;
 

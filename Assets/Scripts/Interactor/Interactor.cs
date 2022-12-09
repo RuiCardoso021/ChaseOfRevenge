@@ -40,7 +40,7 @@ public class Interactor : MonoBehaviour
                     GameObject tempEnemy = _interactable.GetInteractionGameObject;
                     tempEnemy.name = Global.findEnemy;
                     TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
-                    SpawnPointSave.instance.SavePosAndRotPlayer();
+                    Town_GameProgress.instance.SavePosAndRotPlayer();
                     //TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
                     TransferGameObject.Instance.LoadNextScene();
                 }

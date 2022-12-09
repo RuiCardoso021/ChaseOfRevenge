@@ -16,7 +16,7 @@ public class MiniMap : MonoBehaviour
     {
         if (targetPlayer == null)
         {
-            GameObject player = SpawnPointSave.instance.Player;
+            GameObject player = GameObject.Find(Global.findPlayer);
 
             if(player != null)
                 targetPlayer = player.transform;

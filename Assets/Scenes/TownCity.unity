@@ -18478,7 +18478,7 @@ PrefabInstance:
     - target: {fileID: 262516111038850099, guid: 7c4cb1599fc92c145b5ad1e4cc4d8176, type: 3}
       propertyPath: Teammates.Array.data[2]
       value: 
-      objectReference: {fileID: 1918240122}
+      objectReference: {fileID: 0}
     - target: {fileID: 1054902583916543840, guid: 7c4cb1599fc92c145b5ad1e4cc4d8176, type: 3}
       propertyPath: setAtiveCanvasLvl
       value: 1
@@ -27088,7 +27088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &750629650
 Transform:
   m_ObjectHideFlags: 0
@@ -29633,7 +29633,7 @@ MonoBehaviour:
   spawnPoint:
   - {fileID: 831917175}
   activeMovimentPlayer: 1
-  DestroyObjectsTransfer: 1
+  DestroyObjectsTransfer: 0
   savePrefab: 1
   SpawnerList: []
   ObjectPrefab: {fileID: 0}
@@ -59621,6 +59621,14 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 8400000, guid: 107824fe9fb6c964b80678201ce4bb52, type: 2}
+    - target: {fileID: 837036761657729430, guid: b97affd1e1d93994f842cd2677396bd5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 235
+      objectReference: {fileID: 0}
+    - target: {fileID: 837036761657729430, guid: b97affd1e1d93994f842cd2677396bd5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 235
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b97affd1e1d93994f842cd2677396bd5, type: 3}
 --- !u!1001 &1641480032

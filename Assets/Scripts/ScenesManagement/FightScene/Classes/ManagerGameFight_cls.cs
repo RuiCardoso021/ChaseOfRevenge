@@ -128,7 +128,7 @@ public class ManagerGameFight_cls {
         {
             Enemy_Prefab character = CharactersOnFight[GetIndexCharactersOnFight(item)].GetComponent<Enemy_Prefab>();
 
-            if (character != null)
+            if (character != null && !character.enemyIsDead)
             {
                 if (selection == 1) character.Health += value;
                 else if (selection == 2)
@@ -148,7 +148,10 @@ public class ManagerGameFight_cls {
     //selection - Whant data you can change (1 - Health / 2 - PermissedByAttack / 3 - Attack power)
     public void SetNewValuesOnRandomCharacter(int value, int selection)
     {
-        int random = Random.Range(0, CharactersICanAttack.Length);
+        int random;
+        do {
+            random = Random.Range(0, CharactersICanAttack.Length);
+        } while (CharactersICanAttack[random].GetComponent<Enemy_Prefab>().enemyIsDead);
 
         SetNewValuesOnCharacter(CharactersICanAttack[random], value, selection);
     }
@@ -167,7 +170,7 @@ public class ManagerGameFight_cls {
         {
             if(item != null)
             {
-                if (item.GetComponent<Enemy_Prefab>().Health <= 0) enemiesDead++;
+                if (item.GetComponent<Enemy_Prefab>().enemyIsDead) enemiesDead++;
             }
         }
 
