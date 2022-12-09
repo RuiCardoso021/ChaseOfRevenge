@@ -5,10 +5,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerSave : PlayerPrefsData
+public class SpawnPointSave : PlayerPrefsData
 {
-    public static PlayerSave instance;
+    public static SpawnPointSave instance;
     public GameObject Player;
+    public GameObject SpawnPoint;
 
     private void Start()
     {
@@ -19,14 +20,15 @@ public class PlayerSave : PlayerPrefsData
     {
         if (Player == null) Player = GameObject.Find(Global.findPlayer);
         //LoadPosAndRotPlayer();
+        //LoadPosAndRotPlayer();
     }
 
     public void SavePosAndRotPlayer()
     {
         if (Player != null)
         {
-            SaveVector3("PlayerPosition", Player.transform.localPosition);
-            SaveQuaternion("PlayerRotation", Player.transform.localRotation);
+            SaveVector3("PlayerPosition", Player.transform.position);
+            SaveQuaternion("PlayerRotation", Player.transform.rotation);
         }
     }
 
@@ -34,14 +36,14 @@ public class PlayerSave : PlayerPrefsData
     {
         Vector3 position;
         Quaternion rotation;
-        if (Player != null)
+        if (SpawnPoint != null)
         {
             position = LoadVector3("PlayerPosition");
             rotation = LoadQuaternion("PlayerRotation");
             if (position != null && rotation != null)
             {
-                Player.transform.localPosition = position;
-                Player.transform.localRotation = rotation;
+                SpawnPoint.transform.position = position;
+                SpawnPoint.transform.rotation = rotation;
             }
         }
     }

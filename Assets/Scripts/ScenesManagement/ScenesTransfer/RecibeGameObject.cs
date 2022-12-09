@@ -40,6 +40,7 @@ public class RecibeGameObject : MonoBehaviour
         ObjectPrefab = GameObject.Find(Global.recivedObjects);
         SpawnerList = new GameObject[MAX_CHARACTERS_SPAWN];
         if (ObjectPrefab != null) ObjectPrefab.SetActive(false);
+        if (SpawnPointSave.instance != null) SpawnPointSave.instance.LoadPosAndRotPlayer();
     }
 
     public void getComponentsOtherScene()

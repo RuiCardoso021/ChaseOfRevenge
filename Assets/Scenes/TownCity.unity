@@ -397,7 +397,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14133791}
-  m_LocalRotation: {x: 0.29157948, y: 0.17369148, z: -0.05392927, w: 0.93909764}
+  m_LocalRotation: {x: 0.29157948, y: 0.17369147, z: -0.053929288, w: 0.93909764}
   m_LocalPosition: {x: -1.8564667, y: 3.0800002, z: -4.617774}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5767,7 +5767,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1588235, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -8409,7 +8409,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1588235, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -10222,7 +10222,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1588235, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -23711,6 +23711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LastSceneName: 
   CurrentSceneName: 
+  Spawn: {fileID: 0}
 --- !u!1001 &638214906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27087,7 +27088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &750629650
 Transform:
   m_ObjectHideFlags: 0
@@ -29609,6 +29610,7 @@ GameObject:
   - component: {fileID: 831917177}
   - component: {fileID: 831917176}
   - component: {fileID: 831917178}
+  - component: {fileID: 831917179}
   m_Layer: 0
   m_Name: Play
   m_TagString: Untagged
@@ -29632,6 +29634,7 @@ MonoBehaviour:
   - {fileID: 831917175}
   activeMovimentPlayer: 1
   DestroyObjectsTransfer: 1
+  savePrefab: 1
   SpawnerList: []
   ObjectPrefab: {fileID: 0}
   SpawnedObject: {fileID: 0}
@@ -29667,6 +29670,22 @@ MonoBehaviour:
   _nextSceneName: FightScene
   loaderUI: {fileID: 579191844}
   progressSlider: {fileID: 433754800}
+--- !u!114 &831917179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831917175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088ab1b9a2ed8fe40b5f4e08db826ec8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extensionType: 0
+  sceneID: 0
+  Player: {fileID: 0}
+  SpawnPoint: {fileID: 831917175}
 --- !u!1001 &835372478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64324,7 +64343,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1588235, y: 1}
+    m_SensorSize: {x: 1, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
