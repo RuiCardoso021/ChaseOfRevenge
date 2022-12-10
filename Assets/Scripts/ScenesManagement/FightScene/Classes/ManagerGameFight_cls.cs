@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.Progress;
 using Random = UnityEngine.Random;
@@ -16,17 +17,39 @@ public class ManagerGameFight_cls {
 
     public void changeCharacters()
     {
-        CurrentCharacter = NextCharacter;
-        NextCharacter = CharactersOnFight[ValidationNextIndex(GetIndexCharactersOnFight(CurrentCharacter)+1)];
+
+        if (NextCharacter.GetComponent<Enemy_Prefab>() != null && NextCharacter.GetComponent<CircleSelection_Prefab>())
+        {
+            if (NextCharacter.GetComponent<Enemy_Prefab>().enemyIsDead)
+            {
+                NextCharacter.GetComponent<CircleSelection_Prefab>().setActive = false;
+                NextCharacter = CharactersOnFight[GetNextIndexCharactersOnFight(NextCharacter)];
+                NextCharacter.GetComponent<CircleSelection_Prefab>().setActive = true;
+            }
+        }
     }
 
-    //return first index if index to send it is invalid
-    private int ValidationNextIndex(int index)
+    //return next index if existe gameobject to send
+    private int GetNextIndexCharactersOnFight(GameObject gameObject)
     {
-        if (index > CharactersOnFight.Length)
-            index = 0;
+        int index = GetIndexCharactersOnFight(gameObject);
+        int nextIndex = index;
+        
+        do
+        {
+            nextIndex++;
+            if (nextIndex >= CharactersOnFight.Length) nextIndex = 1;
+        } while (CharactersOnFight[nextIndex] == null);
 
-        return index;
+
+        for (int i = 1; i < CharactersOnFight.Length; i++)
+        {
+            if (CharactersOnFight[i] != null)
+                if (i == nextIndex) return i;
+        }
+
+
+        return -1;
     }
 
     //return index if existe gameobject to send

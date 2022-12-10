@@ -18,8 +18,6 @@ public class Enemy_Config_FightScene_Prefab : MonoBehaviour
         CircleSelection = GetComponent<CircleSelection_Prefab>();
     }
 
-
-
     private void OnMouseDown()
     {
         if (ManagerGameFight.Manager != null && !GetComponent<Enemy_Prefab>().enemyIsDead)

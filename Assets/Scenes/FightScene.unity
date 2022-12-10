@@ -3813,7 +3813,6 @@ GameObject:
   - component: {fileID: 1122245174}
   - component: {fileID: 1122245177}
   - component: {fileID: 1122245178}
-  - component: {fileID: 1122245181}
   - component: {fileID: 1122245182}
   - component: {fileID: 1122245183}
   m_Layer: 0
@@ -3921,18 +3920,6 @@ MonoBehaviour:
   ObjectPrefab: {fileID: 0}
   SpawnedObject: {fileID: 0}
   spawnEnemiesCount: 2
---- !u!114 &1122245181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1122245168}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d22254cf6d7fd1b458590186cdeff38a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1122245182
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -58,6 +58,8 @@ public class ManagerGameFight : MonoBehaviour
     {
         if (Manager.CharactersOnFight != null)
         {
+            Manager.changeCharacters();
+
             foreach (GameObject gm in Manager.CharactersOnFight)
             {  
                 if (gm != null)
