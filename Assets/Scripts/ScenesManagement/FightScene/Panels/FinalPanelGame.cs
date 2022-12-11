@@ -28,11 +28,15 @@ public class FinalPanelGame : MonoBehaviour
     }
 
     public void FightOutcome()
-    {   
+    {
         if (ManagerGameFight.Instance.Manager.PlayerIsDead() && activePanel)
             ActivePanel(PanelLose);
         else if (ManagerGameFight.Instance.Manager.EnemiesIsDead() && activePanel)
+        {
             ActivePanel(PanelWin);
+            UnblockMapAreas.Instance.FightWinCount();
+            //UnblockMapAreas.Instance.UnblockArea();
+        }
     }
 
     private void ActivePanel(GameObject panel)
