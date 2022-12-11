@@ -155,6 +155,8 @@ public class GamePlayFightScene : MonoBehaviour
 
             if (_cardsToPlay.CardsOnHand.Count == 0) _cardsToPlay.getCards = false;
 
+
+
         }
     }
 
@@ -165,12 +167,22 @@ public class GamePlayFightScene : MonoBehaviour
         {
             if (item != null)
             {
-                if (item.GetComponent<Enemy_Prefab>().PermissedByAttack && item.GetComponent<Enemy_Prefab>().MaxAttack > 1)
-                {
+                Enemy_Prefab enemy_Prefab = item.GetComponent<Enemy_Prefab>();
 
-                    StartCoroutine(SetAttackEnemy(item, time));
-                    time += 1.2f;
-                }   
+                if (!enemy_Prefab.enemyIsDead)
+                {
+                    if (enemy_Prefab.PermissedByAttack && enemy_Prefab.MaxAttack > 1)
+                    {
+
+                        StartCoroutine(SetAttackEnemy(item, time));
+                        time += 1.2f;
+                    }
+                    else
+                    {
+                        enemy_Prefab.PermissedByAttack = true;
+                        enemy_Prefab.setInicialMinAndMaxAttack();
+                    }
+                }
             }
         }
 

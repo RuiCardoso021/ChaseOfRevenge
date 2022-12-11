@@ -23,6 +23,7 @@ public class Enemy_Prefab : MonoBehaviour
     public int MinAttack;
     public int MaxAttack;
     public Sprite ImageProfile;
+    public bool enemyIsDead;
     private Animator _animator;
 
     // Start is called before the first frame update
@@ -32,6 +33,7 @@ public class Enemy_Prefab : MonoBehaviour
         HeightEnemy = GetComponent<CapsuleCollider>().height;
         HealthBar = new HealthBar_cls(SceneManager.GetActiveScene().name);
         MaxHealth = Health;
+        enemyIsDead = false;
         PermissedByAttack = true;
         InicialMinAttack = MinAttack;
         InicialMaxAttack = MaxAttack;
@@ -68,7 +70,7 @@ public class Enemy_Prefab : MonoBehaviour
 
     private void HealthValidation()
     {
-        if (Health < 0) Health = 0;
+        if (Health <= 0) { Health = 0; enemyIsDead = true; }
         if (Health > MaxHealth) Health = MaxHealth;
     }
 

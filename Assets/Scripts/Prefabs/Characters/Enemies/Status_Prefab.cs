@@ -8,6 +8,7 @@ public class Status_Prefab : MonoBehaviour
 {
     private Camera _mainCam;
     [SerializeField] private GameObject _characterPrefab;
+    [SerializeField] private GameObject status;
     [SerializeField] private TextMeshProUGUI _textName;
     [SerializeField] private TextMeshProUGUI _textRangeAttack;
     [SerializeField] private TextMeshProUGUI _textLife;
@@ -24,13 +25,13 @@ public class Status_Prefab : MonoBehaviour
         string _nameScene = SceneManager.GetActiveScene().name;
         if (_nameScene == "FightScene")
         {
-            if (this.gameObject.activeSelf == true)
-                this.gameObject.SetActive(false);
+            if (status.activeSelf == true)
+                status.SetActive(false);
         }
         else
         {
-            if (this.gameObject.activeSelf == false)
-                this.gameObject.SetActive(true);
+            if (status.activeSelf == false)
+                status.SetActive(true);
 
             UpdateRotation();
         }

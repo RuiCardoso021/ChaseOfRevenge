@@ -15,7 +15,6 @@ public class RecibeGameObject : MonoBehaviour
     public GameObject[] spawnPoint;
     public bool activeMovimentPlayer = false;
     public bool DestroyObjectsTransfer = false;
-    [SerializeField] private bool savePrefab = false;
     [HideInInspector] public GameObject[] SpawnerList;
     [HideInInspector] public GameObject ObjectPrefab;
     [HideInInspector] public GameObject SpawnedObject;
@@ -40,6 +39,7 @@ public class RecibeGameObject : MonoBehaviour
         ObjectPrefab = GameObject.Find(Global.recivedObjects);
         SpawnerList = new GameObject[MAX_CHARACTERS_SPAWN];
         if (ObjectPrefab != null) ObjectPrefab.SetActive(false);
+        if (Town_GameProgress.instance != null) Town_GameProgress.instance.LoadPosAndRotPlayer();
     }
 
     public void getComponentsOtherScene()

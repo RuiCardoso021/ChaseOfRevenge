@@ -5,10 +5,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerSave : PlayerPrefsData
+public class Town_GameProgress : PlayerPrefsData
 {
-    public static PlayerSave instance;
+    public static Town_GameProgress instance;
     public GameObject Player;
+    public GameObject SpawnPoint;
 
     private void Start()
     {
@@ -18,15 +19,14 @@ public class PlayerSave : PlayerPrefsData
     private void Update()
     {
         if (Player == null) Player = GameObject.Find(Global.findPlayer);
-        //LoadPosAndRotPlayer();
     }
 
     public void SavePosAndRotPlayer()
     {
         if (Player != null)
         {
-            SaveVector3("PlayerPosition", Player.transform.localPosition);
-            SaveQuaternion("PlayerRotation", Player.transform.localRotation);
+            SaveVector3("PlayerPosition", Player.transform.position);
+            SaveQuaternion("PlayerRotation", Player.transform.rotation);
         }
     }
 
@@ -34,14 +34,14 @@ public class PlayerSave : PlayerPrefsData
     {
         Vector3 position;
         Quaternion rotation;
-        if (Player != null)
+        if (SpawnPoint != null)
         {
             position = LoadVector3("PlayerPosition");
             rotation = LoadQuaternion("PlayerRotation");
-            if (position != null && rotation != null)
+            if (position != Vector3.zero && rotation != new Quaternion(0f,0f,0f,0f))
             {
-                Player.transform.localPosition = position;
-                Player.transform.localRotation = rotation;
+                SpawnPoint.transform.position = position;
+                SpawnPoint.transform.rotation = rotation;
             }
         }
     }
