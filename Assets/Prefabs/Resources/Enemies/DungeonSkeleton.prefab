@@ -769,10 +769,11 @@ MonoBehaviour:
   - {fileID: 0}
   Name: DungeonSkeleton
   ClassType: Enemy
-  Health: 30
+  Health: 5
   MinAttack: 1
-  MaxAttack: 4
+  MaxAttack: 3
   ImageProfile: {fileID: 0}
+  enemyIsDead: 0
 --- !u!114 &8383636333524552468
 MonoBehaviour:
   m_ObjectHideFlags: 0
