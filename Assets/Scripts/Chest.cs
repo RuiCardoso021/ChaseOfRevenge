@@ -5,6 +5,7 @@ public class Chest : MonoBehaviour
     //public WeightedRandomList<Transform> cardTable;
     [SerializeField] private GameObject chestPanel;
     public GameObject chest;
+    InventoryManager inventoryManager;
 
     void Start()
     {
@@ -31,5 +32,10 @@ public class Chest : MonoBehaviour
     public void CloseChest()
     {
         chestPanel.SetActive(false);
+    }
+
+    public void AddCardToList()
+    {
+        inventoryManager.cards2play.Add(gameObject);
     }
 }
