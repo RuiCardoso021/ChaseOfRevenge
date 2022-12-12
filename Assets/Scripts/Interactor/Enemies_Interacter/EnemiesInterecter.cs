@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DungeonSkeleton : MonoBehaviour, IInteractable
+public class EnemiesInterecter : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject _enemy;
     [SerializeField] private string _prompt;

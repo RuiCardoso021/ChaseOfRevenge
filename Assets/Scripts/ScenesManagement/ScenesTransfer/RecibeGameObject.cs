@@ -115,6 +115,15 @@ public class RecibeGameObject : MonoBehaviour
             case var value when value == Global.DungeonSkeleton:
                 gm = Resources.Load(Global.linkToDungeonSkeleton) as GameObject;
                 break;
+            case var value when value == Global.Orc:
+                gm = Resources.Load(Global.linkToOrc) as GameObject;
+                break;
+            case var value when value == Global.Pumpkin:
+                gm = Resources.Load(Global.linkToPumpkin) as GameObject;
+                break;
+            case var value when value == Global.Boss:
+                gm = Resources.Load(Global.linkToBoss) as GameObject;
+                break;
         }
 
         return gm;

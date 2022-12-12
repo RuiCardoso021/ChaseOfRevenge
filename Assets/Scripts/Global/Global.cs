@@ -18,6 +18,12 @@ public static class Global
     //enemies
     public static string DungeonSkeleton = "DungeonSkeleton";
     public static string linkToDungeonSkeleton = "Enemies/DungeonSkeleton";
+    public static string Orc = "OrcWolfRider";
+    public static string linkToOrc = "Enemies/Orc_Wolfrider";
+    public static string Pumpkin = "PumpkinMan";
+    public static string linkToPumpkin = "Enemies/pumpkin";
+    public static string Boss = "Boss";
+    public static string linkToBoss = "Enemies/Maw J Laygo";
 
     // tipos de carta de personagem
     public static string magePlayerType = "SORCE";
