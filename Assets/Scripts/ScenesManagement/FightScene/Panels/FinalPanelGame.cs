@@ -34,7 +34,8 @@ public class FinalPanelGame : MonoBehaviour
         else if (ManagerGameFight.Instance.Manager.EnemiesIsDead() && activePanel)
         {
             ActivePanel(PanelWin);
-            UnblockMapAreas.Instance.FightWinCount();
+            BlockSave.instance.saveWins();
+            //UnblockMapAreas.Instance.FightWinCount();
             //UnblockMapAreas.Instance.UnblockArea();
         }
     }

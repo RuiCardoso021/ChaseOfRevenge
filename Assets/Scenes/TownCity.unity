@@ -11796,6 +11796,7 @@ GameObject:
   - component: {fileID: 289474945}
   - component: {fileID: 289474944}
   - component: {fileID: 289474943}
+  - component: {fileID: 289474947}
   m_Layer: 0
   m_Name: AreaBlocker (1)
   m_TagString: Untagged
@@ -11881,6 +11882,19 @@ Transform:
   m_Father: {fileID: 1274470540}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &289474947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289474942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df81111e7271974ba4af5a71b03677d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objective: 2
 --- !u!1001 &289646395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23530,12 +23544,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606120126}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 97.15543, y: -54.076813, z: 123.37767}
+  m_LocalPosition: {x: 94.195435, y: -54.076813, z: 123.37767}
   m_LocalScale: {x: 17.851786, y: 3.0822, z: 2.0304}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1274470540}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &606120131
 MonoBehaviour:
@@ -23546,17 +23560,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 606120126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d05bb658a6d266e42b2cac36e000ea64, type: 3}
+  m_Script: {fileID: 11500000, guid: 6df81111e7271974ba4af5a71b03677d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaBlocker1: {fileID: 606120126}
-  areaBlocker2: {fileID: 289474942}
-  areaBlocker3: {fileID: 1652419081}
-  bossSpawner: {fileID: 1578959270}
-  Boss: {fileID: 1954835321359878373, guid: 98c9dfaaa16bf9d44b18d5029e2833eb, type: 3}
-  firstObjective: 1
-  secondObjective: 2
-  thirdObjective: 3
+  objective: 1
 --- !u!1001 &607775438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30879,6 +30886,7 @@ GameObject:
   - component: {fileID: 831917178}
   - component: {fileID: 831917179}
   - component: {fileID: 831917180}
+  - component: {fileID: 831917181}
   m_Layer: 0
   m_Name: Play
   m_TagString: Untagged
@@ -30965,14 +30973,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05bb658a6d266e42b2cac36e000ea64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaBlocker1: {fileID: 606120126}
-  areaBlocker2: {fileID: 289474942}
-  areaBlocker3: {fileID: 1652419081}
-  bossSpawner: {fileID: 0}
-  Boss: {fileID: 0}
-  firstObjective: 1
-  secondObjective: 2
-  thirdObjective: 3
+  areasBlocker: []
+--- !u!114 &831917181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831917175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83cecb63762c52d47a6656d080eb4572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extensionType: 0
+  sceneID: 0
 --- !u!1001 &835372478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48882,6 +48897,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1274470540}
+  - component: {fileID: 1274470541}
   m_Layer: 0
   m_Name: AreasBlock
   m_TagString: Untagged
@@ -48901,12 +48917,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1652419085}
-  - {fileID: 289474946}
   - {fileID: 606120130}
+  - {fileID: 289474946}
+  - {fileID: 1652419085}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1274470541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274470539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05bb658a6d266e42b2cac36e000ea64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  areasBlocker:
+  - {fileID: 606120126}
+  - {fileID: 289474942}
+  - {fileID: 1652419081}
 --- !u!1001 &1274592142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62921,6 +62953,7 @@ GameObject:
   - component: {fileID: 1652419084}
   - component: {fileID: 1652419083}
   - component: {fileID: 1652419082}
+  - component: {fileID: 1652419086}
   m_Layer: 0
   m_Name: AreaBlocker (2)
   m_TagString: Untagged
@@ -63004,8 +63037,21 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1274470540}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1652419086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1652419081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df81111e7271974ba4af5a71b03677d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objective: 3
 --- !u!4 &1654677568 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8715690842050147842, guid: 3d264bce8652bb649ad59ee0c6a368cc, type: 3}

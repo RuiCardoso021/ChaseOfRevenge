@@ -3815,6 +3815,7 @@ GameObject:
   - component: {fileID: 1122245178}
   - component: {fileID: 1122245182}
   - component: {fileID: 1122245183}
+  - component: {fileID: 1122245184}
   m_Layer: 0
   m_Name: GamePlay
   m_TagString: Untagged
@@ -3964,6 +3965,20 @@ MonoBehaviour:
     description: 
     mana: 0
     src: 
+--- !u!114 &1122245184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122245168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83cecb63762c52d47a6656d080eb4572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extensionType: 0
+  sceneID: 0
 --- !u!4 &1130418540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 940d55d4117386f4f9398ea3ff52d4cd, type: 3}
