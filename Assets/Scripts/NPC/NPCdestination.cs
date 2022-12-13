@@ -16,7 +16,7 @@ public class NPCdestination : MonoBehaviour
             }
             if (pivotPoint == 4)
             {
-                this.gameObject.transform.position = new Vector3(87, 44, 186);
+                this.gameObject.transform.position = new Vector3(77, 44, 181);
                 pivotPoint = 5;
             }
             if (pivotPoint == 3)
