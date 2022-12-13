@@ -16,27 +16,27 @@ public class NPCdestination : MonoBehaviour
             }
             if (pivotPoint == 4)
             {
-                this.gameObject.transform.position = new Vector3(4, 1.44f, -1);
+                this.gameObject.transform.position = new Vector3(87, 44, 186);
                 pivotPoint = 5;
             }
             if (pivotPoint == 3)
             {
-                this.gameObject.transform.position = new Vector3(2, 1.44f, -1);
+                this.gameObject.transform.position = new Vector3(69, 44, 185);
                 pivotPoint = 4;
             }
             if (pivotPoint == 2)
             {
-                this.gameObject.transform.position = new Vector3(-13, 1.44f, -1);
+                this.gameObject.transform.position = new Vector3(64, 44, 171);
                 pivotPoint = 3;
             }
             if (pivotPoint == 1)
             {
-                this.gameObject.transform.position = new Vector3(-2, 1.44f, 5);
+                this.gameObject.transform.position = new Vector3(78, 44, 171);
                 pivotPoint = 2;
             }
             if (pivotPoint == 0)
             {
-                this.gameObject.transform.position = new Vector3(-13, 1.44f, -1);
+                this.gameObject.transform.position = new Vector3(79, 44, 160);
                 pivotPoint = 1;
             }
         }
