@@ -38,7 +38,7 @@
             [
                 { 
                     "tag": "Damage", 
-                    "value": 2, 
+                    "value": 4, 
                     "effect_quantity": 1, 
                     "type_effect": "Other"
                 }
@@ -272,7 +272,7 @@
             [
                 { 
                     "tag": "Damage", 
-                    "value": 8, 
+                    "value": 6, 
                     "effect_quantity": 0, 
                     "type_effect": "Other"
                 }
@@ -293,12 +293,12 @@
             [
                 { 
                     "tag": "Damage", 
-                    "value": 2, 
+                    "value": 3, 
                     "effect_quantity": 0, 
                     "type_effect": "Other"
                 }
             ],
-            "description": "2 damage to all enemies",
+            "description": "3 damage to all enemies",
             "mana":1,
             "src": "sorceress"
         },
@@ -313,12 +313,12 @@
             [
                 { 
                     "tag": "DeBuffEnemy", 
-                    "value": 1, 
+                    "value": 3, 
                     "effect_quantity": 1, 
                     "type_effect": "Other"
                 }
             ],
-            "description": "Enemy attacks has 1 damage reduced on next turn",
+            "description": "Enemy attacks has 3 damage reduced on next turn",
             "mana":1,
             "src": "sorceress"
         },
@@ -353,12 +353,12 @@
             [
                 { 
                     "tag": "Damage", 
-                    "value": 3, 
+                    "value": 5, 
                     "effect_quantity": -1, 
                     "type_effect": "Other"
                 }
             ],
-            "description": "3 damage to a random enemy",
+            "description": "5 damage to a random enemy",
             "mana":2,
             "src": "sorceress"
         },
@@ -679,7 +679,27 @@
             "description": "3 damage to all enemie",
             "mana":3,
             "src": "archery"
-       }
+       }, 
+       {
+            "id": 32,
+            "type": "SORCE",
+            "name": "Target",
+            "rarity": 1,
+            "category": "Attack",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Damage", 
+                    "value": 7, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "7 damage to a selected enemy",
+            "mana":3,
+            "src": "sorceress"
+        }
     ]
 }
 
