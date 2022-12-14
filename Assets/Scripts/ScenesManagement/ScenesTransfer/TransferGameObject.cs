@@ -64,6 +64,7 @@ public class TransferGameObject : MonoBehaviour
 
     public void BackToScene()
     {
+        Time.timeScale = 1;
         LoadedCharacter.Add(GameObject.Find(Global.findPlayer));
         LoadNextScene();
         Destroy(RecibeGameObject.Instance.ObjectPrefab);
@@ -71,6 +72,7 @@ public class TransferGameObject : MonoBehaviour
 
     public void ReloadScene()
     {
+        Time.timeScale = 1;
         RecibeGameObject.Instance.ObjectPrefab.SetActive(true);
         DontDestroyOnLoad(RecibeGameObject.Instance.ObjectPrefab);
         SceneManager.LoadScene(DataTransferScene.Instance.CurrentSceneName);

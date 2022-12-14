@@ -24,17 +24,20 @@ public class CardsAnimationFight : MonoBehaviour, IPointerEnterHandler, IPointer
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        mouse_over = true;
+        if (Time.timeScale != 0)
+            mouse_over = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        mouse_over = false;
+        if (Time.timeScale != 0)
+            mouse_over = false;
 
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        mouse_click = true;
+        if (Time.timeScale != 0)
+            mouse_click = true;
     }
 }

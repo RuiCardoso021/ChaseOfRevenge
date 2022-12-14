@@ -41,7 +41,8 @@ public class GamePlayFightScene : MonoBehaviour
                 enemy = ManagerGameFight.Instance.Manager.NextCharacter.GetComponent<Enemy_Prefab>();
 
                 //codigo rodado enquanto não existir um ecrã de vitoria ou derrota
-                MechanicsCards();
+                if (Time.timeScale != 0)
+                    MechanicsCards();
             }
         }
        

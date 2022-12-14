@@ -8,6 +8,8 @@ public class InventoryManager : MonoBehaviour
 {
     [SerializeField] private GameObject contentCards2Play;
     [SerializeField] private GameObject contentInventory;
+    [SerializeField] private TextMeshProUGUI count_ContentCards2Play;
+    [SerializeField] private TextMeshProUGUI count_ContentInventory;
     public Deck deck;
     public TextAsset jsonFile;
 
@@ -17,6 +19,13 @@ public class InventoryManager : MonoBehaviour
     public GameObject Player;
 
     private void Start()
+    {
+
+        Inicialize();
+
+    }
+
+    public void Inicialize()
     {
         deck = Player.GetComponent<Character_Prefab>().myDeck;
         //cardsOnInventory.cards = new Card[200];
@@ -29,8 +38,41 @@ public class InventoryManager : MonoBehaviour
     private void Update()
     {
         Inventory inventory = GetComponent<Inventory>();
-        if(inventory != null && inventory.isOpen)
+        if (inventory != null && inventory.isOpen)
+        {
             ChangeCardsInInventory();
+            setDataCount();
+        }
+    }
+
+    public void setDataCount()
+    {
+        if (count_ContentCards2Play != null && count_ContentInventory != null)
+        {
+            count_ContentCards2Play.text = CountCards(contentCards2Play).ToString();
+            count_ContentInventory.text = CountCards(contentInventory).ToString();
+        }
+
+
+    }
+
+    //0 - cardsToPlay && 1 - Inventory
+    public int CountCards(GameObject content)
+    {
+        int count = 0;
+        if (cards2play != null)
+        {
+            foreach (GameObject go in cards2play)
+            {
+                if (go != null)
+                {
+                    if (go.transform.parent == content.transform)
+                        count++;
+                }
+            }
+        }
+       
+        return count;
     }
 
     // primeira lista com as cartas todas
@@ -56,20 +98,23 @@ public class InventoryManager : MonoBehaviour
     // escolha das cartas para levar para a fight
     public void ChangeCardsInInventory()
     {
-        foreach (GameObject go in cards2play)
+
+        if (cards2play != null)
         {
-            if (go != null)
+            foreach (GameObject go in cards2play)
             {
-                if (go.GetComponent<InventoryCard_cls>().transferItemToInventory)
-                    go.transform.parent = contentInventory.transform;
-                
-                else
-                    go.transform.parent = contentCards2Play.transform;     
+                if (go != null)
+                {
+                    if (go.GetComponent<InventoryCard_cls>().transferItemToInventory)
+                        go.transform.parent = contentInventory.transform;
+
+                    else
+                        go.transform.parent = contentCards2Play.transform;
+                }
             }
         }
+      
     }
-
-
 
     public void saveDeck()
     {

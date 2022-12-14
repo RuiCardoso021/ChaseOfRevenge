@@ -3416,7 +3416,7 @@ MonoBehaviour:
   _3dCameraObject: {fileID: 4864703073175597481}
   moveSpeed: 5
   walkSpeed: 2
-  runSpeed: 6
+  runSpeed: 40
   gravity: -9.81
   activePlayer: 1
 --- !u!114 &4864703072629357865
@@ -5447,6 +5447,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contentCards2Play: {fileID: 3359826874176288415}
   contentInventory: {fileID: 2186353288693367120}
+  count_ContentCards2Play: {fileID: 0}
+  count_ContentInventory: {fileID: 0}
   deck:
     cards: []
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}

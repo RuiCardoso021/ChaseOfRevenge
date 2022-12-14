@@ -34,11 +34,15 @@ public class RoundTurn : MonoBehaviour
 
     //chenge next turn
     public void NextTurn(){
-        myTurn = !myTurn;
-        if (myTurn)
+
+        if (Time.timeScale != 0)
         {
-            ManagerGameFight.Instance.AddManagerOnHistoric(Round);
-            Round++;
+            myTurn = !myTurn;
+            if (myTurn)
+            {
+                ManagerGameFight.Instance.AddManagerOnHistoric(Round);
+                Round++;
+            }
         }
     }
 

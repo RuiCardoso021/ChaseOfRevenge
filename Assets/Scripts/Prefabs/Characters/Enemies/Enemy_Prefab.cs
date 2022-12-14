@@ -17,6 +17,7 @@ public class Enemy_Prefab : MonoBehaviour
     [HideInInspector] public float HeightEnemy;
 
     public GameObject[] Teammates = new GameObject[3];
+    public int id;
     public string Name;
     public string ClassType;
     public float Health;

@@ -29,8 +29,6 @@ public class CharacterSelection : MonoBehaviour
 		foreach (GameObject go in characters){
 			if (characters[index] == go){
 				go.SetActive(true);
-                inventoryManager.deck = go.GetComponent<Character_Prefab>().myDeck;
-                inventoryManager.FirstInventory();
             }
 			else{
 				go.SetActive(false);
@@ -42,17 +40,20 @@ public class CharacterSelection : MonoBehaviour
     {
 		if (CharacterInformation == null)
 			CharacterInformation = GameObject.Find("CharacterInformation");
+
 		if(CharacterInformation != null)
         {
             InteractionCharacterSelectionPanel Panel = CharacterInformation.GetComponent<InteractionCharacterSelectionPanel>();
 
-			if(Panel != null)
+			if(Panel != null && characters[index] != inventoryManager.Player)
 			{
                 Panel.Name = characters[index].GetComponent<Character_Prefab>().Name;
                 Panel.Health = characters[index].GetComponent<Character_Prefab>().Health;
                 Panel.Mana = characters[index].GetComponent<Character_Prefab>().Mana;
                 Panel.ClassType = characters[index].GetComponent<Character_Prefab>().ClassType;
                 Panel.ImageProfile = characters[index].GetComponent<Character_Prefab>().ImageProfile;
+				//inventoryManager.Player = characters[index];
+				//inventoryManager.Inicialize();
             }
 
 		}

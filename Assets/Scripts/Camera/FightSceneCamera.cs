@@ -18,7 +18,7 @@ public class FightSceneCamera : MonoBehaviour
         Instance = this;
         mainCamera = GetComponent<Camera>();
         currentPosition = mainCamera.transform.position;
-        finalPosition = new Vector3(-2.6f, 4.5f, -12f);
+        finalPosition = new Vector3(-2f, 5.5f, -12.5f);
         validation = true;
     }
 

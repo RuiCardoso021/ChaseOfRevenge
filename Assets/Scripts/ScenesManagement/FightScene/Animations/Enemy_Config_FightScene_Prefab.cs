@@ -20,11 +20,15 @@ public class Enemy_Config_FightScene_Prefab : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (ManagerGameFight.Manager != null && !GetComponent<Enemy_Prefab>().enemyIsDead)
+        if (Time.timeScale != 0)
         {
-            CircleSelection.setActive = true;
-            ManagerGameFight.Manager.NextCharacter = this.gameObject;
+            if (ManagerGameFight.Manager != null && !GetComponent<Enemy_Prefab>().enemyIsDead)
+            {
+                CircleSelection.setActive = true;
+                ManagerGameFight.Manager.NextCharacter = this.gameObject;
+            }
         }
+        
     }
    
 

@@ -38,7 +38,7 @@ public class ManagerGameFight : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        Vector2 hotSpot = new Vector2(_cursorTexture.width / 4, _cursorTexture.height / 4);
+        Vector2 hotSpot = new Vector2(_cursorTexture.width / 8, _cursorTexture.height / 8);
         Cursor.SetCursor(_cursorTexture, hotSpot, CursorMode.ForceSoftware);
         Invoke("Inicialization", DELAY_TO_PLAY_GAME);
     }
@@ -48,7 +48,8 @@ public class ManagerGameFight : MonoBehaviour
         //this permisse is active after method Invoke
         if (PermissedExecute)
         {
-            updateSelectionCharacter();
+            if (Time.timeScale != 0)
+                updateSelectionCharacter();
             //Debug.Log("Management: " + Manager.CurrentCharacter.GetComponent<Character_cls>().Health);
         }
     }
