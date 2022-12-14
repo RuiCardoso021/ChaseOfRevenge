@@ -669,6 +669,7 @@ GameObject:
   - component: {fileID: 262516111038850099}
   - component: {fileID: 8383636333524552468}
   - component: {fileID: 1054902583916543840}
+  - component: {fileID: -318699604293111342}
   m_Layer: 8
   m_Name: DungeonSkeleton
   m_TagString: Enemy
@@ -803,6 +804,18 @@ MonoBehaviour:
   height: -0.5
   gmFather: {fileID: 4591218618518783640}
   setAtiveCanvasLvl: 0
+--- !u!114 &-318699604293111342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4591218618518783714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a185db3934afd24aa70ba8993886dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4591218618518783716
 GameObject:
   m_ObjectHideFlags: 0
