@@ -49,28 +49,42 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         float moveZ = Input.GetAxis("Vertical");
+        float moveX = Input.GetAxis("Horizontal");
 
         // ground check
         isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, Ground);
+        
+        if (isGrounded && velocity.y < 0)
+        {
+            if (velocity.y < 0) velocity.y = 0f;
+        }
+
+        
+
+        moveDirection = new Vector3(moveX, 0, moveZ);
+        moveDirection = transform.TransformDirection(moveDirection);
+        controller.Move(moveDirection * Time.deltaTime * moveSpeed);
+
+        if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift) && moveZ > 0) Walk();
+
         if (isGrounded)
         {
-            if (velocity.y < 0) velocity.y = -2f;
-                         
-            moveDirection = new Vector3(0, 0, moveZ);
-            moveDirection = transform.TransformDirection(moveDirection);
 
-            if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift) && moveZ > 0) Walk();
-            if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift) && moveZ > 0) Run();
-            if (moveDirection == Vector3.zero) Idle();
-
-            moveDirection *= moveSpeed;
- 
+            if (moveDirection.z != 0 && Input.GetKey(KeyCode.LeftShift) && moveZ > 0) Run();
+            if (moveDirection.z == 0) Idle();
         }
-        if (moveZ > 0)
+
+        if (moveDirection != Vector3.zero)
         {
-            controller.Move(moveDirection * Time.deltaTime);
-            controller.Move(velocity * Time.deltaTime);
+            if (!Input.GetKey(KeyCode.LeftShift))
+                animator.SetInteger("Transition", 1);
+            transform.forward = Vector3.Slerp(transform.forward, moveDirection.normalized, Time.deltaTime * moveSpeed*2);
         }
+
+        velocity.y += gravity;
+        controller.Move(velocity * Time.deltaTime);
+
+
     }
 
     private void Idle()
