@@ -173,7 +173,6 @@ GameObject:
   - component: {fileID: 5863126154078675690}
   - component: {fileID: 6798632871965043238}
   - component: {fileID: 4492098178625122391}
-  - component: {fileID: 8825699678256126998}
   m_Layer: 8
   m_Name: Orc_Wolfrider
   m_TagString: Enemy
@@ -258,6 +257,7 @@ MonoBehaviour:
   - {fileID: 615894790869500439}
   - {fileID: 0}
   - {fileID: 0}
+  id: 0
   Name: OrcWolfRider
   ClassType: Enemy
   Health: 20
@@ -308,18 +308,6 @@ CapsuleCollider:
   m_Height: 2.011431
   m_Direction: 1
   m_Center: {x: 0, y: 0.99999994, z: 0.03465092}
---- !u!114 &8825699678256126998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 615894790869500439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a185db3934afd24aa70ba8993886dae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &615894790869500441
 GameObject:
   m_ObjectHideFlags: 0

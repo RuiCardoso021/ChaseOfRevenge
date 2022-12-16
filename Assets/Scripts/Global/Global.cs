@@ -71,6 +71,7 @@ public static class Global
     public static string linkToCanvasInteractEnemy = "CanvasInteractionsCharacters/CanvasInteractEnemy";
     public static string linkToHealthBar = "FightSceneComponents/HealthBar";
     public static string linkToInfoValuesCharacter = "FightSceneComponents/Info_values_characters";
+    public static string linkToDeadEffect = "";
 
     //scenes name
     public static string FightScene = "FightScene";

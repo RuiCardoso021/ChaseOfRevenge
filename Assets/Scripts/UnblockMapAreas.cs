@@ -7,11 +7,11 @@ public class UnblockMapAreas : MonoBehaviour
 {
     public GameObject[] areasBlocker;
     //public GameObject panelWinGame;
-    private int wins;
+    public int wins;
     
     void Start()
     {
-        wins = BlockSave.instance.getWins();
+        wins = Save_BlockSave.instance.getWins();
     }
 
     private void Update()

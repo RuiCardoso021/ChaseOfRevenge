@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class TransferGameObject : MonoBehaviour
 {
@@ -76,6 +77,29 @@ public class TransferGameObject : MonoBehaviour
         RecibeGameObject.Instance.ObjectPrefab.SetActive(true);
         DontDestroyOnLoad(RecibeGameObject.Instance.ObjectPrefab);
         SceneManager.LoadScene(DataTransferScene.Instance.CurrentSceneName);
+    }
+
+    public void ReloadTownScene()
+    {   
+        //PRECISO PASSAR A CLASSE E DAR INSTANCIA EM VEZ DE FAZER FINDPLAYER
+        //add Player;
+        LoadedCharacter.Add(GameObject.Find(Global.findPlayer));
+        
+        //createGameObject
+        GameObject gameObjectToSend = new GameObject();
+        gameObjectToSend.name = Global.recivedObjects;
+
+
+        SendDataFromOtherScene();
+
+        foreach (GameObject character in LoadedCharacter)
+        {
+            if (character != null)
+                character.transform.SetParent(gameObjectToSend.transform);
+        }
+        SendDataFromOtherScene();
+        DontDestroyOnLoad(gameObjectToSend);
+        SceneManager.LoadScene("TownCity");
     }
 
     private void SendDataFromOtherScene()

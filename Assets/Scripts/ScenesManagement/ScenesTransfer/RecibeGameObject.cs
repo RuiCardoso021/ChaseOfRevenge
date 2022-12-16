@@ -39,7 +39,19 @@ public class RecibeGameObject : MonoBehaviour
         ObjectPrefab = GameObject.Find(Global.recivedObjects);
         SpawnerList = new GameObject[MAX_CHARACTERS_SPAWN];
         if (ObjectPrefab != null) ObjectPrefab.SetActive(false);
-        if (Town_GameProgress.instance != null) Town_GameProgress.instance.LoadPosAndRotPlayer();
+        if (Save_Town_GameProgress.instance != null)
+        {
+            Save_Town_GameProgress town = Save_Town_GameProgress.instance;
+            if (town.GetPermissionLoad() == true)
+            {
+                town.SavePermissionLoad(false);
+                town.sceneID = 1;
+            }
+            else town.sceneID = 0;
+
+            Save_Town_GameProgress.instance.LoadPosAndRotPlayer();
+        }
+            
     }
 
     public void getComponentsOtherScene()

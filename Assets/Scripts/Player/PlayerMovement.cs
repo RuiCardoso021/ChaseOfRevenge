@@ -17,9 +17,9 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private bool isGrounded;
     private CharacterController controller;
+    private float moveSpeed;
 
     [SerializeField] private GameObject _3dCameraObject;
-    [SerializeField] private float moveSpeed;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
     [SerializeField] private float gravity;
@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        moveSpeed = walkSpeed;
         controller = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
 
