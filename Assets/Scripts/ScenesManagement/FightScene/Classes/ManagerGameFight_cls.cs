@@ -128,7 +128,7 @@ public class ManagerGameFight_cls {
 
             if (character != null)
             {
-                if (selection == 1) character.Health += value;
+                if (selection == 1) character.setValueHealth(value);
                 else if (selection == 2)
                 {
                     bool validation = false;
@@ -153,7 +153,10 @@ public class ManagerGameFight_cls {
 
             if (character != null && !character.enemyIsDead)
             {
-                if (selection == 1) character.Health += value;
+                if (selection == 1)
+                {
+                    character.setValueHealth(value);
+                }
                 else if (selection == 2)
                 {
                     bool validation = false;

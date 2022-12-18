@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
+using Newtonsoft.Json.Linq;
+using UnityEngine.UIElements;
 
 public class PlayerPrefsData : MonoBehaviour
 {
@@ -91,7 +93,7 @@ public class PlayerPrefsData : MonoBehaviour
         for (int x = 0; x < array.Length; x++)
         {
             PlayerPrefs.SetFloat(key + x + "" + sceneID, array[x]);
-            PlayerPrefs.SetInt("LengthFloat" + sceneID, length);
+            PlayerPrefs.SetInt(key + "Length" + sceneID, length);
         }
     }
 
@@ -100,7 +102,7 @@ public class PlayerPrefsData : MonoBehaviour
         for (int x = 0; x < array.Length; x++)
         {
             PlayerPrefs.SetInt(key + x + "" + sceneID, array[x]);
-            PlayerPrefs.SetInt("LengthInt" + sceneID, length);
+            PlayerPrefs.SetInt(key + "Length" + sceneID, length);
         }
     }
 
@@ -109,7 +111,7 @@ public class PlayerPrefsData : MonoBehaviour
         for (int x = 0; x < array.Length; x++)
         {
             PlayerPrefs.SetInt(key + x + "" + sceneID, Convert.ToInt32(array[x]));
-            PlayerPrefs.SetInt("LengthBool" + sceneID, length);
+            PlayerPrefs.SetInt(key + "Length" + sceneID, length);
         }
     }
 
@@ -118,7 +120,7 @@ public class PlayerPrefsData : MonoBehaviour
         for (int x = 0; x < array.Length; x++)
         {
             PlayerPrefs.SetString(key + x + "" + sceneID, array[x]);
-            PlayerPrefs.SetInt("LengthString" + sceneID, length);
+            PlayerPrefs.SetInt(key + "Length" + sceneID, length);
         }
     }
 
@@ -127,7 +129,7 @@ public class PlayerPrefsData : MonoBehaviour
         for (int x = 0; x < array.Length; x++)
         {
             PlayerPrefs.SetString(key + x + "" + sceneID, array[x].ToString());
-            PlayerPrefs.SetInt("LengthDouble" + sceneID, length);
+            PlayerPrefs.SetInt(key + "Length" + sceneID, length);
         }
     }
 
@@ -138,7 +140,7 @@ public class PlayerPrefsData : MonoBehaviour
             PlayerPrefs.SetFloat(key + x + "x" + sceneID, array[x].x);
             PlayerPrefs.SetFloat(key + x + "y" + sceneID, array[x].y);
             PlayerPrefs.SetFloat(key + x + "z" + sceneID, array[x].z);
-            PlayerPrefs.SetInt("LengthVector3" + sceneID, length);
+            PlayerPrefs.SetInt(key + "Length" + sceneID, length);
         }
     }
 
@@ -148,7 +150,7 @@ public class PlayerPrefsData : MonoBehaviour
         {
             PlayerPrefs.SetFloat(key + x + "x" + sceneID, array[x].x);
             PlayerPrefs.SetFloat(key + x + "y" + sceneID, array[x].y);
-            PlayerPrefs.SetInt("LengthVector2" + sceneID, length);
+            PlayerPrefs.SetInt(key + "Length" + sceneID, length);
         }
     }
 
@@ -160,7 +162,7 @@ public class PlayerPrefsData : MonoBehaviour
             PlayerPrefs.SetFloat(key + x + "y" + sceneID, array[x].y);
             PlayerPrefs.SetFloat(key + x + "z" + sceneID, array[x].z);
             PlayerPrefs.SetFloat(key + x + "w" + sceneID, array[x].w);
-            PlayerPrefs.SetInt("LengthQuaternion" + sceneID, length);
+            PlayerPrefs.SetInt(key + "Length" + sceneID, length);
         }
     }
 
@@ -218,7 +220,7 @@ public class PlayerPrefsData : MonoBehaviour
 
     public float[] LoadFloatArray(string key)
     {
-        float[] array = new float[PlayerPrefs.GetInt("LengthFloat" + sceneID)];
+        float[] array = new float[PlayerPrefs.GetInt(key + "Length" + sceneID)];
         for (int x = 0; x < array.Length; x++)
         {
             array[x] = PlayerPrefs.GetFloat(key + x + "" + sceneID);
@@ -228,7 +230,7 @@ public class PlayerPrefsData : MonoBehaviour
 
     public int[] LoadIntArray(string key)
     {
-        int[] array = new int[PlayerPrefs.GetInt("LengthInt" + sceneID)];
+        int[] array = new int[PlayerPrefs.GetInt(key + "Length" + sceneID)];
         for (int x = 0; x < array.Length; x++)
         {
             array[x] = PlayerPrefs.GetInt(key + x + "" + sceneID);
@@ -238,7 +240,7 @@ public class PlayerPrefsData : MonoBehaviour
 
     public bool[] LoadBoolArray(string key)
     {
-        bool[] array = new bool[PlayerPrefs.GetInt("LengthBool" + sceneID)];
+        bool[] array = new bool[PlayerPrefs.GetInt(key + "Length" + sceneID)];
         for (int x = 0; x < array.Length; x++)
         {
             array[x] = Convert.ToBoolean(PlayerPrefs.GetInt(key + x + "" + sceneID));
@@ -248,7 +250,7 @@ public class PlayerPrefsData : MonoBehaviour
 
     public string[] LoadStringArray(string key)
     {
-        string[] array = new string[PlayerPrefs.GetInt("LengthString" + sceneID)];
+        string[] array = new string[PlayerPrefs.GetInt(key + "Length" + sceneID)];
         for (int x = 0; x < array.Length; x++)
         {
             array[x] = PlayerPrefs.GetString(key + x + "" + sceneID);
@@ -258,7 +260,7 @@ public class PlayerPrefsData : MonoBehaviour
 
     public double[] LoadDoubleArray(string key)
     {
-        double[] array = new double[PlayerPrefs.GetInt("LengthDouble" + sceneID)];
+        double[] array = new double[PlayerPrefs.GetInt(key + "Length" + sceneID)];
         for (int x = 0; x < array.Length; x++)
         {
             array[x] = double.Parse(PlayerPrefs.GetString(key + x + "" + sceneID), System.Globalization.CultureInfo.InvariantCulture);
@@ -268,7 +270,7 @@ public class PlayerPrefsData : MonoBehaviour
 
     public Vector2[] LoadVector2Array(string key)
     {
-        Vector2[] array = new Vector2[PlayerPrefs.GetInt("LengthVector2" + sceneID)];
+        Vector2[] array = new Vector2[PlayerPrefs.GetInt(key + "Length" + sceneID)];
         for (int x = 0; x < array.Length; x++)
         {
             array[x].x = PlayerPrefs.GetFloat(key + x + "x" + sceneID, array[x].x);
@@ -279,7 +281,7 @@ public class PlayerPrefsData : MonoBehaviour
 
     public Vector3[] LoadVector3Array(string key)
     {
-        Vector3[] array = new Vector3[PlayerPrefs.GetInt("LengthVector3" + sceneID)];
+        Vector3[] array = new Vector3[PlayerPrefs.GetInt(key + "Length" + sceneID)];
         for (int x = 0; x < array.Length; x++)
         {
             array[x].x = PlayerPrefs.GetFloat(key + x + "x" + sceneID, array[x].x);
@@ -291,7 +293,7 @@ public class PlayerPrefsData : MonoBehaviour
 
     public Quaternion[] LoadQuaternionArray(string key)
     {
-        Quaternion[] array = new Quaternion[PlayerPrefs.GetInt("LengthQuaternion" + sceneID)];
+        Quaternion[] array = new Quaternion[PlayerPrefs.GetInt(key + "Length" + sceneID)];
         for (int x = 0; x < array.Length; x++)
         {
             array[x].x = PlayerPrefs.GetFloat(key + x + "x" + sceneID, array[x].x);
@@ -300,5 +302,53 @@ public class PlayerPrefsData : MonoBehaviour
             array[x].w = PlayerPrefs.GetFloat(key + x + "w" + sceneID, array[x].w);
         }
         return array;
+    }
+
+    public void DeleteBasicKey(string key)
+    {
+        if (extensionType == ExtensionType.PlayerPrefs)
+        {
+            PlayerPrefs.DeleteKey(key + sceneID);
+        }
+    }
+
+    public void DeleteVector2(string key)
+    {
+        if (extensionType == ExtensionType.PlayerPrefs)
+        {
+            PlayerPrefs.DeleteKey(key + sceneID + "x");
+            PlayerPrefs.DeleteKey(key + sceneID + "y");
+        }
+    }
+
+    public void DeleteVector3(string key)
+    {
+        if (extensionType == ExtensionType.PlayerPrefs)
+        {
+            PlayerPrefs.DeleteKey(key + sceneID + "x");
+            PlayerPrefs.DeleteKey(key + sceneID + "y");
+            PlayerPrefs.DeleteKey(key + sceneID + "z");
+        }
+    }
+
+    public void DeleteQuaternion(string key)
+    {
+        if (extensionType == ExtensionType.PlayerPrefs)
+        {
+            PlayerPrefs.DeleteKey(key + sceneID + "x");
+            PlayerPrefs.DeleteKey(key + sceneID + "y");
+            PlayerPrefs.DeleteKey(key + sceneID + "z");
+            PlayerPrefs.DeleteKey(key + sceneID + "w");
+        }
+    }
+
+    public void DeleteArrayBasicArray(string key)
+    {
+        int[] array = new int[PlayerPrefs.GetInt(key + "Length" + sceneID)];
+        for (int x = 0; x < array.Length; x++)
+        {
+            PlayerPrefs.DeleteKey(key + x + "" + sceneID);
+        }
+        PlayerPrefs.DeleteKey(key + "Length" + sceneID);
     }
 }

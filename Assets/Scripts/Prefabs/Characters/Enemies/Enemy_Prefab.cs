@@ -1,9 +1,12 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.TextCore.Text;
+using UnityEngine.UI;
 
 public class Enemy_Prefab : MonoBehaviour
 {
@@ -26,6 +29,8 @@ public class Enemy_Prefab : MonoBehaviour
     public Sprite ImageProfile;
     public bool enemyIsDead;
     private Animator _animator;
+    private bool effectDead = true;
+    GameObject effectNumber;
 
     // Start is called before the first frame update
     void Start()
@@ -67,11 +72,25 @@ public class Enemy_Prefab : MonoBehaviour
         MaxAttack -= value;
         valitationRangeAttack();
     }
+    
+    public void setValueHealth(float value)
+    {
+        _animator.SetInteger("Transition", 5);
+        //StartCoroutine(destoryGameObject());
+        Health += value;
+    }
+    
+    IEnumerable destoryGameObject() {
+        GameObject infoValues = Instantiate(Resources.Load(Global.linkToInfoValuesCharacter) as GameObject);
+        yield return infoValues != null;
 
+        Destroy(infoValues,1f);
+
+    }
 
     private void HealthValidation()
     {
-        if (Health <= 0) { Health = 0; enemyIsDead = true; }
+        if (Health <= 0) { Health = 0; enemyIsDead = true; Dead(); }
         if (Health > MaxHealth) Health = MaxHealth;
     }
 
@@ -91,4 +110,18 @@ public class Enemy_Prefab : MonoBehaviour
         }
     }
 
+
+    public void Dead()
+    {
+        if (effectDead)
+        {
+            _animator.SetInteger("Transition", 4);
+            //yield return new WaitForSeconds(1.5f);
+            GameObject _effect = Instantiate(Resources.Load(Global.linkToDeadEffect) as GameObject,
+                                             new Vector3(0,2f, 0),
+                                             Quaternion.identity);
+            //Destroy(gameObject);
+            effectDead = false;
+        }
+    }
 }

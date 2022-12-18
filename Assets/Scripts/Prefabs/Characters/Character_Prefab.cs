@@ -26,7 +26,6 @@ public class Character_Prefab : MonoBehaviour
     public Sprite ImageProfile;
     public Deck myDeck;
     private Animator animator;
-    
 
     private void Start()
     {

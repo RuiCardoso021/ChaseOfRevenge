@@ -70,8 +70,9 @@ public static class Global
     public static string linkToCircleSelection = "FightSceneComponents/CircleSelection";
     public static string linkToCanvasInteractEnemy = "CanvasInteractionsCharacters/CanvasInteractEnemy";
     public static string linkToHealthBar = "FightSceneComponents/HealthBar";
-    public static string linkToInfoValuesCharacter = "FightSceneComponents/Info_values_characters";
-    public static string linkToDeadEffect = "";
+    public static string linkToInfoValuesCharacter = "Effects/Info_values_characters_1";
+    public static string linkToDeadEffect = "Effects/CFX2_EnemyDeathSkull";
+    public static string linkToPanelGoToFight = "Panel/GoToFight";
 
     //scenes name
     public static string FightScene = "FightScene";

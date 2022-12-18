@@ -5,40 +5,34 @@ using UnityEngine;
 public class SaveOrLoadGame : MonoBehaviour
 {
     // Start is called before the first frame update
-    Save_BlockSave SaveBlock;
-    Save_Town_GameProgress SaveTown;
+    SaveGameProgress SaveTown;
     UnblockMapAreas UnblockMapAreas;
 
     private void Awake()
     {
         UnblockMapAreas = GameObject.Find("AreasBlock").GetComponent<UnblockMapAreas>();
-        SaveTown = GameObject.Find("Play").GetComponent<Save_Town_GameProgress>();
-        SaveBlock = GameObject.Find("Play").GetComponent<Save_BlockSave>();
-    }
-
-    private void Start()
-    {
-
+        SaveTown = GameObject.Find("Play").GetComponent<SaveGameProgress>();
     }
 
     // Update is called once per frame
     public void SaveGame()
     {
-        if (SaveBlock != null && SaveTown != null)
+        if (SaveTown != null)
         {
-            SaveBlock.SaveWinsIfClose();
+            SaveTown.SaveWinsIfClose();
             SaveTown.SavePosAndRotPlayerIfClose();          
         }
     }
 
     public void LoadGame()
     {
-        if (SaveBlock != null && SaveTown != null)
+        if (SaveTown != null)
         {
             SaveTown.SavePermissionLoad(true);
-            UnblockMapAreas.wins = SaveBlock.getWinsIfClose();
-            SaveTown.LoadPosAndRotPlayer();
+            UnblockMapAreas.wins = SaveTown.getWinsIfClose();
+            SaveTown.LoadPlayer();
             TransferGameObject.Instance.ReloadTownScene();
         }
     }
+
 }

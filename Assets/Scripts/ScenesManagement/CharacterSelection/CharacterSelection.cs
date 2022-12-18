@@ -8,15 +8,17 @@ public class CharacterSelection : MonoBehaviour
 	public GameObject InventoryCanvas;
 	private InventoryManager inventoryManager;
 	[SerializeField] private GameObject CharacterInformation;
+    private SaveGameProgress gameProgress;
 
-	private int index;
+    private int index;
 
     private void Start()
     {
 		index = PlayerPrefs.GetInt(Global.selectionObjects);
 		characters = new GameObject[transform.childCount];
 		inventoryManager = InventoryCanvas.GetComponent<InventoryManager>();
-		PlayerPrefs.DeleteAll();
+        gameProgress = new SaveGameProgress();
+		gameProgress.DeleteProgressGame();
 
         //Add GameObjects for to list
         for (int i = 0; i < transform.childCount; i++)

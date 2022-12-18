@@ -39,9 +39,9 @@ public class RecibeGameObject : MonoBehaviour
         ObjectPrefab = GameObject.Find(Global.recivedObjects);
         SpawnerList = new GameObject[MAX_CHARACTERS_SPAWN];
         if (ObjectPrefab != null) ObjectPrefab.SetActive(false);
-        if (Save_Town_GameProgress.instance != null)
+        if (SaveGameProgress.instance != null)
         {
-            Save_Town_GameProgress town = Save_Town_GameProgress.instance;
+            SaveGameProgress town = SaveGameProgress.instance;
             if (town.GetPermissionLoad() == true)
             {
                 town.SavePermissionLoad(false);
@@ -49,7 +49,7 @@ public class RecibeGameObject : MonoBehaviour
             }
             else town.sceneID = 0;
 
-            Save_Town_GameProgress.instance.LoadPosAndRotPlayer();
+            SaveGameProgress.instance.LoadPlayer();
         }
             
     }
@@ -69,7 +69,7 @@ public class RecibeGameObject : MonoBehaviour
                 }
                 else if (child.GetComponent<Character_Prefab>() != null)
                 {
-                    SpawnedObject = Instantiate(getCharacterPlayerPrefab(child), spawnPoint[i].transform);
+                    SpawnedObject = Instantiate(getCharacterPlayerPrefab(child.GetComponent<Character_Prefab>().Name), spawnPoint[i].transform);
                     SpawnedObject.name = Global.findPlayer;
                     SpawnedObject.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
                     SpawnedObject.GetComponent<Character_Prefab>().myDeck = _player.GetComponent<Character_Prefab>().myDeck;
@@ -98,9 +98,9 @@ public class RecibeGameObject : MonoBehaviour
 
     //return true if was a friend
 
-    private GameObject getCharacterPlayerPrefab(GameObject gm)
+    public GameObject getCharacterPlayerPrefab(string classType)
     {
-        string classType = gm.GetComponent<Character_Prefab>().Name;
+        GameObject gm = new GameObject();
 
         switch (classType)
         {

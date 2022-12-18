@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,6 +16,7 @@ public class Interactor : MonoBehaviour
     private readonly Collider[] _colliders = new Collider[3];
     [SerializeField] private int _numFound;
     private int index;
+    private bool validation = true;
 
     private IInteractable _interactable;
 
@@ -34,41 +36,9 @@ public class Interactor : MonoBehaviour
 
                 //if(!_interactionPromptUI.isDisplayed) _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
 
-                if (Input.GetKeyDown(KeyCode.E)){
-
-                    TransferGameObject.Instance.LoadedCharacter.Add(_player);
-                    GameObject tempEnemy = _interactable.GetInteractionGameObject;
-                    tempEnemy.name = Global.findEnemy;
-                    TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
-                    Save_Town_GameProgress.instance.SavePosAndRotPlayer();
-                    //TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
-                    TransferGameObject.Instance.LoadNextScene();
-                }
-
-                if (Input.GetKeyDown(KeyCode.Mouse0))
-                {          
-                    if (_interactable.GetInteractionGameObject != null)
-                    {
-                        if (index < _interactable.InteractionPromptArray.Length)
-                        {
-                            if (_interactable.InteractionPromptArray[index].CanSpeak == "Player")
-                            {
-                                _interactionPromptUI.SetUp(".:" + _player.GetComponent<Character_Prefab>().Name + ":. \n\n " +  _interactable.InteractionPromptArray[index].Dialog);
-                            }
-                            else
-                            {
-                                
-                                _interactionPromptUI.SetUp(".:" + _interactable.GetInteractionGameObject.GetComponent<Enemy_Prefab>().Name + ":. \n\n " + _interactable.InteractionPromptArray[index].Dialog);
-                            }
-                            
-                            index++;
-                        }
-                        else if (index == _interactable.InteractionPromptArray.Length)
-                        {
-                            if (_interactionPromptUI.isDisplayed) _interactionPromptUI.Close();
-                        }
-                    }
-                    
+                if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Mouse0))
+                {
+                    InterectText();
                 }
             }
 
@@ -79,4 +49,45 @@ public class Interactor : MonoBehaviour
             
         }
     }
+
+    public void InterectText()
+    {
+        if (_interactable.GetInteractionGameObject != null)
+        {
+            if (index < _interactable.InteractionPromptArray.Length)
+            {
+                if (_interactable.InteractionPromptArray[index].CanSpeak == "Player")
+                {
+                    _interactionPromptUI.SetUp(".:" + _player.GetComponent<Character_Prefab>().Name + ":. \n\n " + _interactable.InteractionPromptArray[index].Dialog);
+                }
+                else
+                {
+
+                    _interactionPromptUI.SetUp(".:" + _interactable.GetInteractionGameObject.GetComponent<Enemy_Prefab>().Name + ":. \n\n " + _interactable.InteractionPromptArray[index].Dialog);
+                }
+
+                index++;
+            }
+            else if (index == _interactable.InteractionPromptArray.Length && validation)
+            {
+                if (_interactionPromptUI.isDisplayed) _interactionPromptUI.Close();
+                Instantiate(Resources.Load(Global.linkToPanelGoToFight) as GameObject);
+                Invoke("SendObjectFromOtherScene", 2f);
+                validation = false;
+            }
+        }
+    }
+
+    public void SendObjectFromOtherScene()
+    {
+        TransferGameObject.Instance.LoadedCharacter.Add(_player);
+        GameObject tempEnemy = _interactable.GetInteractionGameObject;
+        tempEnemy.name = Global.findEnemy;
+        TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
+        SaveGameProgress.instance.SavePlayer();
+        //TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
+        TransferGameObject.Instance.LoadNextScene();
+    }
+
+
 }

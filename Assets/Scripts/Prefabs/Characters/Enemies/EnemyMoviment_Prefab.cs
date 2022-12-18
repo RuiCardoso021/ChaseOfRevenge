@@ -19,6 +19,7 @@ public class EnemyMoviment_Prefab : MonoBehaviour
     Vector3 velocity;
     CanvasIntercterEnemy_Prefab canvasinterct;
     bool backToPosition = true;
+    bool colision = false;
 
     [SerializeField] float speed = 2;
     [SerializeField] float radius = 5;
@@ -42,7 +43,7 @@ public class EnemyMoviment_Prefab : MonoBehaviour
             
             if (controller != null)
             {
-                if (!backToPosition)
+                if (!backToPosition && !colision)
                 {
                     animator.SetInteger("Transition", 1);
                     controller.Move(velocity * Time.deltaTime);
@@ -59,16 +60,15 @@ public class EnemyMoviment_Prefab : MonoBehaviour
     private void CheckRadius()
     {
 
-        if (Vector3.Distance(firstPosition, player.transform.position) < radius + 2f && backToPosition)
-        {
-            //detect player on range + 2f, apply rotation from player
-            moveDirect = transform.position - player.transform.position;
-        }
+        //if (Vector3.Distance(firstPosition, player.transform.position) < radius + 2f && backToPosition)
+        //{
+        //    //detect player on range + 2f, apply rotation from player
+        //    moveDirect = transform.position - player.transform.position;
+        //}
         if (Vector3.Distance(firstPosition, player.transform.position) < radius)
         {
             //if detect player on range, move to player
             moveDirect = player.transform.position - transform.position;
-            canvasinterct.setAtiveCanvasLvl = true;
             backToPosition = false;
 
             velocity = moveDirect * speed;
@@ -79,7 +79,6 @@ public class EnemyMoviment_Prefab : MonoBehaviour
         {
             //move to first position
             moveDirect = firstPosition - transform.position;
-            canvasinterct.setAtiveCanvasLvl = false;
             if (Vector3.Distance(firstPosition, transform.position) <= 0.6f)
                 backToPosition = true;
             else backToPosition = false;
@@ -88,18 +87,23 @@ public class EnemyMoviment_Prefab : MonoBehaviour
             velocity.Normalize();
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(velocity), (speed * 2) * Time.deltaTime);
         }
-
-
-        IEnumerator Dead()
-        {
-            animator.SetInteger("Transition", 4);
-            yield return new WaitForSeconds(1.5f);
-            GameObject _effect = Instantiate(Resources.Load(Global.linkToDeadEffect) as GameObject, 
-                                             transform.position, 
-                                             Quaternion.identity);
-            Destroy(gameObject);
-        }
-
     }
-   
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            colision = true;
+            animator.SetInteger("Transition", 0);
+            canvasinterct.setAtiveCanvasLvl = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        colision = false;
+        canvasinterct.setAtiveCanvasLvl = true;
+        Debug.Log(colision);
+    }
 }

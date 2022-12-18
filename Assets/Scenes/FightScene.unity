@@ -4880,11 +4880,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1122245168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83cecb63762c52d47a6656d080eb4572, type: 3}
+  m_Script: {fileID: 11500000, guid: 088ab1b9a2ed8fe40b5f4e08db826ec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   extensionType: 0
   sceneID: 0
+  Player: {fileID: 0}
+  SpawnPoint: {fileID: 0}
 --- !u!4 &1130418540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 940d55d4117386f4f9398ea3ff52d4cd, type: 3}

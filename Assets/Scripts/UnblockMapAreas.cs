@@ -11,7 +11,7 @@ public class UnblockMapAreas : MonoBehaviour
     
     void Start()
     {
-        wins = Save_BlockSave.instance.getWins();
+        wins = SaveGameProgress.instance.getWins();
     }
 
     private void Update()

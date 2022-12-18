@@ -27,6 +27,8 @@ public class EnemiesInterecter : MonoBehaviour, IInteractable
     }
 
 
+
+
     //public bool Interact(Interactor interactor){
     //
     //    var Inventory = interactor.GetComponent<Inventory>();
