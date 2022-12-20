@@ -9,6 +9,16 @@ public class ThirdPersonCamera : MonoBehaviour
     public Transform player;
     public Transform playerObj;
 
+    // The minimum and maximum zoom distance
+    public float minZoomDistance = 1.0f;
+    public float maxZoomDistance = 10.0f;
+
+    // The current zoom distance
+    private float zoomDistance;
+
+    // The speed at which the camera will zoom
+    public float zoomSpeed = 5.0f;
+
     public float rotationSpeed;
 
     private void Start()
@@ -21,6 +31,10 @@ public class ThirdPersonCamera : MonoBehaviour
     {
         Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
         orientation.forward = viewDir.normalized;
+
+        // Zoom in or out using the mouse wheel
+        zoomDistance -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
+        zoomDistance = Mathf.Clamp(zoomDistance, minZoomDistance, maxZoomDistance);
 
         // rotate orientation
         if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -36,8 +50,5 @@ public class ThirdPersonCamera : MonoBehaviour
                 playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
             }
         }
-
-
-
     }
 }

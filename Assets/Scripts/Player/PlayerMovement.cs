@@ -111,8 +111,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else moveSpeed = runSpeed;
 
-        animator.SetInteger("Transition",2);
-    
+        animator.SetInteger("Transition",2);   
     }
 
     public void SetActivePlayerMoviment(bool value){
