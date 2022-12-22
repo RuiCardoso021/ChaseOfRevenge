@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 750881744025329362}
   - component: {fileID: 750881744025329361}
   - component: {fileID: 7794731673269814223}
+  - component: {fileID: 2153388836736815831}
   m_Layer: 0
   m_Name: Magus Raven
   m_TagString: Player
@@ -399,7 +400,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 480410878680319498}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1dd6750c80479b40b4ecd68aaa1e7dc, type: 3}
   m_Name: 
@@ -464,6 +465,30 @@ MonoBehaviour:
   ImageProfile: {fileID: 21300000, guid: 6a17a62d3b1dd1e4eb5661c962970412, type: 3}
   myDeck:
     cards: []
+--- !u!114 &2153388836736815831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480410878680319498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ddcf9573a865374abc1c7dc950e8680, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thePlayer: {fileID: 480410878680319498}
+  groundDrag: 5
+  playerHeight: 2
+  Ground:
+    serializedVersion: 2
+    m_Bits: 8
+  _3dCameraObject: {fileID: 750881743647283371}
+  moveSpeed: 1
+  walkSpeed: 2
+  runSpeed: 5
+  gravity: -9.81
+  activePlayer: 1
 --- !u!1 &581988369881591867
 GameObject:
   m_ObjectHideFlags: 0

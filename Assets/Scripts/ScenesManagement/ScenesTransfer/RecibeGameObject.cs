@@ -71,7 +71,7 @@ public class RecibeGameObject : MonoBehaviour
                 {
                     SpawnedObject = Instantiate(getCharacterPlayerPrefab(child.GetComponent<Character_Prefab>().Name), spawnPoint[i].transform);
                     SpawnedObject.name = Global.findPlayer;
-                    SpawnedObject.GetComponent<PlayerMovement>().SetActivePlayerMoviment(activeMovimentPlayer);
+                    SpawnedObject.GetComponent<PlayerController>().SetActivePlayerMoviment(activeMovimentPlayer);
                     SpawnedObject.GetComponent<Character_Prefab>().myDeck = _player.GetComponent<Character_Prefab>().myDeck;
                     SpawnerList[i] = SpawnedObject;
                 }
