@@ -2929,7 +2929,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _3dCameraObject: {fileID: 8804903803197635875}
-  moveSpeed: 5
   walkSpeed: 2
   runSpeed: 6
   gravity: -9.81
@@ -3773,7 +3772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8804903803197635872
 Transform:
   m_ObjectHideFlags: 0
@@ -3911,6 +3910,9 @@ MonoBehaviour:
   orientation: {fileID: 9060103522325954362}
   player: {fileID: 9060103522325954362}
   playerObj: {fileID: 9060103522325954362}
+  minZoomDistance: 1
+  maxZoomDistance: 10
+  zoomSpeed: 5
   rotationSpeed: 0
 --- !u!114 &8804903803197635878
 MonoBehaviour:
@@ -4883,6 +4885,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contentCards2Play: {fileID: 1662717001114056821}
   contentInventory: {fileID: 2874655882055126970}
+  count_ContentCards2Play: {fileID: 0}
+  count_ContentInventory: {fileID: 0}
   deck:
     cards: []
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
