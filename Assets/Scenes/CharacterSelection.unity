@@ -1625,7 +1625,7 @@ MonoBehaviour:
   walkSpeed: 2
   runSpeed: 6
   gravity: -9.81
-  activePlayer: 1
+  activePlayer: 0
 --- !u!1001 &845362338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3646,7 +3646,7 @@ MonoBehaviour:
   walkSpeed: 2
   runSpeed: 6
   gravity: -9.81
-  activePlayer: 1
+  activePlayer: 0
 --- !u!4 &1202399402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 490190, guid: a67e15b1ca208c641a5b4e1e20844590, type: 3}
@@ -4704,6 +4704,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4864703073175597481, guid: 78080c294971ce848abd752f49bb37b0, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4898583653810148874, guid: 78080c294971ce848abd752f49bb37b0, type: 3}
+      propertyPath: activePlayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4902270272535501515, guid: 78080c294971ce848abd752f49bb37b0, type: 3}
