@@ -3500,10 +3500,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1300952962}
     m_Modifications:
-    - target: {fileID: 5952557341197469611, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
-      propertyPath: activePlayer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8570390266919298432, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
       propertyPath: m_Name
       value: Miles Raven
@@ -3590,7 +3586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
-    - {fileID: 5952557341197469611, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
 --- !u!1 &1189959442 stripped
 GameObject:

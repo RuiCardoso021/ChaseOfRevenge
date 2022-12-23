@@ -47,7 +47,7 @@ public class CharacterSelection : MonoBehaviour
         {
             InteractionCharacterSelectionPanel Panel = CharacterInformation.GetComponent<InteractionCharacterSelectionPanel>();
 
-			if(Panel != null && characters[index] != inventoryManager.Player)
+			if(Panel != null && characters[index] /*!= inventoryManager.Player*/)
 			{
                 Panel.Name = characters[index].GetComponent<Character_Prefab>().Name;
                 Panel.Health = characters[index].GetComponent<Character_Prefab>().Health;
