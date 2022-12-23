@@ -2827,7 +2827,6 @@ GameObject:
   - component: {fileID: 8804903803250645209}
   - component: {fileID: 8804903803250645208}
   - component: {fileID: 8804903803250645211}
-  - component: {fileID: 5952557341197469611}
   m_Layer: 0
   m_Name: Miles Raven
   m_TagString: Player
@@ -2918,7 +2917,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8570390266919298432}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1dd6750c80479b40b4ecd68aaa1e7dc, type: 3}
   m_Name: 
@@ -2983,30 +2982,6 @@ MonoBehaviour:
   ImageProfile: {fileID: 21300000, guid: 44e45508bc606ac45b2b81c5d421c1d5, type: 3}
   myDeck:
     cards: []
---- !u!114 &5952557341197469611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8570390266919298432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ddcf9573a865374abc1c7dc950e8680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thePlayer: {fileID: 8570390266919298432}
-  groundDrag: 5
-  playerHeight: 2
-  Ground:
-    serializedVersion: 2
-    m_Bits: 8
-  _3dCameraObject: {fileID: 8804903803197635875}
-  moveSpeed: 1
-  walkSpeed: 2
-  runSpeed: 5
-  gravity: -9.81
-  activePlayer: 1
 --- !u!1 &8659981318633085591
 GameObject:
   m_ObjectHideFlags: 0
@@ -3491,7 +3466,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 9060103522325954362}
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
@@ -3935,9 +3910,6 @@ MonoBehaviour:
   orientation: {fileID: 9060103522325954362}
   player: {fileID: 9060103522325954362}
   playerObj: {fileID: 9060103522325954362}
-  minZoomDistance: 1
-  maxZoomDistance: 10
-  zoomSpeed: 5
   rotationSpeed: 0
 --- !u!114 &8804903803197635878
 MonoBehaviour:

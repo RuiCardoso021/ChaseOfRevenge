@@ -29,7 +29,7 @@ public class Character_Prefab : MonoBehaviour
 
     private void Start()
     {
-        HeightPlayer = GetComponent<PlayerController>().playerHeight;
+        HeightPlayer = GetComponent<PlayerMovement>().playerHeight;
         animator = GetComponentInChildren<Animator>();
 
         myDeck = JsonUtility.FromJson<Deck>(jsonFile.text);
@@ -66,8 +66,6 @@ public class Character_Prefab : MonoBehaviour
             animator.SetInteger("Transition", 3);
             
         }
-
-
     }
 
     private void validateHealthBar()

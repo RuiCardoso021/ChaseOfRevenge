@@ -1402,11 +1402,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771059559}
   m_CullTransparentMesh: 1
---- !u!1 &774929871 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8804903803197635875, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
-  m_PrefabInstance: {fileID: 1189959441}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &781448981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1494,7 +1489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 750881744025329362, guid: b62978132d1ac704db2a0a8a62ad47ed, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 750881744025329362, guid: b62978132d1ac704db2a0a8a62ad47ed, type: 3}
       propertyPath: activePlayer
@@ -1593,8 +1588,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 3753662353496952735, guid: b62978132d1ac704db2a0a8a62ad47ed, type: 3}
-    - {fileID: 750881744025329362, guid: b62978132d1ac704db2a0a8a62ad47ed, type: 3}
+    - {fileID: 0}
+    - {fileID: 2153388836736815831, guid: b62978132d1ac704db2a0a8a62ad47ed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b62978132d1ac704db2a0a8a62ad47ed, type: 3}
 --- !u!4 &818601486 stripped
 Transform:
@@ -1606,30 +1601,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 480410878680319498, guid: b62978132d1ac704db2a0a8a62ad47ed, type: 3}
   m_PrefabInstance: {fileID: 818601485}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &818601494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818601487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ddcf9573a865374abc1c7dc950e8680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thePlayer: {fileID: 818601487}
-  groundDrag: 5
-  playerHeight: 2
-  Ground:
-    serializedVersion: 2
-    m_Bits: 8
-  _3dCameraObject: {fileID: 1317911983}
-  moveSpeed: 1
-  walkSpeed: 2
-  runSpeed: 6
-  gravity: -9.81
-  activePlayer: 0
 --- !u!1001 &845362338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3547,7 +3518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8804903803250645209, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8804903803250645209, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
       propertyPath: activePlayer
@@ -3619,7 +3590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
-    - {fileID: 8804903803250645209, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
+    - {fileID: 5952557341197469611, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
 --- !u!1 &1189959442 stripped
 GameObject:
@@ -3631,30 +3602,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9060103522325954362, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
   m_PrefabInstance: {fileID: 1189959441}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1189959450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189959442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ddcf9573a865374abc1c7dc950e8680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thePlayer: {fileID: 1189959442}
-  groundDrag: 5
-  playerHeight: 2
-  Ground:
-    serializedVersion: 2
-    m_Bits: 8
-  _3dCameraObject: {fileID: 774929871}
-  moveSpeed: 1
-  walkSpeed: 2
-  runSpeed: 6
-  gravity: -9.81
-  activePlayer: 0
 --- !u!4 &1202399402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 490190, guid: a67e15b1ca208c641a5b4e1e20844590, type: 3}
@@ -4310,11 +4257,6 @@ MonoBehaviour:
   _nextSceneName: TownCity
   loaderUI: {fileID: 1341789006}
   progressSlider: {fileID: 995928092}
---- !u!1 &1317911983 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 750881743647283371, guid: b62978132d1ac704db2a0a8a62ad47ed, type: 3}
-  m_PrefabInstance: {fileID: 818601485}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1341789006
 GameObject:
   m_ObjectHideFlags: 0
@@ -4791,8 +4733,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 4864703072629357863, guid: 78080c294971ce848abd752f49bb37b0, type: 3}
-    - {fileID: 4864703072629357864, guid: 78080c294971ce848abd752f49bb37b0, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 78080c294971ce848abd752f49bb37b0, type: 3}
 --- !u!1 &1485898113 stripped
 GameObject:

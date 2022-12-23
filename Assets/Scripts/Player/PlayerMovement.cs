@@ -50,7 +50,6 @@ public class PlayerMovement : MonoBehaviour
     private void Move()
     {
         float moveZ = Input.GetAxis("Vertical");
-        float moveX = Input.GetAxis("Horizontal");
 
         // ground check
         isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, Ground);
@@ -60,32 +59,29 @@ public class PlayerMovement : MonoBehaviour
             if (velocity.y < 0) velocity.y = 0f;
         }
 
-        
-
-        moveDirection = new Vector3(moveX, 0, moveZ);
+        moveDirection = new Vector3(0, 0, moveZ);
         moveDirection = transform.TransformDirection(moveDirection);
-        controller.Move(moveDirection * Time.deltaTime * moveSpeed);
 
         if (moveDirection != Vector3.zero && !Input.GetKey(KeyCode.LeftShift) && moveZ > 0) Walk();
+        if (moveDirection != Vector3.zero && Input.GetKey(KeyCode.LeftShift) && moveZ > 0) Run();
+        if (moveDirection == Vector3.zero) Idle();
 
-        if (isGrounded)
+        moveDirection *= moveSpeed;
+
+        //if (moveDirection != Vector3.zero)
+        //{
+        //    if (!Input.GetKey(KeyCode.LeftShift))
+        //        animator.SetInteger("Transition", 1);
+        //    transform.forward = Vector3.Slerp(transform.forward, moveDirection.normalized, Time.deltaTime * moveSpeed*2);
+        //}
+
+        //velocity.y += gravity;
+
+        if (moveZ > 0)
         {
-
-            if (moveDirection.z != 0 && Input.GetKey(KeyCode.LeftShift) && moveZ > 0) Run();
-            if (moveDirection.z == 0) Idle();
+            controller.Move(moveDirection * Time.deltaTime);
+            controller.Move(velocity * Time.deltaTime);         
         }
-
-        if (moveDirection != Vector3.zero)
-        {
-            if (!Input.GetKey(KeyCode.LeftShift))
-                animator.SetInteger("Transition", 1);
-            transform.forward = Vector3.Slerp(transform.forward, moveDirection.normalized, Time.deltaTime * moveSpeed*2);
-        }
-
-        velocity.y += gravity;
-        controller.Move(velocity * Time.deltaTime);
-
-
     }
 
     private void Idle()
