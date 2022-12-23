@@ -1544,6 +1544,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2153388836736815831, guid: b62978132d1ac704db2a0a8a62ad47ed, type: 3}
+      propertyPath: activePlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2428815867224934013, guid: b62978132d1ac704db2a0a8a62ad47ed, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -3525,6 +3529,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1300952962}
     m_Modifications:
+    - target: {fileID: 5952557341197469611, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
+      propertyPath: activePlayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8570390266919298432, guid: e7d9427a9c9560c40b88e81a9a1635c8, type: 3}
       propertyPath: m_Name
       value: Miles Raven

@@ -29,8 +29,9 @@ public class ThirdPersonCamera : MonoBehaviour
 
     void Update()
     {
-        Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
-        orientation.forward = viewDir.normalized;
+        //Vector3 viewDir = player.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
+        //orientation.forward = viewDir.normalized;
+        transform.LookAt(playerObj);
 
         // Zoom in or out using the mouse wheel
         zoomDistance -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
