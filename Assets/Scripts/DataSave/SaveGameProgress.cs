@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -132,4 +134,23 @@ public class SaveGameProgress : PlayerPrefsData
         DeleteBasicKey(VarSaves.Wins);
     }
 
+    public void SaveEnemiesLose(int id)
+    {
+        int[] getArrayIDSave = LoadIntArray(VarSaves.EnemiesLose);
+        int[] arrayID = new int[getArrayIDSave.Length + 1];
+        arrayID[getArrayIDSave.Length] = id;
+        SaveIntArray(VarSaves.EnemiesLose, arrayID, arrayID.Count());
+    }
+
+    public bool CheckIfEnemieIsDead(int id)
+    {
+        int[] getArrayIDSave = LoadIntArray(VarSaves.EnemiesLose);
+        bool checkIsDead = false;
+        foreach (int value in getArrayIDSave)
+        {
+            if (value == id) checkIsDead = true;
+        }
+
+        return checkIsDead;
+    }
 }

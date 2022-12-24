@@ -11,6 +11,7 @@ public class DataTransferScene : MonoBehaviour
     public string LastSceneName;
     public string CurrentSceneName;
     public GameObject Spawn;
+    public int FightID;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,6 @@ public class DataTransferScene : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Z))
-            Debug.Log("Last: " + LastSceneName + "Cur: " + CurrentSceneName);
+            Debug.Log("ID: " + FightID);
     }
 }

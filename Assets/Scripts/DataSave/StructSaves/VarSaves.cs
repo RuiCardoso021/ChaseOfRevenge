@@ -9,4 +9,7 @@
 
     //wins
     public static string Wins = "wins";
+
+    //enemies
+    public static string EnemiesLose = "EnemiesLose";
 }

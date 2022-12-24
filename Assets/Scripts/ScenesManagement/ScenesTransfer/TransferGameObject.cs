@@ -110,6 +110,8 @@ public class TransferGameObject : MonoBehaviour
         DataTransferScene dataTransferScene = GameObjectDataTransfer.GetComponent<DataTransferScene>();
         dataTransferScene.LastSceneName = SceneManager.GetActiveScene().name;
         dataTransferScene.CurrentSceneName = _nextSceneName;
+        if (SceneManager.GetActiveScene().name == "TownCity" && LoadedCharacter.Count == 2)
+            dataTransferScene.FightID = LoadedCharacter[1].GetComponent<Enemy_Prefab>().id;
 
         LoadedCharacter.Add(GameObjectDataTransfer);
     }

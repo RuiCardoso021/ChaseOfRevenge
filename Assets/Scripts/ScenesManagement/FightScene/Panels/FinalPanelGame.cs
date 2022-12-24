@@ -18,7 +18,6 @@ public class FinalPanelGame : MonoBehaviour
         PanelLose.SetActive(false);
         PanelWin.SetActive(false);
         activePanel = true;
-
     }
 
     private void Update()
@@ -35,6 +34,7 @@ public class FinalPanelGame : MonoBehaviour
         {
             ActivePanel(PanelWin);
             SaveGameProgress.instance.saveWins();
+            SaveGameProgress.instance.SaveEnemiesLose(DataTransferScene.Instance.FightID);
             //UnblockMapAreas.Instance.FightWinCount();
             //UnblockMapAreas.Instance.UnblockArea();
         }
