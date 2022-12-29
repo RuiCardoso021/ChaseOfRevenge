@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MiniMapFullScale : MonoBehaviour
 {
-    Transform targetPlayer;
+    //Transform targetPlayer;
     [SerializeField] private GameObject fullMap;
 
     public void CloseFullMap()
@@ -14,13 +14,13 @@ public class MiniMapFullScale : MonoBehaviour
 
     private void Update()
     {
-        if (targetPlayer == null)
-        {
-            GameObject player = GameObject.Find(Global.findPlayer);
+        //if (targetPlayer == null)
+        //{
+        //    GameObject player = GameObject.Find(Global.findPlayer);
 
-            if(player != null)
-                targetPlayer = player.transform;
-        }
+        //    if(player != null)
+        //        targetPlayer = player.transform;
+        //}
 
         if(Input.GetKey(KeyCode.M))
         {
@@ -28,15 +28,15 @@ public class MiniMapFullScale : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
-    {
-        if (targetPlayer != null)
-        {
-            Vector3 newPos = targetPlayer.position;
-            newPos.y = transform.position.y;
-            transform.position = newPos;
+    //private void LateUpdate()
+    //{
+    //    if (targetPlayer != null)
+    //    {
+    //        Vector3 newPos = targetPlayer.position;
+    //        newPos.y = transform.position.y;
+    //        transform.position = newPos;
 
-            transform.rotation = Quaternion.Euler(90f, targetPlayer.transform.eulerAngles.y, 0f);
-        }
-    }
+    //        transform.rotation = Quaternion.Euler(90f, targetPlayer.transform.eulerAngles.y, 0f);
+    //    }
+    //}
 }
