@@ -140,7 +140,4 @@ public class RecibeGameObject : MonoBehaviour
 
         return gm;
     }
-
-
-
 }

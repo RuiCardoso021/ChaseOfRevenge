@@ -132,6 +132,7 @@ public class SaveGameProgress : PlayerPrefsData
         DeleteBasicKey(VarSaves.Mana);
         DeleteBasicKey(VarSaves.Health);
         DeleteBasicKey(VarSaves.Wins);
+        DeleteArrayBasicArray(VarSaves.EnemiesLose);
     }
 
     public void SaveEnemiesLose(int id)
