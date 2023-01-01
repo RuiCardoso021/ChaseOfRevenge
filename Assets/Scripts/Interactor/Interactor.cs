@@ -17,6 +17,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private int _numFound;
     private int index;
     private bool validation = true;
+    private bool checkIsNpc = false;
 
     private IInteractable _interactable;
 
@@ -60,15 +61,20 @@ public class Interactor : MonoBehaviour
                 {
                     _interactionPromptUI.SetUp(".:" + _player.GetComponent<Character_Prefab>().Name + ":. \n\n " + _interactable.InteractionPromptArray[index].Dialog);
                 }
+                else if (_interactable.InteractionPromptArray[index].CanSpeak == "Enemy")
+                {
+                    _interactionPromptUI.SetUp(".:" + _interactable.GetInteractionGameObject.GetComponent<Enemy_Prefab>().Name + ":. \n\n " + _interactable.InteractionPromptArray[index].Dialog);
+                    checkIsNpc = false;
+                }
                 else
                 {
-
-                    _interactionPromptUI.SetUp(".:" + _interactable.GetInteractionGameObject.GetComponent<Enemy_Prefab>().Name + ":. \n\n " + _interactable.InteractionPromptArray[index].Dialog);
+                    _interactionPromptUI.SetUp(".:NPC:. \n\n " + _interactable.InteractionPromptArray[index].Dialog);
+                    checkIsNpc = true;
                 }
 
                 index++;
             }
-            else if (index == _interactable.InteractionPromptArray.Length && validation)
+            else if (index == _interactable.InteractionPromptArray.Length && validation && !checkIsNpc)
             {
                 if (_interactionPromptUI.isDisplayed) _interactionPromptUI.Close();
                 Instantiate(Resources.Load(Global.linkToPanelGoToFight) as GameObject);
