@@ -20,10 +20,10 @@ public static class Global
     public static string linkToDungeonSkeleton = "Enemies/DungeonSkeleton";
     public static string Orc = "OrcWolfRider";
     public static string linkToOrc = "Enemies/Orc_Wolfrider";
-    public static string Pumpkin = "PumpkinMan";
-    public static string linkToPumpkin = "Enemies/pumpkin";
+    public static string Pumpkin = "Rhino";
+    public static string linkToPumpkin = "Enemies/Rhinoceros";
     public static string Boss = "Boss";
-    public static string linkToBoss = "Enemies/Maw J Laygo";
+    public static string linkToBoss = "Enemies/Boss";
 
     // tipos de carta de personagem
     public static string magePlayerType = "SORCE";

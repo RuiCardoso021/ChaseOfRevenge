@@ -88,6 +88,4 @@ public class Interactor : MonoBehaviour
         //TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
         TransferGameObject.Instance.LoadNextScene();
     }
-
-
 }
