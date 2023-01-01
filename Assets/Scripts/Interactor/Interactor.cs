@@ -74,12 +74,15 @@ public class Interactor : MonoBehaviour
 
                 index++;
             }
-            else if (index == _interactable.InteractionPromptArray.Length && validation && !checkIsNpc)
+            else if (index == _interactable.InteractionPromptArray.Length && validation)
             {
                 if (_interactionPromptUI.isDisplayed) _interactionPromptUI.Close();
-                Instantiate(Resources.Load(Global.linkToPanelGoToFight) as GameObject);
-                Invoke("SendObjectFromOtherScene", 2f);
-                validation = false;
+                if (!checkIsNpc)
+                {
+                    Instantiate(Resources.Load(Global.linkToPanelGoToFight) as GameObject);
+                    Invoke("SendObjectFromOtherScene", 2f);
+                    validation = false;
+                }
             }
         }
     }
