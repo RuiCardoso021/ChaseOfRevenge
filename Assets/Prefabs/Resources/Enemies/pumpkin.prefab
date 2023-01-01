@@ -531,6 +531,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: b4ea6a37bcc5b784ca01a69e7c613a0f, type: 2}
     - target: {fileID: 9500000, guid: 698d7543eef02b44eb8758d362a8f1d0, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'Character1_Reference'\n\tTransform 'Character1_LeftHandIndex1'\n\tTransform
+        'Character1_LeftHandRing3'\n\tTransform 'Character1_RightHandRing2'\n\tTransform
+        'Character1_RightHand'\n\tTransform 'Character1_Spine1'\n\tTransform 'Character1_LeftShoulder'\n\tTransform
+        'Character1_RightHandRing1'\n\tTransform 'Character1_RightUpLeg'\n\tTransform
+        'Character1_LeftUpLeg'\n\tand more ...\n\tFrom animation clip 'mixamo.com'\n\tFrom
+        animation clip 'mixamo.com'\n\tFrom animation clip 'mixamo.com'\n\tFrom animation
+        clip 'mixamo.com'\n\tFrom animation clip 'mixamo.com'"
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 698d7543eef02b44eb8758d362a8f1d0, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
@@ -656,7 +668,7 @@ MonoBehaviour:
   - {fileID: 6726383687323824357}
   - {fileID: 0}
   - {fileID: 0}
-  id: 0
+  id: 1
   Name: PumpkinMan
   ClassType: Enemy
   Health: 10

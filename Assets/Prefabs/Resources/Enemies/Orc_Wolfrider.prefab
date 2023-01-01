@@ -257,7 +257,7 @@ MonoBehaviour:
   - {fileID: 615894790869500439}
   - {fileID: 0}
   - {fileID: 0}
-  id: 0
+  id: 2
   Name: OrcWolfRider
   ClassType: Enemy
   Health: 20
