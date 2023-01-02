@@ -1,8 +1,6 @@
-﻿ 
-{
-"cards":
+﻿ {
+    "cards":
     [
-
         {
             "id": 100,
             "type": "UN",
@@ -50,7 +48,7 @@
             "src": "generic"
         },
         {
-            "id": 102
+            "id": 102,
             "type": "UN",
             "name": "Reduceme",
             "rarity": 1,
@@ -90,7 +88,7 @@
             "src": "generic"
         },
         {
-            "id": 104
+            "id": 104,
             "type": "UN",
             "name": "Ballistic",
             "rarity": 1,
@@ -128,6 +126,6 @@
                 "description": "9 damage to all enemies",
                 "mana":3,
                 "src": "generic"
-            }
-        ]
-    }
+        }
+    ]
+}

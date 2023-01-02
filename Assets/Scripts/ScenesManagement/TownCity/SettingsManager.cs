@@ -24,17 +24,13 @@ public class SettingsManager : MonoBehaviour
 
         if (_GO_Settings.activeSelf)
         {
-            Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             Vector2 hotSpot = new Vector2(_cursorTexture.width / 8, _cursorTexture.height / 8);
             Cursor.SetCursor(_cursorTexture, hotSpot, CursorMode.ForceSoftware);
-            Time.timeScale = 0;
         }
         else
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = false;
-            Time.timeScale = 1;
+            //Cursor.visible = false;
         }
     }
 
