@@ -6,6 +6,7 @@ public class MiniMapFullScale : MonoBehaviour
 {
     //Transform targetPlayer;
     [SerializeField] private GameObject fullMap;
+    private bool active;
 
     public void CloseFullMap()
     {
@@ -22,9 +23,10 @@ public class MiniMapFullScale : MonoBehaviour
         //        targetPlayer = player.transform;
         //}
 
-        if(Input.GetKey(KeyCode.M))
+        if(Input.GetKeyDown(KeyCode.M))
         {
-            fullMap.SetActive(true);
+            active = !active;
+            fullMap.SetActive(active);
         }
     }
 
