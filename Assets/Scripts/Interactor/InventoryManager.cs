@@ -28,7 +28,6 @@ public class InventoryManager : MonoBehaviour
     public void Inicialize()
     {
         deck = Player.GetComponent<Character_Prefab>().myDeck;
-        //cardsOnInventory.cards = new Card[200];
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
@@ -37,43 +36,55 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        Inventory inventory = GetComponent<Inventory>();
-        if (inventory != null && inventory.isOpen)
+ 
+        //ChangeCardsInInventory();
+
+        setDataCount();
+        
+    }
+
+    public void checkIfChangeInventory()
+    {
+        if (deck != GameObject.Find(Global.findPlayer).GetComponent<Character_Prefab>().myDeck)
         {
-            ChangeCardsInInventory();
-            setDataCount();
+            foreach (var item in cards2play)
+            {
+                Destroy(item);
+            }
+
+            Inicialize();
         }
     }
 
     public void setDataCount()
     {
-        if (count_ContentCards2Play != null && count_ContentInventory != null)
+        if (cards2play.Count > 0 && count_ContentCards2Play != null)
         {
-            count_ContentCards2Play.text = CountCards(contentCards2Play).ToString();
-            count_ContentInventory.text = CountCards(contentInventory).ToString();
+            count_ContentCards2Play.text = cards2play.Count.ToString();
+            //count_ContentInventory.text = CountCards(contentInventory).ToString();
         }
 
 
     }
 
     //0 - cardsToPlay && 1 - Inventory
-    public int CountCards(GameObject content)
-    {
-        int count = 0;
-        if (cards2play != null)
-        {
-            foreach (GameObject go in cards2play)
-            {
-                if (go != null)
-                {
-                    if (go.transform.parent == content.transform)
-                        count++;
-                }
-            }
-        }
-       
-        return count;
-    }
+    //public int CountCards(GameObject content)
+    //{
+    //    int count = 0;
+    //    if (cards2play != null)
+    //    {
+    //        foreach (GameObject go in cards2play)
+    //        {
+    //            if (go != null)
+    //            {
+    //                if (go.transform.parent == content.transform)
+    //                    count++;
+    //            }
+    //        }
+    //    }
+    //   
+    //    return count;
+    //}
 
     // primeira lista com as cartas todas
     public void FirstInventory()
@@ -85,7 +96,7 @@ public class InventoryManager : MonoBehaviour
             if (card != null)
             {
                 gmTemp = Instantiate(cardGameObject, Vector3.zero, Quaternion.identity);
-                gmTemp.AddComponent<InventoryCard_cls>();
+                //gmTemp.AddComponent<InventoryCard_cls>();
                 gmTemp.GetComponent<Card_Prefab>().dataCard = card;
                 gmTemp.transform.parent = contentCards2Play.transform;
 
@@ -95,26 +106,27 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+
     // escolha das cartas para levar para a fight
-    public void ChangeCardsInInventory()
-    {
-
-        if (cards2play != null)
-        {
-            foreach (GameObject go in cards2play)
-            {
-                if (go != null)
-                {
-                    if (go.GetComponent<InventoryCard_cls>().transferItemToInventory)
-                        go.transform.parent = contentInventory.transform;
-
-                    else
-                        go.transform.parent = contentCards2Play.transform;
-                }
-            }
-        }
-      
-    }
+    //public void ChangeCardsInInventory()
+    //{
+    //
+    //    if (cards2play != null)
+    //    {
+    //        foreach (GameObject go in cards2play)
+    //        {
+    //            if (go != null)
+    //            {
+    //                if (go.GetComponent<InventoryCard_cls>().transferItemToInventory)
+    //                    go.transform.parent = contentInventory.transform;
+    //
+    //                else
+    //                    go.transform.parent = contentCards2Play.transform;
+    //            }
+    //        }
+    //    }
+    //  
+    //}
 
     public void saveDeck()
     {

@@ -3452,6 +3452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonFile: {fileID: 4900000, guid: ddb70c4540a227d4392738a09a82a8a0, type: 3}
+  jsonFileOther: {fileID: 4900000, guid: da718201a583ca448bdb78350fc17816, type: 3}
   _canvasLife: {fileID: 3604393075113281452}
   PermissedByAttack: 0
   MaxMana: 0
@@ -3467,6 +3468,8 @@ MonoBehaviour:
   Health: 25
   ImageProfile: {fileID: 21300000, guid: b0c9b1db33f774a41a85317615b8c3c1, type: 3}
   myDeck:
+    cards: []
+  otherDeck:
     cards: []
 --- !u!1 &5721359693597137274
 GameObject:
@@ -5423,6 +5426,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6761478713094169106, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
   m_PrefabInstance: {fileID: 4864703072871686978}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3253163912189029505 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7973459296692277187, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
+  m_PrefabInstance: {fileID: 4864703072871686978}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3359826874176288415 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7863959044679144925, guid: 996d2a9fc3ccf3047a1e0979ede855c7, type: 3}
@@ -5447,7 +5461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contentCards2Play: {fileID: 3359826874176288415}
   contentInventory: {fileID: 2186353288693367120}
-  count_ContentCards2Play: {fileID: 0}
+  count_ContentCards2Play: {fileID: 3253163912189029505}
   count_ContentInventory: {fileID: 0}
   deck:
     cards: []

@@ -1,3 +1,5 @@
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +23,12 @@ public class Deck {
         }
         cards = inventoryCards.ToArray();
 
+    }
+
+    public void AddCard(Card data)
+    {
+        Array.Resize(ref cards, cards.Length + 1);
+        cards[cards.Length - 1] = new Card(data);
     }
 
     

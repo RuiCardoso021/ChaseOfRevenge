@@ -5021,6 +5021,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   extensionType: 0
   sceneID: 0
+  numberEnemies: 5
+  numberChest: 10
 --- !u!4 &1130418540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 940d55d4117386f4f9398ea3ff52d4cd, type: 3}

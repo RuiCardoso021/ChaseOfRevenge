@@ -35,8 +35,13 @@ public class Inventory : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name != "CharacterSelection" || SceneManager.GetActiveScene().name != "FightScene")
         {
+            InventoryManager manager = GetComponent<InventoryManager>();
             if (Input.GetKeyDown(KeyCode.I) && !isOpen && !canClose)
             {
+                if (manager != null)
+                {
+                    manager.checkIfChangeInventory();
+                }
                 isOpen = true;
 
                 inventoryOpen.Play();

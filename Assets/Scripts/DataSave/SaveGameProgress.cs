@@ -133,19 +133,50 @@ public class SaveGameProgress : PlayerPrefsData
         DeleteBasicKey(VarSaves.Health);
         DeleteBasicKey(VarSaves.Wins);
         DeleteArrayBasicArray(VarSaves.EnemiesLose);
+        DeleteArrayBasicArray(VarSaves.CardsInventory);
     }
 
     public void SaveEnemiesLose(int id)
     {
         int[] getArrayIDSave = LoadIntArray(VarSaves.EnemiesLose);
-        int[] arrayID = new int[getArrayIDSave.Length + 1];
-        arrayID[getArrayIDSave.Length] = id;
-        SaveIntArray(VarSaves.EnemiesLose, arrayID, arrayID.Count());
+        Array.Resize(ref getArrayIDSave, getArrayIDSave.Length + 1);
+        getArrayIDSave[getArrayIDSave.Length - 1] = id;
+        SaveIntArray(VarSaves.EnemiesLose, getArrayIDSave, getArrayIDSave.Length);
     }
 
     public bool CheckIfEnemieIsDead(int id)
     {
         int[] getArrayIDSave = LoadIntArray(VarSaves.EnemiesLose);
+        bool checkIsDead = false;
+        foreach (int value in getArrayIDSave)
+        {
+            if (value == id) checkIsDead = true;
+        }
+
+        return checkIsDead;
+    }
+
+    public void SaveCardChest(int id)
+    {
+        int[] getArrayIDSave = LoadIntArray(VarSaves.CardsInventory);
+        Array.Resize(ref getArrayIDSave, getArrayIDSave.Length + 1);
+        getArrayIDSave[getArrayIDSave.Length - 1] = id;
+        SaveIntArray(VarSaves.CardsInventory, getArrayIDSave, getArrayIDSave.Length);
+    }
+
+    private int checkNextPositionToAddArray(int[] array)
+    {
+        int num = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] == 0) return i;
+        }
+        return num;
+    }
+
+    public bool CheckIfCardChestIsmy(int id)
+    {
+        int[] getArrayIDSave = LoadIntArray(VarSaves.CardsInventory);
         bool checkIsDead = false;
         foreach (int value in getArrayIDSave)
         {

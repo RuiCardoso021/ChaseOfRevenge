@@ -11,6 +11,7 @@ public class Character_Prefab : MonoBehaviour
 {
 
     [SerializeField] private TextAsset jsonFile;
+    [SerializeField] private TextAsset jsonFileOther;
     [SerializeField] private GameObject _canvasLife;
 
     [HideInInspector] public bool PermissedByAttack;
@@ -25,18 +26,33 @@ public class Character_Prefab : MonoBehaviour
     public float Health;
     public Sprite ImageProfile;
     public Deck myDeck;
+    public Deck otherDeck;
     private Animator animator;
 
     private void Start()
     {
         HeightPlayer = GetComponent<PlayerMovement>().playerHeight;
         animator = GetComponentInChildren<Animator>();
-
         myDeck = JsonUtility.FromJson<Deck>(jsonFile.text);
         myDeck.GetInicialCards(ClassType);
+        otherDeck = JsonUtility.FromJson<Deck>(jsonFileOther.text);
+        checkExistCardSaves();
+
         MaxHealth = Health;
         MaxMana = Mana;
         PermissedByAttack = true;
+    }
+
+    private void checkExistCardSaves()
+    {
+        foreach (Card cardInventory in otherDeck.cards)
+        {
+            if (SaveGameProgress.instance != null)
+            {
+                if (SaveGameProgress.instance.CheckIfCardChestIsmy(cardInventory.id))
+                    myDeck.AddCard(cardInventory);
+            }
+        }
     }
 
 

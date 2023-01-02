@@ -12,4 +12,7 @@
 
     //enemies
     public static string EnemiesLose = "EnemiesLose";
+
+    //cardInventory
+    public static string CardsInventory = "Inventory";
 }
