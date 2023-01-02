@@ -53,7 +53,7 @@
             "name": "Stealer",
             "number_effects": 2,
             "rarity": 1,
-            "category": "Heal",
+            "category": "Attack/Heal",
             "ability": 
             [
                 { 
@@ -76,9 +76,7 @@
          {
             "id": 4,
             "type": "UN",
-            "name": "Buff",
-            "rarity": 1,
-            "category": "Attack",
+            "name": "Fresh",
             "rarity": 1,
             "category": "Magic",
             "number_effects": 1,
@@ -267,7 +265,7 @@
             "type": "SORCE",
             "name": "Plusone",
             "rarity": 1,
-            "category": "Buff",
+            "category": "Defense",
             "number_effects": 1,
             "ability": 
             [
@@ -287,7 +285,7 @@
             "type": "SORCE",
             "name": "Freeze",
             "rarity": 1,
-            "category": "Attack",
+            "category": "Defense",
             "number_effects": 1,
             "ability": 
             [
@@ -327,7 +325,7 @@
             "type": "UN",
             "name": "OMG",
             "rarity": 1,
-            "category": "Attack",
+            "category": "Heal",
             "number_effects": 1,
             "ability": 
             [
@@ -373,7 +371,7 @@
             "type": "UN",
             "name": "Getfive",
             "rarity": 1,
-            "category": "Attack",
+            "category": "Defense",
             "number_effects": 1,
             "ability": 
             [
@@ -413,7 +411,7 @@
             "type": "WAR",
             "name": "Healme",
             "rarity": 1,
-            "category": "Attack",
+            "category": "Heal",
             "number_effects": 1,
             "ability": 
             [
@@ -433,7 +431,7 @@
             "type": "UN",
             "name": "CalmNova",
             "rarity": 1,
-            "category": "Attack",
+            "category": "Defense",
             "number_effects": 1,
             "ability": 
             [
@@ -453,7 +451,7 @@
             "type": "WAR",
             "name": "Maxcoil",
             "rarity": 1,
-            "category": "Attack",
+            "category": "Attack/Heal",
             "number_effects": 2,
             "ability": 
             [
@@ -479,7 +477,7 @@
             "type": "WAR",
             "name": "Priest",
             "rarity": 1,
-            "category": "Attack",
+            "category": "Heal",
             "number_effects": 1,
             "ability": 
             [
@@ -499,7 +497,7 @@
             "type": "UN",
             "name": "HealEnemy",
             "rarity": 1,
-            "category": "Attack",
+            "category": "Heal",
             "number_effects": 1,
             "ability": 
             [
@@ -545,7 +543,7 @@
             "type": "UN",
             "name": "ManaMore",
             "rarity": 1,
-            "category": "Attack",
+            "category": "Magic",
             "number_effects": 1,
             "ability": 
             [
@@ -565,7 +563,7 @@
             "type": "UN",
             "name": "Reduce",
             "rarity": 1,
-            "category": "Attack",
+            "category": "Magic",
             "number_effects": 1,
             "ability": 
             [
@@ -616,7 +614,7 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "3 damage to all enemie",
+            "description": "3 damage to all enemies",
             "mana":1,
             "src": "archery"
        }, 
@@ -665,7 +663,7 @@
             "type": "SORCE",
             "name": "Slow",
             "rarity": 1,
-            "category": "Buff",
+            "category": "Defense",
             "number_effects": 1,
             "ability": 
             [
@@ -686,7 +684,7 @@
             "name": "Comeback",
             "number_effects": 2,
             "rarity": 1,
-            "category": "Heal",
+            "category": "Attack/Heal",
             "ability": 
             [
                 { 
@@ -711,7 +709,7 @@
             "type": "SORCE",
             "name": "Calm",
             "rarity": 1,
-            "category": "Buff",
+            "category": "Defense",
             "number_effects": 1,
             "ability": 
             [
@@ -732,7 +730,7 @@
             "name": "Rolemn",
             "number_effects": 2,
             "rarity": 1,
-            "category": "Heal",
+            "category": "Attack/Heal",
             "ability": 
             [
                 { 
@@ -757,7 +755,7 @@
             "type": "WAR",
             "name": "Deathcoil",
             "rarity": 1,
-            "category": "Attack",
+            "category": "Attack/Heal",
             "number_effects": 2,
             "ability": 
             [
@@ -869,7 +867,7 @@
             "type": "ARCH",
             "name": "Viper",
             "rarity": 1,
-            "category": "Buff",
+            "category": "Defense",
             "number_effects": 1,
             "ability": 
             [
@@ -930,7 +928,7 @@
             "name": "Notdien",
             "number_effects": 2,
             "rarity": 1,
-            "category": "Heal",
+            "category": "Attack/Heal",
             "ability": 
             [
                 { 
