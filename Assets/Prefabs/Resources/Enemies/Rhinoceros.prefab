@@ -693,7 +693,6 @@ GameObject:
   - component: {fileID: 1652931582688745277}
   - component: {fileID: 1652931582697766767}
   - component: {fileID: 1652931582276418944}
-  - component: {fileID: 1652931582276418951}
   - component: {fileID: 1652931582276418950}
   - component: {fileID: 1652931582276418949}
   - component: {fileID: 1652931582276418948}
@@ -763,24 +762,6 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 1
   m_Center: {x: -0, y: 1.5, z: -0}
---- !u!143 &1652931582276418951
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1652931582688368495}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 3
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.2
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &1652931582276418950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -793,9 +774,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231040749df4e7345bcf3e26509d4945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: -0.5
-  gmFather: {fileID: 1652931582688422767}
-  setAtiveCanvasLvl: 1
+  height: -2.34
+  gmFather: {fileID: 1652931582688417799}
+  setAtiveCanvasLvl: 0
 --- !u!114 &1652931582276418949
 MonoBehaviour:
   m_ObjectHideFlags: 0

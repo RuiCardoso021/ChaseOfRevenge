@@ -23,7 +23,7 @@
                     "type_effect": "Me"
                  }
             ],
-            "description": "2 damage to all enemies, 2 damage to player ",
+            "description": "2 damage to all enemies, 2 damage to player",
             "mana":1,
             "src": "generic"
         },
@@ -184,26 +184,6 @@
         {
             "id": 9,
             "type": "UN",
-            "name": "King Kongor",
-            "rarity": 1,
-            "category": "Attack",
-            "number_effects": 1,
-            "ability": 
-            [
-                { 
-                    "tag": "Damage", 
-                    "value": 5, 
-                    "effect_quantity": 1, 
-                    "type_effect": "Other"
-                }
-            ],
-            "description": "5 damage to an enemy",
-            "mana":3,
-            "src": "generic"
-        },
-        {
-            "id": 10,
-            "type": "UN",
             "name": "Shotone",
             "rarity": 1,
             "category": "Attack",
@@ -222,7 +202,7 @@
             "src": "generic"
         },
         {
-            "id": 11,
+            "id": 10,
             "type": "ARCH",
             "name": "Dup",
             "rarity": 1,
@@ -237,32 +217,12 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "2 damage to a random enemy ",
+            "description": "2 damage to a random enemy",
             "mana":1,
             "src": "archery"
         },
         {
-            "id": 12,
-            "type": "ARCH",
-            "name": "Imobilize",
-            "rarity": 2,
-            "category": "Stun",
-            "number_effects": 1,
-            "ability": 
-            [
-                { 
-                    "tag": "CC", 
-                    "value": 0, 
-                    "effect_quantity": 0, 
-                    "type_effect": "Other"
-                }
-            ],
-            "description": "Imobilize all enemies in next turn",
-            "mana":2,
-            "src": "archery"
-        },
-        {
-            "id": 13,
+            "id": 11,
             "type": "ARCH",
             "name": "Damage",
             "rarity": 2,
@@ -283,7 +243,7 @@
         },
 
           {
-            "id": 14,
+            "id": 12,
             "type": "SORCE",
             "name": "FireAoe",
             "rarity": 1,
@@ -303,7 +263,7 @@
             "src": "sorceress"
         },
         {
-            "id": 15,
+            "id": 13,
             "type": "SORCE",
             "name": "Plusone",
             "rarity": 1,
@@ -323,7 +283,7 @@
             "src": "sorceress"
         },
         {
-            "id": 16,
+            "id": 14,
             "type": "SORCE",
             "name": "Freeze",
             "rarity": 1,
@@ -338,12 +298,12 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "Freeze all enemies in next turn",
+            "description": "Enemies cannot attack player on next turn",
             "mana":2,
             "src": "sorceress"
         },
          {
-            "id": 17,
+            "id": 15,
             "type": "SORCE",
             "name": "Corrupt",
             "rarity": 1,
@@ -363,7 +323,7 @@
             "src": "sorceress"
         },
          {
-            "id": 18,
+            "id": 16,
             "type": "UN",
             "name": "OMG",
             "rarity": 1,
@@ -389,7 +349,7 @@
             "src": "generic"
         },
          {
-            "id": 19,
+            "id": 17,
             "type": "WAR",
             "name": "Slash",
             "rarity": 1,
@@ -404,12 +364,12 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "2 damage to a random enemy ",
+            "description": "2 damage to a random enemy",
             "mana":1,
             "src": "warrior"
         },
          {
-            "id": 20,
+            "id": 18,
             "type": "UN",
             "name": "Getfive",
             "rarity": 1,
@@ -429,7 +389,7 @@
             "src": "generic"
         },
          {
-            "id": 21,
+            "id": 19,
             "type": "WAR",
             "name": "Onetoall",
             "rarity": 1,
@@ -439,7 +399,7 @@
             [
                 { 
                     "tag": "Damage", 
-                    "value": 0, 
+                    "value": 1, 
                     "effect_quantity": 0, 
                     "type_effect": "Other"
                 }
@@ -449,7 +409,7 @@
             "src": "warrior"
         },
          {
-            "id": 22,
+            "id": 20,
             "type": "WAR",
             "name": "Healme",
             "rarity": 1,
@@ -469,9 +429,9 @@
             "src": "warrior"
         },
            {
-            "id": 23,
+            "id": 21,
             "type": "UN",
-            "name": "Getfivenow",
+            "name": "CalmNova",
             "rarity": 1,
             "category": "Attack",
             "number_effects": 1,
@@ -489,7 +449,7 @@
             "src": "generic"
         },
            {
-            "id": 24,
+            "id": 22,
             "type": "WAR",
             "name": "Maxcoil",
             "rarity": 1,
@@ -515,7 +475,7 @@
             "src": "warrior"
        }, 
           {
-            "id": 25,
+            "id": 23,
             "type": "WAR",
             "name": "Priest",
             "rarity": 1,
@@ -534,28 +494,8 @@
             "mana":3,
             "src": "warrior"
         },
-          {
-            "id": 26,
-            "type": "WAR",
-            "name": "Light",
-            "rarity": 1,
-            "category": "Attack",
-            "number_effects": 1,
-            "ability": 
-            [
-                { 
-                    "tag": "Heal", 
-                    "value": 3, 
-                    "effect_quantity": 0, 
-                    "type_effect": "Me"
-                }
-            ],
-            "description": "Heal player with 3 life on next turn",
-            "mana":3,
-            "src": "warrior"
-        },
         {
-            "id": 27,
+            "id": 24,
             "type": "UN",
             "name": "HealEnemy",
             "rarity": 1,
@@ -576,12 +516,12 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "Full heal, all enemies receive 15 health ",
+            "description": "Full heal, all enemies receive 15 health",
             "mana":4,
             "src": "generic"
         },
         {
-            "id": 28,
+            "id": 25,
             "type": "WAR",
             "name": "Killemall",
             "rarity": 1,
@@ -596,12 +536,12 @@
                     "type_effect": "Other"
                 }
             ],
-            "description": "3 damage to all enemie",
+            "description": "3 damage to all enemies",
             "mana":3,
             "src": "warrior"
         },
         {
-            "id": 29,
+            "id": 26,
             "type": "UN",
             "name": "ManaMore",
             "rarity": 1,
@@ -621,7 +561,7 @@
             "src": "generic"
         },
         {
-            "id": 30,
+            "id": 27,
             "type": "UN",
             "name": "Reduce",
             "rarity": 1,
@@ -641,7 +581,7 @@
             "src": "generic"
         },
          {
-            "id": 30,
+            "id": 28,
             "type": "ARCH",
             "name": "Threetime",
             "rarity": 1,
@@ -651,17 +591,17 @@
             [
                 { 
                     "tag": "Damage", 
-                    "value": 2, 
+                    "value": 4, 
                     "effect_quantity": 0, 
                     "type_effect": "Other"
                 }
             ],
             "description": "4 damage to all enemie",
-            "mana":3,
+            "mana":2,
             "src": "archery"
         },
         {
-            "id": 31,
+            "id": 29,
             "type": "ARCH",
             "name": "Twotime",
             "rarity": 1,
@@ -671,17 +611,17 @@
             [
                 { 
                     "tag": "Damage", 
-                    "value": 1, 
+                    "value": 3, 
                     "effect_quantity": 0, 
                     "type_effect": "Other"
                 }
             ],
             "description": "3 damage to all enemie",
-            "mana":3,
+            "mana":1,
             "src": "archery"
        }, 
        {
-            "id": 32,
+            "id": 30,
             "type": "SORCE",
             "name": "Target",
             "rarity": 1,
@@ -699,6 +639,336 @@
             "description": "7 damage to a selected enemy",
             "mana":3,
             "src": "sorceress"
+        },
+        {
+            "id": 31,
+            "type": "SORCE",
+            "name": "Tagg",
+            "rarity": 1,
+            "category": "Attack",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Damage", 
+                    "value": 4, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "4 damage to a selected enemy",
+            "mana":2,
+            "src": "sorceress"
+        },
+        {
+            "id": 32,
+            "type": "SORCE",
+            "name": "Slow",
+            "rarity": 1,
+            "category": "Buff",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "DeBuffEnemy", 
+                    "value": 5, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "Enemy attacks has 5 damage reduced on next turn",
+            "mana":2,
+            "src": "sorceress"
+        },
+        {
+            "id": 33,
+            "type": "SORCE",
+            "name": "Comeback",
+            "number_effects": 2,
+            "rarity": 1,
+            "category": "Heal",
+            "ability": 
+            [
+                { 
+                    "tag": "Damage", 
+                    "value": 2, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Other"
+                },
+                { 
+                    "tag": "Heal", 
+                    "value": 2, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Me"
+                }
+            ],
+            "description": "2 damage to all enemies, heal 2 life per enemy damaged",
+            "mana": 3,
+            "src": "sorceress"
+       }, 
+         {
+            "id": 34,
+            "type": "SORCE",
+            "name": "Calm",
+            "rarity": 1,
+            "category": "Buff",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "DeBuffEnemy", 
+                    "value": 7, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "Enemy attacks has 7 damage reduced on next turn",
+            "mana":3,
+            "src": "sorceress"
+        },
+        {
+            "id": 35,
+            "type": "SORCE",
+            "name": "Rolemn",
+            "number_effects": 2,
+            "rarity": 1,
+            "category": "Heal",
+            "ability": 
+            [
+                { 
+                    "tag": "Damage", 
+                    "value": 3, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Other"
+                },
+                { 
+                    "tag": "Heal", 
+                    "value": 3, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Me"
+                }
+            ],
+            "description": "3 damage to all enemies, heal 3 life per enemy damaged",
+            "mana": 4,
+            "src": "sorceress"
+       }, 
+       {
+            "id": 36,
+            "type": "WAR",
+            "name": "Deathcoil",
+            "rarity": 1,
+            "category": "Attack",
+            "number_effects": 2,
+            "ability": 
+            [
+                { 
+                    "tag": "Damage", 
+                    "value": 2, 
+                    "effect_quantity": -1, 
+                    "type_effect": "Other"
+                },
+                { 
+                    "tag": "Heal", 
+                    "value": 5, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Me"
+                }
+            ],
+            "description": "2 damage to a random enemy, heal 5 life",
+            "mana": 3,
+            "src": "warrior"
+       },
+       {
+            "id": 37,
+            "type": "WAR",
+            "name": "Savemeabit",
+            "rarity": 1,
+            "category": "Heal",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Heal", 
+                    "value": 1, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Me"
+                }
+            ],
+            "description": "Heal player with 1 life",
+            "mana":1,
+            "src": "warrior"
+        },
+        {
+            "id": 38,
+            "type": "WAR",
+            "name": "Cardmeg",
+            "rarity": 2,
+            "category": "Attack/Magic",
+            "number_effects": 2,
+            "ability": 
+            [
+                { 
+                    "tag": "Damage", 
+                    "value": 2, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Other"
+                },
+                { 
+                    "tag": "Shuffle", 
+                    "value": 0, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Card"
+                }
+            ],
+            "description": "2 damage to all enemies, get 1 card from deck",
+            "mana": 2,
+            "src": "warrior"
+       },
+        {
+            "id": 39,
+            "type": "WAR",
+            "name": "Dashq",
+            "rarity": 1,
+            "category": "Attack",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Damage", 
+                    "value": 6, 
+                    "effect_quantity": -1, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "6 damage to a random enemy",
+            "mana":3,
+            "src": "warrior"
+        },
+        {
+            "id": 40,
+            "type": "ARCH",
+            "name": "Dki",
+            "rarity": 1,
+            "category": "Attack",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Damage", 
+                    "value": 3, 
+                    "effect_quantity": -1, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "3 damage to a random enemy",
+            "mana":2,
+            "src": "archery"
+        },
+         {
+            "id": 41,
+            "type": "ARCH",
+            "name": "Viper",
+            "rarity": 1,
+            "category": "Buff",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "DeBuffEnemy", 
+                    "value": 4, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "Enemy attacks has 4 damage reduced on next turn",
+            "mana":1,
+            "src": "archery"
+        },
+        {
+            "id": 42,
+            "type": "ARCH",
+            "name": "Tuna",
+            "rarity": 1,
+            "category": "Attack",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Damage", 
+                    "value": 5, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "5 damage to a selected enemy",
+            "mana":3,
+            "src": "archery"
+        },
+        {
+            "id": 43,
+            "type": "ARCH",
+            "name": "Snipe",
+            "rarity": 1,
+            "category": "Attack",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Damage", 
+                    "value": 8, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "8 damage to a selected enemy",
+            "mana":4,
+            "src": "archery"
+        },
+        {
+            "id": 44,
+            "type": "ARCH",
+            "name": "Notdien",
+            "number_effects": 2,
+            "rarity": 1,
+            "category": "Heal",
+            "ability": 
+            [
+                { 
+                    "tag": "Damage", 
+                    "value": 2, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Other"
+                },
+                { 
+                    "tag": "Heal", 
+                    "value": 2, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Me"
+                }
+            ],
+            "description": "2 damage to all enemies, heal 2 life per enemy damaged",
+            "mana": 3,
+            "src": "archery"
+       }, 
+       {
+            "id": 45,
+            "type": "ARCH",
+            "name": "Sting",
+            "rarity": 1,
+            "category": "Heal",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Heal", 
+                    "value": 4, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Me"
+                }
+            ],
+            "description": "Heal player with 4 life",
+            "mana":2,
+            "src": "archery"
         }
     ]
 }

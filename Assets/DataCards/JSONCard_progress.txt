@@ -1,0 +1,133 @@
+﻿ 
+{
+"cards":
+    [
+
+        {
+            "id": 100,
+            "type": "UN",
+            "name": "Healmemaster",
+            "rarity": 1,
+            "category": "Attack",
+            "number_effects": 1,
+            "ability": 
+            [
+                {
+                    "tag": "Heal", 
+                    "value": 20, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Me"
+                },
+                { 
+                    "tag": "CC", 
+                    "value": 0, 
+                    "effect_quantity": "0", 
+                    "type_effect": "Me"
+                }
+            ],
+            "description": "Get 20 Heal and pass turn",
+            "mana":7,
+            "src": "generic"
+        },
+        {
+            "id":101 ,
+            "type": "Combomaster",
+            "name": "ManaMore",
+            "rarity": 1,
+            "category": "Attack",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Mana", 
+                    "value": 8, 
+                    "effect_quantity": 0, 
+                    "type_effect": "Me"
+                }
+            ],
+            "description": "Gain 8 Mana on this turn",
+            "mana":4,
+            "src": "generic"
+        },
+        {
+            "id": 102
+            "type": "UN",
+            "name": "Reduceme",
+            "rarity": 1,
+            "category": "Attack",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Mana", 
+                    "value": 3, 
+                    "effect_quantity": 1,
+                    "type_effect": "Card"
+                }
+            ],
+            "description": "Reduce 3 mana on next card",
+            "mana": 1,
+            "src": "generic"
+        },
+        {
+            "id": 103,
+            "type": "UN",
+            "name": "Bishop",
+            "rarity": 1,
+            "category": "Attack",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Heal", 
+                    "value": 7, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Me"
+                }
+            ],
+            "description": "Heal player with 2 life",
+            "mana":2,
+            "src": "generic"
+        },
+        {
+            "id": 104
+            "type": "UN",
+            "name": "Ballistic",
+            "rarity": 1,
+            "category": "Attack",
+            "number_effects": 1,
+            "ability": 
+            [
+                { 
+                    "tag": "Damage", 
+                    "value": 4, 
+                    "effect_quantity": 1, 
+                    "type_effect": "Other"
+                }
+            ],
+            "description": "15 damage to a selected enemy",
+            "mana":4,
+            "src": "generic"
+        },
+        {
+                "id": 105,
+                "type": "UN",
+                "name": "Flamexposion",
+                "rarity": 2,
+                "category": "Attack",
+                "number_effects": 1,
+                "ability": 
+                [
+                    { 
+                        "tag": "Damage", 
+                        "value": 6, 
+                        "effect_quantity": 0, 
+                        "type_effect": "Other"
+                    }
+                ],
+                "description": "9 damage to all enemies",
+                "mana":3,
+                "src": "generic"
+            }
+        ]
+    }
