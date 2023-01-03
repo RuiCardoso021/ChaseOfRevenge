@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class WinPanel : MonoBehaviour
 {
-    GameObject winPanel;
-    GameObject finalPanel;
+    [SerializeField] GameObject winPanel;
+    [SerializeField] GameObject finalPanel;
 
     public void MainMenuButton()
     {
@@ -22,7 +22,7 @@ public class WinPanel : MonoBehaviour
 
     public void GoToFinalPanel()
     {
-        winPanel.SetActive(false);
-        finalPanel.SetActive(true);
+        if (finalPanel != null)
+            finalPanel.SetActive(true);
     }
 }

@@ -4,42 +4,26 @@ using UnityEngine;
 
 public class BossTriggerSpawner : MonoBehaviour
 {
-    private bool isSpawned = false;
-    public GameObject bossSpawner;
-    public GameObject Boss;
+    public Enemy_Prefab Boss;
     public GameObject winPanel;
 
     void Start()
     {
-        // Disable the win panel and boss enemy at the start of the game
         winPanel.SetActive(false);
     }
 
     private void Update()
     {
-        // Check if the boss enemy has been destroyed
-        if (isSpawned == true && Boss == null)
-            // If the boss enemy has been destroyed, enable the win panel
-            winPanel.SetActive(true);
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
+        // Check if the boss is dead
+        if (Boss.enemyIsDead == true)
         {
-            bossManager();
+            // If the boss enemy has been destroyed, enable the win panel
+            StartCoroutine(ShowWinPanel());
         }
     }
-
-    //fazer um trigger collider ao entrar na porta do castelo spawnar o boss
-    public void bossManager()
+    IEnumerator ShowWinPanel()
     {
-        if (!isSpawned)
-            EnemyBossSpawner();
-    }
-
-    private void EnemyBossSpawner()
-    {
-        Instantiate(Boss, bossSpawner.transform.position, bossSpawner.transform.rotation);
-        isSpawned = true;
+        yield return new WaitForSeconds(2);
+        winPanel.SetActive(true);
     }
 }

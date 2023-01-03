@@ -9,6 +9,7 @@ public class FinalPanelGame : MonoBehaviour
     [SerializeField] private GameObject InterfacePanel;
     [SerializeField] private GameObject PanelWin;
     [SerializeField] private GameObject PanelLose;
+    [SerializeField] private GameObject PanelWinGame;
     private Character_Prefab _player;
     private Enemy_Prefab _enemy;
     private bool activePanel;
@@ -17,6 +18,7 @@ public class FinalPanelGame : MonoBehaviour
     {
         PanelLose.SetActive(false);
         PanelWin.SetActive(false);
+        PanelWinGame.SetActive(false);
         activePanel = true;
     }
 
@@ -35,8 +37,6 @@ public class FinalPanelGame : MonoBehaviour
             ActivePanel(PanelWin);
             SaveGameProgress.instance.saveWins();
             SaveGameProgress.instance.SaveEnemiesLose(DataTransferScene.Instance.FightID);
-            //UnblockMapAreas.Instance.FightWinCount();
-            //UnblockMapAreas.Instance.UnblockArea();
         }
     }
 
