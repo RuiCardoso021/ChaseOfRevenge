@@ -11,7 +11,7 @@ public class WinPanel : MonoBehaviour
     public void MainMenuButton()
     {
         // Load the main menu scene when the "Main Menu" button is clicked
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("StartMenu");
     }
 
     public void QuitButton()
