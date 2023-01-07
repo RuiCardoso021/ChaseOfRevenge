@@ -1071,7 +1071,7 @@ MonoBehaviour:
   id: 3
   Name: Boss
   ClassType: Enemy
-  Health: 100
+  Health: 50
   MinAttack: 5
   MaxAttack: 10
   ImageProfile: {fileID: 0}

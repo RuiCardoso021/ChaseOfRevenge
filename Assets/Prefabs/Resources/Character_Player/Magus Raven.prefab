@@ -413,7 +413,7 @@ MonoBehaviour:
     m_Bits: 8
   _3dCameraObject: {fileID: 750881743647283371}
   walkSpeed: 2
-  runSpeed: 6
+  runSpeed: 10
   gravity: -9.81
   activePlayer: 1
 --- !u!114 &750881744025329361

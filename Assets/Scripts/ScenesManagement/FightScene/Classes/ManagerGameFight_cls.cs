@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Progress;
+//using static UnityEditor.Progress;
 using Random = UnityEngine.Random;
 
 public class ManagerGameFight_cls {
