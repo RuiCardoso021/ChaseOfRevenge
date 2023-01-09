@@ -26,7 +26,7 @@ public class UnblockMapAreas : MonoBehaviour
         {
             if (item != null)
             {
-                if (wins == item.GetComponent<ObjectiveDesblock>().objective)
+                if (wins >= item.GetComponent<ObjectiveDesblock>().objective)
                 {
                     if (item.activeSelf)
                     {

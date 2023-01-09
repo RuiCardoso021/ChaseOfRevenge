@@ -80,7 +80,7 @@ public class Interactor : MonoBehaviour
                 if (!checkIsNpc)
                 {
                     Instantiate(Resources.Load(Global.linkToPanelGoToFight) as GameObject);
-                    Invoke("SendObjectFromOtherScene", 2f);
+                    Invoke("SendObjectFromOtherScene", 1f);
                     validation = false;
                 }
             }
@@ -88,13 +88,16 @@ public class Interactor : MonoBehaviour
     }
 
     public void SendObjectFromOtherScene()
-    {
-        TransferGameObject.Instance.LoadedCharacter.Add(_player);
-        GameObject tempEnemy = _interactable.GetInteractionGameObject;
-        tempEnemy.name = Global.findEnemy;
-        TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
-        SaveGameProgress.instance.SavePlayer();
-        //TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
-        TransferGameObject.Instance.LoadNextScene();
+    {   
+        if (_interactable.GetInteractionGameObject != null)
+        {
+            TransferGameObject.Instance.LoadedCharacter.Add(_player);
+            GameObject tempEnemy = _interactable.GetInteractionGameObject;
+            tempEnemy.name = Global.findEnemy;
+            TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
+            SaveGameProgress.instance.SavePlayer();
+            //TransferGameObject.Instance.LoadedCharacter.Add(tempEnemy);
+            TransferGameObject.Instance.LoadNextScene();
+        }
     }
 }
