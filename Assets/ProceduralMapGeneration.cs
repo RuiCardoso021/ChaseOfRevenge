@@ -10,6 +10,9 @@ public class ProceduralMapGeneration : MonoBehaviour
     public int height = 256;
     public int scale = 10;
 
+    public float offsetX = 100f;
+    public float offsetY = 100f;
+
     //public Transform[] Locations;
     //public GameObject[] Components;
 
@@ -24,8 +27,11 @@ public class ProceduralMapGeneration : MonoBehaviour
 
     private void Start()
     {
+        offsetX = Random.Range(0f, 999f);
+        offsetY = Random.Range(0f, 999f);
+
         Terrain terrain = GetComponent<Terrain>();
-        terrain.gameObject.transform.position = new Vector3(-41.6127472f, -2.38146639f, -33.4000015f);
+        terrain.gameObject.transform.position = new Vector3(-41.6127472f, -10.38146639f, -33.4000015f);
     }
 
     private void Update()
@@ -58,10 +64,10 @@ public class ProceduralMapGeneration : MonoBehaviour
         return heights;
     }
 
-    float CalculateHeights (int x, int y)
+    float CalculateHeights(int x, int y)
     {
-        float cordX = (float)x / width * scale;
-        float cordY = (float)y / height * scale;
+        float cordX = (float)x / width * scale + offsetX;
+        float cordY = (float)y / height * scale + offsetY;
 
         return Mathf.PerlinNoise(cordX, cordY);
     }

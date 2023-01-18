@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CharacterSelection.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TownCity.unity
     guid: 3db309fc96ed8d349a61fdf7b75c7e92
   - enabled: 1
@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TownCity.unity
     guid: 3db309fc96ed8d349a61fdf7b75c7e92
+  - enabled: 1
+    path: Assets/Scenes/FightScene_generated.unity
+    guid: f39927bbb9973624eb473eaf50b8b871
   m_configObjects: {}
