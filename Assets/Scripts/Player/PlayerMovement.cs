@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundDrag;
     public float playerHeight;
     public LayerMask Ground;
+    public Material RuningMaterial;
 
     private Vector3 moveDirection;
     private Vector3 velocity;
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         moveSpeed = walkSpeed;
         controller = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
-
+        SetMovementMode(false);
 
         if (activePlayer){
             _3dCameraObject.SetActive(true);
@@ -47,9 +48,24 @@ public class PlayerMovement : MonoBehaviour
         if (activePlayer) Move();
     }
 
+    private void SetMovementMode(bool isRuning)
+    {
+        if (isRuning)
+        {
+            RuningMaterial.SetFloat("_MotionBlurStrength", 0.8f);
+            RuningMaterial.SetFloat("_BlurAmount", 0.8f);
+        }
+        else
+        {
+            RuningMaterial.SetFloat("_MotionBlurStrength", 0);
+            RuningMaterial.SetFloat("_BlurAmount", 0);
+        }
+    }
+
     private void Move()
     {
         float moveZ = Input.GetAxis("Vertical");
+        SetMovementMode(false);
 
         // ground check
         isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, Ground);
@@ -101,6 +117,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Run()
     {
+        SetMovementMode(true);
         //aumentar a velocidade suavemente
         if (moveSpeed == walkSpeed) {
             moveSpeed = moveSpeed + 1;

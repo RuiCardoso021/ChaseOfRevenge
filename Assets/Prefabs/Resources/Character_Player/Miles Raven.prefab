@@ -2929,6 +2929,7 @@ MonoBehaviour:
   Ground:
     serializedVersion: 2
     m_Bits: 8
+  RuningMaterial: {fileID: 2100000, guid: f58f792af5799bf4cad8b1bc66c28f15, type: 2}
   _3dCameraObject: {fileID: 8804903803197635875}
   walkSpeed: 2
   runSpeed: 10
