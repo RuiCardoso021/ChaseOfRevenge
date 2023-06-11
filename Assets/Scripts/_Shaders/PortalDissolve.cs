@@ -43,7 +43,7 @@ public class PortalDissolve : MonoBehaviour
             Vector3 collisionPoint = transform.InverseTransformPoint(other.ClosestPoint(transform.position));
 
             // Update the dissolve start point
-            dissolveStartPoint = collisionPoint;
+            portalMaterial.SetVector("_DissolveStartPoint", new Vector4(collisionPoint.x, collisionPoint.y, collisionPoint.z, 0));
 
             // Enable the dissolve effect
             EnableDissolve();
