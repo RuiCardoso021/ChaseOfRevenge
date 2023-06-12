@@ -32,6 +32,6 @@ Material:
     m_Floats:
     - _DissolveAmount: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DissolveStartPoint: {r: 0.034953848, g: -0.09063107, b: -0.5453341, a: 0}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _DissolveStartPoint: {r: 0.061687842, g: -0.103149325, b: -3.2183576, a: 0}
   m_BuildTextureStacks: []
