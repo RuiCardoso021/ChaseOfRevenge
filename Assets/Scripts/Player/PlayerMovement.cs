@@ -4,6 +4,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+enum MovementType
+{
+    RuningFast = 0,
+    Running = 1,
+    Walk = 2
+}
+
 public class PlayerMovement : MonoBehaviour
 {
     public GameObject thePlayer;
@@ -19,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private CharacterController controller;
     private float moveSpeed;
+    private float? runningTime;
+    private float? runningStartTime;
+    private float targetValue = 5f;
 
     [SerializeField] private GameObject _3dCameraObject;
     [SerializeField] private float walkSpeed;
@@ -31,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         moveSpeed = walkSpeed;
         controller = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
-        SetMovementMode(false);
+        SetMovementMode(MovementType.Walk);
 
         if (activePlayer){
             _3dCameraObject.SetActive(true);
@@ -48,24 +58,31 @@ public class PlayerMovement : MonoBehaviour
         if (activePlayer) Move();
     }
 
-    private void SetMovementMode(bool isRuning)
+    private void SetMovementMode(MovementType movementType)
     {
-        if (isRuning)
+        switch (movementType)
         {
-            RuningMaterial.SetFloat("_MotionBlurStrength", 0.8f);
-            RuningMaterial.SetFloat("_BlurAmount", 0.8f);
-        }
-        else
-        {
-            RuningMaterial.SetFloat("_MotionBlurStrength", 0);
-            RuningMaterial.SetFloat("_BlurAmount", 0);
+            case MovementType.RuningFast:
+                RuningMaterial.SetFloat("_MotionBlurStrength", 0.8f);
+                RuningMaterial.SetFloat("_BlurAmount", 0.8f);
+                break;
+            case MovementType.Running:
+                RuningMaterial.SetFloat("_MotionBlurStrength", 0.8f);
+                RuningMaterial.SetFloat("_BlurAmount", 0.6f);
+                break;
+            case MovementType.Walk:
+                RuningMaterial.SetFloat("_MotionBlurStrength", 0f);
+                RuningMaterial.SetFloat("_BlurAmount", 0f);
+                break;
+            default:
+                break;
         }
     }
 
     private void Move()
     {
         float moveZ = Input.GetAxis("Vertical");
-        SetMovementMode(false);
+        SetMovementMode(MovementType.Walk);
 
         // ground check
         isGrounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, Ground);
@@ -102,11 +119,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Idle()
     {
+        runningStartTime = null;
+        runningTime = null;
         animator.SetInteger("Transition", 0);
     }
 
     private void Walk()
     {
+        runningStartTime = null;
+        runningTime = null;
+
         //diminuir a velocidade suavemente
         if (moveSpeed > walkSpeed) {
             moveSpeed = moveSpeed - 1;
@@ -117,12 +139,22 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Run()
     {
-        SetMovementMode(true);
-        //aumentar a velocidade suavemente
-        if (moveSpeed == walkSpeed) {
-            moveSpeed = moveSpeed + 1;
+        if (runningStartTime == null)
+        {
+            runningStartTime = Time.time;
+            runningTime = 0;
         }
-        else moveSpeed = runSpeed;
+        else if (runningStartTime != null && runningTime < targetValue)
+        {
+            SetMovementMode(MovementType.RuningFast);
+            moveSpeed = runSpeed + 4;
+            runningTime = Time.time - runningStartTime;
+        }
+        else if(runningStartTime != null && runningTime >= targetValue)
+        {
+            SetMovementMode(MovementType.Running);
+            moveSpeed = runSpeed - 4;
+        }
 
         animator.SetInteger("Transition",2);   
     }
