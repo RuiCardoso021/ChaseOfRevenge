@@ -8,7 +8,7 @@ public class UnblockMapAreas : MonoBehaviour
     public GameObject[] areasBlocker;
     //public GameObject panelWinGame;
     public int wins;
-    
+
     void Start()
     {
         wins = SaveGameProgress.instance.getWins();
