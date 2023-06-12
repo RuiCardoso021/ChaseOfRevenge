@@ -42,7 +42,7 @@ Shader "Unlit/RunningShader"
             }
             
             sampler2D _MainTex;
-            float _MotionBlurStrength; // Força do efeito de correr
+            float _MotionBlurStrength; // Intensidade do efeito
             float _BlurAmount; // Quantidade de desfoque nas áreas laterais
             
             float4 frag (v2f i) : SV_Target
@@ -50,23 +50,25 @@ Shader "Unlit/RunningShader"
                 // Ler a cor original do pixel
                 fixed4 col = tex2D(_MainTex, i.uv);
                 
-                // Calcular o vetor de deslocamento
+                // Calcular o vetor deslocamento multiplicando as coordenadas de textura pela intensidade do efeito
                 float2 displacement = i.uv * _MotionBlurStrength;
                 
-                // Aplicar o efeito de correr deslocando o UV
+                // Calcular as coordenadas de textura deslocadas (displacedUV) para aplicar o efeito de deslocamento
                 float2 displacedUV = i.uv - displacement;
                 
-                // Calcular a distância do centro da tela
-                float2 center = float2(0.5, 0.5); // Posição do centro da tela
+                // Posição do centro do ecra
+                float2 center = float2(0.5, 0.5); 
+
+                // Calcular a distância entre a coordenada atual e o centro
                 float distanceFromCenter = distance(i.uv, center);
                 
-                // Calcular o fator de desfoque com base na distância do centro
+                // Aplicar um desfoque com base na distância ao centro
                 float blurFactor = smoothstep(1.0 - _BlurAmount, 1.0, distanceFromCenter);
                 
-                // Ler a cor deslocada do pixel
+                // Obter a cor deslocada do pixel
                 fixed4 displacedColor = tex2D(_MainTex, displacedUV);
                 
-                // Misturar as cores original e deslocada com base na força do efeito de correr e no fator de desfoque
+                // Misturar as cores original e deslocada com base na intensidade do efeito de correr e desfoque calculado anteriormente
                 col = lerp(col, displacedColor, _MotionBlurStrength * blurFactor);
                 
                 return col;
