@@ -44,7 +44,7 @@ Material:
     m_Floats:
     - _Controlador: 0.27
     - _Controller: -0.3
-    - _DissolveAmount: 0
+    - _DissolveAmount: 0.8458419
     - _DissolveSpeed: 0.379
     - _DissolveThreshold: 0
     - _Exponencial: 2
@@ -54,7 +54,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _DissolveColor: {r: 0, g: 0, b: 0, a: 1}
-    - _DissolveStartPoint: {r: 0.02956388, g: -0.10302994, b: -3.1977437, a: 0}
+    - _DissolveStartPoint: {r: -0.103908956, g: -0.059363715, b: 0.37963226, a: 0}
     - _RimColor: {r: 1, g: 0.009225845, b: 0, a: 1}
     - _RimColor2: {r: 0, g: 0.08628178, b: 1, a: 1}
   m_BuildTextureStacks: []
