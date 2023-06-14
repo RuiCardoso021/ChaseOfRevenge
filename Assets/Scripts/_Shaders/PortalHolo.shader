@@ -10,7 +10,7 @@ Shader "Custom/hologram" {
 
         //dissolve
         _DissolveTexture("Dissolve Texture", 2D) = "whitetexture" {}
-        _DissolveAmount("Dissolve Amount", Range(0, 1)) = 0.5
+        _DissolveAmount("Dissolve Amount", Range(0, 1)) = 0
     }
 
         SubShader{
