@@ -31,6 +31,7 @@ public class PortalDissolve : MonoBehaviour
             if (dissolveAmount >= 1f)
             {
                 isDissolving = false;
+                Destroy(gameObject);
             }
         }
     }
