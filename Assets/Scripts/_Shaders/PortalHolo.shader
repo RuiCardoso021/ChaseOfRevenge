@@ -2,10 +2,8 @@ Shader "Custom/hologram" {
     Properties{
         // holo
         _RimColor("Rim Color", Color) = (1, 1, 1, 1)
-        _RimColor2("rim color2", Color) = (1,1,1,1)
         _Albedo("Albedo", 2D) = "defaulttexture" {}
         _Exponential("Exponential", Range(-5, 10)) = 1
-        _Exponential2("Exponential2", Range(-5, 100)) = 1
         _Controlador("controlador", Range(-1, 1)) = 1
 
         //dissolve
@@ -23,7 +21,6 @@ Shader "Custom/hologram" {
             struct Input {
                 float2 uv_Albedo;
                 float3 viewDir;
-                float2 uv_Text;
             };
 
             // holo
