@@ -19,7 +19,7 @@ public class GamePlayFightScene : MonoBehaviour
     private Enemy_Prefab enemy;
     private bool activeDestroyThisCard;
     private bool _enemyPermissed;
-
+    public Material damagePostP;
     //Start
     private void Start()
     {
@@ -27,6 +27,9 @@ public class GamePlayFightScene : MonoBehaviour
         _enemyPermissed = true;
         _turn = GetComponent<RoundTurn>();
         _cardsToPlay = GetComponent<CardManager>();
+        //damagePostP.SetColor("_DamageColor", null);
+        damagePostP.SetFloat("_DamageRadius", 0f);
+        damagePostP.SetFloat("_DamageIntensity", 0f);
     }
 
     // Update is called once per frame
@@ -177,11 +180,14 @@ public class GamePlayFightScene : MonoBehaviour
 
                         StartCoroutine(SetAttackEnemy(item, time));
                         time += 1.2f;
+                        damagePostP.SetColor("_DamageColor", Color.red);
+                        damagePostP.SetFloat("_DamageRadius", 0.4f);
+                        damagePostP.SetFloat("_DamageIntensity", 1.0f);
                     }
                     else
                     {
                         enemy_Prefab.PermissedByAttack = true;
-                        enemy_Prefab.setInicialMinAndMaxAttack();
+                        enemy_Prefab.setInicialMinAndMaxAttack();                       
                     }
                 }
             }
@@ -209,25 +215,39 @@ public class GamePlayFightScene : MonoBehaviour
     //damage in character(s)
     private void IfDamage(Ability _ab)
     {
-        if (_ab.type_effect == Global.cardAffectsOther) {  //if others
+        if (_ab.type_effect == Global.cardAffectsOther)
+        {  //if others
 
             if (_ab.effect_quantity == 0)
             {   //if all enemies
                 ManagerGameFight.Instance.Manager.SetNewValuesOnAllCharactersICanAttack(-_ab.value, 1);
-
+                //damagePostP.SetColor("_DamageColor", Color.red);
+                //damagePostP.SetFloat("_DamageRadius", 0.1f);
+                //damagePostP.SetFloat("_DamageIntensity", 1.0f);
             }
             else if (_ab.effect_quantity == -1)
             {  //if a random
                 ManagerGameFight.Instance.Manager.SetNewValuesOnRandomCharacter(-_ab.value, 1);
-
+                //damagePostP.SetColor("_DamageColor", Color.red);
+                //damagePostP.SetFloat("_DamageRadius", 0.1f);
+                //damagePostP.SetFloat("_DamageIntensity", 1.0f);
             }
             else if (_ab.effect_quantity == 1 && ManagerGameFight.Instance.Manager.NextCharacter != null)
             {
                 ManagerGameFight.Instance.Manager.SetNewValuesOnCharacter(ManagerGameFight.Instance.Manager.NextCharacter, -_ab.value, 1);
+                //damagePostP.SetColor("_DamageColor", Color.red);
+                //damagePostP.SetFloat("_DamageRadius", 0.1f);
+                //damagePostP.SetFloat("_DamageIntensity", 1.0f);
             }
 
-        } else if (_ab.type_effect == Global.cardAffectsPlayer) //if player to play
+        }
+        else if (_ab.type_effect == Global.cardAffectsPlayer)
+        { //if player to play
             player.HealthUpdate(-_ab.value);
+            damagePostP.SetColor("_DamageColor", new Color(1, 0, 0, 0));
+            damagePostP.SetFloat("_DamageRadius", 0f);
+            damagePostP.SetFloat("_DamageIntensity", 0f);
+        }
     }
 
     //heal mechanics

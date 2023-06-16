@@ -2997,6 +2997,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2024fb801f504704cb74bef8bb0488a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  winPanel: {fileID: 0}
+  finalPanel: {fileID: 0}
 --- !u!114 &567731742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6115,6 +6117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff4a7544533ea949a76b525b53c5983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damagePostP: {fileID: 2100000, guid: a4c691d8d1531884b9fbc61dedaf699f, type: 2}
 --- !u!114 &1122245180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10255,6 +10258,7 @@ GameObject:
   - component: {fileID: 2043488779}
   - component: {fileID: 2043488780}
   - component: {fileID: 2043488781}
+  - component: {fileID: 2043488782}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -10375,6 +10379,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_MaxRayIntersections: 0
+--- !u!114 &2043488782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043488775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e9ada809b35bd42a6f6001e7f9697a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 2100000, guid: a4c691d8d1531884b9fbc61dedaf699f, type: 2}
 --- !u!1 &2068210692
 GameObject:
   m_ObjectHideFlags: 0
