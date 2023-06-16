@@ -26,9 +26,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _CenterScale: 2
     - _CenterSize: 0.5
     - _DamageIntensity: 1
-    - _DamageRadius: 0.1
+    - _DamageRadius: 0.4
     - _Glossiness: 0.5
     - _Metallic: 0
     m_Colors:
